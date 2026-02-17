@@ -1,6 +1,6 @@
-## Restaurant Chain → Kubernetes Mapping (with colors)
+## Restaurant Chain → Kubernetes Mapping (Colored via embedded SVG)
 
-<svg width="100%" height="auto" viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg">
+<svg width="100%" height="420" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg">
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     .header { fill: #ffffff; font-weight: bold; font-size: 16px; }
@@ -10,12 +10,12 @@
     .border { stroke: #cbd5e1; stroke-width: 1; }
     .header-bg { fill: #1e40af; }
     .concept { fill: #1e293b; font-weight: 600; }
-    .term    { fill: #2563eb; font-weight: 600; }
-    .desc    { fill: #334155; }
+    .term { fill: #2563eb; font-weight: 600; }
+    .desc { fill: #334155; }
   </style>
 
-  <!-- Background -->
-  <rect width="900" height="380" fill="#f1f5f9" rx="8"/>
+  <!-- Background rectangle for the whole table -->
+  <rect width="900" height="420" fill="#f1f5f9" rx="8"/>
 
   <!-- Header row -->
   <rect x="20" y="20" width="860" height="50" class="header-bg" rx="6"/>
@@ -23,7 +23,7 @@
   <text x="380" y="52" class="header">Kubernetes Term</text>
   <text x="620" y="52" class="header">What it Does in Real Life</text>
 
-  <!-- Horizontal lines -->
+  <!-- Horizontal divider under header -->
   <line x1="20" y1="70" x2="880" y2="70" class="border"/>
 
   <!-- Row 1 -->
