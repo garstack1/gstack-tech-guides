@@ -1,6 +1,73 @@
+## Restaurant Chain → Kubernetes Mapping (with colors)
+
+<svg width="100%" height="auto" viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    .header { fill: #ffffff; font-weight: bold; font-size: 16px; }
+    .cell { font-size: 14px; }
+    .row-odd { fill: #f8fafc; }
+    .row-even { fill: #ffffff; }
+    .border { stroke: #cbd5e1; stroke-width: 1; }
+    .header-bg { fill: #1e40af; }
+    .concept { fill: #1e293b; font-weight: 600; }
+    .term    { fill: #2563eb; font-weight: 600; }
+    .desc    { fill: #334155; }
+  </style>
+
+  <!-- Background -->
+  <rect width="900" height="380" fill="#f1f5f9" rx="8"/>
+
+  <!-- Header row -->
+  <rect x="20" y="20" width="860" height="50" class="header-bg" rx="6"/>
+  <text x="50"  y="52" class="header">Restaurant Concept</text>
+  <text x="380" y="52" class="header">Kubernetes Term</text>
+  <text x="620" y="52" class="header">What it Does in Real Life</text>
+
+  <!-- Horizontal lines -->
+  <line x1="20" y1="70" x2="880" y2="70" class="border"/>
+
+  <!-- Row 1 -->
+  <rect x="20" y="70" width="860" height="50" class="row-odd border"/>
+  <text x="50"  y="102" class="cell concept">Prepared dish</text>
+  <text x="380" y="102" class="cell term">Container</text>
+  <text x="620" y="102" class="cell desc">Your app packaged with everything it needs</text>
+
+  <!-- Row 2 -->
+  <rect x="20" y="120" width="860" height="50" class="row-even border"/>
+  <text x="50"  y="152" class="cell concept">Order tray / table</text>
+  <text x="380" y="152" class="cell term">Pod</text>
+  <text x="620" y="152" class="cell desc">Smallest deployable unit (1+ containers together)</text>
+
+  <!-- Row 3 -->
+  <rect x="20" y="170" width="860" height="50" class="row-odd border"/>
+  <text x="50"  y="202" class="cell concept">Individual restaurant</text>
+  <text x="380" y="202" class="cell term">Node (Worker Node)</text>
+  <text x="620" y="202" class="cell desc">A server/machine running Pods</text>
+
+  <!-- Row 4 -->
+  <rect x="20" y="220" width="860" height="50" class="row-even border"/>
+  <text x="50"  y="252" class="cell concept">Entire chain</text>
+  <text x="380" y="252" class="cell term">Cluster</text>
+  <text x="620" y="252" class="cell desc">All nodes + control plane working together</text>
+
+  <!-- Row 5 -->
+  <rect x="20" y="270" width="860" height="50" class="row-odd border"/>
+  <text x="50"  y="302" class="cell concept">Central office / boss</text>
+  <text x="380" y="302" class="cell term">Control Plane</text>
+  <text x="620" y="302" class="cell desc">API Server, Scheduler, Controller Manager, etcd</text>
+
+  <!-- Row 6 -->
+  <rect x="20" y="320" width="860" height="50" class="row-even border"/>
+  <text x="50"  y="352" class="cell concept">Single ordering phone/app</text>
+  <text x="380" y="352" class="cell term">Service</text>
+  <text x="620" y="352" class="cell desc">Stable network endpoint + load balancing</text>
+</svg>
+
+
+
 # Kubernetes for Absolute Beginners
 
-Welcome to the first part of the Kubernetes learning series!  
+Welcome to the first part of the Kubernetes learning series  
 This beginner level assumes **no prior knowledge** of containers or orchestration — just curiosity.
 
 ## Table of Contents
@@ -19,12 +86,12 @@ This beginner level assumes **no prior knowledge** of containers or orchestratio
 Imagine you have a great app (like a web service or SaaS tool) that runs perfectly on your laptop in a container (using Docker).  
 Now you want to run it **reliably** for thousands of users, on multiple servers, with automatic restarts if something crashes, scaling up during busy times, and easy updates without downtime.
 
-Doing all that manually is painful and error-prone.  
+Doing all that manually is painful and error prone.  
 That's where **Kubernetes** comes in: it's an open-source system that **automates** deployment, scaling, networking, and management of containerized applications — so you focus on your code, not the infrastructure chaos.
 
 ## The Restaurant Chain Analogy
 
-Think of Kubernetes as managing a **fast-growing restaurant chain** (like a burger franchise with hundreds of locations).
+To use a simple analogy, think of Kubernetes as managing a **fast-growing restaurant chain** (like a burger franchise with hundreds of locations).
 
 - **Containers** = individual prepared dishes (burgers, fries, drinks)  
   → Portable, consistent, and ready to serve quickly.
@@ -44,7 +111,7 @@ Key roles in the chain:
 - **Worker Nodes** (Individual Restaurants / Kitchens)  
   → The actual places where food gets made. Each has cooks, ovens, and storage.  
   → Run the real work (your containers).
-
+  
 - **Pods** = A single order tray or table setup  
   → Usually one main dish + sides (one primary container + helpers).  
   → The smallest thing Kubernetes directly manages — you don't run loose containers; you run Pods.
