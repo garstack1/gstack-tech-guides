@@ -1,0 +1,62 @@
+/* Collapse all top-level sections by default on page load */
+.md-nav__section {
+  --md-nav-section--collapsed: true !important;
+}
+
+/* Optional: Make collapsed sections more obvious */
+.md-nav__section > .md-nav__link {
+  font-weight: bold;
+  color: #000000;              /* black bold for parents like "Kubernetes" */
+}
+
+/* Parent titles bold black */
+.md-nav__title {
+  color: #000000 !important;
+  font-weight: bold;
+}
+
+/* Grey out non-active sub-items */
+.md-nav__link:not(.md-nav__link--active) {
+  color: #666666 !important;
+}
+
+/* Active/current page in blue */
+.md-nav__link--active {
+  color: #0066ff !important;   /* strong blue */
+  font-weight: bold;
+  background-color: rgba(0, 102, 255, 0.08);
+}
+
+/* Make footer background match header (primary color) */
+.md-footer-meta {
+  background-color: var(--md-primary-fg-color) !important;  /* Uses your primary color (indigo) */
+  color: var(--md-primary-fg-color--lighter) !important;   /* Light text on dark bg */
+  border-top: none;                                         /* Remove default border if you want seamless look */
+}
+
+/* Optional: Make footer text/icons white/light for contrast */
+.md-footer-meta__inner,
+.md-footer-meta__link,
+.md-footer-meta__inner a {
+  color: white !important;
+}
+
+/* Optional: Hover effect on links */
+.md-footer-meta__inner a:hover {
+  color: #ffffffcc !important;  /* Slightly transparent white on hover */
+}
+
+.md-footer-meta a {
+  color: #0066ff;                   /* Blue links */
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.md-footer-meta a:hover {
+  text-decoration: underline;
+}
+
+/* Optional: Make copyright bold */
+.md-footer-meta__inner .md-footer-copyright {
+  font-weight: 600;
+}
