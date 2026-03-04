@@ -23,7 +23,7 @@
     
     
       
-        <title>Intermediate Part 5: Namespaces – Organizing Large Projects - Technical Tutorials Hub</title>
+        <title>03 your first pod and deployment - Technical Tutorials Hub</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#intermediate-part-5-namespaces-organizing-large-projects" class="md-skip">
+        <a href="#run-your-first-pod-your-first-pizza-order" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intermediate Part 5: Namespaces – Organizing Large Projects
+              03 your first pod and deployment
             
           </span>
         </div>
@@ -1659,8 +1659,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1669,6 +1667,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#run-your-first-pod-your-first-pizza-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run Your First Pod (Your First "Pizza Order")
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run Your First Pod (Your First &#34;Pizza Order&#34;)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#goal-for-this-section" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1678,70 +1688,114 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-create-namespaces" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-make-sure-your-cluster-is-running" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Create namespaces
+        Step 1: Make sure your cluster is running
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-deploy-nginx-in-dev-namespace" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-2-run-your-first-pod-the-easiest-way" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Deploy nginx in dev namespace
+        Step 2: Run your first Pod (the easiest way)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-deploy-the-same-app-in-prod-namespace" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-3-check-that-its-running" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Deploy the same app in prod namespace
+        Step 3: Check that it's running
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-access-the-prod-service" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-4-see-whats-inside-describe-the-pod" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4: Access the prod Service
+        Step 4: See what’s inside (describe the Pod)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-cleanup" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-5-optional-but-fun-open-the-nginx-welcome-page" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 5: Cleanup
+        Step 5: (Optional but fun) Open the nginx welcome page
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#key-takeaways" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-6-clean-up" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key Takeaways
+        Step 6: Clean up
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we learned
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What we learned">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-just-ran-your-first-real-container-inside-kubernetes-congratulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        You just ran your first real container inside Kubernetes, congratulations!
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next step
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1765,95 +1819,131 @@
   
 
 
-<h1 id="intermediate-part-5-namespaces-organizing-large-projects">Intermediate Part 5: Namespaces – Organizing Large Projects<a class="headerlink" href="#intermediate-part-5-namespaces-organizing-large-projects" title="Permanent link">&para;</a></h1>
-<p>So far everything we've done lives in the <strong>default</strong> namespace — Kubernetes' built-in "room" for resources.<br />
-When projects grow (multiple teams, dev/test/prod environments, or many apps), the default namespace becomes messy — like putting all pizza orders from every location into one giant kitchen.</p>
-<p><strong>Namespaces</strong> are virtual clusters inside one physical cluster:
-- Separate resources (Pods, Deployments, Services, Secrets, etc.)<br />
-- Avoid name conflicts<br />
-- Apply different policies (RBAC, resource quotas, network policies) per namespace<br />
-- Make dev/test/prod look like separate worlds</p>
-<p>Analogy:<br />
-- Default namespace = the main kitchen<br />
-- dev namespace = a test kitchen for experimenting with new recipes<br />
-- prod namespace = the live kitchen for real customers<br />
-Same building (cluster), but clear separation.</p>
-<p>Namespaces are <strong>lightweight</strong> — no extra cost, just logical isolation.</p>
-<h2 id="goal-for-this-section">Goal for this section<a class="headerlink" href="#goal-for-this-section" title="Permanent link">&para;</a></h2>
-<p>Create two namespaces (dev and prod), deploy the same nginx app in each, and see they don't interfere.</p>
-<h2 id="step-1-create-namespaces">Step 1: Create namespaces<a class="headerlink" href="#step-1-create-namespaces" title="Permanent link">&para;</a></h2>
-<p>Run:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>dev
-kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>prod
-</code></pre></div>
-<p>Check:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get namespaces
-</code></pre></div>
-<p>You should see:</p>
-<p>text</p>
-<div class="highlight"><pre><span></span><code>NAME              STATUS   AGE
-default           Active   1h
-dev               Active   10s
-kube-system       Active   1h
-prod              Active   10s
-</code></pre></div>
-<h2 id="step-2-deploy-nginx-in-dev-namespace">Step 2: Deploy nginx in dev namespace<a class="headerlink" href="#step-2-deploy-nginx-in-dev-namespace" title="Permanent link">&para;</a></h2>
-<p>Use your existing nginx-deployment.yaml and nginx-service.yaml from beginner track, but apply with --namespace:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl apply -f nginx-deployment.yaml -n dev
-kubectl apply -f nginx-service.yaml -n dev
-</code></pre></div>
-<p>Check resources <strong>only in dev</strong>:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get all -n dev
-</code></pre></div>
-<p>→ You see Deployment, ReplicaSet, Pods, Service — all in dev</p>
-<p>Now switch context so future commands default to dev:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl config set-context --current --namespace=dev
-</code></pre></div>
-<p>(You can switch back later with --namespace=default)</p>
-<h2 id="step-3-deploy-the-same-app-in-prod-namespace">Step 3: Deploy the same app in prod namespace<a class="headerlink" href="#step-3-deploy-the-same-app-in-prod-namespace" title="Permanent link">&para;</a></h2>
-<p>Apply again, but in prod:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl apply -f nginx-deployment.yaml -n prod
-kubectl apply -f nginx-service.yaml -n prod
-</code></pre></div>
-<p>Check:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get all -n prod
-</code></pre></div>
-<p>→ Same resources appear in prod, but completely separate from dev.</p>
-<p>Try listing without namespace:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get pods
-</code></pre></div>
-<p>→ Shows only Pods in current namespace (dev, if you set it). No overlap — perfect isolation!</p>
-<h2 id="step-4-access-the-prod-service">Step 4: Access the prod Service<a class="headerlink" href="#step-4-access-the-prod-service" title="Permanent link">&para;</a></h2>
-<p>Since we have two Services named nginx-service in different namespaces:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>minikube service nginx-service -n prod
-</code></pre></div>
-<p>→ Opens the prod version in browser (Do the same with -n dev for the dev version)</p>
-<h2 id="step-5-cleanup">Step 5: Cleanup<a class="headerlink" href="#step-5-cleanup" title="Permanent link">&para;</a></h2>
-<p>Delete namespaces (this deletes everything inside them):</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl delete namespace dev
-kubectl delete namespace prod
-</code></pre></div>
-<p>(Or delete resources individually if you prefer.)</p>
-<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+  <h1>03 your first pod and deployment</h1>
+
+<h2 id="run-your-first-pod-your-first-pizza-order">Run Your First Pod (Your First "Pizza Order")<a class="headerlink" href="#run-your-first-pod-your-first-pizza-order" title="Permanent link">&para;</a></h2>
+<p>Now that your tiny Kubernetes cluster is running (the pizza chain head office is open), let's place our first order.</p>
+<p>In Kubernetes terms: we are going to create our first <strong>Pod</strong>, the smallest thing Kubernetes can run.</p>
+<p>Think of a Pod as <strong>one customer order</strong>: usually one main pizza, sometimes with a side or drink that must arrive together.</p>
+<h3 id="goal-for-this-section">Goal for this section<a class="headerlink" href="#goal-for-this-section" title="Permanent link">&para;</a></h3>
+<p>Run a very simple web server container (nginx) inside your cluster<br />
+→ See it appear<br />
+→ Check that it's healthy<br />
+→ Delete it when done</p>
+<p>No files to create yet, just two or three commands.</p>
+<h3 id="step-1-make-sure-your-cluster-is-running">Step 1: Make sure your cluster is running<a class="headerlink" href="#step-1-make-sure-your-cluster-is-running" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>In your terminal / PowerShell, run:
+<div class="highlight"><pre><span></span><code>minikube<span class="w"> </span>status
+</code></pre></div></p>
+</li>
+<li>
+<p>You should see the following output on your terminal:
+<div class="highlight"><pre><span></span><code><span class="go">minikube</span>
+<span class="go">type: Control Plane</span>
+<span class="go">host: Running</span>
+<span class="go">kubelet: Running</span>
+<span class="go">apiserver: Running</span>
+<span class="go">kubeconfig: Configured</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>If it says "Stopped", just run minikube start again.
+<div class="highlight"><pre><span></span><code>minikube<span class="w"> </span>start
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="step-2-run-your-first-pod-the-easiest-way">Step 2: Run your first Pod (the easiest way)<a class="headerlink" href="#step-2-run-your-first-pod-the-easiest-way" title="Permanent link">&para;</a></h3>
+<ol>
+<li>To run your first Pod, enter the following command in the terminal:
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>run<span class="w"> </span>my-first-pizza<span class="w"> </span>--image<span class="o">=</span>nginx<span class="w"> </span>--port<span class="o">=</span><span class="m">80</span>
+</code></pre></div></li>
+</ol>
+<p>What this does:
+- <strong>kubectl run</strong> : "Hey Kubernetes, create something"
+- <strong>my-first-pizza</strong> : name we give this Pod (like naming the order "Order #123")
+- <strong>--image=nginx</strong> : use the official nginx web server container (a tiny web server that says "Welcome to nginx!")
+- <strong>--port=80</strong> : this container listens on port 80 (normal web port)</p>
+<p>After a few seconds you should see the following output in your terminal window:
+<div class="highlight"><pre><span></span><code><span class="go">pod/my-first-pizza created</span>
+</code></pre></div></p>
+<h3 id="step-3-check-that-its-running">Step 3: Check that it's running<a class="headerlink" href="#step-3-check-that-its-running" title="Permanent link">&para;</a></h3>
+<p>To check if the Pod is running, enter the following command:
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods
+</code></pre></div></p>
+<p>You should see something like the following in your terminal window:
+<div class="highlight"><pre><span></span><code><span class="go">NAME                 READY       STATUS       RESTARTS       AGE</span>
+<span class="go">my-first-pizza       1/1         Running      0              45s</span>
+</code></pre></div></p>
 <ul>
-<li>Namespaces provide <strong>logical separation</strong> inside one cluster</li>
-<li>Use them for dev/test/prod, teams, or large apps</li>
-<li>Resources in different namespaces can have the same name (nginx-service in dev vs prod)</li>
-<li>Most kubectl commands accept -n <namespace> or --namespace=<name></li>
-<li>Switch default namespace with kubectl config set-context --current --namespace=<name></li>
-<li>System namespaces (kube-system, default) exist — don't delete them!</li>
+<li><strong>READY 1/1</strong> : the Pod is healthy and ready (1 container out of 1 is running)</li>
+<li><strong>STATUS Running</strong> : it's working!</li>
+<li><strong>AGE</strong> : how long it's been alive</li>
 </ul>
-<p>This is a core intermediate skill — almost every real cluster uses multiple namespaces.</p>
-<p>→ Next &amp; Final Intermediate Part: Troubleshooting &amp; Debugging</p>
+<p>If it says ContainerCreating → wait 10–30 seconds and run the command again.</p>
+<h3 id="step-4-see-whats-inside-describe-the-pod">Step 4: See what’s inside (describe the Pod)<a class="headerlink" href="#step-4-see-whats-inside-describe-the-pod" title="Permanent link">&para;</a></h3>
+<ol>
+<li>To get a description of the Pod, run the following Bash command:
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>describe<span class="w"> </span>pod<span class="w"> </span>my-first-pizza
+</code></pre></div></li>
+</ol>
+<p>This shows lots of details:
+- Which node (restaurant) it's running on
+- Events (what Kubernetes did: pulled image, started container…)
+- IP address inside the cluster</p>
+<p>Scroll to the bottom, look for "Events" to see the story of how it started.</p>
+<h3 id="step-5-optional-but-fun-open-the-nginx-welcome-page">Step 5: (Optional but fun) Open the nginx welcome page<a class="headerlink" href="#step-5-optional-but-fun-open-the-nginx-welcome-page" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Expose the Pod temporarily so you can see it in your browser
+   Enter the following in the terminal window:
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>port-forward<span class="w"> </span>my-first-pizza<span class="w"> </span><span class="m">8080</span>:80
+</code></pre></div></p>
+</li>
+<li>
+<p>Leave this command running (it creates a tunnel)</p>
+</li>
+<li>Open your browser and go to: <a href="http://localhost:8080">http://localhost:8080</a></li>
+<li>
+<p>You should see the classic "Welcome to nginx!" page
+  This proves your first container is really running inside Kubernetes!</p>
+</li>
+<li>
+<p>Press <strong>Ctrl + C</strong> in the terminal to stop the port-forward when done.</p>
+</li>
+</ol>
+<h3 id="step-6-clean-up">Step 6: Clean up<a class="headerlink" href="#step-6-clean-up" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>When you're ready to delete the Pod, enter the following Bash command:
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>delete<span class="w"> </span>pod<span class="w"> </span>my-first-pizza
+</code></pre></div></p>
+</li>
+<li>
+<p>You should see the following output:
+<div class="highlight"><pre><span></span><code><span class="go">pod &quot;my-first-pizza&quot; deleted</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Run kubectl get pods again, it should be gone.
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="what-we-learned">What we learned<a class="headerlink" href="#what-we-learned" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A <strong>Pod</strong> is the smallest unit Kubernetes runs (like one customer order)</li>
+<li><strong>kubectl run ... --image=...</strong> is the quickest way to create a single Pod (good for testing)</li>
+<li><strong>kubectl get pods</strong> : see what's running</li>
+<li><strong>kubectl describe pod <name></strong> : get details and history</li>
+<li>Pods are temporary by default, if deleted, they're gone (later we'll learn Deployments that keep them alive)</li>
+</ul>
+<h4 id="you-just-ran-your-first-real-container-inside-kubernetes-congratulations">You just ran your first real container inside Kubernetes, congratulations!<a class="headerlink" href="#you-just-ran-your-first-real-container-inside-kubernetes-congratulations" title="Permanent link">&para;</a></h4>
+<h4 id="next-step">Next step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h4>
+<p>Right now our Pod disappears when we delete it or the cluster restarts. In real life we want apps to stay running, auto-restart if they crash, and scale to multiple copies.</p>
+<p>Next we will create a <strong>Deployment</strong> — the "always keep 3 pizzas ready" rule.</p>
+<p><a href="../04-deployments/">→ Continue to Part 4: Deployments – Keep Your Pizzas Coming</a></p>
 
 
 

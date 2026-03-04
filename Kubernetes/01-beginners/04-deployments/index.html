@@ -23,7 +23,7 @@
     
     
       
-        <title>Intermediate Part 5: Namespaces – Organizing Large Projects - Technical Tutorials Hub</title>
+        <title>04 deployments - Technical Tutorials Hub</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#intermediate-part-5-namespaces-organizing-large-projects" class="md-skip">
+        <a href="#deployments-keep-your-pizzas-running-automatically" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intermediate Part 5: Namespaces – Organizing Large Projects
+              04 deployments
             
           </span>
         </div>
@@ -1659,8 +1659,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1669,6 +1667,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#deployments-keep-your-pizzas-running-automatically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployments – Keep Your Pizzas Running Automatically
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployments – Keep Your Pizzas Running Automatically">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#goal-for-this-section" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1678,70 +1688,92 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-create-namespaces" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-simple-deployment-yaml-file" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Create namespaces
+        Step 1: Create a simple Deployment YAML file
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-deploy-nginx-in-dev-namespace" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-2-apply-the-deployment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Deploy nginx in dev namespace
+        Step 2: Apply the Deployment
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-deploy-the-same-app-in-prod-namespace" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-3-check-that-its-working" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Deploy the same app in prod namespace
+        Step 3: Check that it's working
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-access-the-prod-service" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-4-scale-it-change-the-number-of-pizzas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4: Access the prod Service
+        Step 4: Scale it (change the number of pizzas)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-cleanup" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-5-clean-up-when-done" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 5: Cleanup
+        Step 5: Clean up when done
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Clean up when done">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-we-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we learned
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#key-takeaways" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key Takeaways
+        Next step
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1765,95 +1797,155 @@
   
 
 
-<h1 id="intermediate-part-5-namespaces-organizing-large-projects">Intermediate Part 5: Namespaces – Organizing Large Projects<a class="headerlink" href="#intermediate-part-5-namespaces-organizing-large-projects" title="Permanent link">&para;</a></h1>
-<p>So far everything we've done lives in the <strong>default</strong> namespace — Kubernetes' built-in "room" for resources.<br />
-When projects grow (multiple teams, dev/test/prod environments, or many apps), the default namespace becomes messy — like putting all pizza orders from every location into one giant kitchen.</p>
-<p><strong>Namespaces</strong> are virtual clusters inside one physical cluster:
-- Separate resources (Pods, Deployments, Services, Secrets, etc.)<br />
-- Avoid name conflicts<br />
-- Apply different policies (RBAC, resource quotas, network policies) per namespace<br />
-- Make dev/test/prod look like separate worlds</p>
-<p>Analogy:<br />
-- Default namespace = the main kitchen<br />
-- dev namespace = a test kitchen for experimenting with new recipes<br />
-- prod namespace = the live kitchen for real customers<br />
-Same building (cluster), but clear separation.</p>
-<p>Namespaces are <strong>lightweight</strong> — no extra cost, just logical isolation.</p>
-<h2 id="goal-for-this-section">Goal for this section<a class="headerlink" href="#goal-for-this-section" title="Permanent link">&para;</a></h2>
-<p>Create two namespaces (dev and prod), deploy the same nginx app in each, and see they don't interfere.</p>
-<h2 id="step-1-create-namespaces">Step 1: Create namespaces<a class="headerlink" href="#step-1-create-namespaces" title="Permanent link">&para;</a></h2>
-<p>Run:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>dev
-kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>prod
-</code></pre></div>
-<p>Check:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get namespaces
-</code></pre></div>
-<p>You should see:</p>
-<p>text</p>
-<div class="highlight"><pre><span></span><code>NAME              STATUS   AGE
-default           Active   1h
-dev               Active   10s
-kube-system       Active   1h
-prod              Active   10s
-</code></pre></div>
-<h2 id="step-2-deploy-nginx-in-dev-namespace">Step 2: Deploy nginx in dev namespace<a class="headerlink" href="#step-2-deploy-nginx-in-dev-namespace" title="Permanent link">&para;</a></h2>
-<p>Use your existing nginx-deployment.yaml and nginx-service.yaml from beginner track, but apply with --namespace:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl apply -f nginx-deployment.yaml -n dev
-kubectl apply -f nginx-service.yaml -n dev
-</code></pre></div>
-<p>Check resources <strong>only in dev</strong>:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get all -n dev
-</code></pre></div>
-<p>→ You see Deployment, ReplicaSet, Pods, Service — all in dev</p>
-<p>Now switch context so future commands default to dev:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl config set-context --current --namespace=dev
-</code></pre></div>
-<p>(You can switch back later with --namespace=default)</p>
-<h2 id="step-3-deploy-the-same-app-in-prod-namespace">Step 3: Deploy the same app in prod namespace<a class="headerlink" href="#step-3-deploy-the-same-app-in-prod-namespace" title="Permanent link">&para;</a></h2>
-<p>Apply again, but in prod:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl apply -f nginx-deployment.yaml -n prod
-kubectl apply -f nginx-service.yaml -n prod
-</code></pre></div>
-<p>Check:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get all -n prod
-</code></pre></div>
-<p>→ Same resources appear in prod, but completely separate from dev.</p>
-<p>Try listing without namespace:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get pods
-</code></pre></div>
-<p>→ Shows only Pods in current namespace (dev, if you set it). No overlap — perfect isolation!</p>
-<h2 id="step-4-access-the-prod-service">Step 4: Access the prod Service<a class="headerlink" href="#step-4-access-the-prod-service" title="Permanent link">&para;</a></h2>
-<p>Since we have two Services named nginx-service in different namespaces:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>minikube service nginx-service -n prod
-</code></pre></div>
-<p>→ Opens the prod version in browser (Do the same with -n dev for the dev version)</p>
-<h2 id="step-5-cleanup">Step 5: Cleanup<a class="headerlink" href="#step-5-cleanup" title="Permanent link">&para;</a></h2>
-<p>Delete namespaces (this deletes everything inside them):</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl delete namespace dev
-kubectl delete namespace prod
-</code></pre></div>
-<p>(Or delete resources individually if you prefer.)</p>
-<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+  <h1>04 deployments</h1>
+
+<h2 id="deployments-keep-your-pizzas-running-automatically">Deployments – Keep Your Pizzas Running Automatically<a class="headerlink" href="#deployments-keep-your-pizzas-running-automatically" title="Permanent link">&para;</a></h2>
+<p>In the last section we created a single Pod with <code>kubectl run</code>.<br />
+It worked — but if we delete it, or if it crashes, it's gone forever.<br />
+We had to manually recreate it.</p>
+<p>In real life we want apps to:
+- Stay running even if something goes wrong
+- Automatically restart if a Pod dies
+- Scale to more copies when busy
+- Update to a new version without downtime</p>
+<p>That's what a <strong>Deployment</strong> does.</p>
+<p>Think back to the pizza chain:<br />
+A <strong>Deployment</strong> is the rule: "Always keep 3 margherita pizzas ready. If one burns or demand increases, make more. When we improve the recipe, roll out the new version gradually."</p>
+<h3 id="goal-for-this-section">Goal for this section<a class="headerlink" href="#goal-for-this-section" title="Permanent link">&para;</a></h3>
+<p>Create a Deployment that does the following:</p>
 <ul>
-<li>Namespaces provide <strong>logical separation</strong> inside one cluster</li>
-<li>Use them for dev/test/prod, teams, or large apps</li>
-<li>Resources in different namespaces can have the same name (nginx-service in dev vs prod)</li>
-<li>Most kubectl commands accept -n <namespace> or --namespace=<name></li>
-<li>Switch default namespace with kubectl config set-context --current --namespace=<name></li>
-<li>System namespaces (kube-system, default) exist — don't delete them!</li>
+<li>Runs 3 copies of the nginx web server</li>
+<li>Automatically restarts if one fails</li>
+<li>Lets us scale up/down easily</li>
 </ul>
-<p>This is a core intermediate skill — almost every real cluster uses multiple namespaces.</p>
-<p>→ Next &amp; Final Intermediate Part: Troubleshooting &amp; Debugging</p>
+<p>We will use a small YAML file this time — don't worry, it's very short.</p>
+<h3 id="step-1-create-a-simple-deployment-yaml-file"><a id="deployment-file"></a>Step 1: Create a simple Deployment YAML file<a class="headerlink" href="#step-1-create-a-simple-deployment-yaml-file" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>In your terminal, create a file called <code>nginx-deployment.yaml</code> (you can use Notepad, VS Code, or any text editor):
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx-deployment</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w">                </span><span class="c1"># We want 3 copies (3 pizzas always ready)</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:1.25</span><span class="w">      </span><span class="c1"># Use a specific version for stability</span>
+<span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80``</span><span class="w">          </span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Save the file in the same folder where you're running commands.
+   <strong>What this file says in plain English</strong>:</p>
+</li>
+<li>Create a Deployment named <code>nginx-deployment</code></li>
+<li>Always run <strong>3 replicas</strong> (3 Pods)</li>
+<li>Use the label <code>app: nginx</code> so Kubernetes knows which Pods belong to this Deployment</li>
+<li>Each Pod should run one container from the <code>nginx:1.25</code> image</li>
+<li>Listen on port 80 inside the container</li>
+</ol>
+<h3 id="step-2-apply-the-deployment">Step 2: Apply the Deployment<a class="headerlink" href="#step-2-apply-the-deployment" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Run the following Bash command in the terminal:
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>nginx-deployment.yaml
+</code></pre></div></p>
+</li>
+<li>
+<p>You should see the following output:
+<div class="highlight"><pre><span></span><code><span class="go">deployment.apps/nginx-deployment created</span>
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="step-3-check-that-its-working">Step 3: Check that it's working<a class="headerlink" href="#step-3-check-that-its-working" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Run the following Bash Command:
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>deployments
+</code></pre></div></p>
+</li>
+<li>
+<p>You should see an output like the following:
+<div class="highlight"><pre><span></span><code><span class="go">NAME                         READY     UP-TO-DATE      AVAILABLE       AGE</span>
+<span class="go">nginx-deployment             3/3       3               3               45s</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>READY 3/3 → All 3 desired Pods are running and healthy</p>
+</li>
+<li>
+<p>Now check the actual Pods, by running the following bash command:
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods
+</code></pre></div></p>
+</li>
+<li>
+<p>You should see <strong>three Pods</strong> (names like <code>nginx-deployment-xyz-abcde</code>):
+<div class="highlight"><pre><span></span><code><span class="go">NAME                                  READY      STATUS      RESTARTS     AGE</span>
+<span class="go">nginx-deployment-5d8f7c6b9f-abcde     1/1        Running     0            50s</span>
+<span class="go">nginx-deployment-5d8f7c6b9f-defgh     1/1        Running     0            50s</span>
+<span class="go">nginx-deployment-5d8f7c6b9f-ijklm     1/1        Running     0            50s</span>
+</code></pre></div></p>
+</li>
+<li>They all have the same prefix — Kubernetes created and manages them.</li>
+</ol>
+<h3 id="step-4-scale-it-change-the-number-of-pizzas">Step 4: Scale it (change the number of pizzas)<a class="headerlink" href="#step-4-scale-it-change-the-number-of-pizzas" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Try scaling to 5 replicas:
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>nginx-deployment<span class="w"> </span>--replicas<span class="o">=</span><span class="m">5</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Then check the Pods again:
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods
+</code></pre></div></p>
+</li>
+<li>
+<p>You should now see <strong>5 Pods</strong> running.</p>
+</li>
+<li>
+<p>Scale back down to 2 if you want:
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>nginx-deployment<span class="w"> </span>--replicas<span class="o">=</span><span class="m">2</span>
+</code></pre></div></p>
+</li>
+<li>Kubernetes automatically deletes extra Pods.</li>
+</ol>
+<h3 id="step-5-clean-up-when-done">Step 5: Clean up when done<a class="headerlink" href="#step-5-clean-up-when-done" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Delete the Deployment (this also deletes all its Pods):
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">kubectl delete -f nginx-deployment.yaml</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Alternatively delete them by name:
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">kubectl delete deployment nginx-deployment</span>
+</code></pre></div></p>
+</li>
+</ol>
+<h4 id="what-we-learned">What we learned<a class="headerlink" href="#what-we-learned" title="Permanent link">&para;</a></h4>
+<ul>
+<li>A <strong>Deployment</strong> manages multiple Pods for you</li>
+<li>You define <strong>desired state</strong> in YAML (e.g., "3 replicas")</li>
+<li>Kubernetes makes reality match that state (creates Pods, restarts if they crash, scales on command)</li>
+<li>kubectl apply → create or update resources from YAML</li>
+<li>kubectl get deployments and kubectl get pods → see status</li>
+<li>Scaling is instant with kubectl scale</li>
+</ul>
+<p>This is how real applications run in Kubernetes, not single Pods, but Deployments.</p>
+<h4 id="next-step">Next step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h4>
+<p>Right now our nginx Pods are running inside the cluster, but we can't reach them from our browser yet. We need a <strong>Service</strong> to create a stable entry point (the "single phone number" for ordering pizza).</p>
+<p><a href="../05-services/">→ Continue to Part 5: Services – Make Your App Accessible</a></p>
 
 
 

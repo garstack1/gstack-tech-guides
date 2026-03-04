@@ -23,7 +23,7 @@
     
     
       
-        <title>Intermediate Part 5: Namespaces – Organizing Large Projects - Technical Tutorials Hub</title>
+        <title>Advanced Kubernetes Part 6: Wrap-up, Portfolio Tips & What's Next - Technical Tutorials Hub</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#intermediate-part-5-namespaces-organizing-large-projects" class="md-skip">
+        <a href="#advanced-kubernetes-part-6-wrap-up-portfolio-tips-whats-next" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intermediate Part 5: Namespaces – Organizing Large Projects
+              Advanced Kubernetes Part 6: Wrap-up, Portfolio Tips &amp; What's Next
             
           </span>
         </div>
@@ -1669,10 +1669,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#goal-for-this-section" class="md-nav__link">
+  <a href="#quick-advanced-recap-table" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Goal for this section
+        Quick Advanced Recap Table
       
     </span>
   </a>
@@ -1680,10 +1680,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-create-namespaces" class="md-nav__link">
+  <a href="#portfolio-tips-how-to-showcase-this-work" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Create namespaces
+        Portfolio Tips – How to Showcase This Work
       
     </span>
   </a>
@@ -1691,54 +1691,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-deploy-nginx-in-dev-namespace" class="md-nav__link">
+  <a href="#whats-beyond-expert-production-level" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Deploy nginx in dev namespace
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-deploy-the-same-app-in-prod-namespace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Deploy the same app in prod namespace
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-access-the-prod-service" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Access the prod Service
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-cleanup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5: Cleanup
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-takeaways" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Takeaways
+        What's Beyond (Expert / Production Level)
       
     </span>
   </a>
@@ -1765,95 +1721,132 @@
   
 
 
-<h1 id="intermediate-part-5-namespaces-organizing-large-projects">Intermediate Part 5: Namespaces – Organizing Large Projects<a class="headerlink" href="#intermediate-part-5-namespaces-organizing-large-projects" title="Permanent link">&para;</a></h1>
-<p>So far everything we've done lives in the <strong>default</strong> namespace — Kubernetes' built-in "room" for resources.<br />
-When projects grow (multiple teams, dev/test/prod environments, or many apps), the default namespace becomes messy — like putting all pizza orders from every location into one giant kitchen.</p>
-<p><strong>Namespaces</strong> are virtual clusters inside one physical cluster:
-- Separate resources (Pods, Deployments, Services, Secrets, etc.)<br />
-- Avoid name conflicts<br />
-- Apply different policies (RBAC, resource quotas, network policies) per namespace<br />
-- Make dev/test/prod look like separate worlds</p>
-<p>Analogy:<br />
-- Default namespace = the main kitchen<br />
-- dev namespace = a test kitchen for experimenting with new recipes<br />
-- prod namespace = the live kitchen for real customers<br />
-Same building (cluster), but clear separation.</p>
-<p>Namespaces are <strong>lightweight</strong> — no extra cost, just logical isolation.</p>
-<h2 id="goal-for-this-section">Goal for this section<a class="headerlink" href="#goal-for-this-section" title="Permanent link">&para;</a></h2>
-<p>Create two namespaces (dev and prod), deploy the same nginx app in each, and see they don't interfere.</p>
-<h2 id="step-1-create-namespaces">Step 1: Create namespaces<a class="headerlink" href="#step-1-create-namespaces" title="Permanent link">&para;</a></h2>
-<p>Run:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>dev
-kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>prod
-</code></pre></div>
-<p>Check:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get namespaces
-</code></pre></div>
-<p>You should see:</p>
-<p>text</p>
-<div class="highlight"><pre><span></span><code>NAME              STATUS   AGE
-default           Active   1h
-dev               Active   10s
-kube-system       Active   1h
-prod              Active   10s
-</code></pre></div>
-<h2 id="step-2-deploy-nginx-in-dev-namespace">Step 2: Deploy nginx in dev namespace<a class="headerlink" href="#step-2-deploy-nginx-in-dev-namespace" title="Permanent link">&para;</a></h2>
-<p>Use your existing nginx-deployment.yaml and nginx-service.yaml from beginner track, but apply with --namespace:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl apply -f nginx-deployment.yaml -n dev
-kubectl apply -f nginx-service.yaml -n dev
-</code></pre></div>
-<p>Check resources <strong>only in dev</strong>:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get all -n dev
-</code></pre></div>
-<p>→ You see Deployment, ReplicaSet, Pods, Service — all in dev</p>
-<p>Now switch context so future commands default to dev:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl config set-context --current --namespace=dev
-</code></pre></div>
-<p>(You can switch back later with --namespace=default)</p>
-<h2 id="step-3-deploy-the-same-app-in-prod-namespace">Step 3: Deploy the same app in prod namespace<a class="headerlink" href="#step-3-deploy-the-same-app-in-prod-namespace" title="Permanent link">&para;</a></h2>
-<p>Apply again, but in prod:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl apply -f nginx-deployment.yaml -n prod
-kubectl apply -f nginx-service.yaml -n prod
-</code></pre></div>
-<p>Check:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get all -n prod
-</code></pre></div>
-<p>→ Same resources appear in prod, but completely separate from dev.</p>
-<p>Try listing without namespace:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get pods
-</code></pre></div>
-<p>→ Shows only Pods in current namespace (dev, if you set it). No overlap — perfect isolation!</p>
-<h2 id="step-4-access-the-prod-service">Step 4: Access the prod Service<a class="headerlink" href="#step-4-access-the-prod-service" title="Permanent link">&para;</a></h2>
-<p>Since we have two Services named nginx-service in different namespaces:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>minikube service nginx-service -n prod
-</code></pre></div>
-<p>→ Opens the prod version in browser (Do the same with -n dev for the dev version)</p>
-<h2 id="step-5-cleanup">Step 5: Cleanup<a class="headerlink" href="#step-5-cleanup" title="Permanent link">&para;</a></h2>
-<p>Delete namespaces (this deletes everything inside them):</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl delete namespace dev
-kubectl delete namespace prod
-</code></pre></div>
-<p>(Or delete resources individually if you prefer.)</p>
-<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<h1 id="advanced-kubernetes-part-6-wrap-up-portfolio-tips-whats-next">Advanced Kubernetes Part 6: Wrap-up, Portfolio Tips &amp; What's Next<a class="headerlink" href="#advanced-kubernetes-part-6-wrap-up-portfolio-tips-whats-next" title="Permanent link">&para;</a></h1>
+<p>Congratulations — you've completed the full Kubernetes learning path in this portfolio:</p>
+<p><strong>Beginner</strong><br />
+- Containers &amp; high-level concepts<br />
+- Local cluster (Minikube)<br />
+- Pods, Deployments, Services  </p>
+<p><strong>Intermediate</strong><br />
+- ConfigMaps &amp; volume mounts<br />
+- Secrets for secure config<br />
+- Persistent Volumes &amp; state<br />
+- Namespaces for organization<br />
+- Basic troubleshooting &amp; debugging  </p>
+<p><strong>Advanced</strong><br />
+- Ingress for proper HTTP routing &amp; TLS<br />
+- Helm for packaged, reusable apps<br />
+- Resource requests/limits + HPA for efficiency &amp; autoscaling<br />
+- RBAC &amp; Network Policies for security<br />
+- StatefulSets + Headless Services for databases &amp; stateful apps  </p>
+<p>You now have a <strong>complete, production-relevant</strong> skill progression — from "I can run an app" to "I can secure, scale, and manage real workloads".</p>
+<h3 id="quick-advanced-recap-table">Quick Advanced Recap Table<a class="headerlink" href="#quick-advanced-recap-table" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>What it solves</th>
+<th>Key commands / concepts you learned</th>
+<th>Portfolio value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ingress</td>
+<td>Domain-based routing, TLS, path rules</td>
+<td>Ingress resource, nginx ingress controller</td>
+<td>Shows web-scale exposure</td>
+</tr>
+<tr>
+<td>Helm</td>
+<td>Reusable, templated app management</td>
+<td>helm install/upgrade/rollback, values.yaml</td>
+<td>Demonstrates production packaging</td>
+</tr>
+<tr>
+<td>Resources &amp; HPA</td>
+<td>Efficiency, cost control, auto-scaling</td>
+<td>requests/limits, HorizontalPodAutoscaler</td>
+<td>Critical for cloud/performance roles</td>
+</tr>
+<tr>
+<td>RBAC &amp; Network Policies</td>
+<td>Access control &amp; network isolation</td>
+<td>Role/RoleBinding, NetworkPolicy</td>
+<td>Security mindset — huge plus for enterprises</td>
+</tr>
+<tr>
+<td>StatefulSets</td>
+<td>Ordered, stable, persistent workloads</td>
+<td>StatefulSet, headless Service, stable DNS</td>
+<td>Handles databases/state — advanced differentiator</td>
+</tr>
+</tbody>
+</table>
+<h3 id="portfolio-tips-how-to-showcase-this-work">Portfolio Tips – How to Showcase This Work<a class="headerlink" href="#portfolio-tips-how-to-showcase-this-work" title="Permanent link">&para;</a></h3>
+<p>Your GitHub repo (<code>kubernetes-portfolio</code>) is already a strong portfolio piece. Here's how to make it shine for job applications (e.g. Senior Technical Writer roles like NetApp):</p>
+<ol>
+<li><strong>Polish the README.md (root of repo)</strong><br />
+   Add a clear overview:</li>
+</ol>
+<p>```markdown
+   # Kubernetes Learning Portfolio</p>
+<p>Progressive hands-on tutorials: Beginner → Intermediate → Advanced</p>
 <ul>
-<li>Namespaces provide <strong>logical separation</strong> inside one cluster</li>
-<li>Use them for dev/test/prod, teams, or large apps</li>
-<li>Resources in different namespaces can have the same name (nginx-service in dev vs prod)</li>
-<li>Most kubectl commands accept -n <namespace> or --namespace=<name></li>
-<li>Switch default namespace with kubectl config set-context --current --namespace=<name></li>
-<li>System namespaces (kube-system, default) exist — don't delete them!</li>
+<li><strong>Beginner</strong> — Containers, Pods, Deployments, Services  </li>
+<li><strong>Intermediate</strong> — ConfigMaps/Secrets, Storage, Namespaces, Troubleshooting  </li>
+<li><strong>Advanced</strong> — Ingress, Helm, HPA, RBAC/Network Policies, StatefulSets  </li>
 </ul>
-<p>This is a core intermediate skill — almost every real cluster uses multiple namespaces.</p>
-<p>→ Next &amp; Final Intermediate Part: Troubleshooting &amp; Debugging</p>
+<p>Built with Markdown/AsciiDoc, VS Code, Minikube, Helm.<br />
+   Demonstrates clear technical writing + practical Kubernetes knowledge.</p>
+<p><a href="./beginners/01-high-level-overview.md">View Beginner Track</a><br />
+<a href="./intermediate/01-overview.md">View Intermediate Track</a><br />
+<a href="./advanced/01-ingress.md">View Advanced Track</a></p>
+<p>Skills shown: docs-as-code, Git version control, structured tutorials, analogies, step-by-step guides, troubleshooting.</p>
+<p>````</p>
+<ol>
+<li><strong>Add READMEs in each folder</strong><ul>
+<li>beginners/README.md → "Core concepts + first hands-on"</li>
+<li>intermediate/README.md → "Configuration, security, storage, organization"</li>
+<li>advanced/README.md → "Production-grade features &amp; scaling"</li>
+</ul>
+</li>
+<li><strong>Enable GitHub Pages</strong> (free hosted site)<ul>
+<li>Repo Settings → Pages → Source: main branch → / (root) or /docs</li>
+<li>Use MkDocs or just raw Markdown — makes it look like real product docs</li>
+</ul>
+</li>
+<li><strong>Highlight in resume/LinkedIn</strong><ul>
+<li>"Kubernetes Technical Writing Portfolio: 18-part progressive tutorial covering beginner to advanced topics (Pods → StatefulSets, Helm, HPA, RBAC)"</li>
+<li>Link: github.com/yourusername/kubernetes-portfolio</li>
+</ul>
+</li>
+<li><strong>Bonus polish</strong><ul>
+<li>Add screenshots (kubectl get all, browser results, scaling in action) — embed as images</li>
+<li>Include a CONTRIBUTING.md or PROCESS.md explaining your workflow (VS Code → Git → GitHub)</li>
+<li>Pin the repo to your GitHub profile</li>
+</ul>
+</li>
+</ol>
+<p>This repo demonstrates:</p>
+<ul>
+<li>Deep Kubernetes understanding</li>
+<li>Clear, audience-focused writing</li>
+<li>Docs-as-code (Git, Markdown)</li>
+<li>Progression from basic to advanced — perfect for senior technical writer roles</li>
+</ul>
+<h3 id="whats-beyond-expert-production-level">What's Beyond (Expert / Production Level)<a class="headerlink" href="#whats-beyond-expert-production-level" title="Permanent link">&para;</a></h3>
+<p>If you want to go further:</p>
+<ul>
+<li><strong>GitOps</strong> — ArgoCD or Flux (declarative Git → cluster sync)</li>
+<li><strong>Operators</strong> — Custom controllers (e.g. Postgres Operator)</li>
+<li><strong>Monitoring</strong> — Prometheus + Grafana</li>
+<li><strong>Service Mesh</strong> — Istio/Linkerd (traffic management, security)</li>
+<li><strong>Multi-cluster</strong> — Federation, Karmada</li>
+<li><strong>Security</strong> — Pod Security Admission, Kyverno policies</li>
+<li><strong>CI/CD for docs</strong> — GitHub Actions to build &amp; deploy MkDocs site</li>
+</ul>
+<p>You can create a new repo/section for any of these when ready.</p>
 
 
 

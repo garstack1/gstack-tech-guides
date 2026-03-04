@@ -23,7 +23,7 @@
     
     
       
-        <title>Intermediate Part 5: Namespaces – Organizing Large Projects - Technical Tutorials Hub</title>
+        <title>Advanced Kubernetes Part 2: Helm Basics – Packaging & Managing Apps - Technical Tutorials Hub</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#intermediate-part-5-namespaces-organizing-large-projects" class="md-skip">
+        <a href="#advanced-kubernetes-part-2-helm-basics-packaging-managing-apps" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intermediate Part 5: Namespaces – Organizing Large Projects
+              Advanced Kubernetes Part 2: Helm Basics – Packaging &amp; Managing Apps
             
           </span>
         </div>
@@ -1680,57 +1680,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-create-namespaces" class="md-nav__link">
+  <a href="#step-1-install-helm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Create namespaces
+        Step 1: Install Helm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Install Helm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-chocolatey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows (Chocolatey)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-deploy-nginx-in-dev-namespace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Deploy nginx in dev namespace
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-deploy-the-same-app-in-prod-namespace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Deploy the same app in prod namespace
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-access-the-prod-service" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Access the prod Service
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-cleanup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5: Cleanup
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1765,95 +1738,159 @@
   
 
 
-<h1 id="intermediate-part-5-namespaces-organizing-large-projects">Intermediate Part 5: Namespaces – Organizing Large Projects<a class="headerlink" href="#intermediate-part-5-namespaces-organizing-large-projects" title="Permanent link">&para;</a></h1>
-<p>So far everything we've done lives in the <strong>default</strong> namespace — Kubernetes' built-in "room" for resources.<br />
-When projects grow (multiple teams, dev/test/prod environments, or many apps), the default namespace becomes messy — like putting all pizza orders from every location into one giant kitchen.</p>
-<p><strong>Namespaces</strong> are virtual clusters inside one physical cluster:
-- Separate resources (Pods, Deployments, Services, Secrets, etc.)<br />
-- Avoid name conflicts<br />
-- Apply different policies (RBAC, resource quotas, network policies) per namespace<br />
-- Make dev/test/prod look like separate worlds</p>
-<p>Analogy:<br />
-- Default namespace = the main kitchen<br />
-- dev namespace = a test kitchen for experimenting with new recipes<br />
-- prod namespace = the live kitchen for real customers<br />
-Same building (cluster), but clear separation.</p>
-<p>Namespaces are <strong>lightweight</strong> — no extra cost, just logical isolation.</p>
+<h1 id="advanced-kubernetes-part-2-helm-basics-packaging-managing-apps">Advanced Kubernetes Part 2: Helm Basics – Packaging &amp; Managing Apps<a class="headerlink" href="#advanced-kubernetes-part-2-helm-basics-packaging-managing-apps" title="Permanent link">&para;</a></h1>
+<p>By now you've hand-written Deployments, Services, ConfigMaps, Secrets, etc.<br />
+That's great for learning — but in real projects, repeating that YAML for every app (or version) is painful and error-prone.</p>
+<p><strong>Helm</strong> is Kubernetes' official package manager.<br />
+It bundles YAML templates + values into <strong>charts</strong> — reusable, versioned packages.<br />
+You can install, upgrade, rollback, or delete entire apps with one command.</p>
+<p>Pizza chain analogy:<br />
+- Hand-written YAML = writing a new recipe from scratch every time<br />
+- Helm chart = a pre-made recipe book with fill-in-the-blanks (values.yaml)<br />
+  → Change sauce type or number of ovens → run <code>helm upgrade</code> → done</p>
 <h2 id="goal-for-this-section">Goal for this section<a class="headerlink" href="#goal-for-this-section" title="Permanent link">&para;</a></h2>
-<p>Create two namespaces (dev and prod), deploy the same nginx app in each, and see they don't interfere.</p>
-<h2 id="step-1-create-namespaces">Step 1: Create namespaces<a class="headerlink" href="#step-1-create-namespaces" title="Permanent link">&para;</a></h2>
-<p>Run:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>dev
-kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>prod
+<p>Install Helm locally<br />
+Deploy nginx using the official Bitnami nginx chart<br />
+Customize it (replicas, config)<br />
+Upgrade &amp; rollback<br />
+See how much easier this is than raw kubectl</p>
+<h2 id="step-1-install-helm">Step 1: Install Helm<a class="headerlink" href="#step-1-install-helm" title="Permanent link">&para;</a></h2>
+<p>Helm is just a client binary — no cluster-side component.</p>
+<h3 id="windows-chocolatey">Windows (Chocolatey)<a class="headerlink" href="#windows-chocolatey" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">choco</span> <span class="n">install</span> <span class="n">kubernetes-helm</span>
+
+<span class="p">``````</span>
+
+
+<span class="c">### macOS (Homebrew)</span>
+
+<span class="n">Bash</span>
 </code></pre></div>
-<p>Check:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get namespaces
+brew install helm
+<div class="highlight"><pre><span></span><code>### Linux / other
+
+Bash
 </code></pre></div>
-<p>You should see:</p>
-<p>text</p>
-<div class="highlight"><pre><span></span><code>NAME              STATUS   AGE
-default           Active   1h
-dev               Active   10s
-kube-system       Active   1h
-prod              Active   10s
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+<div class="highlight"><pre><span></span><code>Verify:
+
+Bash
 </code></pre></div>
-<h2 id="step-2-deploy-nginx-in-dev-namespace">Step 2: Deploy nginx in dev namespace<a class="headerlink" href="#step-2-deploy-nginx-in-dev-namespace" title="Permanent link">&para;</a></h2>
-<p>Use your existing nginx-deployment.yaml and nginx-service.yaml from beginner track, but apply with --namespace:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl apply -f nginx-deployment.yaml -n dev
-kubectl apply -f nginx-service.yaml -n dev
+helm version
+<div class="highlight"><pre><span></span><code>→ You should see something like version.BuildInfo{Version:&quot;v3.16.x&quot;...}
+
+## Step 2: Add a chart repository
+
+Helm charts are hosted in repos (like Docker Hub for images).
+
+Add the popular Bitnami repo (lots of high-quality charts):
+
+Bash
 </code></pre></div>
-<p>Check resources <strong>only in dev</strong>:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get all -n dev
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo update
+<div class="highlight"><pre><span></span><code>Search for nginx:
+
+Bash
 </code></pre></div>
-<p>→ You see Deployment, ReplicaSet, Pods, Service — all in dev</p>
-<p>Now switch context so future commands default to dev:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl config set-context --current --namespace=dev
+helm search repo nginx
+<div class="highlight"><pre><span></span><code>→ You&#39;ll see bitnami/nginx (official, well-maintained)
+
+## Step 3: Install nginx via Helm
+
+Run:
+
+Bash
 </code></pre></div>
-<p>(You can switch back later with --namespace=default)</p>
-<h2 id="step-3-deploy-the-same-app-in-prod-namespace">Step 3: Deploy the same app in prod namespace<a class="headerlink" href="#step-3-deploy-the-same-app-in-prod-namespace" title="Permanent link">&para;</a></h2>
-<p>Apply again, but in prod:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl apply -f nginx-deployment.yaml -n prod
-kubectl apply -f nginx-service.yaml -n prod
+helm install my-nginx bitnami/nginx \
+  --set replicaCount=3 \
+  --set service.type=NodePort
+<div class="highlight"><pre><span></span><code>What this does:
+
+- Installs the chart named my-nginx
+- Overrides defaults: 3 replicas, NodePort service
+- Helm creates Deployment, Service, ConfigMap, etc. automatically
+
+Check:
+
+Bash
 </code></pre></div>
-<p>Check:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get all -n prod
+kubectl get all
+helm list
+<div class="highlight"><pre><span></span><code>→ See the 3 Pods, Service, and Helm release.
+
+Open in browser:
+
+Bash
 </code></pre></div>
-<p>→ Same resources appear in prod, but completely separate from dev.</p>
-<p>Try listing without namespace:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get pods
+minikube service my-nginx-nginx
+<div class="highlight"><pre><span></span><code>→ Welcome to nginx!
+
+## Step 4: Customize with values.yaml (real power)
+
+Create a file custom-values.yaml:
+
+YAML
 </code></pre></div>
-<p>→ Shows only Pods in current namespace (dev, if you set it). No overlap — perfect isolation!</p>
-<h2 id="step-4-access-the-prod-service">Step 4: Access the prod Service<a class="headerlink" href="#step-4-access-the-prod-service" title="Permanent link">&para;</a></h2>
-<p>Since we have two Services named nginx-service in different namespaces:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>minikube service nginx-service -n prod
+replicaCount: 5</p>
+<p>image:
+  tag: "1.25"           # pin version</p>
+<p>service:
+  type: NodePort
+  nodePorts:
+    http: 30080         # fixed port (optional)</p>
+<p>ingress:
+  enabled: true
+  hostname: nginx.local
+  path: /
+<div class="highlight"><pre><span></span><code>Upgrade the release:
+
+Bash
 </code></pre></div>
-<p>→ Opens the prod version in browser (Do the same with -n dev for the dev version)</p>
-<h2 id="step-5-cleanup">Step 5: Cleanup<a class="headerlink" href="#step-5-cleanup" title="Permanent link">&para;</a></h2>
-<p>Delete namespaces (this deletes everything inside them):</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl delete namespace dev
-kubectl delete namespace prod
+helm upgrade my-nginx bitnami/nginx -f custom-values.yaml
+<div class="highlight"><pre><span></span><code>→ Replicas → 5, Ingress created (if you enabled Ingress addon earlier), port fixed
+
+Check:
+
+Bash
 </code></pre></div>
-<p>(Or delete resources individually if you prefer.)</p>
+kubectl get pods   # 5 replicas now
+helm get values my-nginx   # see applied values
+<div class="highlight"><pre><span></span><code>## Step 5: Rollback if something breaks
+
+Simulate a bad change — set wrong image tag:
+
+Bash
+</code></pre></div>
+helm upgrade my-nginx bitnami/nginx --set image.tag=bad-tag
+<div class="highlight"><pre><span></span><code>Pods will fail (ImagePullBackOff).
+
+Rollback to previous revision:
+
+Bash
+</code></pre></div>
+helm rollback my-nginx 1   # or 2, 3... (check with helm history my-nginx)
+<div class="highlight"><pre><span></span><code>→ Back to working state instantly.
+
+## Step 6: Cleanup
+
+Uninstall the chart:
+
+Bash
+</code></pre></div>
+helm uninstall my-nginx
+```</p>
+<p>→ Deletes all resources created by the chart (Deployment, Service, etc.)</p>
 <h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Namespaces provide <strong>logical separation</strong> inside one cluster</li>
-<li>Use them for dev/test/prod, teams, or large apps</li>
-<li>Resources in different namespaces can have the same name (nginx-service in dev vs prod)</li>
-<li>Most kubectl commands accept -n <namespace> or --namespace=<name></li>
-<li>Switch default namespace with kubectl config set-context --current --namespace=<name></li>
-<li>System namespaces (kube-system, default) exist — don't delete them!</li>
+<li>Helm = templated, reusable YAML + one-command install/upgrade/rollback</li>
+<li>Charts = pre-packaged apps (bitnami/nginx, bitnami/postgresql, wordpress, etc.)</li>
+<li>values.yaml = your customizations (replicas, images, config, ingress…)</li>
+<li>helm repo + search → discover charts</li>
+<li>Production: Use Helmfile, Helmfile + GitOps, or ChartMuseum for private charts</li>
 </ul>
-<p>This is a core intermediate skill — almost every real cluster uses multiple namespaces.</p>
-<p>→ Next &amp; Final Intermediate Part: Troubleshooting &amp; Debugging</p>
+<p>This is a game-changer for managing complexity — most advanced Kubernetes users rely on Helm daily.</p>
+<p>→ Next: Part 3 – Resource Limits, Requests &amp; Horizontal Pod Autoscaler (HPA)</p>
 
 
 

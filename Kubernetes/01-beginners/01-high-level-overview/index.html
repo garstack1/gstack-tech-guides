@@ -23,7 +23,7 @@
     
     
       
-        <title>Intermediate Part 5: Namespaces – Organizing Large Projects - Technical Tutorials Hub</title>
+        <title>01 high level overview - Technical Tutorials Hub</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#intermediate-part-5-namespaces-organizing-large-projects" class="md-skip">
+        <a href="#a-gentle-high-level-introduction" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intermediate Part 5: Namespaces – Organizing Large Projects
+              01 high level overview
             
           </span>
         </div>
@@ -1659,8 +1659,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1669,79 +1667,91 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#goal-for-this-section" class="md-nav__link">
+  <a href="#a-gentle-high-level-introduction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Goal for this section
+        A Gentle High-Level Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Gentle High-Level Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-what-even-is-a-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: What even is a container?
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-create-namespaces" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-2-the-problem-when-you-have-lots-of-containers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Create namespaces
+        Step 2: The problem when you have lots of containers
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-deploy-nginx-in-dev-namespace" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-3-the-pizza-chain-analogy-for-kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Deploy nginx in dev namespace
+        Step 3: The pizza chain analogy for Kubernetes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: The pizza chain analogy for Kubernetes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-sentence-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One-sentence summary
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-deploy-the-same-app-in-prod-namespace" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#what-you-should-remember" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Deploy the same app in prod namespace
+        What you should remember
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-access-the-prod-service" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4: Access the prod Service
+        Next step
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-cleanup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5: Cleanup
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#key-takeaways" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Takeaways
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1765,95 +1775,119 @@
   
 
 
-<h1 id="intermediate-part-5-namespaces-organizing-large-projects">Intermediate Part 5: Namespaces – Organizing Large Projects<a class="headerlink" href="#intermediate-part-5-namespaces-organizing-large-projects" title="Permanent link">&para;</a></h1>
-<p>So far everything we've done lives in the <strong>default</strong> namespace — Kubernetes' built-in "room" for resources.<br />
-When projects grow (multiple teams, dev/test/prod environments, or many apps), the default namespace becomes messy — like putting all pizza orders from every location into one giant kitchen.</p>
-<p><strong>Namespaces</strong> are virtual clusters inside one physical cluster:
-- Separate resources (Pods, Deployments, Services, Secrets, etc.)<br />
-- Avoid name conflicts<br />
-- Apply different policies (RBAC, resource quotas, network policies) per namespace<br />
-- Make dev/test/prod look like separate worlds</p>
-<p>Analogy:<br />
-- Default namespace = the main kitchen<br />
-- dev namespace = a test kitchen for experimenting with new recipes<br />
-- prod namespace = the live kitchen for real customers<br />
-Same building (cluster), but clear separation.</p>
-<p>Namespaces are <strong>lightweight</strong> — no extra cost, just logical isolation.</p>
-<h2 id="goal-for-this-section">Goal for this section<a class="headerlink" href="#goal-for-this-section" title="Permanent link">&para;</a></h2>
-<p>Create two namespaces (dev and prod), deploy the same nginx app in each, and see they don't interfere.</p>
-<h2 id="step-1-create-namespaces">Step 1: Create namespaces<a class="headerlink" href="#step-1-create-namespaces" title="Permanent link">&para;</a></h2>
-<p>Run:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>dev
-kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>prod
-</code></pre></div>
-<p>Check:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get namespaces
-</code></pre></div>
-<p>You should see:</p>
-<p>text</p>
-<div class="highlight"><pre><span></span><code>NAME              STATUS   AGE
-default           Active   1h
-dev               Active   10s
-kube-system       Active   1h
-prod              Active   10s
-</code></pre></div>
-<h2 id="step-2-deploy-nginx-in-dev-namespace">Step 2: Deploy nginx in dev namespace<a class="headerlink" href="#step-2-deploy-nginx-in-dev-namespace" title="Permanent link">&para;</a></h2>
-<p>Use your existing nginx-deployment.yaml and nginx-service.yaml from beginner track, but apply with --namespace:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl apply -f nginx-deployment.yaml -n dev
-kubectl apply -f nginx-service.yaml -n dev
-</code></pre></div>
-<p>Check resources <strong>only in dev</strong>:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get all -n dev
-</code></pre></div>
-<p>→ You see Deployment, ReplicaSet, Pods, Service — all in dev</p>
-<p>Now switch context so future commands default to dev:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl config set-context --current --namespace=dev
-</code></pre></div>
-<p>(You can switch back later with --namespace=default)</p>
-<h2 id="step-3-deploy-the-same-app-in-prod-namespace">Step 3: Deploy the same app in prod namespace<a class="headerlink" href="#step-3-deploy-the-same-app-in-prod-namespace" title="Permanent link">&para;</a></h2>
-<p>Apply again, but in prod:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl apply -f nginx-deployment.yaml -n prod
-kubectl apply -f nginx-service.yaml -n prod
-</code></pre></div>
-<p>Check:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get all -n prod
-</code></pre></div>
-<p>→ Same resources appear in prod, but completely separate from dev.</p>
-<p>Try listing without namespace:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get pods
-</code></pre></div>
-<p>→ Shows only Pods in current namespace (dev, if you set it). No overlap — perfect isolation!</p>
-<h2 id="step-4-access-the-prod-service">Step 4: Access the prod Service<a class="headerlink" href="#step-4-access-the-prod-service" title="Permanent link">&para;</a></h2>
-<p>Since we have two Services named nginx-service in different namespaces:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>minikube service nginx-service -n prod
-</code></pre></div>
-<p>→ Opens the prod version in browser (Do the same with -n dev for the dev version)</p>
-<h2 id="step-5-cleanup">Step 5: Cleanup<a class="headerlink" href="#step-5-cleanup" title="Permanent link">&para;</a></h2>
-<p>Delete namespaces (this deletes everything inside them):</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl delete namespace dev
-kubectl delete namespace prod
-</code></pre></div>
-<p>(Or delete resources individually if you prefer.)</p>
-<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+  <h1>01 high level overview</h1>
+
+<h2 id="a-gentle-high-level-introduction">A Gentle High-Level Introduction<a class="headerlink" href="#a-gentle-high-level-introduction" title="Permanent link">&para;</a></h2>
+<p>This page is <strong>only</strong> about understanding the big picture. No commands, no installation, no technical details yet — just the “why” and “what”.</p>
+<h3 id="step-1-what-even-is-a-container">Step 1: What even is a container?<a class="headerlink" href="#step-1-what-even-is-a-container" title="Permanent link">&para;</a></h3>
+<p>Most people start by hearing about <strong>Docker</strong> or <strong>containers</strong>, but what are they really?</p>
+<ol>
+<li>
+<p>Imagine you want to send someone your favourite homemade pizza recipe.</p>
 <ul>
-<li>Namespaces provide <strong>logical separation</strong> inside one cluster</li>
-<li>Use them for dev/test/prod, teams, or large apps</li>
-<li>Resources in different namespaces can have the same name (nginx-service in dev vs prod)</li>
-<li>Most kubectl commands accept -n <namespace> or --namespace=<name></li>
-<li>Switch default namespace with kubectl config set-context --current --namespace=<name></li>
-<li>System namespaces (kube-system, default) exist — don't delete them!</li>
+<li>
+<p>You could write down the ingredients and instructions on paper, but what if their kitchen has different ovens, missing spices, wrong pans
+  It probably won’t turn out the same.</p>
+</li>
+<li>
+<p>Instead, you prepare the pizza yourself (dough, sauce, toppings, cheese), put it in a <strong>standardized pizza box</strong>, seal it, and ship the whole box.
+  No matter where it arrives, as long as they have an oven, they can just slide it in and bake it, and get the same taste every time.</p>
+</li>
 </ul>
-<p>This is a core intermediate skill — almost every real cluster uses multiple namespaces.</p>
-<p>→ Next &amp; Final Intermediate Part: Troubleshooting &amp; Debugging</p>
+</li>
+<li>
+<p>A <strong>container</strong> is exactly like that pizza box for software:</p>
+<ul>
+<li>It packages your entire application (code + libraries + settings + everything it needs to run)</li>
+<li>It makes the app behave <strong>exactly the same</strong> on your laptop, on a colleague’s computer, on a test server, or in the cloud</li>
+<li>Containers are lightweight (much smaller and faster than full virtual machines)</li>
+<li>Popular tool: <strong>Docker</strong> (the most common way people create and run containers)</li>
+</ul>
+</li>
+</ol>
+<p>So far so good, containers solve “it works on my machine” problems very well.</p>
+<h3 id="step-2-the-problem-when-you-have-lots-of-containers">Step 2: The problem when you have lots of containers<a class="headerlink" href="#step-2-the-problem-when-you-have-lots-of-containers" title="Permanent link">&para;</a></h3>
+<p>Now imagine your pizza business grows:</p>
+<ul>
+<li>You need to make 1,000 pizzas per hour instead of 10</li>
+<li>You open 50 restaurants (servers)</li>
+<li>Some restaurants get busy, others are quiet, therefore you want to move chefs (containers) automatically</li>
+<li>One oven breaks, and you don’t want customers to wait</li>
+<li>You create a new, better pizza recipe, and you want to update all restaurants without closing them all at once</li>
+</ul>
+<p>Doing all of this <strong>manually</strong> (copying containers, restarting servers, load balancing, watching for crashes) becomes a nightmare very quickly.</p>
+<p>You need an <strong>automated manager</strong> that runs 24/7 and keeps everything working perfectly according to your rules.</p>
+<p>That manager is <strong>Kubernetes</strong>.</p>
+<h3 id="step-3-the-pizza-chain-analogy-for-kubernetes">Step 3: The pizza chain analogy for Kubernetes<a class="headerlink" href="#step-3-the-pizza-chain-analogy-for-kubernetes" title="Permanent link">&para;</a></h3>
+<p>Think of Kubernetes as the <strong>head office</strong> of a very large pizza chain.</p>
+<table>
+<thead>
+<tr>
+<th>Pizza Chain Concept</th>
+<th>Kubernetes Concept</th>
+<th>Simple Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ready-to-bake pizza in a box</td>
+<td>Container</td>
+<td>Your app + everything it needs, packed and portable</td>
+</tr>
+<tr>
+<td>One customer order (pizza + drink + side)</td>
+<td>Pod</td>
+<td>Smallest thing Kubernetes manages — usually 1 main container + helpers if needed</td>
+</tr>
+<tr>
+<td>One restaurant / kitchen</td>
+<td>Node</td>
+<td>A server (physical or virtual machine) that runs containers</td>
+</tr>
+<tr>
+<td>All restaurants together</td>
+<td>Cluster</td>
+<td>The whole system: many nodes + head office</td>
+</tr>
+<tr>
+<td>Head office (phone system + managers)</td>
+<td>Control Plane</td>
+<td>The brain: decides where to send orders, watches health, scales up/down</td>
+</tr>
+<tr>
+<td>“Always have 50 margherita pizzas ready”</td>
+<td>Deployment</td>
+<td>Your rule: “run this many copies, update safely, rollback if needed”</td>
+</tr>
+<tr>
+<td>Single phone number / website / app for ordering</td>
+<td>Service</td>
+<td>Customers call one number — traffic goes to the right kitchens automatically</td>
+</tr>
+</tbody>
+</table>
+<p>Head office (Control Plane) never bakes pizzas itself, it just makes smart decisions:</p>
+<ul>
+<li>Which kitchen gets which order? (Scheduler)</li>
+<li>Are we still meeting the target of 50 pizzas? (Controllers)</li>
+<li>Where is everything right now? (the etcd database)</li>
+<li>How do customers reach us? (API Server - the front door)</li>
+</ul>
+<h4 id="one-sentence-summary">One-sentence summary<a class="headerlink" href="#one-sentence-summary" title="Permanent link">&para;</a></h4>
+<p>Kubernetes is the automated head office that takes your containerized applications and makes sure the right number of them are always running, healthy, scaled, updated, and reachable, even when restaurants crash, customers flood in, or you change the recipe.</p>
+<h4 id="what-you-should-remember">What you should remember<a class="headerlink" href="#what-you-should-remember" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Containers solve the packaging problem and the traditional “it works on my machine” problem.</li>
+<li>Kubernetes solves <strong>running many containers at scale</strong> reliably and automatically</li>
+<li>You tell Kubernetes <strong>what you want</strong> (“desired state”) → it keeps making reality match that state</li>
+</ul>
+<p>That’s the mental model.</p>
+<h4 id="next-step">Next step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h4>
+<p>In the next section we’ll get hands-on for the first time:
+- Install a tiny Kubernetes cluster on your own computer (it’s free and safe)
+- Run your very first container inside it
+- See the pizza chain come to life with real commands</p>
+<p><a href="../02-install-minikube/">→ Go to Part 2: Installing a Local Kubernetes Cluster</a></p>
 
 
 

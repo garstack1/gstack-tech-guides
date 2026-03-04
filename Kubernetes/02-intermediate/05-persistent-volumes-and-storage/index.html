@@ -23,7 +23,7 @@
     
     
       
-        <title>Intermediate Part 5: Namespaces – Organizing Large Projects - Technical Tutorials Hub</title>
+        <title>Intermediate Part 4: Persistent Volumes & Storage – Saving Data - Technical Tutorials Hub</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#intermediate-part-5-namespaces-organizing-large-projects" class="md-skip">
+        <a href="#intermediate-part-4-persistent-volumes-storage-saving-data" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intermediate Part 5: Namespaces – Organizing Large Projects
+              Intermediate Part 4: Persistent Volumes &amp; Storage – Saving Data
             
           </span>
         </div>
@@ -1680,10 +1680,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-create-namespaces" class="md-nav__link">
+  <a href="#step-1-create-a-persistentvolumeclaim-pvc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Create namespaces
+        Step 1: Create a PersistentVolumeClaim (PVC)
       
     </span>
   </a>
@@ -1691,10 +1691,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-deploy-nginx-in-dev-namespace" class="md-nav__link">
+  <a href="#step-2-run-a-pod-that-uses-the-pvc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Deploy nginx in dev namespace
+        Step 2: Run a Pod that uses the PVC
       
     </span>
   </a>
@@ -1702,10 +1702,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-deploy-the-same-app-in-prod-namespace" class="md-nav__link">
+  <a href="#step-3-write-data-to-the-volume" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Deploy the same app in prod namespace
+        Step 3: Write data to the volume
       
     </span>
   </a>
@@ -1713,10 +1713,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-access-the-prod-service" class="md-nav__link">
+  <a href="#step-4-delete-recreate-the-pod-data-survives" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4: Access the prod Service
+        Step 4: Delete &amp; recreate the Pod – data survives
       
     </span>
   </a>
@@ -1765,95 +1765,108 @@
   
 
 
-<h1 id="intermediate-part-5-namespaces-organizing-large-projects">Intermediate Part 5: Namespaces – Organizing Large Projects<a class="headerlink" href="#intermediate-part-5-namespaces-organizing-large-projects" title="Permanent link">&para;</a></h1>
-<p>So far everything we've done lives in the <strong>default</strong> namespace — Kubernetes' built-in "room" for resources.<br />
-When projects grow (multiple teams, dev/test/prod environments, or many apps), the default namespace becomes messy — like putting all pizza orders from every location into one giant kitchen.</p>
-<p><strong>Namespaces</strong> are virtual clusters inside one physical cluster:
-- Separate resources (Pods, Deployments, Services, Secrets, etc.)<br />
-- Avoid name conflicts<br />
-- Apply different policies (RBAC, resource quotas, network policies) per namespace<br />
-- Make dev/test/prod look like separate worlds</p>
-<p>Analogy:<br />
-- Default namespace = the main kitchen<br />
-- dev namespace = a test kitchen for experimenting with new recipes<br />
-- prod namespace = the live kitchen for real customers<br />
-Same building (cluster), but clear separation.</p>
-<p>Namespaces are <strong>lightweight</strong> — no extra cost, just logical isolation.</p>
+<h1 id="intermediate-part-4-persistent-volumes-storage-saving-data">Intermediate Part 4: Persistent Volumes &amp; Storage – Saving Data<a class="headerlink" href="#intermediate-part-4-persistent-volumes-storage-saving-data" title="Permanent link">&para;</a></h1>
+<p>So far our nginx app is stateless — if a Pod dies or we scale to zero, all data inside it is lost.<br />
+Real apps need <strong>persistent data</strong>: databases, uploaded files, logs, user sessions, etc.</p>
+<p>Kubernetes separates <strong>storage concerns</strong> from the app using <strong>Persistent Volumes (PV)</strong> and <strong>PersistentVolumeClaims (PVC)</strong>.</p>
+<p>Pizza chain analogy:<br />
+- Pods are the kitchens — temporary and replaceable<br />
+- Persistent Volumes are the <strong>walk-in fridges</strong> — the ingredients (data) stay even if the kitchen burns down and gets rebuilt<br />
+- A PersistentVolumeClaim is the kitchen manager saying: "I need a 100-liter fridge with fast access"</p>
+<p>In Minikube, we use <strong>hostPath</strong> or <strong>local</strong> storage (simple for learning — not production-grade).</p>
 <h2 id="goal-for-this-section">Goal for this section<a class="headerlink" href="#goal-for-this-section" title="Permanent link">&para;</a></h2>
-<p>Create two namespaces (dev and prod), deploy the same nginx app in each, and see they don't interfere.</p>
-<h2 id="step-1-create-namespaces">Step 1: Create namespaces<a class="headerlink" href="#step-1-create-namespaces" title="Permanent link">&para;</a></h2>
-<p>Run:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>dev
-kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>prod
+<p>Run a tiny file server (or database) that saves a file.<br />
+Delete the Pod → recreate it → file is still there.</p>
+<p>We'll use a simple busybox Pod + PVC.</p>
+<h2 id="step-1-create-a-persistentvolumeclaim-pvc">Step 1: Create a PersistentVolumeClaim (PVC)<a class="headerlink" href="#step-1-create-a-persistentvolumeclaim-pvc" title="Permanent link">&para;</a></h2>
+<p>The PVC is what your app requests: "I need 1 GB of storage."</p>
+<p>Create <code>pvc.yaml</code>:</p>
+<p>`apiVersion: v1
+<code>kind: PersistentVolumeClaim</code>metadata:
+  <code>name: my-pvc</code>spec:
+  <code>accessModes:</code>    - ReadWriteOnce          # Can be mounted by one Pod at a time
+ <code>resources:</code>   requests:
+ ``     storage: 1Gi           # 1 GiB</p>
+<p>Apply:</p>
+<p>Bash</p>
+<div class="highlight"><pre><span></span><code>kubectl apply -f pvc.yaml
 </code></pre></div>
 <p>Check:</p>
 <p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get namespaces
+<div class="highlight"><pre><span></span><code>kubectl get pvc
 </code></pre></div>
-<p>You should see:</p>
-<p>text</p>
-<div class="highlight"><pre><span></span><code>NAME              STATUS   AGE
-default           Active   1h
-dev               Active   10s
-kube-system       Active   1h
-prod              Active   10s
+<p>You should see my-pvc with STATUS: Bound (Minikube auto-provisions a PV).</p>
+<h2 id="step-2-run-a-pod-that-uses-the-pvc">Step 2: Run a Pod that uses the PVC<a class="headerlink" href="#step-2-run-a-pod-that-uses-the-pvc" title="Permanent link">&para;</a></h2>
+<p>Create storage-pod.yaml:</p>
+<p>YAML</p>
+<div class="highlight"><pre><span></span><code>apiVersion: v1
+kind: Pod
+metadata:
+  name: storage-demo
+spec:
+  containers:
+  - name: storage-container
+    image: busybox
+    command: [&quot;/bin/sh&quot;, &quot;-c&quot;, &quot;sleep 3600&quot;]
+    volumeMounts:
+    - mountPath: /data
+      name: storage-volume
+  volumes:
+  - name: storage-volume
+    persistentVolumeClaim:
+      claimName: my-pvc
 </code></pre></div>
-<h2 id="step-2-deploy-nginx-in-dev-namespace">Step 2: Deploy nginx in dev namespace<a class="headerlink" href="#step-2-deploy-nginx-in-dev-namespace" title="Permanent link">&para;</a></h2>
-<p>Use your existing nginx-deployment.yaml and nginx-service.yaml from beginner track, but apply with --namespace:</p>
+<p>Apply:</p>
 <p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl apply -f nginx-deployment.yaml -n dev
-kubectl apply -f nginx-service.yaml -n dev
+<div class="highlight"><pre><span></span><code>kubectl apply -f storage-pod.yaml
 </code></pre></div>
-<p>Check resources <strong>only in dev</strong>:</p>
+<p>Wait until Ready:</p>
 <p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get all -n dev
+<div class="highlight"><pre><span></span><code>kubectl get pods -w
 </code></pre></div>
-<p>→ You see Deployment, ReplicaSet, Pods, Service — all in dev</p>
-<p>Now switch context so future commands default to dev:</p>
+<h2 id="step-3-write-data-to-the-volume">Step 3: Write data to the volume<a class="headerlink" href="#step-3-write-data-to-the-volume" title="Permanent link">&para;</a></h2>
+<p>Exec into the Pod:</p>
 <p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl config set-context --current --namespace=dev
+<div class="highlight"><pre><span></span><code>kubectl exec -it storage-demo -- sh
 </code></pre></div>
-<p>(You can switch back later with --namespace=default)</p>
-<h2 id="step-3-deploy-the-same-app-in-prod-namespace">Step 3: Deploy the same app in prod namespace<a class="headerlink" href="#step-3-deploy-the-same-app-in-prod-namespace" title="Permanent link">&para;</a></h2>
-<p>Apply again, but in prod:</p>
+<p>Inside the Pod shell:</p>
+<p>sh</p>
+<div class="highlight"><pre><span></span><code>echo &quot;Hello from persistent storage!&quot; &gt; /data/hello.txt
+cat /data/hello.txt
+exit
+</code></pre></div>
+<p>→ You wrote a file to the mounted volume.</p>
+<h2 id="step-4-delete-recreate-the-pod-data-survives">Step 4: Delete &amp; recreate the Pod – data survives<a class="headerlink" href="#step-4-delete-recreate-the-pod-data-survives" title="Permanent link">&para;</a></h2>
+<p>Delete the Pod:</p>
 <p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl apply -f nginx-deployment.yaml -n prod
-kubectl apply -f nginx-service.yaml -n prod
+<div class="highlight"><pre><span></span><code>kubectl delete pod storage-demo
 </code></pre></div>
-<p>Check:</p>
+<p>Recreate it (same YAML):</p>
 <p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get all -n prod
+<div class="highlight"><pre><span></span><code>kubectl apply -f storage-pod.yaml
 </code></pre></div>
-<p>→ Same resources appear in prod, but completely separate from dev.</p>
-<p>Try listing without namespace:</p>
+<p>Wait for Ready, then check the file:</p>
 <p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get pods
+<div class="highlight"><pre><span></span><code>kubectl exec -it storage-demo -- cat /data/hello.txt
 </code></pre></div>
-<p>→ Shows only Pods in current namespace (dev, if you set it). No overlap — perfect isolation!</p>
-<h2 id="step-4-access-the-prod-service">Step 4: Access the prod Service<a class="headerlink" href="#step-4-access-the-prod-service" title="Permanent link">&para;</a></h2>
-<p>Since we have two Services named nginx-service in different namespaces:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>minikube service nginx-service -n prod
-</code></pre></div>
-<p>→ Opens the prod version in browser (Do the same with -n dev for the dev version)</p>
+<p>→ "Hello from persistent storage!" is still there!</p>
+<p>→ Proof: the data survived Pod deletion/recreation — the PVC kept it alive.</p>
 <h2 id="step-5-cleanup">Step 5: Cleanup<a class="headerlink" href="#step-5-cleanup" title="Permanent link">&para;</a></h2>
-<p>Delete namespaces (this deletes everything inside them):</p>
 <p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl delete namespace dev
-kubectl delete namespace prod
+<div class="highlight"><pre><span></span><code>kubectl delete pod storage-demo
+kubectl delete pvc my-pvc
 </code></pre></div>
-<p>(Or delete resources individually if you prefer.)</p>
+<p>(The PV might stay in Minikube — harmless.)</p>
 <h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Namespaces provide <strong>logical separation</strong> inside one cluster</li>
-<li>Use them for dev/test/prod, teams, or large apps</li>
-<li>Resources in different namespaces can have the same name (nginx-service in dev vs prod)</li>
-<li>Most kubectl commands accept -n <namespace> or --namespace=<name></li>
-<li>Switch default namespace with kubectl config set-context --current --namespace=<name></li>
-<li>System namespaces (kube-system, default) exist — don't delete them!</li>
+<li><strong>PVC</strong> = what your app requests ("give me storage")</li>
+<li><strong>PV</strong> = the actual storage (Minikube auto-creates simple ones)</li>
+<li>Mount as a volume → data persists beyond Pod lifetime</li>
+<li><strong>ReadWriteOnce</strong> = common for single-node or single-writer apps</li>
+<li>In production: use cloud PVs (AWS EBS, GCP PD, Azure Disk), CSI drivers, or distributed storage (Longhorn, Rook Ceph)</li>
 </ul>
-<p>This is a core intermediate skill — almost every real cluster uses multiple namespaces.</p>
-<p>→ Next &amp; Final Intermediate Part: Troubleshooting &amp; Debugging</p>
+<p>This is how databases (PostgreSQL, MySQL), file servers, or stateful apps run on Kubernetes.</p>
+<p>→ Next: Part 5 – Namespaces – Organizing Large Projects</p>
 
 
 

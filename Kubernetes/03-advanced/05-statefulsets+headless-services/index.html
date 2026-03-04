@@ -23,7 +23,7 @@
     
     
       
-        <title>Intermediate Part 5: Namespaces – Organizing Large Projects - Technical Tutorials Hub</title>
+        <title>Advanced Kubernetes Part 5: StatefulSets + Headless Services – Running Stateful Apps - Technical Tutorials Hub</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#intermediate-part-5-namespaces-organizing-large-projects" class="md-skip">
+        <a href="#advanced-kubernetes-part-5-statefulsets-headless-services-running-stateful-apps" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intermediate Part 5: Namespaces – Organizing Large Projects
+              Advanced Kubernetes Part 5: StatefulSets + Headless Services – Running Stateful Apps
             
           </span>
         </div>
@@ -1680,54 +1680,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-create-namespaces" class="md-nav__link">
+  <a href="#step-1-make-sure-helm-is-ready" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Create namespaces
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-deploy-nginx-in-dev-namespace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Deploy nginx in dev namespace
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-deploy-the-same-app-in-prod-namespace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Deploy the same app in prod namespace
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-access-the-prod-service" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Access the prod Service
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-cleanup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5: Cleanup
+        Step 1: Make sure Helm is ready
       
     </span>
   </a>
@@ -1765,95 +1721,138 @@
   
 
 
-<h1 id="intermediate-part-5-namespaces-organizing-large-projects">Intermediate Part 5: Namespaces – Organizing Large Projects<a class="headerlink" href="#intermediate-part-5-namespaces-organizing-large-projects" title="Permanent link">&para;</a></h1>
-<p>So far everything we've done lives in the <strong>default</strong> namespace — Kubernetes' built-in "room" for resources.<br />
-When projects grow (multiple teams, dev/test/prod environments, or many apps), the default namespace becomes messy — like putting all pizza orders from every location into one giant kitchen.</p>
-<p><strong>Namespaces</strong> are virtual clusters inside one physical cluster:
-- Separate resources (Pods, Deployments, Services, Secrets, etc.)<br />
-- Avoid name conflicts<br />
-- Apply different policies (RBAC, resource quotas, network policies) per namespace<br />
-- Make dev/test/prod look like separate worlds</p>
-<p>Analogy:<br />
-- Default namespace = the main kitchen<br />
-- dev namespace = a test kitchen for experimenting with new recipes<br />
-- prod namespace = the live kitchen for real customers<br />
-Same building (cluster), but clear separation.</p>
-<p>Namespaces are <strong>lightweight</strong> — no extra cost, just logical isolation.</p>
+<h1 id="advanced-kubernetes-part-5-statefulsets-headless-services-running-stateful-apps">Advanced Kubernetes Part 5: StatefulSets + Headless Services – Running Stateful Apps<a class="headerlink" href="#advanced-kubernetes-part-5-statefulsets-headless-services-running-stateful-apps" title="Permanent link">&para;</a></h1>
+<p>So far our nginx app was <strong>stateless</strong> — any Pod could be replaced without losing data.<br />
+Real-world apps like databases (PostgreSQL, MySQL, MongoDB), Kafka, Redis clusters, or ZooKeeper need:
+- Stable, unique Pod names (pod-0, pod-1, not random hashes)
+- Ordered startup/shutdown (master before replicas)
+- Persistent identity for discovery (e.g. pod-0 always has the same DNS)
+- Persistent storage that follows the Pod</p>
+<p><strong>StatefulSets</strong> handle this — they are like Deployments but for stateful workloads.</p>
+<p><strong>Headless Services</strong> provide stable DNS entries for each Pod (no load balancing — just direct access).</p>
+<p>Pizza chain analogy:<br />
+- Deployment = stateless pizza ovens (replace any oven, no issue)<br />
+- StatefulSet = numbered specialty ovens (oven-0 is the wood-fired one, oven-1 is gas — they must stay in order, clients need to know exactly which oven has their favorite style)</p>
 <h2 id="goal-for-this-section">Goal for this section<a class="headerlink" href="#goal-for-this-section" title="Permanent link">&para;</a></h2>
-<p>Create two namespaces (dev and prod), deploy the same nginx app in each, and see they don't interfere.</p>
-<h2 id="step-1-create-namespaces">Step 1: Create namespaces<a class="headerlink" href="#step-1-create-namespaces" title="Permanent link">&para;</a></h2>
-<p>Run:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>dev
-kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>prod
+<p>Deploy a small PostgreSQL cluster using StatefulSet<br />
+See stable Pod names, ordered rollout, and direct Pod-to-Pod communication via headless Service</p>
+<p>(We'll use Bitnami PostgreSQL chart for simplicity — Helm again!)</p>
+<h2 id="step-1-make-sure-helm-is-ready">Step 1: Make sure Helm is ready<a class="headerlink" href="#step-1-make-sure-helm-is-ready" title="Permanent link">&para;</a></h2>
+<p>(If not already added:)</p>
+<p><div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>bitnami<span class="w"> </span>https://charts.bitnami.com/bitnami
+helm<span class="w"> </span>repo<span class="w"> </span>update
+
+<span class="sb">````</span>
+
+
+<span class="c1">## Step 2: Install PostgreSQL via Helm (creates StatefulSet)</span>
+
+Bash
 </code></pre></div>
-<p>Check:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get namespaces
+helm install pg-db bitnami/postgresql \
+  --set auth.postgresPassword=supersecret \
+  --set primary.persistence.enabled=true \
+  --set primary.persistence.size=1Gi \
+  --set replicaCount=1
+<div class="highlight"><pre><span></span><code>What this does:
+
+- Deploys a StatefulSet named pg-db-postgresql
+- 1 primary + 0 replicas (for simplicity)
+- PersistentVolumeClaim for data
+- Headless Service pg-db-postgresql-headless
+- Password set via values
+
+Check:
+
+Bash
 </code></pre></div>
-<p>You should see:</p>
-<p>text</p>
-<div class="highlight"><pre><span></span><code>NAME              STATUS   AGE
-default           Active   1h
-dev               Active   10s
-kube-system       Active   1h
-prod              Active   10s
+kubectl get statefulset
+kubectl get pods -l app.kubernetes.io/name=postgresql
+kubectl get pvc
+kubectl get svc
+<div class="highlight"><pre><span></span><code>→ See:
+
+- StatefulSet: pg-db-postgresql
+- Pod: pg-db-postgresql-0 (stable name!)
+- PVC: data-pg-db-postgresql-0
+- Headless Service: pg-db-postgresql-headless (clusterIP: None)
+
+## Step 3: Connect &amp; write data
+
+Port-forward to primary Pod:
+
+Bash
 </code></pre></div>
-<h2 id="step-2-deploy-nginx-in-dev-namespace">Step 2: Deploy nginx in dev namespace<a class="headerlink" href="#step-2-deploy-nginx-in-dev-namespace" title="Permanent link">&para;</a></h2>
-<p>Use your existing nginx-deployment.yaml and nginx-service.yaml from beginner track, but apply with --namespace:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl apply -f nginx-deployment.yaml -n dev
-kubectl apply -f nginx-service.yaml -n dev
+kubectl port-forward svc/pg-db-postgresql 5432:5432
+<div class="highlight"><pre><span></span><code>In another terminal, use psql (install if needed: choco install postgresql on Windows, brew install libpq on macOS):
+
+Bash
 </code></pre></div>
-<p>Check resources <strong>only in dev</strong>:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get all -n dev
+psql -h localhost -U postgres -d postgres
+<div class="highlight"><pre><span></span><code>Password: supersecret
+
+Inside psql:
+
+SQL
 </code></pre></div>
-<p>→ You see Deployment, ReplicaSet, Pods, Service — all in dev</p>
-<p>Now switch context so future commands default to dev:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl config set-context --current --namespace=dev
+CREATE TABLE orders (
+  id SERIAL PRIMARY KEY,
+  pizza_type VARCHAR(50)
+);</p>
+<p>INSERT INTO orders (pizza_type) VALUES ('margherita');</p>
+<p>SELECT * FROM orders;
+\q
+<div class="highlight"><pre><span></span><code>→ Data saved.
+
+## Step 4: Test persistence &amp; stable identity
+
+Delete the Pod:
+
+Bash
 </code></pre></div>
-<p>(You can switch back later with --namespace=default)</p>
-<h2 id="step-3-deploy-the-same-app-in-prod-namespace">Step 3: Deploy the same app in prod namespace<a class="headerlink" href="#step-3-deploy-the-same-app-in-prod-namespace" title="Permanent link">&para;</a></h2>
-<p>Apply again, but in prod:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl apply -f nginx-deployment.yaml -n prod
-kubectl apply -f nginx-service.yaml -n prod
+kubectl delete pod pg-db-postgresql-0
+<div class="highlight"><pre><span></span><code>Watch:
+
+Bash
 </code></pre></div>
-<p>Check:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get all -n prod
+kubectl get pods -w
+<div class="highlight"><pre><span></span><code>→ StatefulSet recreates pg-db-postgresql-0 immediately (same name!)
+
+Reconnect with psql → data is still there (volume persisted).
+
+Check DNS stability (inside cluster):
+
+Create a temp Pod:
+
+Bash
 </code></pre></div>
-<p>→ Same resources appear in prod, but completely separate from dev.</p>
-<p>Try listing without namespace:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get pods
+kubectl run -it --rm debug --image=busybox -- sh
+<div class="highlight"><pre><span></span><code>Inside:
+
+sh
 </code></pre></div>
-<p>→ Shows only Pods in current namespace (dev, if you set it). No overlap — perfect isolation!</p>
-<h2 id="step-4-access-the-prod-service">Step 4: Access the prod Service<a class="headerlink" href="#step-4-access-the-prod-service" title="Permanent link">&para;</a></h2>
-<p>Since we have two Services named nginx-service in different namespaces:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>minikube service nginx-service -n prod
+nslookup pg-db-postgresql-0.pg-db-postgresql-headless.default.svc.cluster.local
+<div class="highlight"><pre><span></span><code>→ Resolves to Pod IP — stable identity!
+
+Exit &amp; delete temp Pod.
+
+## Step 5: Cleanup
+
+Bash
 </code></pre></div>
-<p>→ Opens the prod version in browser (Do the same with -n dev for the dev version)</p>
-<h2 id="step-5-cleanup">Step 5: Cleanup<a class="headerlink" href="#step-5-cleanup" title="Permanent link">&para;</a></h2>
-<p>Delete namespaces (this deletes everything inside them):</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl delete namespace dev
-kubectl delete namespace prod
-</code></pre></div>
-<p>(Or delete resources individually if you prefer.)</p>
+helm uninstall pg-db
+```</p>
+<p>→ Deletes StatefulSet, Pods, PVCs, Services (data gone unless PVC retained)</p>
 <h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Namespaces provide <strong>logical separation</strong> inside one cluster</li>
-<li>Use them for dev/test/prod, teams, or large apps</li>
-<li>Resources in different namespaces can have the same name (nginx-service in dev vs prod)</li>
-<li>Most kubectl commands accept -n <namespace> or --namespace=<name></li>
-<li>Switch default namespace with kubectl config set-context --current --namespace=<name></li>
-<li>System namespaces (kube-system, default) exist — don't delete them!</li>
+<li><strong>StatefulSet</strong> = ordered, stable Pods (pod-0, pod-1…) with persistent identity</li>
+<li><strong>Headless Service</strong> (clusterIP: None) = DNS for each Pod (pod-0.service-name.namespace.svc.cluster.local)</li>
+<li>Use for databases, Kafka, Redis clusters, ZooKeeper, etc.</li>
+<li>Storage: Always pair with PVCs</li>
+<li>Production: Use operators (Crunchy Postgres, Strimzi Kafka) or cloud-managed (RDS, ElastiCache)</li>
 </ul>
-<p>This is a core intermediate skill — almost every real cluster uses multiple namespaces.</p>
-<p>→ Next &amp; Final Intermediate Part: Troubleshooting &amp; Debugging</p>
+<p>You've now handled stateless <strong>and</strong> stateful workloads — a complete advanced skill set.</p>
+<p>→ Final Advanced Part: Wrap-up, Portfolio Tips &amp; What's Beyond</p>
 
 
 

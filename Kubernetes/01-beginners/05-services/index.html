@@ -23,7 +23,7 @@
     
     
       
-        <title>Intermediate Part 5: Namespaces – Organizing Large Projects - Technical Tutorials Hub</title>
+        <title>05 services - Technical Tutorials Hub</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#intermediate-part-5-namespaces-organizing-large-projects" class="md-skip">
+        <a href="#part-5-services-make-your-app-reachable" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intermediate Part 5: Namespaces – Organizing Large Projects
+              05 services
             
           </span>
         </div>
@@ -1659,8 +1659,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1669,6 +1667,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#part-5-services-make-your-app-reachable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: Services – Make Your App Reachable
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5: Services – Make Your App Reachable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#goal-for-this-section" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1678,70 +1688,81 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-create-namespaces" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-make-sure-your-deployment-is-still-running" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Create namespaces
+        Step 1: Make sure your Deployment is still running
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-deploy-nginx-in-dev-namespace" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-3-see-the-service" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Deploy nginx in dev namespace
+        Step 3: See the Service
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-deploy-the-same-app-in-prod-namespace" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-4-open-it-in-your-browser-the-fun-part" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Deploy the same app in prod namespace
+        Step 4: Open it in your browser (the fun part!)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-access-the-prod-service" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-5-clean-up-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4: Access the prod Service
+        Step 5: Clean up (optional)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Clean up (optional)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-we-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we learned
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-cleanup" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#next-steps-for-beginners" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 5: Cleanup
+        Next steps for beginners
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#key-takeaways" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Takeaways
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1765,95 +1786,130 @@
   
 
 
-<h1 id="intermediate-part-5-namespaces-organizing-large-projects">Intermediate Part 5: Namespaces – Organizing Large Projects<a class="headerlink" href="#intermediate-part-5-namespaces-organizing-large-projects" title="Permanent link">&para;</a></h1>
-<p>So far everything we've done lives in the <strong>default</strong> namespace — Kubernetes' built-in "room" for resources.<br />
-When projects grow (multiple teams, dev/test/prod environments, or many apps), the default namespace becomes messy — like putting all pizza orders from every location into one giant kitchen.</p>
-<p><strong>Namespaces</strong> are virtual clusters inside one physical cluster:
-- Separate resources (Pods, Deployments, Services, Secrets, etc.)<br />
-- Avoid name conflicts<br />
-- Apply different policies (RBAC, resource quotas, network policies) per namespace<br />
-- Make dev/test/prod look like separate worlds</p>
-<p>Analogy:<br />
-- Default namespace = the main kitchen<br />
-- dev namespace = a test kitchen for experimenting with new recipes<br />
-- prod namespace = the live kitchen for real customers<br />
-Same building (cluster), but clear separation.</p>
-<p>Namespaces are <strong>lightweight</strong> — no extra cost, just logical isolation.</p>
-<h2 id="goal-for-this-section">Goal for this section<a class="headerlink" href="#goal-for-this-section" title="Permanent link">&para;</a></h2>
-<p>Create two namespaces (dev and prod), deploy the same nginx app in each, and see they don't interfere.</p>
-<h2 id="step-1-create-namespaces">Step 1: Create namespaces<a class="headerlink" href="#step-1-create-namespaces" title="Permanent link">&para;</a></h2>
-<p>Run:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>dev
-kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>prod
+  <h1>05 services</h1>
+
+<h2 id="part-5-services-make-your-app-reachable">Part 5: Services – Make Your App Reachable<a class="headerlink" href="#part-5-services-make-your-app-reachable" title="Permanent link">&para;</a></h2>
+<p>In the previous sections we created Pods and a Deployment — our "pizzas" are now being made automatically in the kitchen (cluster).<br />
+But there's a problem: customers (you, on your laptop) can't order anything yet.</p>
+<p>Pods have temporary, random IP addresses inside the cluster.<br />
+If a Pod dies and restarts, its IP changes.<br />
+We need a <strong>stable front door</strong> that always points to the right pizzas, no matter which kitchen is baking them.</p>
+<p>In the pizza chain analogy:<br />
+A <strong>Service</strong> is the <strong>single phone number, website, or delivery app</strong> — customers call one number, and the call gets routed to whichever restaurant has a ready pizza.</p>
+<h4 id="goal-for-this-section">Goal for this section<a class="headerlink" href="#goal-for-this-section" title="Permanent link">&para;</a></h4>
+<p>Expose our nginx Deployment so we can see the "Welcome to nginx!" page in our browser.<br />
+We'll use the simplest types first.</p>
+<h3 id="step-1-make-sure-your-deployment-is-still-running">Step 1: Make sure your Deployment is still running<a class="headerlink" href="#step-1-make-sure-your-deployment-is-still-running" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Check that the deployment is still running:
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>deployments
+<span class="sb">````</span>
+
+<span class="m">2</span>.<span class="w"> </span>You<span class="w"> </span>should<span class="w"> </span>see<span class="w"> </span><span class="sb">`</span>nginx-deployment<span class="sb">`</span><span class="w"> </span>with<span class="w"> </span><span class="sb">`</span>READY<span class="w"> </span><span class="m">3</span>/3<span class="sb">`</span><span class="w"> </span><span class="o">(</span>or<span class="w"> </span>whatever<span class="w"> </span>number<span class="w"> </span>you<span class="w"> </span>scaled<span class="w"> </span>to<span class="o">)</span>.<span class="w"> </span>If<span class="w"> </span>not,<span class="w"> </span>re-apply<span class="w"> </span>your<span class="w"> </span><span class="sb">`</span>nginx-deployment.yaml<span class="sb">`</span><span class="w"> </span>created<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span><span class="o">[</span>Deployments<span class="o">](</span><span class="m">04</span>-deployments.md.md#deployment-file<span class="o">)</span>
+<span class="w">   </span>To<span class="w"> </span>re-apply<span class="w"> </span>the<span class="w"> </span>deployment,<span class="w"> </span>run<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>from<span class="w"> </span>your<span class="w"> </span>terminal:
+<span class="w">   </span><span class="sb">```</span>bash
+<span class="w">   </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>nginx-deployment.yaml
+<span class="w">   </span><span class="sb">```</span>
+
+
+<span class="c1">### Step 2: Create a Service (the stable phone number)</span>
+<span class="m">1</span>.<span class="w"> </span>Create<span class="w"> </span>a<span class="w"> </span>file<span class="w"> </span>called<span class="w"> </span>nginx-service.yaml:
+<span class="sb">```</span>yaml
+apiVersion:<span class="w"> </span>v1
+kind:<span class="w"> </span>Service
+metadata:
+<span class="w">  </span>name:<span class="w"> </span>nginx-service
+spec:
+<span class="w">  </span>selector:
+<span class="w">    </span>app:<span class="w"> </span>nginx<span class="w">           </span><span class="c1"># Points to our Deployment&#39;s Pods (via label)</span>
+<span class="w">  </span>ports:
+<span class="w">    </span>-<span class="w"> </span>protocol:<span class="w"> </span>TCP
+<span class="w">      </span>port:<span class="w"> </span><span class="m">80</span><span class="w">           </span><span class="c1"># Port we expose on the Service</span>
+<span class="w">      </span>targetPort:<span class="w"> </span><span class="m">80</span><span class="w">     </span><span class="c1"># Port inside the Pods</span>
+<span class="w">  </span>type:<span class="w"> </span>NodePort<span class="w">         </span><span class="c1"># Makes it reachable from outside the cluster</span>
+</code></pre></div></li>
+</ol>
+<p><strong>What this says in plain English</strong>:
+- Create a Service named <strong>nginx-service</strong>
+- Send traffic to any Pod with label <strong>app: nginx</strong>
+- Listen on <strong>port 80</strong>
+- Use <strong>NodePort</strong> type → Kubernetes opens a random high port (30000–32767) on your computer so you can reach it</p>
+<ol>
+<li>
+<p>Apply the nginx-service.yaml by running the bash command:
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>nginx-service.yaml
+</code></pre></div></p>
+</li>
+<li>
+<p>After applying the Service YAML file, you should see the following output:
+<div class="highlight"><pre><span></span><code><span class="go">service/nginx-service created</span>
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="step-3-see-the-service">Step 3: See the Service<a class="headerlink" href="#step-3-see-the-service" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>To check the status of the service, run the following bash command:
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>services
+</code></pre></div></p>
+</li>
+<li>
+<p>You should see an output similar to the following:
+<div class="highlight"><pre><span></span><code><span class="go">NAME            TYPE          CLUSTER-IP      EXTERNAL-IP      PORT(S)         AGE</span>
+<span class="go">kubernetes      ClusterIP     10.96.0.1       &lt;none&gt;           443/TCP         10m</span>
+<span class="go">nginx-service   NodePort      10.108.123.45   &lt;none&gt;           80:31234/TCP    45s</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Look at the <strong>PORT(S)</strong> column for the value 80:31234/TCP:</p>
+</li>
+<li>80 = port inside cluster</li>
+<li>31234 = the random high port opened on your computer (NodePort)</li>
+</ol>
+<h3 id="step-4-open-it-in-your-browser-the-fun-part">Step 4: Open it in your browser (the fun part!)<a class="headerlink" href="#step-4-open-it-in-your-browser-the-fun-part" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Minikube makes this super easy:
+   <div class="highlight"><pre><span></span><code>minikube<span class="w"> </span>service<span class="w"> </span>nginx-service
+</code></pre></div></p>
+</li>
+<li>
+<p>This automatically opens your default browser</p>
+</li>
+<li>URL looks like: <a href="http://192.168.49.2:31234">http://192.168.49.2:31234</a> (or similar)</li>
+<li>
+<p>You should see the <strong>"Welcome to nginx!"</strong> page, served by one of your 3 Pods!</p>
+</li>
+<li>
+<p>If it doesn't open automatically, copy the URL from the terminal output and paste it into your browser.</p>
+</li>
+</ol>
+<p>→ Proof: your app is now reachable from outside the cluster!</p>
+<h3 id="step-5-clean-up-optional">Step 5: Clean up (optional)<a class="headerlink" href="#step-5-clean-up-optional" title="Permanent link">&para;</a></h3>
+<p>When you're done, run the following bash command:
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>delete<span class="w"> </span>-f<span class="w"> </span>nginx-service.yaml
 </code></pre></div>
-<p>Check:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get namespaces
-</code></pre></div>
-<p>You should see:</p>
-<p>text</p>
-<div class="highlight"><pre><span></span><code>NAME              STATUS   AGE
-default           Active   1h
-dev               Active   10s
-kube-system       Active   1h
-prod              Active   10s
-</code></pre></div>
-<h2 id="step-2-deploy-nginx-in-dev-namespace">Step 2: Deploy nginx in dev namespace<a class="headerlink" href="#step-2-deploy-nginx-in-dev-namespace" title="Permanent link">&para;</a></h2>
-<p>Use your existing nginx-deployment.yaml and nginx-service.yaml from beginner track, but apply with --namespace:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl apply -f nginx-deployment.yaml -n dev
-kubectl apply -f nginx-service.yaml -n dev
-</code></pre></div>
-<p>Check resources <strong>only in dev</strong>:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get all -n dev
-</code></pre></div>
-<p>→ You see Deployment, ReplicaSet, Pods, Service — all in dev</p>
-<p>Now switch context so future commands default to dev:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl config set-context --current --namespace=dev
-</code></pre></div>
-<p>(You can switch back later with --namespace=default)</p>
-<h2 id="step-3-deploy-the-same-app-in-prod-namespace">Step 3: Deploy the same app in prod namespace<a class="headerlink" href="#step-3-deploy-the-same-app-in-prod-namespace" title="Permanent link">&para;</a></h2>
-<p>Apply again, but in prod:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl apply -f nginx-deployment.yaml -n prod
-kubectl apply -f nginx-service.yaml -n prod
-</code></pre></div>
-<p>Check:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get all -n prod
-</code></pre></div>
-<p>→ Same resources appear in prod, but completely separate from dev.</p>
-<p>Try listing without namespace:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get pods
-</code></pre></div>
-<p>→ Shows only Pods in current namespace (dev, if you set it). No overlap — perfect isolation!</p>
-<h2 id="step-4-access-the-prod-service">Step 4: Access the prod Service<a class="headerlink" href="#step-4-access-the-prod-service" title="Permanent link">&para;</a></h2>
-<p>Since we have two Services named nginx-service in different namespaces:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>minikube service nginx-service -n prod
-</code></pre></div>
-<p>→ Opens the prod version in browser (Do the same with -n dev for the dev version)</p>
-<h2 id="step-5-cleanup">Step 5: Cleanup<a class="headerlink" href="#step-5-cleanup" title="Permanent link">&para;</a></h2>
-<p>Delete namespaces (this deletes everything inside them):</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl delete namespace dev
-kubectl delete namespace prod
-</code></pre></div>
-<p>(Or delete resources individually if you prefer.)</p>
-<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+Or alternatively run this bash command:
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>delete<span class="w"> </span>service<span class="w"> </span>nginx-service
+</code></pre></div></p>
+<p>The Deployment and Pods stay running, only the entry point is removed.</p>
+<h4 id="what-we-learned">What we learned<a class="headerlink" href="#what-we-learned" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Namespaces provide <strong>logical separation</strong> inside one cluster</li>
-<li>Use them for dev/test/prod, teams, or large apps</li>
-<li>Resources in different namespaces can have the same name (nginx-service in dev vs prod)</li>
-<li>Most kubectl commands accept -n <namespace> or --namespace=<name></li>
-<li>Switch default namespace with kubectl config set-context --current --namespace=<name></li>
-<li>System namespaces (kube-system, default) exist — don't delete them!</li>
+<li>A <strong>Service</strong> gives Pods a stable, load-balanced network identity</li>
+<li>type: NodePort is great for local testing (opens a port on your laptop)</li>
+<li>kubectl get services shows the ports</li>
+<li>minikube service is a shortcut to access local clusters in the browser</li>
+<li>Labels (app: nginx) connect Services to Pods/Deployments</li>
 </ul>
-<p>This is a core intermediate skill — almost every real cluster uses multiple namespaces.</p>
-<p>→ Next &amp; Final Intermediate Part: Troubleshooting &amp; Debugging</p>
+<p>Now our tiny app is actually <strong>useful</strong>: it's running, scaling, and reachable.</p>
+<h4 id="next-steps-for-beginners">Next steps for beginners<a class="headerlink" href="#next-steps-for-beginners" title="Permanent link">&para;</a></h4>
+<p>You've now completed the following:
+- Understood containers &amp; Kubernetes basics
+- Run a local cluster
+- Created &amp; scaled Pods via Deployment
+- Exposed the app with a Service
+This covers the absolute core of Kubernetes for beginners!</p>
+<p><a href="../06-recap-and-tips/">→ Continue to Part 6: Recap and Tips</a></p>
 
 
 

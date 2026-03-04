@@ -23,7 +23,7 @@
     
     
       
-        <title>Intermediate Part 5: Namespaces – Organizing Large Projects - Technical Tutorials Hub</title>
+        <title>02 install minikube - Technical Tutorials Hub</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#intermediate-part-5-namespaces-organizing-large-projects" class="md-skip">
+        <a href="#your-first-tiny-kubernetes-cluster-local-on-your-computer" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Intermediate Part 5: Namespaces – Organizing Large Projects
+              02 install minikube
             
           </span>
         </div>
@@ -1659,8 +1659,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1669,79 +1667,169 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#goal-for-this-section" class="md-nav__link">
+  <a href="#your-first-tiny-kubernetes-cluster-local-on-your-computer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Goal for this section
+        Your First Tiny Kubernetes Cluster (Local on Your Computer)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Your First Tiny Kubernetes Cluster (Local on Your Computer)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-we-will-do-in-very-simple-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we will do (in very simple steps)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-create-namespaces" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-install-minikube" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Create namespaces
+        Step 1: Install Minikube
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Install Minikube">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-choose-your-operating-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. Choose your operating system:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="a. Choose your operating system:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-deploy-nginx-in-dev-namespace" class="md-nav__link">
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Deploy nginx in dev namespace
+        macOS
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-deploy-the-same-app-in-prod-namespace" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Deploy the same app in prod namespace
+        Linux
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-access-the-prod-service" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#b-windowsmacoslinux" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4: Access the prod Service
+        b. Windows/macOS/Linux
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-cleanup" class="md-nav__link">
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-start-your-tiny-cluster" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 5: Cleanup
+        Step 2: Start your tiny cluster
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#key-takeaways" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#step-3-check-that-its-alive" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key Takeaways
+        Step 3: Check that it’s alive
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-see-a-pretty-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional: See a pretty dashboard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional: See a pretty dashboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clean-up-when-youre-done-playing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clean up (when you’re done playing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-achieved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we achieved
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1765,95 +1853,131 @@
   
 
 
-<h1 id="intermediate-part-5-namespaces-organizing-large-projects">Intermediate Part 5: Namespaces – Organizing Large Projects<a class="headerlink" href="#intermediate-part-5-namespaces-organizing-large-projects" title="Permanent link">&para;</a></h1>
-<p>So far everything we've done lives in the <strong>default</strong> namespace — Kubernetes' built-in "room" for resources.<br />
-When projects grow (multiple teams, dev/test/prod environments, or many apps), the default namespace becomes messy — like putting all pizza orders from every location into one giant kitchen.</p>
-<p><strong>Namespaces</strong> are virtual clusters inside one physical cluster:
-- Separate resources (Pods, Deployments, Services, Secrets, etc.)<br />
-- Avoid name conflicts<br />
-- Apply different policies (RBAC, resource quotas, network policies) per namespace<br />
-- Make dev/test/prod look like separate worlds</p>
-<p>Analogy:<br />
-- Default namespace = the main kitchen<br />
-- dev namespace = a test kitchen for experimenting with new recipes<br />
-- prod namespace = the live kitchen for real customers<br />
-Same building (cluster), but clear separation.</p>
-<p>Namespaces are <strong>lightweight</strong> — no extra cost, just logical isolation.</p>
-<h2 id="goal-for-this-section">Goal for this section<a class="headerlink" href="#goal-for-this-section" title="Permanent link">&para;</a></h2>
-<p>Create two namespaces (dev and prod), deploy the same nginx app in each, and see they don't interfere.</p>
-<h2 id="step-1-create-namespaces">Step 1: Create namespaces<a class="headerlink" href="#step-1-create-namespaces" title="Permanent link">&para;</a></h2>
-<p>Run:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>dev
-kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>prod
-</code></pre></div>
-<p>Check:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get namespaces
-</code></pre></div>
-<p>You should see:</p>
-<p>text</p>
-<div class="highlight"><pre><span></span><code>NAME              STATUS   AGE
-default           Active   1h
-dev               Active   10s
-kube-system       Active   1h
-prod              Active   10s
-</code></pre></div>
-<h2 id="step-2-deploy-nginx-in-dev-namespace">Step 2: Deploy nginx in dev namespace<a class="headerlink" href="#step-2-deploy-nginx-in-dev-namespace" title="Permanent link">&para;</a></h2>
-<p>Use your existing nginx-deployment.yaml and nginx-service.yaml from beginner track, but apply with --namespace:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl apply -f nginx-deployment.yaml -n dev
-kubectl apply -f nginx-service.yaml -n dev
-</code></pre></div>
-<p>Check resources <strong>only in dev</strong>:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get all -n dev
-</code></pre></div>
-<p>→ You see Deployment, ReplicaSet, Pods, Service — all in dev</p>
-<p>Now switch context so future commands default to dev:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl config set-context --current --namespace=dev
-</code></pre></div>
-<p>(You can switch back later with --namespace=default)</p>
-<h2 id="step-3-deploy-the-same-app-in-prod-namespace">Step 3: Deploy the same app in prod namespace<a class="headerlink" href="#step-3-deploy-the-same-app-in-prod-namespace" title="Permanent link">&para;</a></h2>
-<p>Apply again, but in prod:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl apply -f nginx-deployment.yaml -n prod
-kubectl apply -f nginx-service.yaml -n prod
-</code></pre></div>
-<p>Check:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get all -n prod
-</code></pre></div>
-<p>→ Same resources appear in prod, but completely separate from dev.</p>
-<p>Try listing without namespace:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl get pods
-</code></pre></div>
-<p>→ Shows only Pods in current namespace (dev, if you set it). No overlap — perfect isolation!</p>
-<h2 id="step-4-access-the-prod-service">Step 4: Access the prod Service<a class="headerlink" href="#step-4-access-the-prod-service" title="Permanent link">&para;</a></h2>
-<p>Since we have two Services named nginx-service in different namespaces:</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>minikube service nginx-service -n prod
-</code></pre></div>
-<p>→ Opens the prod version in browser (Do the same with -n dev for the dev version)</p>
-<h2 id="step-5-cleanup">Step 5: Cleanup<a class="headerlink" href="#step-5-cleanup" title="Permanent link">&para;</a></h2>
-<p>Delete namespaces (this deletes everything inside them):</p>
-<p>Bash</p>
-<div class="highlight"><pre><span></span><code>kubectl delete namespace dev
-kubectl delete namespace prod
-</code></pre></div>
-<p>(Or delete resources individually if you prefer.)</p>
-<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+  <h1>02 install minikube</h1>
+
+<h2 id="your-first-tiny-kubernetes-cluster-local-on-your-computer">Your First Tiny Kubernetes Cluster (Local on Your Computer)<a class="headerlink" href="#your-first-tiny-kubernetes-cluster-local-on-your-computer" title="Permanent link">&para;</a></h2>
+<p>Now that we understand the big picture (containers + the pizza chain manager), let’s see Kubernetes in action.</p>
+<p>We are going to create a <strong>tiny Kubernetes cluster</strong> right on your own computer.<br />
+It’s safe, free, and only takes just a few minutes to install.</p>
+<h3 id="what-we-will-do-in-very-simple-steps">What we will do (in very simple steps)<a class="headerlink" href="#what-we-will-do-in-very-simple-steps" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Install a tool called <strong>Minikube</strong> (it creates a fake "single restaurant" Kubernetes cluster on your laptop)</li>
+<li>Start the cluster with one command</li>
+<li>Check that it’s alive with another command</li>
+<li>See the dashboard, a pretty web page that shows what’s happening</li>
+</ol>
+<p>That’s it for this part. No containers or apps yet, just making sure the "head office" is open.</p>
+<h3 id="step-1-install-minikube">Step 1: Install Minikube<a class="headerlink" href="#step-1-install-minikube" title="Permanent link">&para;</a></h3>
+<p>Minikube is the easiest way for beginners to try Kubernetes locally.</p>
+<h4 id="a-choose-your-operating-system">a. Choose your operating system:<a class="headerlink" href="#a-choose-your-operating-system" title="Permanent link">&para;</a></h4>
+<p>Run the following commands, based on your OS (Windows/Mac/Linux)</p>
+<h5 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h5>
+<p>Easiest: Install Chocolatey (package manager) first if you don’t have it:
+1. Open PowerShell as Administrator (right-click → Run as administrator)</p>
+<ol>
+<li>
+<p>Install Chocolatey (one-time, if not already installed):
+   <div class="highlight"><pre><span></span><code><span class="nb">Set-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="n">-Scope</span> <span class="k">Process</span> <span class="n">-Force</span>
+<span class="no">[System.Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="p">=</span>
+<span class="no">[System.Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="o">-bor</span> <span class="n">3072</span><span class="p">;</span> <span class="nb">iex </span><span class="p">((</span><span class="nb">New-Object</span>
+<span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://community.chocolatey.org/install.ps1&#39;</span><span class="p">))</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Then install Minikube:
+  <div class="highlight"><pre><span></span><code><span class="n">choco</span> <span class="n">install</span> <span class="n">minikube</span>
+</code></pre></div></p>
+</li>
+</ol>
+<h4 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h4>
+<ol>
+<li>With Homebrew (recommended):
+<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>minikube
+</code></pre></div></li>
+</ol>
+<h4 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Quick one-liner (most common distributions):
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-LO<span class="w"> </span>https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64<span class="w"> </span>sudo<span class="w"> </span>install<span class="w"> </span>minikube-linux-amd64<span class="w"> </span>/usr/local/bin/minikube<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>minikube-linux-amd64
+</code></pre></div></li>
+</ol>
+<h4 id="b-windowsmacoslinux">b. Windows/macOS/Linux<a class="headerlink" href="#b-windowsmacoslinux" title="Permanent link">&para;</a></h4>
+<p>After installing, run the following command to verify that Minikube has been installed, and check the version:
+<div class="highlight"><pre><span></span><code>minikube<span class="w"> </span>version
+</code></pre></div></p>
+<p><strong>Note:</strong> (If you run into issues, search “install minikube [your OS]” official docs are very good.)</p>
+<h3 id="step-2-start-your-tiny-cluster">Step 2: Start your tiny cluster<a class="headerlink" href="#step-2-start-your-tiny-cluster" title="Permanent link">&para;</a></h3>
+<p>Open a terminal (PowerShell on Windows, Terminal on macOS/Linux) and run the following command:
+<div class="highlight"><pre><span></span><code>minikube<span class="w"> </span>start
+</code></pre></div></p>
 <ul>
-<li>Namespaces provide <strong>logical separation</strong> inside one cluster</li>
-<li>Use them for dev/test/prod, teams, or large apps</li>
-<li>Resources in different namespaces can have the same name (nginx-service in dev vs prod)</li>
-<li>Most kubectl commands accept -n <namespace> or --namespace=<name></li>
-<li>Switch default namespace with kubectl config set-context --current --namespace=<name></li>
-<li>System namespaces (kube-system, default) exist — don't delete them!</li>
+<li>This downloads a small virtual machine + Kubernetes components (first time takes 2–5 minutes)</li>
+<li>After that it usually starts in ~30 seconds</li>
+<li>You should see output similar to the following:
+<div class="highlight"><pre><span></span><code><span class="go">minikube v1.34.0 on Microsoft Windows 11 Home Single Language 10.0.26100</span>
+<span class="go">Using the docker driver based on user configuration</span>
+<span class="go">Starting control plane node minikube in cluster minikube</span>
+<span class="go">Creating docker container (CPUs=2, Memory=2200MB) ...</span>
+<span class="go">Preparing Kubernetes v1.31.0 on Docker 24.0.9 ...</span>
+<span class="go">Verifying Kubernetes components...</span>
+<span class="go">Done! kubectl is now configured to use &quot;minikube&quot; cluster```</span>
+</code></pre></div></li>
 </ul>
-<p>This is a core intermediate skill — almost every real cluster uses multiple namespaces.</p>
-<p>→ Next &amp; Final Intermediate Part: Troubleshooting &amp; Debugging</p>
+<p>Congratulations! 
+You now have a real (tiny) Kubernetes cluster running on your computer.</p>
+<h3 id="step-3-check-that-its-alive">Step 3: Check that it’s alive<a class="headerlink" href="#step-3-check-that-its-alive" title="Permanent link">&para;</a></h3>
+<p>Now that Minikube is installed, we want to check that it is running
+Run the following command:
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>nodes
+</code></pre></div></p>
+<p>You should see something like:
+<div class="highlight"><pre><span></span><code><span class="go">NAME       STATUS   ROLES           AGE     VERSION</span>
+<span class="go">minikube   Ready    control-plane   2m30s   v1.31.0</span>
+</code></pre></div></p>
+<ul>
+<li>This means: "Show me all the restaurants (nodes) in the pizza chain"</li>
+<li>You have <strong>one restaurant</strong> called minikube and it’s <strong>Ready</strong> (healthy)</li>
+</ul>
+<h3 id="optional-see-a-pretty-dashboard">Optional: See a pretty dashboard<a class="headerlink" href="#optional-see-a-pretty-dashboard" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>If you want to see the Kubernetes browser dashboard, run the following bash command:
+<div class="highlight"><pre><span></span><code>minikube<span class="w"> </span>dashboard
+</code></pre></div></p>
+</li>
+<li>
+<p>This opens a web browser showing the Kubernetes dashboard</p>
+</li>
+<li>
+<p>You’ll see graphs, lists of things running (right now almost nothing), and a nice visual of your tiny cluster
+<img alt="Kubernetes Dashboard" src="../../../images/kubernetes/beginners/dashboard-01.png" title="Kubernetes Dashboard" /></p>
+</li>
+<li>
+<p>Close the browser tab when done, the dashboard keeps running in the background until you stop Minikube.
+<img alt="Kubernetes Dashboard" src="../../../images/kubernetes/beginners/dashboard-02.png" title="Kubernetes Dashboard" /></p>
+</li>
+</ol>
+<h4 id="clean-up-when-youre-done-playing">Clean up (when you’re done playing)<a class="headerlink" href="#clean-up-when-youre-done-playing" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>To stop the cluster run this Bash Command (saves CPU/RAM):
+<div class="highlight"><pre><span></span><code>minikube<span class="w"> </span>stop
+</code></pre></div></p>
+</li>
+<li>
+<p>To delete it completely (start fresh next time):
+<div class="highlight"><pre><span></span><code>minikube<span class="w"> </span>delete
+</code></pre></div></p>
+</li>
+</ol>
+<h4 id="what-we-achieved">What we achieved<a class="headerlink" href="#what-we-achieved" title="Permanent link">&para;</a></h4>
+<ul>
+<li>We turned your computer into a <strong>real Kubernetes cluster</strong> (even if just one node)</li>
+<li>We used <strong>kubectl</strong> the main command-line tool to talk to Kubernetes</li>
+<li>We proved the "head office" is listening</li>
+</ul>
+<p>Next time we will actually <strong>deploy our first pizza</strong> (run a simple container inside this cluster).</p>
+<p><a href="../03-your-first-pod-and-deployment/">→ Continue to Part 3: Run Your First Container (Pod)</a></p>
 
 
 
