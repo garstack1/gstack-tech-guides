@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -41,7 +38,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -59,7 +56,17 @@
     
     
     
-  </head>
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -95,12 +102,12 @@
     <a href="../../.." title="Technical Tutorials Hub" class="md-header__button md-logo" aria-label="Technical Tutorials Hub" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -126,7 +133,7 @@
     
       <label class="md-header__button md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -135,15 +142,15 @@
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
         </button>
       </nav>
       
@@ -168,7 +175,7 @@
         <a href="https://github.com/garstack-sharetribe/gstack-tech-guides.git" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -192,7 +199,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -204,7 +211,7 @@
     <a href="../../.." title="Technical Tutorials Hub" class="md-nav__button md-logo" aria-label="Technical Tutorials Hub" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
 
     </a>
     Technical Tutorials Hub
@@ -214,7 +221,7 @@
       <a href="https://github.com/garstack-sharetribe/gstack-tech-guides.git" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -252,6 +259,14 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+    
     
       
         
@@ -263,7 +278,9 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2">
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -292,6 +309,20 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
       
     
@@ -300,7 +331,9 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1">
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -437,7 +470,7 @@
         
   
   <span class="md-ellipsis">
-    Recap & Tips
+    Recap &amp; Tips
   </span>
   
 
@@ -463,6 +496,22 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
       
     
@@ -471,7 +520,9 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2">
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -655,6 +706,18 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
       
     
@@ -663,7 +726,9 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3">
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -737,7 +802,7 @@
         
   
   <span class="md-ellipsis">
-    Resources & HPA
+    Resources &amp; HPA
   </span>
   
 
@@ -758,7 +823,7 @@
         
   
   <span class="md-ellipsis">
-    RBAC & Network Policies
+    RBAC &amp; Network Policies
   </span>
   
 
@@ -812,7 +877,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -941,9 +1006,9 @@
 
   <h1>04 deployments</h1>
 
-<h2 id="deployments-keep-your-pizzas-running-automatically">Deployments – Keep Your Pizzas Running Automatically<a class="headerlink" href="#deployments-keep-your-pizzas-running-automatically" title="Permanent link">&para;</a></h2>
-<p>In the last section we created a single Pod with <code>kubectl run</code>.<br />
-It worked — but if we delete it, or if it crashes, it's gone forever.<br />
+<h2 id="deployments-keep-your-pizzas-running-automatically">Deployments – Keep Your Pizzas Running Automatically<a class="headerlink" href="#deployments-keep-your-pizzas-running-automatically" title="Permanent link">¶</a></h2>
+<p>In the last section we created a single Pod with <code>kubectl run</code>.<br>
+It worked — but if we delete it, or if it crashes, it's gone forever.<br>
 We had to manually recreate it.</p>
 <p>In real life we want apps to:
 - Stay running even if something goes wrong
@@ -951,9 +1016,9 @@ We had to manually recreate it.</p>
 - Scale to more copies when busy
 - Update to a new version without downtime</p>
 <p>That's what a <strong>Deployment</strong> does.</p>
-<p>Think back to the pizza chain:<br />
+<p>Think back to the pizza chain:<br>
 A <strong>Deployment</strong> is the rule: "Always keep 3 margherita pizzas ready. If one burns or demand increases, make more. When we improve the recipe, roll out the new version gradually."</p>
-<h3 id="goal-for-this-section">Goal for this section<a class="headerlink" href="#goal-for-this-section" title="Permanent link">&para;</a></h3>
+<h3 id="goal-for-this-section">Goal for this section<a class="headerlink" href="#goal-for-this-section" title="Permanent link">¶</a></h3>
 <p>Create a Deployment that does the following:</p>
 <ul>
 <li>Runs 3 copies of the nginx web server</li>
@@ -961,11 +1026,11 @@ A <strong>Deployment</strong> is the rule: "Always keep 3 margherita pizzas read
 <li>Lets us scale up/down easily</li>
 </ul>
 <p>We will use a small YAML file this time — don't worry, it's very short.</p>
-<h3 id="step-1-create-a-simple-deployment-yaml-file"><a id="deployment-file"></a>Step 1: Create a simple Deployment YAML file<a class="headerlink" href="#step-1-create-a-simple-deployment-yaml-file" title="Permanent link">&para;</a></h3>
+<h3 id="step-1-create-a-simple-deployment-yaml-file"><a id="deployment-file"></a>Step 1: Create a simple Deployment YAML file<a class="headerlink" href="#step-1-create-a-simple-deployment-yaml-file" title="Permanent link">¶</a></h3>
 <ol>
 <li>
 <p>In your terminal, create a file called <code>nginx-deployment.yaml</code> (you can use Notepad, VS Code, or any text editor):
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+</p><div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
 <span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx-deployment</span>
@@ -984,7 +1049,7 @@ A <strong>Deployment</strong> is the rule: "Always keep 3 margherita pizzas read
 <span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:1.25</span><span class="w">      </span><span class="c1"># Use a specific version for stability</span>
 <span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80``</span><span class="w">          </span>
-</code></pre></div></p>
+</code></pre></div><p></p>
 </li>
 <li>
 <p>Save the file in the same folder where you're running commands.
@@ -996,86 +1061,86 @@ A <strong>Deployment</strong> is the rule: "Always keep 3 margherita pizzas read
 <li>Each Pod should run one container from the <code>nginx:1.25</code> image</li>
 <li>Listen on port 80 inside the container</li>
 </ol>
-<h3 id="step-2-apply-the-deployment">Step 2: Apply the Deployment<a class="headerlink" href="#step-2-apply-the-deployment" title="Permanent link">&para;</a></h3>
+<h3 id="step-2-apply-the-deployment">Step 2: Apply the Deployment<a class="headerlink" href="#step-2-apply-the-deployment" title="Permanent link">¶</a></h3>
 <ol>
 <li>
 <p>Run the following Bash command in the terminal:
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>nginx-deployment.yaml
-</code></pre></div></p>
+</p><div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>nginx-deployment.yaml
+</code></pre></div><p></p>
 </li>
 <li>
 <p>You should see the following output:
-<div class="highlight"><pre><span></span><code><span class="go">deployment.apps/nginx-deployment created</span>
-</code></pre></div></p>
+</p><div class="highlight"><pre><span></span><code><span class="go">deployment.apps/nginx-deployment created</span>
+</code></pre></div><p></p>
 </li>
 </ol>
-<h3 id="step-3-check-that-its-working">Step 3: Check that it's working<a class="headerlink" href="#step-3-check-that-its-working" title="Permanent link">&para;</a></h3>
+<h3 id="step-3-check-that-its-working">Step 3: Check that it's working<a class="headerlink" href="#step-3-check-that-its-working" title="Permanent link">¶</a></h3>
 <ol>
 <li>
 <p>Run the following Bash Command:
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>deployments
-</code></pre></div></p>
+</p><div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>deployments
+</code></pre></div><p></p>
 </li>
 <li>
 <p>You should see an output like the following:
-<div class="highlight"><pre><span></span><code><span class="go">NAME                         READY     UP-TO-DATE      AVAILABLE       AGE</span>
+</p><div class="highlight"><pre><span></span><code><span class="go">NAME                         READY     UP-TO-DATE      AVAILABLE       AGE</span>
 <span class="go">nginx-deployment             3/3       3               3               45s</span>
-</code></pre></div></p>
+</code></pre></div><p></p>
 </li>
 <li>
 <p>READY 3/3 → All 3 desired Pods are running and healthy</p>
 </li>
 <li>
 <p>Now check the actual Pods, by running the following bash command:
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods
-</code></pre></div></p>
+</p><div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods
+</code></pre></div><p></p>
 </li>
 <li>
 <p>You should see <strong>three Pods</strong> (names like <code>nginx-deployment-xyz-abcde</code>):
-<div class="highlight"><pre><span></span><code><span class="go">NAME                                  READY      STATUS      RESTARTS     AGE</span>
+</p><div class="highlight"><pre><span></span><code><span class="go">NAME                                  READY      STATUS      RESTARTS     AGE</span>
 <span class="go">nginx-deployment-5d8f7c6b9f-abcde     1/1        Running     0            50s</span>
 <span class="go">nginx-deployment-5d8f7c6b9f-defgh     1/1        Running     0            50s</span>
 <span class="go">nginx-deployment-5d8f7c6b9f-ijklm     1/1        Running     0            50s</span>
-</code></pre></div></p>
+</code></pre></div><p></p>
 </li>
 <li>They all have the same prefix — Kubernetes created and manages them.</li>
 </ol>
-<h3 id="step-4-scale-it-change-the-number-of-pizzas">Step 4: Scale it (change the number of pizzas)<a class="headerlink" href="#step-4-scale-it-change-the-number-of-pizzas" title="Permanent link">&para;</a></h3>
+<h3 id="step-4-scale-it-change-the-number-of-pizzas">Step 4: Scale it (change the number of pizzas)<a class="headerlink" href="#step-4-scale-it-change-the-number-of-pizzas" title="Permanent link">¶</a></h3>
 <ol>
 <li>
 <p>Try scaling to 5 replicas:
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>nginx-deployment<span class="w"> </span>--replicas<span class="o">=</span><span class="m">5</span>
-</code></pre></div></p>
+</p><div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>nginx-deployment<span class="w"> </span>--replicas<span class="o">=</span><span class="m">5</span>
+</code></pre></div><p></p>
 </li>
 <li>
 <p>Then check the Pods again:
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods
-</code></pre></div></p>
+</p><div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods
+</code></pre></div><p></p>
 </li>
 <li>
 <p>You should now see <strong>5 Pods</strong> running.</p>
 </li>
 <li>
 <p>Scale back down to 2 if you want:
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>nginx-deployment<span class="w"> </span>--replicas<span class="o">=</span><span class="m">2</span>
-</code></pre></div></p>
+</p><div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>nginx-deployment<span class="w"> </span>--replicas<span class="o">=</span><span class="m">2</span>
+</code></pre></div><p></p>
 </li>
 <li>Kubernetes automatically deletes extra Pods.</li>
 </ol>
-<h3 id="step-5-clean-up-when-done">Step 5: Clean up when done<a class="headerlink" href="#step-5-clean-up-when-done" title="Permanent link">&para;</a></h3>
+<h3 id="step-5-clean-up-when-done">Step 5: Clean up when done<a class="headerlink" href="#step-5-clean-up-when-done" title="Permanent link">¶</a></h3>
 <ol>
 <li>
 <p>Delete the Deployment (this also deletes all its Pods):
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">kubectl delete -f nginx-deployment.yaml</span>
-</code></pre></div></p>
+</p><div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">kubectl delete -f nginx-deployment.yaml</span>
+</code></pre></div><p></p>
 </li>
 <li>
 <p>Alternatively delete them by name:
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">kubectl delete deployment nginx-deployment</span>
-</code></pre></div></p>
+</p><div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">kubectl delete deployment nginx-deployment</span>
+</code></pre></div><p></p>
 </li>
 </ol>
-<h4 id="what-we-learned">What we learned<a class="headerlink" href="#what-we-learned" title="Permanent link">&para;</a></h4>
+<h4 id="what-we-learned">What we learned<a class="headerlink" href="#what-we-learned" title="Permanent link">¶</a></h4>
 <ul>
 <li>A <strong>Deployment</strong> manages multiple Pods for you</li>
 <li>You define <strong>desired state</strong> in YAML (e.g., "3 replicas")</li>
@@ -1085,7 +1150,7 @@ A <strong>Deployment</strong> is the rule: "Always keep 3 margherita pizzas read
 <li>Scaling is instant with kubectl scale</li>
 </ul>
 <p>This is how real applications run in Kubernetes, not single Pods, but Deployments.</p>
-<h4 id="next-step">Next step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h4>
+<h4 id="next-step">Next step<a class="headerlink" href="#next-step" title="Permanent link">¶</a></h4>
 <p>Right now our nginx Pods are running inside the cluster, but we can't reach them from our browser yet. We need a <strong>Service</strong> to create a stable entry point (the "single phone number" for ordering pizza).</p>
 <p><a href="../05-services/">→ Continue to Part 5: Services – Make Your App Accessible</a></p>
 
@@ -1110,7 +1175,7 @@ A <strong>Deployment</strong> is the rule: "Always keep 3 margherita pizzas read
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
   Back to top
 </button>
         
@@ -1139,7 +1204,7 @@ A <strong>Deployment</strong> is the rule: "Always keep 3 margherita pizzas read
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "navigation.top", "navigation.path", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
@@ -1147,5 +1212,7 @@ A <strong>Deployment</strong> is the rule: "Always keep 3 margherita pizzas read
         <script src="../../../javascripts/extra.js"></script>
       
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
