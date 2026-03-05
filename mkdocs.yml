@@ -1,0 +1,86 @@
+site_name: Technical Tutorials Hub
+site_description: Hands-on guides for Kubernetes, Docker, Automation and more
+site_author: Garrett Stack
+repo_url: https://github.com/garstack-sharetribe/gstack-tech-guides.git
+repo_name: GitHub
+copyright: © 2026 Garrett Stack. All rights reserved. 
+  <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener">Twitter/X</a> | 
+  <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a> | 
+  <a href="https://github.com/garstack-sharetribe" target="_blank" rel="noopener">GitHub</a>
+
+extra:
+  generator: false
+
+extra_css:
+  - stylesheets/extra.css
+  - https://fonts.googleapis.com/icon?family=Material+Icons
+  - https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono
+
+extra_javascript:
+  - javascripts/extra.js
+
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: blue
+  features:
+    - navigation.sections          # Enables collapsible parent sections
+    # - navigation.expand            # Auto-expands current section
+    - navigation.top
+    - navigation.tracking          # Highlights active page
+    - navigation.instant         # optional: faster navigation
+    - search.suggest
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+
+  - Kubernetes:                     # Level 1 parent – collapsible, bold black
+      - Beginner:                     # Level 2 – collapsible sub-folder, indented
+          - Overview: kubernetes/01-beginners/01-high-level-overview
+          - First Cluster: kubernetes/01-beginners/02-install-minikube
+          - First Pod: kubernetes/01-beginners/03-your-first-pod-and-deployment
+          - Deployments: kubernetes/01-beginners/04-deployments
+          - Services: kubernetes/01-beginners/05-services
+          - Recap & Tips: kubernetes/01-beginners/06-recap-and-tips
+      - Intermediate:                 # Level 2 – collapsible sub-folder
+          - Overview: kubernetes/02-intermediate/01-overview
+          - ConfigMaps: kubernetes/02-intermediate/02-configmaps
+          - ConfigMaps: kubernetes/02-intermediate/03-inject-files-into-the-container
+          - Secrets: kubernetes/02-intermediate/04-secrets
+          - Persistent Volumes: kubernetes/02-intermediate/05-persistent-volumes-and-storage
+          - Namespaces: kubernetes/02-intermediate/06-namespaces.md
+          - Troubleshooting: kubernetes/02-intermediate/07-troubleshooting.md
+      - Advanced:                     # Level 2 – collapsible sub-folder
+          - Ingress: kubernetes/03-advanced/01-ingress
+          - Helm Basics: kubernetes/03-advanced/02-helm-basics
+          - Resources & HPA: kubernetes/03-advanced/03-resource-limits-and-requests+horizontal-pod-autoscaler(HPA)
+          - RBAC & Network Policies: kubernetes/03-advanced/04-rbac-and-network-policies
+          - StatefulSets: kubernetes/03-advanced/05-statefulsets+headless-services
+
+  - Docker:                         # Level 1 parent
+      - Beginner:                     # Level 2
+          - Overview: docker/beginner/01-overview.md
+      - Intermediate:
+          - Overview: docker/intermediate/01-overview.md
+      - Advanced:
+          - Overview: docker/advanced/01-overview.md
+
+  - Automation:                     # Level 1 parent
+      - Overview: automation/overview.md
+      - n8n:                          # Level 2
+          - Getting Started: automation/n8n/01-getting-started.md
+      - Make.com:
+          - Getting Started: automation/make/01-getting-started.md
+      - Zapier:
+          - Getting Started: automation/zapier/01-getting-started.md
