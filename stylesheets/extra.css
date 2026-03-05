@@ -1,12 +1,29 @@
-/* Collapse all top-level sections by default on page load */
-.md-nav__section {
-  --md-nav-section--collapsed: true !important;
+/* Force Material Icons font load */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+/* Ensure collapse arrows are visible and normal size */
+.md-nav__section > .md-nav__link::before {
+  font-family: "Material Icons" !important;
+  content: "keyboard_arrow_right" !important;
+  font-size: 1.25rem !important;
+  margin-right: 0.5rem;
 }
 
-/* Optional: Make collapsed sections more obvious */
-.md-nav__section > .md-nav__link {
-  font-weight: bold;
-  color: #000000;              /* black bold for parents like "Kubernetes" */
+.md-nav__section--collapsed > .md-nav__link::before {
+  content: "keyboard_arrow_right" !important;
+  transform: rotate(0deg) !important;
+}
+
+.md-nav__section:not(.md-nav__section--collapsed) > .md-nav__link::before {
+  content: "keyboard_arrow_down" !important;
+  transform: rotate(0deg) !important;
+}
+
+/* Normal icon size everywhere */
+.material-icons, .material-symbols-outlined {
+  font-size: 1.25rem !important;
+  vertical-align: middle;
 }
 
 /* Parent titles bold black */
