@@ -1,28 +1,51 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // 1. Always expand the section that contains the currently viewed page
-  const activeSection = document.querySelector('.md-nav__section--active');
-  if (activeSection) {
-    activeSection.classList.remove('md-nav__section--collapsed');
-  }
+document.addEventListener("DOMContentLoaded", function () {
 
-  // 2. Restore previously expanded sections (remember user's choice)
-  document.querySelectorAll('.md-nav__section').forEach(section => {
-    const storageKey = 'nav-section-' + (section.id || section.textContent.trim());
-    if (localStorage.getItem(storageKey) === 'expanded') {
-      section.classList.remove('md-nav__section--collapsed');
+  const navItems = document.querySelectorAll(".md-nav__item--nested");
+
+  // Restore saved state
+  navItems.forEach(item => {
+    const toggle = item.querySelector(".md-nav__toggle");
+    const label = item.querySelector(".md-nav__link");
+
+    if (!toggle || !label) return;
+
+    const key = "nav-state-" + label.textContent.trim();
+
+    const savedState = localStorage.getItem(key);
+
+    if (savedState === "expanded") {
+      toggle.checked = true;
     }
-  });
 
-  // 3. Save expanded/collapsed state when user clicks a section title
-  document.querySelectorAll('.md-nav__section > .md-nav__link').forEach(link => {
-    link.addEventListener('click', () => {
-      // Wait a tiny bit for Material to process its own collapse
-      setTimeout(() => {
-        const section = link.parentElement;
-        const isCollapsed = section.classList.contains('md-nav__section--collapsed');
-        const storageKey = 'nav-section-' + (section.id || section.textContent.trim());
-        localStorage.setItem(storageKey, isCollapsed ? 'collapsed' : 'expanded');
-      }, 100);
+    if (savedState === "collapsed") {
+      toggle.checked = false;
+    }
+
+    // Save state when toggled
+    toggle.addEventListener("change", () => {
+      localStorage.setItem(key, toggle.checked ? "expanded" : "collapsed");
     });
   });
+
+
+  // Always expand the section that contains the active page
+  const activeLink = document.querySelector(".md-nav__link--active");
+
+  if (activeLink) {
+
+    let parent = activeLink.closest(".md-nav__item--nested");
+
+    while (parent) {
+
+      const toggle = parent.querySelector(".md-nav__toggle");
+
+      if (toggle) {
+        toggle.checked = true;
+      }
+
+      parent = parent.parentElement.closest(".md-nav__item--nested");
+    }
+
+  }
+
 });
