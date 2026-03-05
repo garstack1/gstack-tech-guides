@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", function () {
+function setupNavPersistence() {
 
   const navItems = document.querySelectorAll(".md-nav__item--nested");
 
-  // Restore saved state
   navItems.forEach(item => {
+
     const toggle = item.querySelector(".md-nav__toggle");
     const label = item.querySelector(".md-nav__link");
 
@@ -11,24 +11,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const key = "nav-state-" + label.textContent.trim();
 
-    const savedState = localStorage.getItem(key);
+    // Restore saved state
+    const saved = localStorage.getItem(key);
 
-    if (savedState === "expanded") {
-      toggle.checked = true;
-    }
+    if (saved === "expanded") toggle.checked = true;
+    if (saved === "collapsed") toggle.checked = false;
 
-    if (savedState === "collapsed") {
-      toggle.checked = false;
-    }
-
-    // Save state when toggled
+    // Save state when user toggles
     toggle.addEventListener("change", () => {
       localStorage.setItem(key, toggle.checked ? "expanded" : "collapsed");
     });
+
   });
 
-
-  // Always expand the section that contains the active page
+  // Ensure current page section is open
   const activeLink = document.querySelector(".md-nav__link--active");
 
   if (activeLink) {
@@ -39,13 +35,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const toggle = parent.querySelector(".md-nav__toggle");
 
-      if (toggle) {
-        toggle.checked = true;
-      }
+      if (toggle) toggle.checked = true;
 
-      parent = parent.parentElement.closest(".md-nav__item--nested");
+      parent = parent.parentElement?.closest(".md-nav__item--nested");
+
     }
-
   }
+}
 
-});
+
+/* Run once on first page load */
+document.addEventListener("DOMContentLoaded", setupNavPersistence);
+
+
+/* Run again after instant navigation */
+if (typeof document$ !== "undefined") {
+  document$.subscribe(() => {
+    setupNavPersistence();
+  });
+}
