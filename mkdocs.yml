@@ -1,86 +1,238 @@
 site_name: Technical Tutorials Hub
 site_description: Hands-on guides for Kubernetes, Docker, Automation and more
 site_author: Garrett Stack
-repo_url: https://github.com/garstack-sharetribe/gstack-tech-guides.git
-repo_name: GitHub
-copyright: © 2026 Garrett Stack. All rights reserved. 
-  <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener">Twitter/X</a> | 
-  <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a> | 
-  <a href="https://github.com/garstack-sharetribe" target="_blank" rel="noopener">GitHub</a>
+site_url: https://garstack-sharetribe.github.io/gstack-tech-guides/
+
+repo_url: https://github.com/garstack-sharetribe/gstack-tech-guides
+repo_name: garstack-tech-guides
+
+copyright: © 2026 Garrett Stack
 
 extra:
   generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/garstack-sharetribe
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/yourprofile
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/yourhandle
 
 extra_css:
   - stylesheets/extra.css
-  - https://fonts.googleapis.com/icon?family=Material+Icons
-  - https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono
 
 extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  - javascripts/mermaid-init.js
   - javascripts/extra.js
+
+plugins:
+  - search
+
+  - mermaid2
+
+  - glightbox:
+      touchNavigation: true
+      zoomable: true
+      draggable: true
 
 theme:
   name: material
+  icon:
+    repo: fontawesome/brands/github
+
   palette:
     primary: indigo
     accent: blue
+
   features:
-    - navigation.sections          # Enables collapsible parent sections
-    # - navigation.expand            # Auto-expands current section
+    # Navigation
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
     - navigation.top
-    - navigation.tracking          # Highlights active page
-    - navigation.instant         # optional: faster navigation
-    - search.suggest
+    - navigation.path
+    - navigation.indexes
+
+    # Content
     - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+
+    # Table of contents
+    - toc.follow
+
+    # Search
+    - search.suggest
+    - search.highlight
 
 markdown_extensions:
   - admonition
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
+  - attr_list
+  - md_in_html
   - toc:
       permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
 
+
+      
 nav:
   - Home: index.md
-
-  - Kubernetes:                     # Level 1 parent – collapsible, bold black
-      - Beginner:                     # Level 2 – collapsible sub-folder, indented
-          - Overview: kubernetes/01-beginners/01-high-level-overview
-          - First Cluster: kubernetes/01-beginners/02-install-minikube
-          - First Pod: kubernetes/01-beginners/03-your-first-pod-and-deployment
-          - Deployments: kubernetes/01-beginners/04-deployments
-          - Services: kubernetes/01-beginners/05-services
-          - Recap & Tips: kubernetes/01-beginners/06-recap-and-tips
-      - Intermediate:                 # Level 2 – collapsible sub-folder
-          - Overview: kubernetes/02-intermediate/01-overview
-          - ConfigMaps: kubernetes/02-intermediate/02-configmaps
-          - ConfigMaps: kubernetes/02-intermediate/03-inject-files-into-the-container
-          - Secrets: kubernetes/02-intermediate/04-secrets
-          - Persistent Volumes: kubernetes/02-intermediate/05-persistent-volumes-and-storage
-          - Namespaces: kubernetes/02-intermediate/06-namespaces.md
-          - Troubleshooting: kubernetes/02-intermediate/07-troubleshooting.md
-      - Advanced:                     # Level 2 – collapsible sub-folder
-          - Ingress: kubernetes/03-advanced/01-ingress
-          - Helm Basics: kubernetes/03-advanced/02-helm-basics
-          - Resources & HPA: kubernetes/03-advanced/03-resource-limits-and-requests+horizontal-pod-autoscaler(HPA)
-          - RBAC & Network Policies: kubernetes/03-advanced/04-rbac-and-network-policies
-          - StatefulSets: kubernetes/03-advanced/05-statefulsets+headless-services
-
-  - Docker:                         # Level 1 parent
-      - Beginner:                     # Level 2
-          - Overview: docker/beginner/01-overview.md
+  - "🐳 Docker  (🚧 Planned)":
+    - Overview: docker/index.md
+    - Tutorials:
+      - Index: docker/tutorials/index.md
+      - Beginner:
+         - Index: docker/tutorials/beginner/index.md
+#        - Overview: docker/tutorials/beginner/01-high-level-overview.md
+#        - Recap & Tips: docker/tutorials/beginner/06-recap-and-tips.md
       - Intermediate:
-          - Overview: docker/intermediate/01-overview.md
+         - Index: docker/tutorials/intermediate/index.md
+#        - Overview: docker/tutorials/intermediate/01-overview.md
+#        - Troubleshooting: docker/tutorials/intermediate/06-troubleshooting.md
       - Advanced:
-          - Overview: docker/advanced/01-overview.md
+         - Index: docker/tutorials/intermediate/index.md
+#        - Overview: docker/tutorials/advanced/01-overview.md
+#        - StatefulSets: docker/tutorials/advanced/06-statefulsets.md
+    - How-To Guides:
+      - Index: docker/how-to/index.md
+#      - Troubleshoot Pods: docker/how-to/troubleshooting.md
+#    - Explanation:
+#      - Index: docker/explanation/index.md
+#      - Namespaces: docker/explanation/namespaces.md
+#    - Reference:
+#      - Index: docker/reference/index.md
+#      - StatefulSets: docker/reference/statefulsets.md
 
-  - Automation:                     # Level 1 parent
-      - Overview: automation/overview.md
-      - n8n:                          # Level 2
-          - Getting Started: automation/n8n/01-getting-started.md
-      - Make.com:
-          - Getting Started: automation/make/01-getting-started.md
-      - Zapier:
-          - Getting Started: automation/zapier/01-getting-started.md
+  - "☸ Kubernetes (🚧 In Progress)":
+    - Overview: kubernetes/index.md
+    - Tutorials:
+      - Index: kubernetes/tutorials/index.md
+      - Beginner:
+        - Index: kubernetes/tutorials/beginner/index.md
+        - High Level Overview: kubernetes/tutorials/beginner/high-level-overview.md
+        - Install Minikube: kubernetes/tutorials/beginner/install-minikube.md
+        - Your First Pod: kubernetes/tutorials/beginner/your-first-pod-and-deployment.md
+        - Deployments: kubernetes/tutorials/beginner/deployments.md
+        - Services: kubernetes/tutorials/beginner/services.md
+        - Recap & Tips: kubernetes/tutorials/beginner/recap-and-tips.md
+      - Intermediate:
+        - Index: kubernetes/tutorials/intermediate/index.md
+        - Deploy Multi Container: kubernetes/tutorials/intermediate/deploy-multi-container-app.md
+        - ConfigMaps: kubernetes/tutorials/intermediate/configmaps.md       
+        - Secrets: kubernetes/tutorials/intermediate/secrets.md
+        - Persistent Volumes: kubernetes/tutorials/intermediate/persistent-volumes-and-storage.md
+        - Perform a Rolling Update and Rollback: kubernetes/tutorials/intermediate/rolling-update-and-rollback.md
+        - Expose App With Ingress: kubernetes/tutorials/intermediate/expose-app-with-ingress.md
+      - Advanced:
+        - Index: kubernetes/tutorials/advanced/index.md
+        - Ingress: kubernetes/tutorials/advanced/ingress.md
+        - Helm Basics: kubernetes/tutorials/advanced/helm-basics.md
+        - Resource Limits & HPA: kubernetes/tutorials/advanced/resource-limits-and-requests.md
+        - RBAC & Network Policies: kubernetes/tutorials/advanced/rbac-and-network-policies.md
+        - StatefulSets: kubernetes/tutorials/advanced/statefulsets-headless-services.md
+        - Wrap Up: kubernetes/tutorials/advanced/final-wrap-up.md
+    - How-To Guides:
+      - Index: kubernetes/how-to/index.md
+      - Troubleshooting:
+        - Overview: kubernetes/how-to/troubleshooting/index.md
+        - Debug Crashing Pod: kubernetes/how-to/troubleshooting/debug-crashing-pod.md
+        - View Container Logs: kubernetes/how-to/troubleshooting/view-container-logs.md
+        - Debug ImagePullBackoff: kubernetes/how-to/troubleshooting/debug-imagepullbackoff.md
+      - Deployments:
+        - Overview: kubernetes/how-to/deployments/index.md
+        - Scale Deployment: kubernetes/how-to/deployments/scale-deployment.md
+        - Rollback Deployment: kubernetes/how-to/deployments/rollback-deployment.md
+        - Restart Deployment: kubernetes/how-to/deployments/restart-deployment.md
+        - Update Container Image: kubernetes/how-to/deployments/update-container-image.md
+      - Networking:
+        - Overview: kubernetes/how-to/networking/index.md
+        - Expose Service: kubernetes/how-to/networking/expose-service.md
+        - Expose Service Ingress: kubernetes/how-to/networking/expose-service-ingress.md
+        - Port Forward Pod: kubernetes/how-to/networking/port-forward-pod.md
+      - Configuration:
+        - Overview: kubernetes/how-to/configuration/index.md
+        - Use Configmaps: kubernetes/how-to/configuration/use-configmaps.md
+        - Use Secrets: kubernetes/how-to/configuration/use-secrets.md
+        - Add Env Vars: kubernetes/how-to/configuration/add-env-vars.md
+      - Storage: 
+        - Overview: kubernetes/how-to/storage/index.md
+        - Mount Persistent Volume: kubernetes/how-to/storage/mount-persistent-volume.md
+    - Explanation:
+      - Index: kubernetes/explanation/index.md
+      - Architecture: 
+        - Index: kubernetes/explanation/architecture/index.md
+        - Kubernetes Architecture: kubernetes/explanation/architecture/kubernetes-architecture.md
+        - Control Plane: kubernetes/explanation/architecture/control-plane.md
+        - Node Components: kubernetes/explanation/architecture/node-components.md
+      - Workloads:
+        - Index: kubernetes/explanation/workloads/index.md
+        - Pods: kubernetes/explanation/workloads/pods.md
+        - Deployments: kubernetes/explanation/workloads/deployments.md
+        - Replica Sets: kubernetes/explanation/workloads/replica-sets.md
+        - Stateful Sets: kubernetes/explanation/workloads/statefulsets.md
+      - Networking:
+        - Index: kubernetes/explanation/networking/index.md
+        - Pod Networking: kubernetes/explanation/networking/pod-networking.md
+        - Services: kubernetes/explanation/networking/services.md
+        - Kube Proxy: kubernetes/explanation/networking/kube-proxy.md
+        - Ingress: kubernetes/explanation/networking/ingress.md
+        - DNS: kubernetes/explanation/networking/dns.md
+        - Network Policies: kubernetes/explanation/networking/network-policies.md
+#        - Deployments: kubernetes/explanation/networking/deployments.md
+#        - Replica Sets: kubernetes/explanation/networking/replica-sets.md
+      - Configuration:
+        - Index: kubernetes/explanation/configuration/index.md
+        - Configmaps: kubernetes/explanation/configuration/configmaps.md
+        - Secrets: kubernetes/explanation/configuration/secrets.md
+      - Storage:
+        - Index: kubernetes/explanation/storage/index.md
+        - Configmaps: kubernetes/explanation/storage/persistent-volumes.md
+        - Secrets: kubernetes/explanation/storage/persistent-volume-claims.md
+      - Scaling:
+        - Index: kubernetes/explanation/scaling/index.md
+        - Horizontal Pod Autoscaler: kubernetes/explanation/scaling/horizontal-pod-autoscaler.md
+        - Rolling Updates: kubernetes/explanation/scaling/rolling-updates.md
+    - Reference:
+      - Index: kubernetes/reference/index.md
+      - Ingress: kubernetes/reference/ingress.md
+      - Helm Basics: kubernetes/reference/helm-basics.md
+      - Resource Limits & HPA: kubernetes/reference/hpa.md
+      - RBAC & Network Policies: kubernetes/reference/rbac-network-policies.md
+      - StatefulSets: kubernetes/reference/statefulsets.md
+
+  - "⚡Automation (🚧 Planned)":
+    - Overview: automation/index.md
+    - Tutorials:
+      - Index: automation/tutorials/index.md
+      - Beginner:
+         - Overview: automation/tutorials/beginner/index.md
+#        - Overview: automation/tutorials/beginner/01-high-level-overview.md
+#        - Recap & Tips: automation/tutorials/beginner/06-recap-and-tips.md
+      - Intermediate:
+         - Overview: automation/tutorials/intermediate/index.md
+#        - Overview: automation/tutorials/intermediate/01-overview.md
+#        - Troubleshooting: automation/tutorials/intermediate/06-troubleshooting.md
+      - Advanced:
+         - Overview: automation/tutorials/advanced/index.md
+#        - Overview: automation/tutorials/advanced/01-overview.md
+#        - StatefulSets: automation/tutorials/advanced/06-statefulsets.md
+    - How-To Guides:
+      - Index: automation/how-to/index.md
+#      - Troubleshoot Pods: automation/how-to/troubleshooting.md
+    - Explanation:
+      - Index: automation/explanation/index.md
+#      - Namespaces: automation/explanation/namespaces.md
+    - Reference:
+      - Index: automation/reference/index.md
+#      - StatefulSets: automation/reference/statefulsets.md
+
+extra:
+  mermaid:
+    theme: default
