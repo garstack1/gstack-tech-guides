@@ -1,8 +1,42 @@
 # Kubernetes Reference
 
-The reference section provides quick access to Kubernetes concepts, configuration examples, and command syntax.
+## Overview
 
-These pages are designed for **fast lookup** when you already understand the basics but need to quickly review configuration details or commands.
+This section provides reference documentation for commonly used Kubernetes
+commands and objects.
+
+Reference documentation is designed for quick lookup rather than step-by-step
+learning.
+
+## kubectl Commands
+
+The following commands are commonly used to interact with Kubernetes clusters.
+
+- kubectl overview
+- kubectl get
+- kubectl describe
+- kubectl logs
+- kubectl exec
+- kubectl apply
+
+These commands allow users to inspect resources, retrieve logs, run commands
+inside containers, and manage cluster workloads.
+
+## Kubernetes Objects
+
+Kubernetes resources are represented as objects managed by the Kubernetes API.
+
+Common objects include:
+
+- Pods
+- Deployments
+- Services
+- ConfigMaps
+- Secrets
+- StatefulSets
+
+Each object page describes its purpose, configuration fields, and typical
+usage patterns.
 
 ---
 

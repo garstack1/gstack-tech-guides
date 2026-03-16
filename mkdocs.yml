@@ -112,6 +112,15 @@ nav:
 
   - "☸ Kubernetes (🚧 In Progress)":
     - Overview: kubernetes/index.md
+    - Architecture:
+      - Kubernetes Architecture Overview: kubernetes/architecture/kubernetes-architecture-overview.md
+      - Control Plane Components: kubernetes/architecture/control-plane-components.md
+      - Worker Node Components: kubernetes/architecture/worker-node-components.md
+      - Request Flow Through Kubernetes: kubernetes/architecture/request-flow-through-kubernetes.md
+    - Container Fundamentals:
+      - What is Docker: kubernetes/container-fundamentals/what-is-docker.md
+      - Container vs VM: kubernetes/container-fundamentals/container-vs-docker.md
+      - Building a Docker Image: kubernetes/container-fundamentals/building-a-docker-image.md
     - Tutorials:
       - Index: kubernetes/tutorials/index.md
       - Beginner:
@@ -138,13 +147,12 @@ nav:
         - RBAC & Network Policies: kubernetes/tutorials/advanced/rbac-and-network-policies.md
         - StatefulSets: kubernetes/tutorials/advanced/statefulsets-headless-services.md
         - Wrap Up: kubernetes/tutorials/advanced/final-wrap-up.md
+      - End-to-End Tutorials:
+        - Deploy Your First Application: kubernetes/tutorials/end-to-end/deploy-your-first-application.md
+        - Scale an Application: kubernetes/tutorials/end-to-end/scale-an-application.md
+        - Debug a Failing Application: kubernetes/tutorials/end-to-end/debug-a-failing-application.md
     - How-To Guides:
       - Index: kubernetes/how-to/index.md
-      - Troubleshooting:
-        - Overview: kubernetes/how-to/troubleshooting/index.md
-        - Debug Crashing Pod: kubernetes/how-to/troubleshooting/debug-crashing-pod.md
-        - View Container Logs: kubernetes/how-to/troubleshooting/view-container-logs.md
-        - Debug ImagePullBackoff: kubernetes/how-to/troubleshooting/debug-imagepullbackoff.md
       - Deployments:
         - Overview: kubernetes/how-to/deployments/index.md
         - Scale Deployment: kubernetes/how-to/deployments/scale-deployment.md
@@ -200,12 +208,52 @@ nav:
         - Horizontal Pod Autoscaler: kubernetes/explanation/scaling/horizontal-pod-autoscaler.md
         - Rolling Updates: kubernetes/explanation/scaling/rolling-updates.md
     - Reference:
-      - Index: kubernetes/reference/index.md
+      - Index: kubernetes/reference/index.md                                      # Clean-Up
+      - kubectl Commands:
+        - kubectl Overview: kubernetes/reference/kubectl/kubectl-overview.md      # Done
+        - kubectl get: kubernetes/reference/kubectl/kubectl-get.md                # Done
+        - kubectl describe: kubernetes/reference/kubectl/kubectl-describe.md      # Done
+        - kubectl logs: kubernetes/reference/kubectl/kubectl-logs.md              # Done
+        - kubectl exec: kubernetes/reference/kubectl/kubectl-exec.md              # Done
+        - kubectl apply: kubernetes/reference/kubectl/kubectl-apply.md            # Done
+      - Kubernetes Objects:
+        - Pods: kubernetes/reference/objects/pods.md
+        - Deployments: kubernetes/reference/objects/deployments.md
+        - Services: kubernetes/reference/objects/services.md
+        - ConfigMaps: kubernetes/reference/objects/configmaps.md
+        - Secrets: kubernetes/reference/objects/secrets.md
+        - StatefulSets: kubernetes/reference/objects/statefulsets.md
+      - Resource Management:
+        - Resource Requests & Limits: kubernetes/reference/resources/resource-limits.md
+        - Horizontal Pod Autoscaler: kubernetes/reference/resources/hpa.md
+
+    - Scaling & Resources:
+      - Resource Limits: kubernetes/reference/resource-limits.md
+      - Horizontal Pod Autoscaler: kubernetes/reference/hpa.md
+
+    - Security:
+      - RBAC: kubernetes/reference/rbac.md
+      - Network Policies: kubernetes/reference/network-policies.md
+
+    - Ecosystem Tools:
+      - Helm Basics: kubernetes/reference/helm-basics.md
       - Ingress: kubernetes/reference/ingress.md
       - Helm Basics: kubernetes/reference/helm-basics.md
       - Resource Limits & HPA: kubernetes/reference/hpa.md
       - RBAC & Network Policies: kubernetes/reference/rbac-network-policies.md
       - StatefulSets: kubernetes/reference/statefulsets.md
+
+    - Troubleshooting:
+      - Overview: kubernetes/troubleshooting/index.md                                         # Done
+      - Pods:
+        - CrashLoopBackOff: kubernetes/troubleshooting/CrashLoopBackOff.md                    # Done
+        - ImagePullBackOff: kubernetes/troubleshooting/ImagePullBackOff.md                    # Done
+        - Pod Stuck Pending: kubernetes/troubleshooting/pod-stuck-pending.md                  # Done
+      - Networking:
+        - Service Not Reachable: kubernetes/troubleshooting/service-not-reachable.md          # Done
+      - Debugging:
+        - Kubectl-Debugging: kubernetes/troubleshooting/kubectl-debugging.md                  # Done
+
 
   - "⚡Automation (🚧 Planned)":
     - Overview: automation/index.md
