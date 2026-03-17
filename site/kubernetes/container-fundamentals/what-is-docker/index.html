@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#what-is-docker">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -350,11 +353,120 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    What is Docker
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     What is Docker
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      Overview
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-docker-exists">
+<span class="md-ellipsis">
+      Why Docker Exists
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-is-a-container">
+<span class="md-ellipsis">
+      What is a Container?
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#docker-architecture">
+<span class="md-ellipsis">
+      Docker Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-components">
+<span class="md-ellipsis">
+      Key Components
+    </span>
+</a>
+<nav aria-label="Key Components" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#docker-cli">
+<span class="md-ellipsis">
+      Docker CLI
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#docker-daemon">
+<span class="md-ellipsis">
+      Docker Daemon
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#docker-images">
+<span class="md-ellipsis">
+      Docker Images
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#docker-containers">
+<span class="md-ellipsis">
+      Docker Containers
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#docker-registry">
+<span class="md-ellipsis">
+      Docker Registry
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-docker-works">
+<span class="md-ellipsis">
+      How Docker Works
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-implications">
+<span class="md-ellipsis">
+      Real-World Implications
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      Key Takeaways
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../container-vs-docker/">
@@ -1031,14 +1143,14 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../explanation/storage/persistent-volumes/">
 <span class="md-ellipsis">
-    Configmaps
+    Persistent Volumes
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../explanation/storage/persistent-volume-claims.md">
+<a class="md-nav__link" href="../../explanation/storage/persistent-volume-claims/">
 <span class="md-ellipsis">
-    Secrets
+    Persistent Volume Claims
   </span>
 </a>
 </li>
@@ -1682,14 +1794,192 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      Overview
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-docker-exists">
+<span class="md-ellipsis">
+      Why Docker Exists
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-is-a-container">
+<span class="md-ellipsis">
+      What is a Container?
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#docker-architecture">
+<span class="md-ellipsis">
+      Docker Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-components">
+<span class="md-ellipsis">
+      Key Components
+    </span>
+</a>
+<nav aria-label="Key Components" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#docker-cli">
+<span class="md-ellipsis">
+      Docker CLI
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#docker-daemon">
+<span class="md-ellipsis">
+      Docker Daemon
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#docker-images">
+<span class="md-ellipsis">
+      Docker Images
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#docker-containers">
+<span class="md-ellipsis">
+      Docker Containers
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#docker-registry">
+<span class="md-ellipsis">
+      Docker Registry
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-docker-works">
+<span class="md-ellipsis">
+      How Docker Works
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-implications">
+<span class="md-ellipsis">
+      Real-World Implications
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      Key Takeaways
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>What is Docker</h1>
+<h1 id="what-is-docker">What is Docker?<a class="headerlink" href="#what-is-docker" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>Docker is a platform for building, packaging, and running applications in containers.</p>
+<p>A container bundles:</p>
+<ul>
+<li>Application code</li>
+<li>Runtime</li>
+<li>Dependencies</li>
+<li>System libraries</li>
+</ul>
+<p>This allows the application to run consistently across environments.</p>
+<hr>
+<h2 id="why-docker-exists">Why Docker Exists<a class="headerlink" href="#why-docker-exists" title="Permanent link">¶</a></h2>
+<p>Before containers, applications often failed due to environment differences:</p>
+<blockquote>
+<p>"It works on my machine"</p>
+</blockquote>
+<p>Docker solves this by:</p>
+<ul>
+<li>Standardising environments</li>
+<li>Isolating applications</li>
+<li>Making deployments reproducible</li>
+</ul>
+<hr>
+<h2 id="what-is-a-container">What is a Container?<a class="headerlink" href="#what-is-a-container" title="Permanent link">¶</a></h2>
+<p>A container is:</p>
+<ul>
+<li>A lightweight, isolated process</li>
+<li>Running on a shared host OS kernel</li>
+<li>Packaged with everything it needs to run</li>
+</ul>
+<p>Unlike virtual machines, containers do not include a full operating system.</p>
+<hr>
+<h2 id="docker-architecture">Docker Architecture<a class="headerlink" href="#docker-architecture" title="Permanent link">¶</a></h2>
+<div class="mermaid">
+graph TD
+    Developer --&gt; DockerCLI
+    DockerCLI --&gt; DockerDaemon
+    DockerDaemon --&gt; Images
+    DockerDaemon --&gt; Containers
+    DockerDaemon --&gt; Registry
 
+    Registry --&gt;|Pull/Push| DockerDaemon
+</div>
+<hr>
+<h2 id="key-components">Key Components<a class="headerlink" href="#key-components" title="Permanent link">¶</a></h2>
+<h3 id="docker-cli">Docker CLI<a class="headerlink" href="#docker-cli" title="Permanent link">¶</a></h3>
+<p>Command-line interface used by developers.</p>
+<h3 id="docker-daemon">Docker Daemon<a class="headerlink" href="#docker-daemon" title="Permanent link">¶</a></h3>
+<p>Background service that builds and runs containers.</p>
+<h3 id="docker-images">Docker Images<a class="headerlink" href="#docker-images" title="Permanent link">¶</a></h3>
+<p>Immutable templates used to create containers.</p>
+<h3 id="docker-containers">Docker Containers<a class="headerlink" href="#docker-containers" title="Permanent link">¶</a></h3>
+<p>Running instances of images.</p>
+<h3 id="docker-registry">Docker Registry<a class="headerlink" href="#docker-registry" title="Permanent link">¶</a></h3>
+<p>Stores and distributes images (e.g., Docker Hub).</p>
+<hr>
+<h2 id="how-docker-works">How Docker Works<a class="headerlink" href="#how-docker-works" title="Permanent link">¶</a></h2>
+<ol>
+<li>Developer writes a Dockerfile</li>
+<li>Docker builds an image</li>
+<li>Image is stored locally or in a registry</li>
+<li>Container is started from the image</li>
+</ol>
+<hr>
+<h2 id="real-world-implications">Real-World Implications<a class="headerlink" href="#real-world-implications" title="Permanent link">¶</a></h2>
+<ul>
+<li>Containers start in seconds (vs minutes for VMs)</li>
+<li>Applications become portable across environments</li>
+<li>Infrastructure becomes easier to automate</li>
+</ul>
+<hr>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">¶</a></h2>
+<ul>
+<li>Docker packages applications with dependencies</li>
+<li>Containers are lightweight and fast</li>
+<li>Images are immutable; containers are runtime instances</li>
+</ul>
+<hr>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
@@ -1726,7 +2016,7 @@
 <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
 <script src="../../../javascripts/mermaid-init.js"></script>
 <script src="../../../javascripts/extra.js"></script>
-
+<script>mermaid.initialize({});</script>
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });
 </script></body></html>

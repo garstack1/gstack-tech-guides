@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#containers-vs-virtual-machines">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -357,11 +360,92 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Container vs VM
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     Container vs VM
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      Overview
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-difference">
+<span class="md-ellipsis">
+      Key Difference
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#architecture-comparison">
+<span class="md-ellipsis">
+      Architecture Comparison
+    </span>
+</a>
+<nav aria-label="Architecture Comparison" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#virtual-machines">
+<span class="md-ellipsis">
+      Virtual Machines
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#containers">
+<span class="md-ellipsis">
+      Containers
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#detailed-comparison">
+<span class="md-ellipsis">
+      Detailed Comparison
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-kubernetes-uses-containers">
+<span class="md-ellipsis">
+      Why Kubernetes Uses Containers
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-implications">
+<span class="md-ellipsis">
+      Real-World Implications
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      Key Takeaways
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../building-a-docker-image/">
@@ -1031,14 +1115,14 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../explanation/storage/persistent-volumes/">
 <span class="md-ellipsis">
-    Configmaps
+    Persistent Volumes
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../explanation/storage/persistent-volume-claims.md">
+<a class="md-nav__link" href="../../explanation/storage/persistent-volume-claims/">
 <span class="md-ellipsis">
-    Secrets
+    Persistent Volume Claims
   </span>
 </a>
 </li>
@@ -1682,14 +1766,181 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      Overview
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-difference">
+<span class="md-ellipsis">
+      Key Difference
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#architecture-comparison">
+<span class="md-ellipsis">
+      Architecture Comparison
+    </span>
+</a>
+<nav aria-label="Architecture Comparison" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#virtual-machines">
+<span class="md-ellipsis">
+      Virtual Machines
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#containers">
+<span class="md-ellipsis">
+      Containers
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#detailed-comparison">
+<span class="md-ellipsis">
+      Detailed Comparison
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-kubernetes-uses-containers">
+<span class="md-ellipsis">
+      Why Kubernetes Uses Containers
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-implications">
+<span class="md-ellipsis">
+      Real-World Implications
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      Key Takeaways
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Container vs VM</h1>
+<h1 id="containers-vs-virtual-machines">Containers vs Virtual Machines<a class="headerlink" href="#containers-vs-virtual-machines" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>Containers and Virtual Machines (VMs) are both used to run applications in isolated environments.</p>
+<p>However, they differ significantly in architecture and performance.</p>
+<hr>
+<h2 id="key-difference">Key Difference<a class="headerlink" href="#key-difference" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>VMs virtualise hardware</strong></li>
+<li><strong>Containers virtualise the OS</strong></li>
+</ul>
+<hr>
+<h2 id="architecture-comparison">Architecture Comparison<a class="headerlink" href="#architecture-comparison" title="Permanent link">¶</a></h2>
+<h3 id="virtual-machines">Virtual Machines<a class="headerlink" href="#virtual-machines" title="Permanent link">¶</a></h3>
+<div class="mermaid">
+graph TD
+    Hardware --&gt; Hypervisor
+    Hypervisor --&gt; VM1
+    Hypervisor --&gt; VM2
 
+    VM1 --&gt; GuestOS1 --&gt; App1
+    VM2 --&gt; GuestOS2 --&gt; App2
+</div>
+<hr>
+<h2 id="containers">Containers<a class="headerlink" href="#containers" title="Permanent link">¶</a></h2>
+<div class="mermaid">
+graph TD
+    Hardware --&gt; HostOS
+    HostOS --&gt; ContainerRuntime
+    ContainerRuntime --&gt; Container1
+    ContainerRuntime --&gt; Container2
+
+    Container1 --&gt; App1
+    Container2 --&gt; App2
+</div>
+<hr>
+<h2 id="detailed-comparison">Detailed Comparison<a class="headerlink" href="#detailed-comparison" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Containers</th>
+<th>Virtual Machines</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS Overhead</td>
+<td>Low (shared kernel)</td>
+<td>High (full OS per VM)</td>
+</tr>
+<tr>
+<td>Startup Time</td>
+<td>Seconds</td>
+<td>Minutes</td>
+</tr>
+<tr>
+<td>Resource Usage</td>
+<td>Efficient</td>
+<td>Heavy</td>
+</tr>
+<tr>
+<td>Isolation</td>
+<td>Process-level</td>
+<td>Full isolation</td>
+</tr>
+<tr>
+<td>Portability</td>
+<td>High</td>
+<td>Moderate</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="why-kubernetes-uses-containers">Why Kubernetes Uses Containers<a class="headerlink" href="#why-kubernetes-uses-containers" title="Permanent link">¶</a></h2>
+<p>Kubernetes relies on containers because they are:</p>
+<ul>
+<li>Lightweight</li>
+<li>Fast to start/stop</li>
+<li>Easy to replicate</li>
+<li>Ideal for scaling workloads</li>
+</ul>
+<hr>
+<h2 id="real-world-implications">Real-World Implications<a class="headerlink" href="#real-world-implications" title="Permanent link">¶</a></h2>
+<ul>
+<li>Containers enable microservices architectures</li>
+<li>VMs are still used for strong isolation or legacy systems</li>
+<li>Most modern platforms use both together</li>
+</ul>
+<hr>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">¶</a></h2>
+<ul>
+<li>Containers are faster and more efficient than VMs</li>
+<li>VMs provide stronger isolation</li>
+<li>Kubernetes is designed for container workloads</li>
+</ul>
+<hr>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
@@ -1726,7 +1977,7 @@
 <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
 <script src="../../../javascripts/mermaid-init.js"></script>
 <script src="../../../javascripts/extra.js"></script>
-
+<script>mermaid.initialize({});</script>
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });
 </script></body></html>
