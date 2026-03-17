@@ -86,29 +86,184 @@ nav:
   - Home: index.md
   - "🐳 Docker  (🚧 Planned)":
     - Overview: docker/index.md
+
+    # -------------------------
+    # TUTORIALS (Learning path)
+    # -------------------------
     - Tutorials:
       - Index: docker/tutorials/index.md
+
       - Beginner:
-         - Index: docker/tutorials/beginner/index.md
-#        - Overview: docker/tutorials/beginner/01-high-level-overview.md
-#        - Recap & Tips: docker/tutorials/beginner/06-recap-and-tips.md
+          - Index: docker/tutorials/beginner/index.md
+          - Install Docker: docker/tutorials/beginner/install-docker.md
+          - Run Your First Container: docker/tutorials/beginner/first-container.md
+          - Understanding Images vs Containers: docker/tutorials/beginner/images-vs-containers.md
+          - Basic Container Lifecycle: docker/tutorials/beginner/container-lifecycle.md
+
       - Intermediate:
-         - Index: docker/tutorials/intermediate/index.md
-#        - Overview: docker/tutorials/intermediate/01-overview.md
-#        - Troubleshooting: docker/tutorials/intermediate/06-troubleshooting.md
+          - Index: docker/tutorials/intermediate/index.md
+          - Build a Docker Image: docker/tutorials/intermediate/build-image.md
+          - Tag and Push to Registry: docker/tutorials/intermediate/push-to-registry.md
+          - Use Environment Variables: docker/tutorials/intermediate/environment-variables.md
+          - Docker Volumes in Practice: docker/tutorials/intermediate/docker-volumes.md
+          - Docker Networking Basics: docker/tutorials/intermediate/docker-networking.md
+
       - Advanced:
-         - Index: docker/tutorials/intermediate/index.md
-#        - Overview: docker/tutorials/advanced/01-overview.md
-#        - StatefulSets: docker/tutorials/advanced/06-statefulsets.md
+          - Index: docker/tutorials/advanced/index.md
+          - Multi-Stage Builds: docker/tutorials/advanced/multi-stage-builds.md
+          - Optimize Image Size: docker/tutorials/advanced/optimize-images.md
+          - Docker Compose Multi-Service App: docker/tutorials/advanced/docker-compose-app.md
+          - Debugging Containers: docker/tutorials/advanced/debugging-containers.md
+
+      - End-to-End:
+          - Deploy a Web App with Docker: docker/tutorials/end-to-end/deploy-web-app.md
+          - Full Stack App with Compose: docker/tutorials/end-to-end/fullstack-compose.md
+
+
+  # -------------------------
+  # HOW-TO GUIDES (Tasks)
+  # -------------------------
     - How-To Guides:
       - Index: docker/how-to/index.md
-#      - Troubleshoot Pods: docker/how-to/troubleshooting.md
-#    - Explanation:
-#      - Index: docker/explanation/index.md
-#      - Namespaces: docker/explanation/namespaces.md
-#    - Reference:
-#      - Index: docker/reference/index.md
-#      - StatefulSets: docker/reference/statefulsets.md
+
+      - Containers:
+          - Run a Container: docker/how-to/containers/run-container.md
+          - Stop and Remove Containers: docker/how-to/containers/stop-remove.md
+          - Exec into a Container: docker/how-to/containers/docker-exec.md
+          - View Container Logs: docker/how-to/containers/view-logs.md
+
+      - Images:
+          - Build an Image: docker/how-to/images/build-image.md
+          - Tag an Image: docker/how-to/images/tag-image.md
+          - Push to Docker Hub: docker/how-to/images/push-image.md
+          - Remove Images: docker/how-to/images/remove-images.md
+
+      - Networking:
+          - List Networks: docker/how-to/networking/list-networks.md
+          - Create a Network: docker/how-to/networking/create-network.md
+          - Connect Containers: docker/how-to/networking/connect-containers.md
+          - Expose Ports: docker/how-to/networking/expose-ports.md
+
+      - Storage:
+          - Create a Volume: docker/how-to/storage/create-volume.md
+          - Mount a Volume: docker/how-to/storage/mount-volume.md
+          - Use Bind Mounts: docker/how-to/storage/bind-mounts.md
+
+      - Docker Compose:
+          - Create docker-compose.yml: docker/how-to/compose/create-compose-file.md
+          - Run Multi-Container App: docker/how-to/compose/run-compose.md
+          - Stop Compose Services: docker/how-to/compose/stop-compose.md
+
+
+    # -------------------------
+    # EXPLANATION (Concepts)
+    # -------------------------
+    - Explanation:
+      - Index: docker/explanation/index.md
+
+      - Fundamentals:
+          - What is Docker: docker/explanation/fundamentals/what-is-docker.md
+          - Containers vs Virtual Machines: docker/explanation/fundamentals/containers-vs-vm.md
+
+      - Architecture:
+          - Docker Architecture Overview: docker/explanation/architecture/docker-architecture.md
+          - Docker Engine: docker/explanation/architecture/docker-engine.md
+          - Client vs Daemon: docker/explanation/architecture/client-daemon.md
+
+      - Images:
+          - What is a Docker Image: docker/explanation/images/images.md
+          - Image Layers: docker/explanation/images/image-layers.md
+          - Image Caching: docker/explanation/images/image-caching.md
+
+      - Containers:
+          - Container Lifecycle: docker/explanation/containers/container-lifecycle.md
+          - Isolation & Namespaces: docker/explanation/containers/isolation.md
+
+      - Networking:
+          - Docker Networking Overview: docker/explanation/networking/networking.md
+          - Bridge Network: docker/explanation/networking/bridge-network.md
+          - Host Network: docker/explanation/networking/host-network.md
+
+      - Storage:
+          - Volumes vs Bind Mounts: docker/explanation/storage/storage.md
+          - Data Persistence: docker/explanation/storage/data-persistence.md
+
+      - Docker Compose:
+          - What is Docker Compose: docker/explanation/docker-compose/docker-compose.md
+          - Multi-Container Architecture: docker/explanation/docker-compose/multi-container.md
+
+
+    # -------------------------
+    # REFERENCE (Lookup)
+    # -------------------------
+    - Reference:
+      - Index: docker/reference/index.md
+
+      - Core Commands:
+          - docker run: docker/reference/core-commands/docker-run.md
+          - docker ps: docker/reference/core-commands/docker-ps.md
+          - docker stop: docker/reference/core-commands/docker-stop.md
+          - docker rm: docker/reference/core-commands/docker-rm.md
+          - docker logs: docker/reference/core-commands/docker-logs.md
+          - docker exec: docker/reference/core-commands/docker-exec.md
+
+      - Image Commands:
+          - docker build: docker/reference/image-commands/docker-build.md
+          - docker pull: docker/reference/image-commands/docker-pull.md
+          - docker push: docker/reference/image-commands/docker-push.md
+          - docker images: docker/reference/image-commands/docker-images.md
+
+      - Networking Commands:
+          - docker network ls: docker/reference/networking-commands/docker-network-ls.md
+          - docker network create: docker/reference/networking-commands/docker-network-create.md
+
+      - Volume Commands:
+          - docker volume ls: docker/reference/volume-commands/docker-volume-ls.md
+          - docker volume create: docker/reference/volume-commands/docker-volume-create.md
+
+      - Docker Compose:
+          - docker compose up: docker/reference/docker-compose/docker-compose-up.md
+          - docker compose down: docker/reference/docker-compose/docker-compose-down.md
+
+
+    # -------------------------
+    # TROUBLESHOOTING
+    # -------------------------
+    - Troubleshooting:
+      - Overview: docker/troubleshooting/index.md
+
+      - Containers:
+          - Container Crashing: docker/troubleshooting/containers/container-crashing.md
+          - Container Exits Immediately: docker/troubleshooting/containers/container-exits.md
+
+      - Images:
+          - Image Pull Errors: docker/troubleshooting/images/image-pull-errors.md
+          - Build Failures: docker/troubleshooting/images/build-failures.md
+
+      - Networking:
+          - Port Already in Use: docker/troubleshooting/networking/port-in-use.md
+          - Cannot Reach Container: docker/troubleshooting/networking/cannot-reach-container.md
+
+      - General Debugging:
+          - Debugging with Logs: docker/troubleshooting/general-debugging/debugging-logs.md
+          - Inspecting Containers: docker/troubleshooting/general-debugging/docker-inspect.md
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   - "☸ Kubernetes (🚧 In Progress)":
     - Overview: kubernetes/index.md
