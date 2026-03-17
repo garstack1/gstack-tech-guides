@@ -2,406 +2,494 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/README.md/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/automation/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/docker/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/docker/tutorials/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/docker/tutorials/advanced/00-index/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/docker/tutorials/beginner/01-overview/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/docker/tutorials/intermediate/00-index/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/common-tasks/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/architecture/control-plane-components/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/architecture/kubernetes-architecture-overview/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/architecture/request-flow-through-kubernetes/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/architecture/worker-node-components/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/container-fundamentals/building-a-docker-image/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/container-fundamentals/container-vs-docker/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/container-fundamentals/what-is-docker/</loc>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/kubernetes-mental-model/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/architecture/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/architecture/control-plane/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/architecture/kubernetes-architecture/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/architecture/node-components/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/configuration/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/configuration/configmaps/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/configuration/configuration-overview/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/configuration/environment-variables/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/configuration/resource-management/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/configuration/secrets/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/networking/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/networking/_cluster-networking/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/networking/dns/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/networking/ingress/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/networking/kube-proxy/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/networking/network-policies/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/networking/pod-networking/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/networking/services/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/scaling/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/scaling/rolling-updates/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/storage/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/storage/persistent-volumes/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/workloads/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/workloads/deployments/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/workloads/pods/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/workloads/replica-sets/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/workloads/statefulsets/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/configuration/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/configuration/add-env-vars/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/configuration/use-configmaps/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/configuration/use-secrets/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/deployments/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/deployments/restart-deployment/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/deployments/rollback-deployment/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/deployments/scale-deployment/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/deployments/update-container-image/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/networking/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/networking/expose-service-ingress/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/networking/expose-service/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/networking/port-forward-pod/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/storage/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/storage/backup-persistent-volume/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/storage/debug-pvc-pending/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/storage/migrate-persistent-volume/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/storage/mount-persistent-volume/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/storage/resize-persistent-volume/</loc>
-         <lastmod>2026-03-12</lastmod>
-    </url>
-    <url>
-         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/troubleshooting/</loc>
-         <lastmod>2026-03-12</lastmod>
-    </url>
-    <url>
-         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/troubleshooting/debug-crashing-pod/</loc>
-         <lastmod>2026-03-12</lastmod>
-    </url>
-    <url>
-         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/troubleshooting/debug-imagepullbackoff/</loc>
-         <lastmod>2026-03-12</lastmod>
-    </url>
-    <url>
-         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/troubleshooting/kubernetes-error-decoder/</loc>
-         <lastmod>2026-03-12</lastmod>
-    </url>
-    <url>
-         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/troubleshooting/view-container-logs/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/helm-basics/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/hpa/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/ingress/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/rbac-network-policies/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/statefulsets/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/kubectl/kubectl-apply/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/kubectl/kubectl-describe/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/kubectl/kubectl-exec/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/kubectl/kubectl-get/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/kubectl/kubectl-logs/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/kubectl/kubectl-overview/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/objects/configmaps/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/objects/deployments/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/objects/pods/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/objects/secrets/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/objects/services/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/objects/statefulsets/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/resources/hpa/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/resources/resource-limits/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/troubleshooting/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/troubleshooting/CrashLoopBackOff/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/troubleshooting/ImagePullBackOff/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/troubleshooting/kubectl-debugging/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/troubleshooting/pod-stuck-pending/</loc>
+         <lastmod>2026-03-17</lastmod>
+    </url>
+    <url>
+         <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/troubleshooting/service-not-reachable/</loc>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/_old_index/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/advanced/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/advanced/_old_index/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/advanced/advanced-troubleshooting-%26-observability/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/advanced/final-wrap-up/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/advanced/helm-basics/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/advanced/ingress/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/advanced/rbac-and-network-policies/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/advanced/resource-limits-and-requests/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/advanced/statefulsets-headless-services/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/beginner/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/beginner/_old_index/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/beginner/deployments/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/beginner/high-level-overview/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/beginner/install-minikube/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/beginner/recap-and-tips/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/beginner/services/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/beginner/your-first-pod-and-deployment/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/intermediate/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/intermediate/_NOT%20USED_03-inject-files-into-the-container/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/intermediate/_Untitled%201/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/intermediate/_Untitled/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/intermediate/_old_index/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/intermediate/_overview/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/intermediate/configmaps/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/intermediate/deploy-multi-container-app/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/intermediate/expose-app-with-ingress/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/intermediate/persistent-volumes-and-storage/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/intermediate/rolling-update-and-rollback/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
     <url>
          <loc>https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/tutorials/intermediate/secrets/</loc>
-         <lastmod>2026-03-12</lastmod>
+         <lastmod>2026-03-17</lastmod>
     </url>
 </urlset>

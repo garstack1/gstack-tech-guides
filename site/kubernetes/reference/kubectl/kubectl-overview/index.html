@@ -3,12 +3,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <meta content="Hands-on guides for Kubernetes, Docker, Automation and more" name="description">
 <meta content="Garrett Stack" name="author">
-<link href="https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/troubleshooting/debug-crashing-pod/" rel="canonical">
-<link href="../" rel="prev">
-<link href="../view-container-logs/" rel="next">
+<link href="https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/reference/kubectl/kubectl-overview/" rel="canonical">
+<link href="../../" rel="prev">
+<link href="../kubectl-get/" rel="next">
 <link href="../../../../assets/images/favicon.png" rel="icon">
 <meta content="mkdocs-1.6.1, mkdocs-material-9.5.28" name="generator">
-<title>Debug Crashing Pod - Technical Tutorials Hub</title>
+<title>kubectl Overview - Technical Tutorials Hub</title>
 <link href="../../../../assets/stylesheets/main.6543a935.min.css" rel="stylesheet">
 <link href="../../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
@@ -32,7 +32,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#debug-a-crashing-pod">
+<a class="md-skip" href="#kubectl-overview">
           Skip to content
         </a>
 </div>
@@ -56,7 +56,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Debug Crashing Pod
+              kubectl Overview
             
           </span>
 </div>
@@ -294,36 +294,119 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox">
+<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Architecture
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/kubernetes-architecture-overview/">
+<span class="md-ellipsis">
+    Kubernetes Architecture Overview
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/control-plane-components/">
+<span class="md-ellipsis">
+    Control Plane Components
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/worker-node-components/">
+<span class="md-ellipsis">
+    Worker Node Components
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/request-flow-through-kubernetes/">
+<span class="md-ellipsis">
+    Request Flow Through Kubernetes
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox">
+<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Container Fundamentals
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+            Container Fundamentals
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../container-fundamentals/what-is-docker/">
+<span class="md-ellipsis">
+    What is Docker
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../container-fundamentals/container-vs-docker/">
+<span class="md-ellipsis">
+    Container vs VM
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../container-fundamentals/building-a-docker-image/">
+<span class="md-ellipsis">
+    Building a Docker Image
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_4" type="checkbox">
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../tutorials/">
 <span class="md-ellipsis">
     Tutorials
   </span>
 </a>
-<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+<label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_2">
+<nav aria-expanded="false" aria-labelledby="__nav_3_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_4">
 <span class="md-nav__icon md-icon"></span>
             Tutorials
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_2_2" type="checkbox">
+<input class="md-nav__toggle md-toggle" id="__nav_3_4_2" type="checkbox">
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../tutorials/beginner/">
 <span class="md-ellipsis">
     Beginner
   </span>
 </a>
-<label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+<label class="md-nav__link" for="__nav_3_4_2" id="__nav_3_4_2_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_2_2_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_2_2">
+<nav aria-expanded="false" aria-labelledby="__nav_3_4_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_4_2">
 <span class="md-nav__icon md-icon"></span>
             Beginner
           </label>
@@ -374,19 +457,19 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_2_3" type="checkbox">
+<input class="md-nav__toggle md-toggle" id="__nav_3_4_3" type="checkbox">
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../tutorials/intermediate/">
 <span class="md-ellipsis">
     Intermediate
   </span>
 </a>
-<label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+<label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_2_3_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_2_3">
+<nav aria-expanded="false" aria-labelledby="__nav_3_4_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_4_3">
 <span class="md-nav__icon md-icon"></span>
             Intermediate
           </label>
@@ -437,19 +520,19 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_2_4" type="checkbox">
+<input class="md-nav__toggle md-toggle" id="__nav_3_4_4" type="checkbox">
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../tutorials/advanced/">
 <span class="md-ellipsis">
     Advanced
   </span>
 </a>
-<label class="md-nav__link" for="__nav_3_2_4" id="__nav_3_2_4_label" tabindex="0">
+<label class="md-nav__link" for="__nav_3_4_4" id="__nav_3_4_4_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_2_4_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_2_4">
+<nav aria-expanded="false" aria-labelledby="__nav_3_4_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_4_4">
 <span class="md-nav__icon md-icon"></span>
             Advanced
           </label>
@@ -499,195 +582,106 @@
 </ul>
 </nav>
 </li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox">
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_4_5" type="checkbox">
+<label class="md-nav__link" for="__nav_3_4_5" id="__nav_3_4_5_label" tabindex="0">
 <span class="md-ellipsis">
-    How-To Guides
+    End-to-End Tutorials
   </span>
-</a>
-<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
-</div>
-<nav aria-expanded="true" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_3">
+<nav aria-expanded="false" aria-labelledby="__nav_3_4_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_4_5">
 <span class="md-nav__icon md-icon"></span>
-            How-To Guides
+            End-to-End Tutorials
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_3_2" type="checkbox">
-<div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tutorials/end-to-end/deploy-your-first-application.md">
 <span class="md-ellipsis">
-    Troubleshooting
+    Deploy Your First Application
   </span>
 </a>
-<label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="true" aria-labelledby="__nav_3_3_2_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_3_2">
-<span class="md-nav__icon md-icon"></span>
-            Troubleshooting
-          </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
-<label class="md-nav__link md-nav__link--active" for="__toc">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tutorials/end-to-end/scale-an-application.md">
 <span class="md-ellipsis">
-    Debug Crashing Pod
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
-<span class="md-ellipsis">
-    Debug Crashing Pod
+    Scale an Application
   </span>
 </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#problem">
-<span class="md-ellipsis">
-      Problem
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#quick-diagnosis">
+<a class="md-nav__link" href="../../../tutorials/end-to-end/debug-a-failing-application.md">
 <span class="md-ellipsis">
-      Quick Diagnosis
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#quick-debug-commands">
-<span class="md-ellipsis">
-      Quick Debug Commands
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#common-symptoms">
-<span class="md-ellipsis">
-      Common Symptoms
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-1-check-pod-status">
-<span class="md-ellipsis">
-      Step 1 — Check Pod Status
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-2-describe-the-pod">
-<span class="md-ellipsis">
-      Step 2 — Describe the Pod
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-3-check-container-logs">
-<span class="md-ellipsis">
-      Step 3 — Check Container Logs
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-4-inspect-pod-configuration">
-<span class="md-ellipsis">
-      Step 4 — Inspect Pod Configuration
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-5-check-namespace-events">
-<span class="md-ellipsis">
-      Step 5 — Check Namespace Events
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#common-causes-of-crashing-pods">
-<span class="md-ellipsis">
-      Common Causes of Crashing Pods
-    </span>
+    Debug a Failing Application
+  </span>
 </a>
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../view-container-logs/">
-<span class="md-ellipsis">
-    View Container Logs
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../debug-imagepullbackoff/">
-<span class="md-ellipsis">
-    Debug ImagePullBackoff
-  </span>
-</a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_3_3" type="checkbox">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../deployments/">
+<a class="md-nav__link" href="../../../how-to/">
+<span class="md-ellipsis">
+    How-To Guides
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_5">
+<span class="md-nav__icon md-icon"></span>
+            How-To Guides
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5_2" type="checkbox">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../how-to/deployments/">
 <span class="md-ellipsis">
     Deployments
   </span>
 </a>
-<label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+<label class="md-nav__link" for="__nav_3_5_2" id="__nav_3_5_2_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_3_3_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_3_3">
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_5_2">
 <span class="md-nav__icon md-icon"></span>
             Deployments
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../deployments/scale-deployment/">
+<a class="md-nav__link" href="../../../how-to/deployments/scale-deployment/">
 <span class="md-ellipsis">
     Scale Deployment
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../deployments/rollback-deployment/">
+<a class="md-nav__link" href="../../../how-to/deployments/rollback-deployment/">
 <span class="md-ellipsis">
     Rollback Deployment
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../deployments/restart-deployment/">
+<a class="md-nav__link" href="../../../how-to/deployments/restart-deployment/">
 <span class="md-ellipsis">
     Restart Deployment
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../deployments/update-container-image/">
+<a class="md-nav__link" href="../../../how-to/deployments/update-container-image/">
 <span class="md-ellipsis">
     Update Container Image
   </span>
@@ -697,39 +691,39 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_3_4" type="checkbox">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5_3" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../networking/">
+<a class="md-nav__link" href="../../../how-to/networking/">
 <span class="md-ellipsis">
     Networking
   </span>
 </a>
-<label class="md-nav__link" for="__nav_3_3_4" id="__nav_3_3_4_label" tabindex="0">
+<label class="md-nav__link" for="__nav_3_5_3" id="__nav_3_5_3_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_3_4_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_3_4">
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_5_3">
 <span class="md-nav__icon md-icon"></span>
             Networking
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../networking/expose-service/">
+<a class="md-nav__link" href="../../../how-to/networking/expose-service/">
 <span class="md-ellipsis">
     Expose Service
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../networking/expose-service-ingress/">
+<a class="md-nav__link" href="../../../how-to/networking/expose-service-ingress/">
 <span class="md-ellipsis">
     Expose Service Ingress
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../networking/port-forward-pod/">
+<a class="md-nav__link" href="../../../how-to/networking/port-forward-pod/">
 <span class="md-ellipsis">
     Port Forward Pod
   </span>
@@ -739,39 +733,39 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_3_5" type="checkbox">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5_4" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../configuration/">
+<a class="md-nav__link" href="../../../how-to/configuration/">
 <span class="md-ellipsis">
     Configuration
   </span>
 </a>
-<label class="md-nav__link" for="__nav_3_3_5" id="__nav_3_3_5_label" tabindex="0">
+<label class="md-nav__link" for="__nav_3_5_4" id="__nav_3_5_4_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_3_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_3_5">
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_5_4">
 <span class="md-nav__icon md-icon"></span>
             Configuration
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../configuration/use-configmaps/">
+<a class="md-nav__link" href="../../../how-to/configuration/use-configmaps/">
 <span class="md-ellipsis">
     Use Configmaps
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../configuration/use-secrets/">
+<a class="md-nav__link" href="../../../how-to/configuration/use-secrets/">
 <span class="md-ellipsis">
     Use Secrets
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../configuration/add-env-vars/">
+<a class="md-nav__link" href="../../../how-to/configuration/add-env-vars/">
 <span class="md-ellipsis">
     Add Env Vars
   </span>
@@ -781,25 +775,25 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_3_6" type="checkbox">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5_5" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../storage/">
+<a class="md-nav__link" href="../../../how-to/storage/">
 <span class="md-ellipsis">
     Storage
   </span>
 </a>
-<label class="md-nav__link" for="__nav_3_3_6" id="__nav_3_3_6_label" tabindex="0">
+<label class="md-nav__link" for="__nav_3_5_5" id="__nav_3_5_5_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_3_6_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_3_6">
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_5_5">
 <span class="md-nav__icon md-icon"></span>
             Storage
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../storage/mount-persistent-volume/">
+<a class="md-nav__link" href="../../../how-to/storage/mount-persistent-volume/">
 <span class="md-ellipsis">
     Mount Persistent Volume
   </span>
@@ -812,37 +806,37 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_4" type="checkbox">
+<input class="md-nav__toggle md-toggle" id="__nav_3_6" type="checkbox">
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../explanation/">
 <span class="md-ellipsis">
     Explanation
   </span>
 </a>
-<label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+<label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_4_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_4">
+<nav aria-expanded="false" aria-labelledby="__nav_3_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_6">
 <span class="md-nav__icon md-icon"></span>
             Explanation
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_4_2" type="checkbox">
+<input class="md-nav__toggle md-toggle" id="__nav_3_6_2" type="checkbox">
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../explanation/architecture/">
 <span class="md-ellipsis">
     Architecture
   </span>
 </a>
-<label class="md-nav__link" for="__nav_3_4_2" id="__nav_3_4_2_label" tabindex="0">
+<label class="md-nav__link" for="__nav_3_6_2" id="__nav_3_6_2_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_4_2_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_4_2">
+<nav aria-expanded="false" aria-labelledby="__nav_3_6_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_6_2">
 <span class="md-nav__icon md-icon"></span>
             Architecture
           </label>
@@ -872,19 +866,19 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_4_3" type="checkbox">
+<input class="md-nav__toggle md-toggle" id="__nav_3_6_3" type="checkbox">
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../explanation/workloads/">
 <span class="md-ellipsis">
     Workloads
   </span>
 </a>
-<label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
+<label class="md-nav__link" for="__nav_3_6_3" id="__nav_3_6_3_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_4_3_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_4_3">
+<nav aria-expanded="false" aria-labelledby="__nav_3_6_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_6_3">
 <span class="md-nav__icon md-icon"></span>
             Workloads
           </label>
@@ -921,19 +915,19 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_4_4" type="checkbox">
+<input class="md-nav__toggle md-toggle" id="__nav_3_6_4" type="checkbox">
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../explanation/networking/">
 <span class="md-ellipsis">
     Networking
   </span>
 </a>
-<label class="md-nav__link" for="__nav_3_4_4" id="__nav_3_4_4_label" tabindex="0">
+<label class="md-nav__link" for="__nav_3_6_4" id="__nav_3_6_4_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_4_4_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_4_4">
+<nav aria-expanded="false" aria-labelledby="__nav_3_6_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_6_4">
 <span class="md-nav__icon md-icon"></span>
             Networking
           </label>
@@ -984,19 +978,19 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_4_5" type="checkbox">
+<input class="md-nav__toggle md-toggle" id="__nav_3_6_5" type="checkbox">
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../explanation/configuration/">
 <span class="md-ellipsis">
     Configuration
   </span>
 </a>
-<label class="md-nav__link" for="__nav_3_4_5" id="__nav_3_4_5_label" tabindex="0">
+<label class="md-nav__link" for="__nav_3_6_5" id="__nav_3_6_5_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_4_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_4_5">
+<nav aria-expanded="false" aria-labelledby="__nav_3_6_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_6_5">
 <span class="md-nav__icon md-icon"></span>
             Configuration
           </label>
@@ -1019,19 +1013,19 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_4_6" type="checkbox">
+<input class="md-nav__toggle md-toggle" id="__nav_3_6_6" type="checkbox">
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../explanation/storage/">
 <span class="md-ellipsis">
     Storage
   </span>
 </a>
-<label class="md-nav__link" for="__nav_3_4_6" id="__nav_3_4_6_label" tabindex="0">
+<label class="md-nav__link" for="__nav_3_6_6" id="__nav_3_6_6_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_4_6_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_4_6">
+<nav aria-expanded="false" aria-labelledby="__nav_3_6_6_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_6_6">
 <span class="md-nav__icon md-icon"></span>
             Storage
           </label>
@@ -1054,19 +1048,19 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_4_7" type="checkbox">
+<input class="md-nav__toggle md-toggle" id="__nav_3_6_7" type="checkbox">
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../explanation/scaling/">
 <span class="md-ellipsis">
     Scaling
   </span>
 </a>
-<label class="md-nav__link" for="__nav_3_4_7" id="__nav_3_4_7_label" tabindex="0">
+<label class="md-nav__link" for="__nav_3_6_7" id="__nav_3_6_7_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_4_7_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_3_4_7">
+<nav aria-expanded="false" aria-labelledby="__nav_3_6_7_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_6_7">
 <span class="md-nav__icon md-icon"></span>
             Scaling
           </label>
@@ -1091,58 +1085,457 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_7" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../reference/">
+<a class="md-nav__link" href="../../">
 <span class="md-ellipsis">
     Reference
   </span>
 </a>
-<label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+<label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_3_5">
+<nav aria-expanded="true" aria-labelledby="__nav_3_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_7">
 <span class="md-nav__icon md-icon"></span>
             Reference
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/ingress/">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_7_2" type="checkbox">
+<label class="md-nav__link" for="__nav_3_7_2" id="__nav_3_7_2_label" tabindex="0">
 <span class="md-ellipsis">
-    Ingress
+    kubectl Commands
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_7_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_7_2">
+<span class="md-nav__icon md-icon"></span>
+            kubectl Commands
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    kubectl Overview
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    kubectl Overview
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#description">
+<span class="md-ellipsis">
+      Description
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-syntax">
+<span class="md-ellipsis">
+      Basic Syntax
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-commands">
+<span class="md-ellipsis">
+      Common Commands
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration">
+<span class="md-ellipsis">
+      Configuration
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#check-kubectl-version">
+<span class="md-ellipsis">
+      Check kubectl Version
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-commands">
+<span class="md-ellipsis">
+      Related Commands
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../kubectl-get/">
+<span class="md-ellipsis">
+    kubectl get
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/helm-basics/">
+<a class="md-nav__link" href="../kubectl-describe/">
+<span class="md-ellipsis">
+    kubectl describe
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../kubectl-logs/">
+<span class="md-ellipsis">
+    kubectl logs
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../kubectl-exec/">
+<span class="md-ellipsis">
+    kubectl exec
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../kubectl-apply/">
+<span class="md-ellipsis">
+    kubectl apply
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_7_3" type="checkbox">
+<label class="md-nav__link" for="__nav_3_7_3" id="__nav_3_7_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Kubernetes Objects
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_7_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_7_3">
+<span class="md-nav__icon md-icon"></span>
+            Kubernetes Objects
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../objects/pods/">
+<span class="md-ellipsis">
+    Pods
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../objects/deployments/">
+<span class="md-ellipsis">
+    Deployments
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../objects/services/">
+<span class="md-ellipsis">
+    Services
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../objects/configmaps/">
+<span class="md-ellipsis">
+    ConfigMaps
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../objects/secrets/">
+<span class="md-ellipsis">
+    Secrets
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../objects/statefulsets/">
+<span class="md-ellipsis">
+    StatefulSets
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_7_4" type="checkbox">
+<label class="md-nav__link" for="__nav_3_7_4" id="__nav_3_7_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Resource Management
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_7_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_7_4">
+<span class="md-nav__icon md-icon"></span>
+            Resource Management
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../resources/resource-limits/">
+<span class="md-ellipsis">
+    Resource Requests &amp; Limits
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../resources/hpa/">
+<span class="md-ellipsis">
+    Horizontal Pod Autoscaler
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_8" type="checkbox">
+<label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+<span class="md-ellipsis">
+    Scaling &amp; Resources
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_8">
+<span class="md-nav__icon md-icon"></span>
+            Scaling &amp; Resources
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../resource-limits.md">
+<span class="md-ellipsis">
+    Resource Limits
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hpa/">
+<span class="md-ellipsis">
+    Horizontal Pod Autoscaler
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_9" type="checkbox">
+<label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+<span class="md-ellipsis">
+    Security
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_9">
+<span class="md-nav__icon md-icon"></span>
+            Security
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rbac.md">
+<span class="md-ellipsis">
+    RBAC
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../network-policies.md">
+<span class="md-ellipsis">
+    Network Policies
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_10" type="checkbox">
+<label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+<span class="md-ellipsis">
+    Ecosystem Tools
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_10">
+<span class="md-nav__icon md-icon"></span>
+            Ecosystem Tools
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../helm-basics/">
 <span class="md-ellipsis">
     Helm Basics
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/hpa/">
+<a class="md-nav__link" href="../../ingress/">
 <span class="md-ellipsis">
-    Resource Limits &amp; HPA
+    Ingress
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/rbac-network-policies/">
+<a class="md-nav__link" href="../../helm-basics/">
+<span class="md-ellipsis">
+    Helm Basics
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hpa/">
+<span class="md-ellipsis">
+    Horizontal Pod Autoscaler
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rbac-network-policies/">
 <span class="md-ellipsis">
     RBAC &amp; Network Policies
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/statefulsets/">
+<a class="md-nav__link" href="../../statefulsets/">
 <span class="md-ellipsis">
     StatefulSets
   </span>
 </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_11" type="checkbox">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../troubleshooting/">
+<span class="md-ellipsis">
+    Troubleshooting
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_11">
+<span class="md-nav__icon md-icon"></span>
+            Troubleshooting
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_11_2" type="checkbox">
+<label class="md-nav__link" for="__nav_3_11_2" id="__nav_3_11_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Pods
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_11_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_11_2">
+<span class="md-nav__icon md-icon"></span>
+            Pods
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../troubleshooting/CrashLoopBackOff/">
+<span class="md-ellipsis">
+    CrashLoopBackOff
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../troubleshooting/ImagePullBackOff/">
+<span class="md-ellipsis">
+    ImagePullBackOff
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../troubleshooting/pod-stuck-pending/">
+<span class="md-ellipsis">
+    Pod Stuck Pending
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_11_3" type="checkbox">
+<label class="md-nav__link" for="__nav_3_11_3" id="__nav_3_11_3_label" tabindex="0">
+<span class="md-ellipsis">
+    Networking
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_11_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_11_3">
+<span class="md-nav__icon md-icon"></span>
+            Networking
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../troubleshooting/service-not-reachable/">
+<span class="md-ellipsis">
+    Service Not Reachable
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_11_4" type="checkbox">
+<label class="md-nav__link" for="__nav_3_11_4" id="__nav_3_11_4_label" tabindex="0">
+<span class="md-ellipsis">
+    Debugging
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_11_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_11_4">
+<span class="md-nav__icon md-icon"></span>
+            Debugging
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../troubleshooting/kubectl-debugging/">
+<span class="md-ellipsis">
+    Kubectl-Debugging
+  </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -1354,72 +1747,44 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#problem">
+<a class="md-nav__link" href="#description">
 <span class="md-ellipsis">
-      Problem
+      Description
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#quick-diagnosis">
+<a class="md-nav__link" href="#basic-syntax">
 <span class="md-ellipsis">
-      Quick Diagnosis
+      Basic Syntax
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#quick-debug-commands">
+<a class="md-nav__link" href="#common-commands">
 <span class="md-ellipsis">
-      Quick Debug Commands
+      Common Commands
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#common-symptoms">
+<a class="md-nav__link" href="#configuration">
 <span class="md-ellipsis">
-      Common Symptoms
+      Configuration
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#step-1-check-pod-status">
+<a class="md-nav__link" href="#check-kubectl-version">
 <span class="md-ellipsis">
-      Step 1 — Check Pod Status
+      Check kubectl Version
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#step-2-describe-the-pod">
+<a class="md-nav__link" href="#related-commands">
 <span class="md-ellipsis">
-      Step 2 — Describe the Pod
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-3-check-container-logs">
-<span class="md-ellipsis">
-      Step 3 — Check Container Logs
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-4-inspect-pod-configuration">
-<span class="md-ellipsis">
-      Step 4 — Inspect Pod Configuration
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-5-check-namespace-events">
-<span class="md-ellipsis">
-      Step 5 — Check Namespace Events
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#common-causes-of-crashing-pods">
-<span class="md-ellipsis">
-      Common Causes of Crashing Pods
+      Related Commands
     </span>
 </a>
 </li>
@@ -1430,210 +1795,70 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="debug-a-crashing-pod">Debug a Crashing Pod<a class="headerlink" href="#debug-a-crashing-pod" title="Permanent link">¶</a></h1>
-<h2 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">¶</a></h2>
-<p>A Kubernetes pod repeatedly restarts or enters a <code>CrashLoopBackOff</code> state.<br>
-This usually means the container starts but the application inside the container crashes.</p>
-<p>This guide walks through a <strong>systematic process</strong> to identify the cause.</p>
-<hr>
-<h2 id="quick-diagnosis">Quick Diagnosis<a class="headerlink" href="#quick-diagnosis" title="Permanent link">¶</a></h2>
-<p>Use this table to quickly identify the cause of a failing pod.</p>
-<table>
-<thead>
-<tr>
-<th>If you see</th>
-<th>Go to</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>CrashLoopBackOff</code></td>
-<td>Check container logs</td>
-</tr>
-<tr>
-<td><code>ImagePullBackOff</code></td>
-<td><a href="../debug-imagepullbackoff/">Debug Image Pull Errors</a></td>
-</tr>
-<tr>
-<td><code>Pending</code></td>
-<td>Investigate scheduling issues</td>
-</tr>
-<tr>
-<td><code>OOMKilled</code></td>
-<td>Increase memory limits</td>
-</tr>
-<tr>
-<td><code>Error: env variable missing</code></td>
-<td>Verify environment variables</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="quick-debug-commands">Quick Debug Commands<a class="headerlink" href="#quick-debug-commands" title="Permanent link">¶</a></h2>
-<p>Run these commands to quickly identify the cause of a crashing pod.</p>
-<p></p><div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>pod<span class="w"> </span>&lt;pod-name&gt;
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>kubectl<span class="w"> </span>logs<span class="w"> </span>&lt;pod-name&gt;
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>kubectl<span class="w"> </span>logs<span class="w"> </span>&lt;pod-name&gt;<span class="w"> </span>--previous
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>kubectl<span class="w"> </span>get<span class="w"> </span>events<span class="w"> </span>--sort-by<span class="o">=</span>.metadata.creationTimestamp
+<h1 id="kubectl-overview">kubectl Overview<a class="headerlink" href="#kubectl-overview" title="Permanent link">¶</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">¶</a></h2>
+<p><code>kubectl</code> is the command-line interface used to interact with a Kubernetes cluster.<br>
+It allows users to deploy applications, inspect resources, view logs, and manage cluster objects.</p>
+<p><code>kubectl</code> communicates with the Kubernetes API server and translates user commands into API requests.</p>
+<h2 id="basic-syntax">Basic Syntax<a class="headerlink" href="#basic-syntax" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>kubectl<span class="w"> </span><span class="o">[</span>command<span class="o">]</span><span class="w"> </span><span class="o">[</span>resource<span class="o">]</span><span class="w"> </span><span class="o">[</span>name<span class="o">]</span><span class="w"> </span><span class="o">[</span>flags<span class="o">]</span>
 </code></pre></div>
-If the pod keeps restarting, these commands will reveal the cause in most cases.<p></p>
-<hr>
-<h2 id="common-symptoms">Common Symptoms<a class="headerlink" href="#common-symptoms" title="Permanent link">¶</a></h2>
-<table>
-<thead>
-<tr>
-<th>Symptom</th>
-<th>Likely Cause</th>
-<th>Fix</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CrashLoopBackOff</td>
-<td>Application crash during startup</td>
-<td>Check container logs</td>
-</tr>
-<tr>
-<td>ImagePullBackOff</td>
-<td>Invalid or missing container image</td>
-<td>Verify image name and registry access</td>
-</tr>
-<tr>
-<td>OOMKilled</td>
-<td>Container exceeded memory limit</td>
-<td>Increase memory limits</td>
-</tr>
-<tr>
-<td>Error: env variable missing</td>
-<td>Missing environment variable</td>
-<td>Add variable in deployment</td>
-</tr>
-<tr>
-<td>Connection refused</td>
-<td>Dependency service unavailable</td>
-<td>Verify service and networking</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="step-1-check-pod-status">Step 1 — Check Pod Status<a class="headerlink" href="#step-1-check-pod-status" title="Permanent link">¶</a></h2>
-<p>Start by listing pods in the current namespace.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods
-</code></pre></div>
-<p>Example output:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>NAME<span class="w">                     </span>READY<span class="w">   </span>STATUS<span class="w">             </span>RESTARTS<span class="w">   </span>AGE
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>web-app-6f9c8c7b7d-xk92<span class="w">  </span><span class="m">0</span>/1<span class="w">     </span>CrashLoopBackOff<span class="w">   </span><span class="m">5</span><span class="w">          </span>2m
-</code></pre></div><p></p>
-<p>Important fields:</p>
-<ul>
-<li>STATUS → CrashLoopBackOff means the container repeatedly fails</li>
-<li>RESTARTS → high numbers indicate repeated crashes</li>
-</ul>
-<hr>
-<h2 id="step-2-describe-the-pod">Step 2 — Describe the Pod<a class="headerlink" href="#step-2-describe-the-pod" title="Permanent link">¶</a></h2>
-<p>Next, inspect detailed information about the pod.
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>pod<span class="w"> </span>web-app-6f9c8c7b7d-xk92
-</code></pre></div>
-Focus on these sections:<p></p>
-<p>Container State
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>State:<span class="w">          </span>Waiting
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>Reason:<span class="w">         </span>CrashLoopBackOff
-</code></pre></div><p></p>
-<p>Last Container State
-This shows the previous crash reason.
-Example:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>Last<span class="w"> </span>State:<span class="w">     </span>Terminated
-<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>Reason:<span class="w">         </span>Error
-<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>Exit<span class="w"> </span>Code:<span class="w">      </span><span class="m">1</span>
-</code></pre></div><p></p>
-<p>Events
-Events often reveal deployment problems.
-Example:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>Warning<span class="w">  </span>BackOff<span class="w">  </span>kubelet<span class="w">  </span>Back-off<span class="w"> </span>restarting<span class="w"> </span>failed<span class="w"> </span>container
-</code></pre></div><p></p>
-<hr>
-<h2 id="step-3-check-container-logs">Step 3 — Check Container Logs<a class="headerlink" href="#step-3-check-container-logs" title="Permanent link">¶</a></h2>
-<p>Logs usually reveal the root cause.
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>kubectl<span class="w"> </span>logs<span class="w"> </span>web-app-6f9c8c7b7d-xk92
-</code></pre></div><p></p>
 <p>Example:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>Error:<span class="w"> </span>missing<span class="w"> </span>DATABASE_URL<span class="w"> </span>environment<span class="w"> </span>variable
-</code></pre></div>
-If the container crashed quickly, view logs from the previous run:<p></p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>kubectl<span class="w"> </span>logs<span class="w"> </span>web-app-6f9c8c7b7d-xk92<span class="w"> </span>--previous
-</code></pre></div>
+<code>kubectl get pods</code></p>
 <hr>
-<h2 id="step-4-inspect-pod-configuration">Step 4 — Inspect Pod Configuration<a class="headerlink" href="#step-4-inspect-pod-configuration" title="Permanent link">¶</a></h2>
-<p>Verify the container configuration.
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pod<span class="w"> </span>web-app-6f9c8c7b7d-xk92<span class="w"> </span>-o<span class="w"> </span>yaml
-</code></pre></div>
-Check:<p></p>
+<h2 id="common-commands">Common Commands<a class="headerlink" href="#common-commands" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kubectl get</td>
+<td>List resources</td>
+</tr>
+<tr>
+<td>kubectl describe</td>
+<td>Show detailed resource information</td>
+</tr>
+<tr>
+<td>kubectl logs</td>
+<td>View container logs</td>
+</tr>
+<tr>
+<td>kubectl exec</td>
+<td>Execute commands inside a container</td>
+</tr>
+<tr>
+<td>kubectl apply</td>
+<td>Create or update resources from configuration files</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">¶</a></h2>
+<p>kubectl uses a configuration file called kubeconfig to determine:</p>
 <ul>
-<li>container image</li>
-<li>environment variables</li>
-<li>mounted volumes</li>
-<li>resource limits</li>
+<li>cluster endpoint</li>
+<li>authentication credentials</li>
+<li>default namespace</li>
 </ul>
+<p>Default location:
+<code>~/.kube/config</code></p>
 <hr>
-<h2 id="step-5-check-namespace-events">Step 5 — Check Namespace Events<a class="headerlink" href="#step-5-check-namespace-events" title="Permanent link">¶</a></h2>
-<p>Cluster events sometimes reveal scheduling or configuration issues.
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>events<span class="w"> </span>--sort-by<span class="o">=</span>.metadata.creationTimestamp
-</code></pre></div>
-Look for warnings such as:<p></p>
+<h2 id="check-kubectl-version">Check kubectl Version<a class="headerlink" href="#check-kubectl-version" title="Permanent link">¶</a></h2>
+<p><code>kubectl version</code></p>
+<hr>
+<h2 id="related-commands">Related Commands<a class="headerlink" href="#related-commands" title="Permanent link">¶</a></h2>
 <ul>
-<li>Failed scheduling</li>
-<li>Image pull errors</li>
-<li>Volume mount failures</li>
+<li>kubectl get</li>
+<li>kubectl describe</li>
+<li>kubectl logs</li>
+<li>kubectl exec</li>
+<li>kubectl apply</li>
 </ul>
-<hr>
-<h2 id="common-causes-of-crashing-pods">Common Causes of Crashing Pods<a class="headerlink" href="#common-causes-of-crashing-pods" title="Permanent link">¶</a></h2>
-<p><strong>Missing Environment Variables</strong></p>
-<p>Example log:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="go">Error: DATABASE_URL not defined</span>
-</code></pre></div>
-Fix by adding the variable to the deployment.<p></p>
-<hr>
-<p><strong>Incorrect Container Image</strong></p>
-<p>The application may crash due to a bad image version.</p>
-<p>Verify:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>pod<span class="w"> </span>&lt;pod-name&gt;
-</code></pre></div><p></p>
-<hr>
-<p><strong>Application Startup Errors</strong></p>
-<p>Examples:</p>
-<ul>
-<li>invalid configuration</li>
-<li>missing dependencies</li>
-<li>database connection failures
-These will appear in container logs.</li>
-</ul>
-<hr>
-<p><strong>Resource Limits Too Low</strong></p>
-<p>If a container exceeds its memory limit it may be terminated.</p>
-<p>Check:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>pod<span class="w"> </span>&lt;pod-name&gt;
-</code></pre></div>
-Look for:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>Reason:<span class="w"> </span>OOMKilled
-</code></pre></div><p></p>
-<hr>
-<p><strong>Quick Debugging Workflow</strong></p>
-<p>In most cases the problem can be found using these three commands:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods
-<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>pod<span class="w"> </span>&lt;pod-name&gt;
-<a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a>kubectl<span class="w"> </span>logs<span class="w"> </span>&lt;pod-name&gt;
-</code></pre></div><p></p>
-<p>These commands reveal the majority of Kubernetes runtime failures.</p>
-<hr>
-<p><strong>Next Steps</strong></p>
-<p>Once the issue is identified, update the deployment configuration and redeploy the application.</p>
-<p>For example:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment.yaml
-</code></pre></div>
-or restart the deployment:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment<span class="w"> </span>&lt;deployment-name&gt;
-</code></pre></div><p></p>
 <hr>
 </article>
 </div>

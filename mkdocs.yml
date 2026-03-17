@@ -201,8 +201,8 @@ nav:
         - Secrets: kubernetes/explanation/configuration/secrets.md
       - Storage:
         - Index: kubernetes/explanation/storage/index.md
-        - Configmaps: kubernetes/explanation/storage/persistent-volumes.md
-        - Secrets: kubernetes/explanation/storage/persistent-volume-claims.md
+        - Persistent Volumes: kubernetes/explanation/storage/persistent-volumes.md
+        - Persistent Volume Claims: kubernetes/explanation/storage/persistent-volume-claims.md
       - Scaling:
         - Index: kubernetes/explanation/scaling/index.md
         - Horizontal Pod Autoscaler: kubernetes/explanation/scaling/horizontal-pod-autoscaler.md
