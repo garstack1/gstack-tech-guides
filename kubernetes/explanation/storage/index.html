@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#kubernetes-storage-overview">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -1030,14 +1033,14 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="persistent-volumes/">
 <span class="md-ellipsis">
-    Configmaps
+    Persistent Volumes
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="persistent-volume-claims.md">
+<a class="md-nav__link" href="persistent-volume-claims/">
 <span class="md-ellipsis">
-    Secrets
+    Persistent Volume Claims
   </span>
 </a>
 </li>
@@ -1681,14 +1684,151 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-storage-matters">
+<span class="md-ellipsis">
+      Why Storage Matters
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-concepts">
+<span class="md-ellipsis">
+      Key Concepts
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#storage-model">
+<span class="md-ellipsis">
+      Storage Model
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#types-of-storage">
+<span class="md-ellipsis">
+      Types of Storage
+    </span>
+</a>
+<nav aria-label="Types of Storage" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ephemeral-storage">
+<span class="md-ellipsis">
+      Ephemeral Storage
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#persistent-storage">
+<span class="md-ellipsis">
+      Persistent Storage
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-this-design-exists">
+<span class="md-ellipsis">
+      Why This Design Exists
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-implications">
+<span class="md-ellipsis">
+      Real-World Implications
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      Key Takeaways
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Index</h1>
+<h1 id="kubernetes-storage-overview">Kubernetes Storage Overview<a class="headerlink" href="#kubernetes-storage-overview" title="Permanent link">¶</a></h1>
+<h2 id="why-storage-matters">Why Storage Matters<a class="headerlink" href="#why-storage-matters" title="Permanent link">¶</a></h2>
+<p>Containers are ephemeral by default.</p>
+<p>This means:</p>
+<ul>
+<li>When a container stops → its data is lost</li>
+<li>When a Pod is rescheduled → local data disappears</li>
+</ul>
+<p>Kubernetes storage solves this by providing <strong>persistent data across container restarts and rescheduling</strong>.</p>
+<hr>
+<h2 id="key-concepts">Key Concepts<a class="headerlink" href="#key-concepts" title="Permanent link">¶</a></h2>
+<p>Kubernetes storage is built around three core resources:</p>
+<ul>
+<li><strong>Volumes</strong> – Temporary storage attached to a Pod</li>
+<li><strong>Persistent Volumes (PV)</strong> – Cluster-wide storage resources</li>
+<li><strong>Persistent Volume Claims (PVC)</strong> – Requests for storage by Pods</li>
+</ul>
+<hr>
+<h2 id="storage-model">Storage Model<a class="headerlink" href="#storage-model" title="Permanent link">¶</a></h2>
+<div class="mermaid">
+graph TD
+    Pod --&gt; PVC
+    PVC --&gt; PV
+    PV --&gt; StorageBackend
 
+    StorageBackend --&gt; Disk
+</div>
+<hr>
+<h2 id="types-of-storage">Types of Storage<a class="headerlink" href="#types-of-storage" title="Permanent link">¶</a></h2>
+<h3 id="ephemeral-storage">Ephemeral Storage<a class="headerlink" href="#ephemeral-storage" title="Permanent link">¶</a></h3>
+<ul>
+<li>Lives and dies with the Pod</li>
+<li>Example: emptyDir</li>
+</ul>
+<h3 id="persistent-storage">Persistent Storage<a class="headerlink" href="#persistent-storage" title="Permanent link">¶</a></h3>
+<ul>
+<li>Survives Pod restarts</li>
+<li>Backed by external systems (disk, cloud storage, NFS)</li>
+</ul>
+<hr>
+<h2 id="why-this-design-exists">Why This Design Exists<a class="headerlink" href="#why-this-design-exists" title="Permanent link">¶</a></h2>
+<p>Kubernetes separates:</p>
+<ul>
+<li>Storage provisioning (PV)</li>
+<li>Storage consumption (PVC)</li>
+</ul>
+<p>This allows:</p>
+<ul>
+<li>Infrastructure teams to manage storage</li>
+<li>Developers to request storage without knowing backend details</li>
+</ul>
+<hr>
+<h2 id="real-world-implications">Real-World Implications<a class="headerlink" href="#real-world-implications" title="Permanent link">¶</a></h2>
+<ul>
+<li>Pods can restart without losing data</li>
+<li>Storage can be dynamically provisioned</li>
+<li>Applications can scale while maintaining state</li>
+</ul>
+<hr>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">¶</a></h2>
+<ul>
+<li>Containers are stateless by default</li>
+<li>Kubernetes introduces persistent storage via PVs and PVCs</li>
+<li>Storage is decoupled from application logic</li>
+</ul>
+<hr>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
@@ -1725,7 +1865,7 @@
 <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
 <script src="../../../javascripts/mermaid-init.js"></script>
 <script src="../../../javascripts/extra.js"></script>
-
+<script>mermaid.initialize({});</script>
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });
 </script></body></html>

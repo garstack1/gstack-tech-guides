@@ -3,10 +3,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <meta content="Hands-on guides for Kubernetes, Docker, Automation and more" name="description">
 <meta content="Garrett Stack" name="author">
-<link href="https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/how-to/storage/resize-persistent-volume/" rel="canonical">
+<link href="https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/storage/persistent-volume-claims/" rel="canonical">
+<link href="../persistent-volumes/" rel="prev">
+<link href="../../scaling/" rel="next">
 <link href="../../../../assets/images/favicon.png" rel="icon">
 <meta content="mkdocs-1.6.1, mkdocs-material-9.5.28" name="generator">
-<title>Resize Persistent Volume - Technical Tutorials Hub</title>
+<title>Persistent Volume Claims - Technical Tutorials Hub</title>
 <link href="../../../../assets/stylesheets/main.6543a935.min.css" rel="stylesheet">
 <link href="../../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
@@ -30,7 +32,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#resize-persistent-volume">
+<a class="md-skip" href="#persistent-volume-claims-pvc">
           Skip to content
         </a>
 </div>
@@ -54,7 +56,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Resize Persistent Volume
+              Persistent Volume Claims
             
           </span>
 </div>
@@ -272,8 +274,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox">
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox">
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../../../">
 <span class="md-ellipsis">
@@ -284,7 +286,7 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
             ☸ Kubernetes (🚧 In Progress)
@@ -624,7 +626,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../">
+<a class="md-nav__link" href="../../../how-to/">
 <span class="md-ellipsis">
     How-To Guides
   </span>
@@ -642,7 +644,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_5_2" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../deployments/">
+<a class="md-nav__link" href="../../../how-to/deployments/">
 <span class="md-ellipsis">
     Deployments
   </span>
@@ -658,28 +660,28 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../deployments/scale-deployment/">
+<a class="md-nav__link" href="../../../how-to/deployments/scale-deployment/">
 <span class="md-ellipsis">
     Scale Deployment
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../deployments/rollback-deployment/">
+<a class="md-nav__link" href="../../../how-to/deployments/rollback-deployment/">
 <span class="md-ellipsis">
     Rollback Deployment
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../deployments/restart-deployment/">
+<a class="md-nav__link" href="../../../how-to/deployments/restart-deployment/">
 <span class="md-ellipsis">
     Restart Deployment
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../deployments/update-container-image/">
+<a class="md-nav__link" href="../../../how-to/deployments/update-container-image/">
 <span class="md-ellipsis">
     Update Container Image
   </span>
@@ -691,7 +693,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_5_3" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../networking/">
+<a class="md-nav__link" href="../../../how-to/networking/">
 <span class="md-ellipsis">
     Networking
   </span>
@@ -707,21 +709,21 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../networking/expose-service/">
+<a class="md-nav__link" href="../../../how-to/networking/expose-service/">
 <span class="md-ellipsis">
     Expose Service
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../networking/expose-service-ingress/">
+<a class="md-nav__link" href="../../../how-to/networking/expose-service-ingress/">
 <span class="md-ellipsis">
     Expose Service Ingress
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../networking/port-forward-pod/">
+<a class="md-nav__link" href="../../../how-to/networking/port-forward-pod/">
 <span class="md-ellipsis">
     Port Forward Pod
   </span>
@@ -733,7 +735,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_5_4" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../configuration/">
+<a class="md-nav__link" href="../../../how-to/configuration/">
 <span class="md-ellipsis">
     Configuration
   </span>
@@ -749,21 +751,21 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../configuration/use-configmaps/">
+<a class="md-nav__link" href="../../../how-to/configuration/use-configmaps/">
 <span class="md-ellipsis">
     Use Configmaps
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../configuration/use-secrets/">
+<a class="md-nav__link" href="../../../how-to/configuration/use-secrets/">
 <span class="md-ellipsis">
     Use Secrets
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../configuration/add-env-vars/">
+<a class="md-nav__link" href="../../../how-to/configuration/add-env-vars/">
 <span class="md-ellipsis">
     Add Env Vars
   </span>
@@ -775,7 +777,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_5_5" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../">
+<a class="md-nav__link" href="../../../how-to/storage/">
 <span class="md-ellipsis">
     Storage
   </span>
@@ -791,7 +793,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../mount-persistent-volume/">
+<a class="md-nav__link" href="../../../how-to/storage/mount-persistent-volume/">
 <span class="md-ellipsis">
     Mount Persistent Volume
   </span>
@@ -803,10 +805,10 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_6" type="checkbox">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_6" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../explanation/">
+<a class="md-nav__link" href="../../">
 <span class="md-ellipsis">
     Explanation
   </span>
@@ -815,7 +817,7 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_6_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="true" aria-labelledby="__nav_3_6_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_3_6">
 <span class="md-nav__icon md-icon"></span>
             Explanation
@@ -824,7 +826,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_6_2" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../explanation/architecture/">
+<a class="md-nav__link" href="../../architecture/">
 <span class="md-ellipsis">
     Architecture
   </span>
@@ -840,21 +842,21 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/architecture/kubernetes-architecture/">
+<a class="md-nav__link" href="../../architecture/kubernetes-architecture/">
 <span class="md-ellipsis">
     Kubernetes Architecture
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/architecture/control-plane/">
+<a class="md-nav__link" href="../../architecture/control-plane/">
 <span class="md-ellipsis">
     Control Plane
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/architecture/node-components/">
+<a class="md-nav__link" href="../../architecture/node-components/">
 <span class="md-ellipsis">
     Node Components
   </span>
@@ -866,7 +868,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_6_3" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../explanation/workloads/">
+<a class="md-nav__link" href="../../workloads/">
 <span class="md-ellipsis">
     Workloads
   </span>
@@ -882,28 +884,28 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/workloads/pods/">
+<a class="md-nav__link" href="../../workloads/pods/">
 <span class="md-ellipsis">
     Pods
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/workloads/deployments/">
+<a class="md-nav__link" href="../../workloads/deployments/">
 <span class="md-ellipsis">
     Deployments
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/workloads/replica-sets/">
+<a class="md-nav__link" href="../../workloads/replica-sets/">
 <span class="md-ellipsis">
     Replica Sets
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/workloads/statefulsets/">
+<a class="md-nav__link" href="../../workloads/statefulsets/">
 <span class="md-ellipsis">
     Stateful Sets
   </span>
@@ -915,7 +917,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_6_4" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../explanation/networking/">
+<a class="md-nav__link" href="../../networking/">
 <span class="md-ellipsis">
     Networking
   </span>
@@ -931,42 +933,42 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/networking/pod-networking/">
+<a class="md-nav__link" href="../../networking/pod-networking/">
 <span class="md-ellipsis">
     Pod Networking
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/networking/services/">
+<a class="md-nav__link" href="../../networking/services/">
 <span class="md-ellipsis">
     Services
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/networking/kube-proxy/">
+<a class="md-nav__link" href="../../networking/kube-proxy/">
 <span class="md-ellipsis">
     Kube Proxy
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/networking/ingress/">
+<a class="md-nav__link" href="../../networking/ingress/">
 <span class="md-ellipsis">
     Ingress
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/networking/dns/">
+<a class="md-nav__link" href="../../networking/dns/">
 <span class="md-ellipsis">
     DNS
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/networking/network-policies/">
+<a class="md-nav__link" href="../../networking/network-policies/">
 <span class="md-ellipsis">
     Network Policies
   </span>
@@ -978,7 +980,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_6_5" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../explanation/configuration/">
+<a class="md-nav__link" href="../../configuration/">
 <span class="md-ellipsis">
     Configuration
   </span>
@@ -994,14 +996,14 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/configuration/configmaps/">
+<a class="md-nav__link" href="../../configuration/configmaps/">
 <span class="md-ellipsis">
     Configmaps
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/configuration/secrets/">
+<a class="md-nav__link" href="../../configuration/secrets/">
 <span class="md-ellipsis">
     Secrets
   </span>
@@ -1010,10 +1012,10 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3_6_6" type="checkbox">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3_6_6" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../explanation/storage/">
+<a class="md-nav__link" href="../">
 <span class="md-ellipsis">
     Storage
   </span>
@@ -1022,25 +1024,96 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_6_6_label" class="md-nav" data-md-level="3">
+<nav aria-expanded="true" aria-labelledby="__nav_3_6_6_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_3_6_6">
 <span class="md-nav__icon md-icon"></span>
             Storage
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/storage/persistent-volumes/">
+<a class="md-nav__link" href="../persistent-volumes/">
 <span class="md-ellipsis">
     Persistent Volumes
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/storage/persistent-volume-claims/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Persistent Volume Claims
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     Persistent Volume Claims
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      Overview
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-pvc-works">
+<span class="md-ellipsis">
+      How PVC Works
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-pvc">
+<span class="md-ellipsis">
+      Example PVC
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#binding-process">
+<span class="md-ellipsis">
+      Binding Process
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#using-pvc-in-a-pod">
+<span class="md-ellipsis">
+      Using PVC in a Pod
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-pvc-exists">
+<span class="md-ellipsis">
+      Why PVC Exists
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-implications">
+<span class="md-ellipsis">
+      Real-World Implications
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      Key Takeaways
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -1048,7 +1121,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_6_7" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../explanation/scaling/">
+<a class="md-nav__link" href="../../scaling/">
 <span class="md-ellipsis">
     Scaling
   </span>
@@ -1064,14 +1137,14 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/scaling/horizontal-pod-autoscaler.md">
+<a class="md-nav__link" href="../../scaling/horizontal-pod-autoscaler.md">
 <span class="md-ellipsis">
     Horizontal Pod Autoscaler
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/scaling/rolling-updates/">
+<a class="md-nav__link" href="../../scaling/rolling-updates/">
 <span class="md-ellipsis">
     Rolling Updates
   </span>
@@ -1688,51 +1761,58 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#problem">
+<a class="md-nav__link" href="#overview">
 <span class="md-ellipsis">
-      Problem
+      Overview
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#prerequisites">
+<a class="md-nav__link" href="#how-pvc-works">
 <span class="md-ellipsis">
-      Prerequisites
+      How PVC Works
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#step-1-check-current-pvc-size">
+<a class="md-nav__link" href="#example-pvc">
 <span class="md-ellipsis">
-      Step 1 — Check Current PVC Size
+      Example PVC
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#step-2-edit-the-pvc">
+<a class="md-nav__link" href="#binding-process">
 <span class="md-ellipsis">
-      Step 2 — Edit the PVC
+      Binding Process
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#step-3-verify-the-resize">
+<a class="md-nav__link" href="#using-pvc-in-a-pod">
 <span class="md-ellipsis">
-      Step 3 — Verify the Resize
+      Using PVC in a Pod
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#step-4-verify-inside-the-pod">
+<a class="md-nav__link" href="#why-pvc-exists">
 <span class="md-ellipsis">
-      Step 4 — Verify Inside the Pod
+      Why PVC Exists
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#troubleshooting">
+<a class="md-nav__link" href="#real-world-implications">
 <span class="md-ellipsis">
-      Troubleshooting
+      Real-World Implications
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      Key Takeaways
     </span>
 </a>
 </li>
@@ -1743,85 +1823,83 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="resize-persistent-volume">Resize Persistent Volume<a class="headerlink" href="#resize-persistent-volume" title="Permanent link">¶</a></h1>
-<h2 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">¶</a></h2>
-<p>Your application storage is full and needs to be expanded.</p>
-<p>Pods may start failing with errors like:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="go">no space left on device</span>
+<h1 id="persistent-volume-claims-pvc">Persistent Volume Claims (PVC)<a class="headerlink" href="#persistent-volume-claims-pvc" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>A Persistent Volume Claim (PVC) is a request for storage by a Pod.</p>
+<p>It allows developers to request storage without needing to know how it is provisioned.</p>
+<hr>
+<h2 id="how-pvc-works">How PVC Works<a class="headerlink" href="#how-pvc-works" title="Permanent link">¶</a></h2>
+<p>A PVC:</p>
+<ol>
+<li>Requests storage (size, access mode)</li>
+<li>Kubernetes finds a matching PV</li>
+<li>The PV is bound to the PVC</li>
+</ol>
+<hr>
+<h2 id="example-pvc">Example PVC<a class="headerlink" href="#example-pvc" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PersistentVolumeClaim</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example-pvc</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">  </span><span class="nt">accessModes</span><span class="p">:</span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadWriteOnce</span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">  </span><span class="nt">resources</span><span class="p">:</span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="nt">requests</span><span class="p">:</span>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">      </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5Gi</span>
 </code></pre></div>
-or
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="go">disk full</span>
-</code></pre></div><p></p>
-<p>Kubernetes allows <strong>PersistentVolumeClaims (PVCs)</strong> to be resized if the <strong>StorageClass supports expansion.</strong></p>
 <hr>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
-<p>Check if your storage class allows resizing.</p>
-<p>Run:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>storageclass
-</code></pre></div><p></p>
-<p>Then inspect the storage class:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>storageclass<span class="w"> </span>&lt;storage-class-name&gt;
-</code></pre></div><p></p>
-<p>Look for:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>AllowVolumeExpansion: true
-</code></pre></div><p></p>
-<p>If this is <strong>false</strong>, resizing will not work.</p>
+<h2 id="binding-process">Binding Process<a class="headerlink" href="#binding-process" title="Permanent link">¶</a></h2>
+<div class="mermaid">
+graph TD
+    Pod --&gt; PVC
+    PVC --&gt; PV
+</div>
+<ul>
+<li>PVC searches for a matching PV</li>
+<li>If found → binding occurs</li>
+<li>If not → dynamic provisioning may create one</li>
+</ul>
 <hr>
-<h2 id="step-1-check-current-pvc-size">Step 1 — Check Current PVC Size<a class="headerlink" href="#step-1-check-current-pvc-size" title="Permanent link">¶</a></h2>
-<p>Run:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pvc
-</code></pre></div><p></p>
-<p>Example output:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>NAME           STATUS   VOLUME       CAPACITY
-<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>app-storage    Bound    pvc-12345    5Gi
-</code></pre></div><p></p>
+<h2 id="using-pvc-in-a-pod">Using PVC in a Pod<a class="headerlink" href="#using-pvc-in-a-pod" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="s">"/data"</span>
+<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">storage</span>
+<a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">  </span><span class="nt">volumes</span><span class="p">:</span>
+<a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">storage</span>
+<a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">    </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
+<a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">      </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example-pvc</span>
+</code></pre></div>
 <hr>
-<h2 id="step-2-edit-the-pvc">Step 2 — Edit the PVC<a class="headerlink" href="#step-2-edit-the-pvc" title="Permanent link">¶</a></h2>
-<p>Run:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>kubectl<span class="w"> </span>edit<span class="w"> </span>pvc<span class="w"> </span>app-storage
-</code></pre></div><p></p>
-<p>Find:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nt">resources</span><span class="p">:</span>
-<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">  </span><span class="nt">requests</span><span class="p">:</span>
-<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">    </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5Gi</span>
-</code></pre></div><p></p>
-<p>Increase the size:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nt">resources</span><span class="p">:</span>
-<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">  </span><span class="nt">requests</span><span class="p">:</span>
-<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">    </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10Gi</span>
-</code></pre></div><p></p>
-<p>Save and exit.</p>
+<h2 id="why-pvc-exists">Why PVC Exists<a class="headerlink" href="#why-pvc-exists" title="Permanent link">¶</a></h2>
+<p>Without PVCs:</p>
+<ul>
+<li>Developers would need to understand storage infrastructure</li>
+<li>Applications would be tightly coupled to storage backends</li>
+</ul>
+<p>PVCs abstract this complexity.</p>
 <hr>
-<h2 id="step-3-verify-the-resize">Step 3 — Verify the Resize<a class="headerlink" href="#step-3-verify-the-resize" title="Permanent link">¶</a></h2>
-<p>Check PVC status.
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pvc
-</code></pre></div><p></p>
-<p>Example:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>NAME           STATUS   VOLUME       CAPACITY
-<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>app-storage    Bound    pvc-12345    10Gi
-</code></pre></div><p></p>
+<h2 id="real-world-implications">Real-World Implications<a class="headerlink" href="#real-world-implications" title="Permanent link">¶</a></h2>
+<ul>
+<li>Teams can work independently (dev vs infra)</li>
+<li>Storage becomes reusable and scalable</li>
+<li>Supports dynamic cloud-native environments</li>
+</ul>
 <hr>
-<h2 id="step-4-verify-inside-the-pod">Step 4 — Verify Inside the Pod<a class="headerlink" href="#step-4-verify-inside-the-pod" title="Permanent link">¶</a></h2>
-<p>Enter the container.
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;pod-name&gt;<span class="w"> </span>--<span class="w"> </span>/bin/sh
-</code></pre></div><p></p>
-<p>Check disk size.
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>df<span class="w"> </span>-h
-</code></pre></div><p></p>
-<p>Expected output:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>Filesystem      Size  Used Avail Use%
-<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a>/data           10G   2G   8G   20%
-</code></pre></div><p></p>
-<hr>
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">¶</a></h2>
-<p><strong>Resize Not Applied</strong></p>
-<p>Check events.
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>kubectl<span class="w"> </span>describe<span class="w"> </span>pvc<span class="w"> </span>app-storage
-</code></pre></div><p></p>
-<p>Look for:
-</p><div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="go">Waiting for file system resize</span>
-</code></pre></div><p></p>
-<p>Restart the pod if necessary.</p>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">¶</a></h2>
+<ul>
+<li>PVCs request storage</li>
+<li>PVs provide storage</li>
+<li>Kubernetes handles the binding automatically</li>
+</ul>
 <hr>
 </article>
 </div>
@@ -1859,7 +1937,7 @@ or
 <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
 <script src="../../../../javascripts/mermaid-init.js"></script>
 <script src="../../../../javascripts/extra.js"></script>
-
+<script>mermaid.initialize({});</script>
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });
 </script></body></html>

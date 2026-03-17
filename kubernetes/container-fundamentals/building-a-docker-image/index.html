@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#building-a-docker-image">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -364,11 +367,95 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Building a Docker Image
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     Building a Docker Image
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      Overview
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-dockerfile">
+<span class="md-ellipsis">
+      Example Dockerfile
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#build-the-image">
+<span class="md-ellipsis">
+      Build the Image
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-the-container">
+<span class="md-ellipsis">
+      Run the Container
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-the-build-works">
+<span class="md-ellipsis">
+      How the Build Works
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#image-layering-concept">
+<span class="md-ellipsis">
+      Image Layering Concept
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#best-practices">
+<span class="md-ellipsis">
+      Best Practices
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-mistakes">
+<span class="md-ellipsis">
+      Common Mistakes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-implications">
+<span class="md-ellipsis">
+      Real-World Implications
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      Key Takeaways
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -1031,14 +1118,14 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../explanation/storage/persistent-volumes/">
 <span class="md-ellipsis">
-    Configmaps
+    Persistent Volumes
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../explanation/storage/persistent-volume-claims.md">
+<a class="md-nav__link" href="../../explanation/storage/persistent-volume-claims/">
 <span class="md-ellipsis">
-    Secrets
+    Persistent Volume Claims
   </span>
 </a>
 </li>
@@ -1682,14 +1769,165 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      Overview
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-dockerfile">
+<span class="md-ellipsis">
+      Example Dockerfile
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#build-the-image">
+<span class="md-ellipsis">
+      Build the Image
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-the-container">
+<span class="md-ellipsis">
+      Run the Container
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-the-build-works">
+<span class="md-ellipsis">
+      How the Build Works
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#image-layering-concept">
+<span class="md-ellipsis">
+      Image Layering Concept
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#best-practices">
+<span class="md-ellipsis">
+      Best Practices
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-mistakes">
+<span class="md-ellipsis">
+      Common Mistakes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-implications">
+<span class="md-ellipsis">
+      Real-World Implications
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      Key Takeaways
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Building a Docker Image</h1>
-
+<h1 id="building-a-docker-image">Building a Docker Image<a class="headerlink" href="#building-a-docker-image" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>A Docker image is built using a <code>Dockerfile</code>, which defines the steps required to package an application.</p>
+<hr>
+<h2 id="example-dockerfile">Example Dockerfile<a class="headerlink" href="#example-dockerfile" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c"># Use base image</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">FROM</span><span class="w"> </span><span class="s">node:18</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c"># Set working directory</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="c"># Copy files</span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="k">COPY</span><span class="w"> </span>package.json<span class="w"> </span>.
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="c"># Install dependencies</span>
+<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="k">RUN</span><span class="w"> </span>npm<span class="w"> </span>install
+<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>
+<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="c"># Expose port</span>
+<a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="k">EXPOSE</span><span class="w"> </span><span class="s">3000</span>
+<a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a>
+<a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="c"># Start application</span>
+<a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">"npm"</span><span class="p">,</span><span class="w"> </span><span class="s2">"start"</span><span class="p">]</span>
+</code></pre></div>
+<hr>
+<h2 id="build-the-image">Build the Image<a class="headerlink" href="#build-the-image" title="Permanent link">¶</a></h2>
+<p>docker build -t my-app:1.0 .</p>
+<hr>
+<h2 id="run-the-container">Run the Container<a class="headerlink" href="#run-the-container" title="Permanent link">¶</a></h2>
+<p>docker run -p 3000:3000 my-app:1.0</p>
+<hr>
+<h2 id="how-the-build-works">How the Build Works<a class="headerlink" href="#how-the-build-works" title="Permanent link">¶</a></h2>
+<p>Docker builds images in layers:</p>
+<ul>
+<li>Base image is pulled</li>
+<li>Each instruction creates a new layer</li>
+<li>Layers are cached for efficiency</li>
+</ul>
+<hr>
+<h2 id="image-layering-concept">Image Layering Concept<a class="headerlink" href="#image-layering-concept" title="Permanent link">¶</a></h2>
+<div class="mermaid">
+graph TD
+    BaseImage --&gt; Layer1
+    Layer1 --&gt; Layer2
+    Layer2 --&gt; FinalImage
+</div>
+<hr>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">¶</a></h2>
+<ul>
+<li>Use small base images (e.g. alpine)</li>
+<li>Minimise number of layers</li>
+<li>Use .dockerignore</li>
+<li>Avoid running as root</li>
+<li>Pin dependency versions</li>
+</ul>
+<hr>
+<h2 id="common-mistakes">Common Mistakes<a class="headerlink" href="#common-mistakes" title="Permanent link">¶</a></h2>
+<ul>
+<li>Copying unnecessary files into image</li>
+<li>Not using caching effectively</li>
+<li>Large image sizes</li>
+</ul>
+<hr>
+<h2 id="real-world-implications">Real-World Implications<a class="headerlink" href="#real-world-implications" title="Permanent link">¶</a></h2>
+<ul>
+<li>Smaller images = faster deployments</li>
+<li>Efficient builds reduce CI/CD time</li>
+<li>Clean images reduce security risks</li>
+</ul>
+<hr>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">¶</a></h2>
+<ul>
+<li>Dockerfiles define how images are built</li>
+<li>Images are layered and cached</li>
+<li>Good practices improve performance and security</li>
+</ul>
+<hr>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
@@ -1726,7 +1964,7 @@
 <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
 <script src="../../../javascripts/mermaid-init.js"></script>
 <script src="../../../javascripts/extra.js"></script>
-
+<script>mermaid.initialize({});</script>
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });
 </script></body></html>

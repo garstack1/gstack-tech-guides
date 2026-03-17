@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#worker-node-components">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -319,11 +322,85 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Worker Node Components
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     Worker Node Components
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-is-a-worker-node">
+<span class="md-ellipsis">
+      What is a Worker Node?
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-components">
+<span class="md-ellipsis">
+      Core Components
+    </span>
+</a>
+<nav aria-label="Core Components" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kubelet">
+<span class="md-ellipsis">
+      Kubelet
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kube-proxy">
+<span class="md-ellipsis">
+      Kube Proxy
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#container-runtime">
+<span class="md-ellipsis">
+      Container Runtime
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-it-works">
+<span class="md-ellipsis">
+      How It Works
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-implications">
+<span class="md-ellipsis">
+      Real-World Implications
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      Key Takeaways
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../request-flow-through-kubernetes/">
@@ -1031,14 +1108,14 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../explanation/storage/persistent-volumes/">
 <span class="md-ellipsis">
-    Configmaps
+    Persistent Volumes
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../explanation/storage/persistent-volume-claims.md">
+<a class="md-nav__link" href="../../explanation/storage/persistent-volume-claims/">
 <span class="md-ellipsis">
-    Secrets
+    Persistent Volume Claims
   </span>
 </a>
 </li>
@@ -1682,14 +1759,131 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-is-a-worker-node">
+<span class="md-ellipsis">
+      What is a Worker Node?
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-components">
+<span class="md-ellipsis">
+      Core Components
+    </span>
+</a>
+<nav aria-label="Core Components" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kubelet">
+<span class="md-ellipsis">
+      Kubelet
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kube-proxy">
+<span class="md-ellipsis">
+      Kube Proxy
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#container-runtime">
+<span class="md-ellipsis">
+      Container Runtime
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-it-works">
+<span class="md-ellipsis">
+      How It Works
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-implications">
+<span class="md-ellipsis">
+      Real-World Implications
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      Key Takeaways
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Worker Node Components</h1>
+<h1 id="worker-node-components">Worker Node Components<a class="headerlink" href="#worker-node-components" title="Permanent link">¶</a></h1>
+<h2 id="what-is-a-worker-node">What is a Worker Node?<a class="headerlink" href="#what-is-a-worker-node" title="Permanent link">¶</a></h2>
+<p>Worker nodes are the machines where your applications actually run.</p>
+<p>Each node contains the components needed to execute and manage containers.</p>
+<hr>
+<h2 id="core-components">Core Components<a class="headerlink" href="#core-components" title="Permanent link">¶</a></h2>
+<h3 id="kubelet">Kubelet<a class="headerlink" href="#kubelet" title="Permanent link">¶</a></h3>
+<p>The Kubelet is the node agent.</p>
+<ul>
+<li>Receives instructions from API Server</li>
+<li>Ensures containers are running</li>
+<li>Reports node status</li>
+</ul>
+<hr>
+<h3 id="kube-proxy">Kube Proxy<a class="headerlink" href="#kube-proxy" title="Permanent link">¶</a></h3>
+<p>Handles networking for the node.</p>
+<ul>
+<li>Maintains network rules</li>
+<li>Enables communication between services and pods</li>
+</ul>
+<hr>
+<h3 id="container-runtime">Container Runtime<a class="headerlink" href="#container-runtime" title="Permanent link">¶</a></h3>
+<p>Responsible for running containers.</p>
+<p>Examples:</p>
+<ul>
+<li>containerd</li>
+<li>CRI-O</li>
+</ul>
+<hr>
+<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">¶</a></h2>
+<div class="mermaid">
+graph TD
+    APIServer --&gt; Kubelet
+    Kubelet --&gt; ContainerRuntime
+    Kubelet --&gt; Pods
 
+    KubeProxy --&gt; Network
+</div>
+<hr>
+<h2 id="real-world-implications">Real-World Implications<a class="headerlink" href="#real-world-implications" title="Permanent link">¶</a></h2>
+<ul>
+<li>If Kubelet stops → Pods stop being managed</li>
+<li>If runtime fails → containers crash</li>
+<li>Networking issues often trace back to kube-proxy</li>
+</ul>
+<hr>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">¶</a></h2>
+<ul>
+<li>Kubelet is the most critical node component</li>
+<li>Nodes execute, Control Plane decides</li>
+<li>Runtime stability is essential for workloads</li>
+</ul>
+<hr>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
@@ -1726,7 +1920,7 @@
 <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
 <script src="../../../javascripts/mermaid-init.js"></script>
 <script src="../../../javascripts/extra.js"></script>
-
+<script>mermaid.initialize({});</script>
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });
 </script></body></html>

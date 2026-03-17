@@ -5,10 +5,10 @@
 <meta content="Garrett Stack" name="author">
 <link href="https://garstack-sharetribe.github.io/gstack-tech-guides/kubernetes/explanation/storage/persistent-volumes/" rel="canonical">
 <link href="../" rel="prev">
-<link href="../../scaling/" rel="next">
+<link href="../persistent-volume-claims/" rel="next">
 <link href="../../../../assets/images/favicon.png" rel="icon">
 <meta content="mkdocs-1.6.1, mkdocs-material-9.5.28" name="generator">
-<title>Configmaps - Technical Tutorials Hub</title>
+<title>Persistent Volumes - Technical Tutorials Hub</title>
 <link href="../../../../assets/stylesheets/main.6543a935.min.css" rel="stylesheet">
 <link href="../../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
@@ -32,7 +32,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#persistent-volumes">
+<a class="md-skip" href="#persistent-volumes-pv">
           Skip to content
         </a>
 </div>
@@ -56,7 +56,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Configmaps
+              Persistent Volumes
             
           </span>
 </div>
@@ -1034,13 +1034,13 @@
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
 <label class="md-nav__link md-nav__link--active" for="__toc">
 <span class="md-ellipsis">
-    Configmaps
+    Persistent Volumes
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
-    Configmaps
+    Persistent Volumes
   </span>
 </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
@@ -1050,23 +1050,59 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#storage-abstraction">
+<a class="md-nav__link" href="#overview">
 <span class="md-ellipsis">
-      Storage Abstraction
+      Overview
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#benefits">
+<a class="md-nav__link" href="#key-characteristics">
 <span class="md-ellipsis">
-      Benefits
+      Key Characteristics
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#storage-backends">
+<a class="md-nav__link" href="#example-pv">
 <span class="md-ellipsis">
-      Storage Backends
+      Example PV
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#access-modes">
+<span class="md-ellipsis">
+      Access Modes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lifecycle">
+<span class="md-ellipsis">
+      Lifecycle
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#static-vs-dynamic-provisioning">
+<span class="md-ellipsis">
+      Static vs Dynamic Provisioning
+    </span>
+</a>
+<nav aria-label="Static vs Dynamic Provisioning" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#static">
+<span class="md-ellipsis">
+      Static
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dynamic">
+<span class="md-ellipsis">
+      Dynamic
     </span>
 </a>
 </li>
@@ -1074,9 +1110,26 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../persistent-volume-claims.md">
+<a class="md-nav__link" href="#real-world-implications">
 <span class="md-ellipsis">
-    Secrets
+      Real-World Implications
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      Key Takeaways
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../persistent-volume-claims/">
+<span class="md-ellipsis">
+    Persistent Volume Claims
   </span>
 </a>
 </li>
@@ -1726,23 +1779,76 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#storage-abstraction">
+<a class="md-nav__link" href="#overview">
 <span class="md-ellipsis">
-      Storage Abstraction
+      Overview
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#benefits">
+<a class="md-nav__link" href="#key-characteristics">
 <span class="md-ellipsis">
-      Benefits
+      Key Characteristics
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#storage-backends">
+<a class="md-nav__link" href="#example-pv">
 <span class="md-ellipsis">
-      Storage Backends
+      Example PV
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#access-modes">
+<span class="md-ellipsis">
+      Access Modes
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lifecycle">
+<span class="md-ellipsis">
+      Lifecycle
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#static-vs-dynamic-provisioning">
+<span class="md-ellipsis">
+      Static vs Dynamic Provisioning
+    </span>
+</a>
+<nav aria-label="Static vs Dynamic Provisioning" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#static">
+<span class="md-ellipsis">
+      Static
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dynamic">
+<span class="md-ellipsis">
+      Dynamic
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-implications">
+<span class="md-ellipsis">
+      Real-World Implications
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      Key Takeaways
     </span>
 </a>
 </li>
@@ -1753,47 +1859,79 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="persistent-volumes">Persistent Volumes<a class="headerlink" href="#persistent-volumes" title="Permanent link">¶</a></h1>
-<p>Containers are normally <strong>stateless</strong>.</p>
-<p>When a container stops, any data stored inside the container is lost.</p>
-<p>Persistent Volumes provide durable storage for Kubernetes workloads.</p>
-<hr>
-<h2 id="storage-abstraction">Storage Abstraction<a class="headerlink" href="#storage-abstraction" title="Permanent link">¶</a></h2>
-<p>Kubernetes separates storage into two layers:</p>
-<table>
-<thead>
-<tr>
-<th>Resource</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PersistentVolume</td>
-<td>Actual storage resource</td>
-</tr>
-<tr>
-<td>PersistentVolumeClaim</td>
-<td>Request for storage</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="benefits">Benefits<a class="headerlink" href="#benefits" title="Permanent link">¶</a></h2>
-<p>Persistent volumes allow applications to:</p>
+<h1 id="persistent-volumes-pv">Persistent Volumes (PV)<a class="headerlink" href="#persistent-volumes-pv" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>A Persistent Volume (PV) is a cluster-wide resource that provides storage.</p>
+<p>It represents actual storage provisioned from:</p>
 <ul>
-<li>store data safely</li>
-<li>survive pod restarts</li>
-<li>scale across nodes</li>
+<li>Local disks</li>
+<li>Network storage (NFS)</li>
+<li>Cloud providers (AWS EBS, Azure Disk, etc.)</li>
 </ul>
 <hr>
-<h2 id="storage-backends">Storage Backends<a class="headerlink" href="#storage-backends" title="Permanent link">¶</a></h2>
-<p>Persistent volumes can use many storage systems:</p>
+<h2 id="key-characteristics">Key Characteristics<a class="headerlink" href="#key-characteristics" title="Permanent link">¶</a></h2>
 <ul>
-<li>local disks</li>
-<li>NFS</li>
-<li>cloud block storage</li>
-<li>distributed storage systems</li>
+<li>Exists independently of Pods</li>
+<li>Managed by Kubernetes or an administrator</li>
+<li>Has a defined capacity and access mode</li>
+</ul>
+<hr>
+<h2 id="example-pv">Example PV<a class="headerlink" href="#example-pv" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PersistentVolume</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example-pv</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">  </span><span class="nt">capacity</span><span class="p">:</span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5Gi</span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">  </span><span class="nt">accessModes</span><span class="p">:</span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReadWriteOnce</span>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">  </span><span class="nt">hostPath</span><span class="p">:</span>
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/data</span>
+</code></pre></div>
+<hr>
+<h2 id="access-modes">Access Modes<a class="headerlink" href="#access-modes" title="Permanent link">¶</a></h2>
+<ul>
+<li>ReadWriteOnce (RWO) - Mounted by a single node</li>
+<li>ReadOnlyMany (ROX) - Read-only by multiple nodes</li>
+<li>ReadWriteMany (RWX) - Read/write by multiple nodes</li>
+</ul>
+<hr>
+<h2 id="lifecycle">Lifecycle<a class="headerlink" href="#lifecycle" title="Permanent link">¶</a></h2>
+<div class="mermaid">
+graph TD
+    Available --&gt; Bound
+    Bound --&gt; Released
+    Released --&gt; Available
+</div>
+<ul>
+<li><strong>Available</strong> - Not yet claimed</li>
+<li><strong>Bound</strong> - Connected to a PVC</li>
+<li><strong>Released</strong> - Claim deleted but not yet reusable</li>
+</ul>
+<hr>
+<h2 id="static-vs-dynamic-provisioning">Static vs Dynamic Provisioning<a class="headerlink" href="#static-vs-dynamic-provisioning" title="Permanent link">¶</a></h2>
+<h3 id="static">Static<a class="headerlink" href="#static" title="Permanent link">¶</a></h3>
+<ul>
+<li>Admin manually creates PVs</li>
+</ul>
+<h3 id="dynamic">Dynamic<a class="headerlink" href="#dynamic" title="Permanent link">¶</a></h3>
+<ul>
+<li>Kubernetes creates PVs automatically using StorageClasses</li>
+</ul>
+<hr>
+<h2 id="real-world-implications">Real-World Implications<a class="headerlink" href="#real-world-implications" title="Permanent link">¶</a></h2>
+<ul>
+<li>Storage can outlive Pods</li>
+<li>Data is preserved across failures</li>
+<li>Enables stateful applications (databases, queues)</li>
+</ul>
+<hr>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">¶</a></h2>
+<ul>
+<li>PVs represent actual storage resources</li>
+<li>They are independent of Pods</li>
+<li>They are consumed via PVCs</li>
 </ul>
 <hr>
 </article>
@@ -1832,7 +1970,7 @@
 <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
 <script src="../../../../javascripts/mermaid-init.js"></script>
 <script src="../../../../javascripts/extra.js"></script>
-
+<script>mermaid.initialize({});</script>
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });
 </script></body></html>

@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#request-flow-through-kubernetes">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -326,11 +329,99 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Request Flow Through Kubernetes
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     Request Flow Through Kubernetes
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      Overview
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#end-to-end-flow">
+<span class="md-ellipsis">
+      End-to-End Flow
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-by-step-breakdown">
+<span class="md-ellipsis">
+      Step-by-Step Breakdown
+    </span>
+</a>
+<nav aria-label="Step-by-Step Breakdown" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-user-request">
+<span class="md-ellipsis">
+      1. User Request
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-api-server">
+<span class="md-ellipsis">
+      2. API Server
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-scheduler">
+<span class="md-ellipsis">
+      3. Scheduler
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-kubelet">
+<span class="md-ellipsis">
+      4. Kubelet
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-continuous-reconciliation">
+<span class="md-ellipsis">
+      5. Continuous Reconciliation
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-implications">
+<span class="md-ellipsis">
+      Real-World Implications
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      Key Takeaways
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -1031,14 +1122,14 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../explanation/storage/persistent-volumes/">
 <span class="md-ellipsis">
-    Configmaps
+    Persistent Volumes
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../explanation/storage/persistent-volume-claims.md">
+<a class="md-nav__link" href="../../explanation/storage/persistent-volume-claims/">
 <span class="md-ellipsis">
-    Secrets
+    Persistent Volume Claims
   </span>
 </a>
 </li>
@@ -1682,14 +1773,173 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      Overview
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#end-to-end-flow">
+<span class="md-ellipsis">
+      End-to-End Flow
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-by-step-breakdown">
+<span class="md-ellipsis">
+      Step-by-Step Breakdown
+    </span>
+</a>
+<nav aria-label="Step-by-Step Breakdown" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-user-request">
+<span class="md-ellipsis">
+      1. User Request
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-api-server">
+<span class="md-ellipsis">
+      2. API Server
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-scheduler">
+<span class="md-ellipsis">
+      3. Scheduler
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-kubelet">
+<span class="md-ellipsis">
+      4. Kubelet
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-continuous-reconciliation">
+<span class="md-ellipsis">
+      5. Continuous Reconciliation
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-implications">
+<span class="md-ellipsis">
+      Real-World Implications
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      Key Takeaways
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Request Flow Through Kubernetes</h1>
+<h1 id="request-flow-through-kubernetes">Request Flow Through Kubernetes<a class="headerlink" href="#request-flow-through-kubernetes" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>This section explains what happens when you run:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment.yaml
+</code></pre></div>
+<hr>
+<h2 id="end-to-end-flow">End-to-End Flow<a class="headerlink" href="#end-to-end-flow" title="Permanent link">¶</a></h2>
+<div class="mermaid">
+sequenceDiagram
+    participant User
+    participant APIServer
+    participant etcd
+    participant Scheduler
+    participant Kubelet
+    participant ContainerRuntime
 
+    User-&gt;&gt;APIServer: kubectl apply (Deployment)
+    APIServer-&gt;&gt;etcd: Store desired state
+
+    Scheduler-&gt;&gt;APIServer: Watch for unscheduled Pods
+    Scheduler-&gt;&gt;APIServer: Bind Pod to Node
+
+    Kubelet-&gt;&gt;APIServer: Watch for assigned Pods
+    Kubelet-&gt;&gt;ContainerRuntime: Pull image &amp; start container
+
+    ContainerRuntime--&gt;&gt;Kubelet: Container running
+    Kubelet--&gt;&gt;APIServer: Report status
+
+    APIServer-&gt;&gt;etcd: Update current state
+</div>
+<hr>
+<h2 id="step-by-step-breakdown">Step-by-Step Breakdown<a class="headerlink" href="#step-by-step-breakdown" title="Permanent link">¶</a></h2>
+<h3 id="1-user-request">1. User Request<a class="headerlink" href="#1-user-request" title="Permanent link">¶</a></h3>
+<ul>
+<li>kubectl sends request to API Server</li>
+</ul>
+<hr>
+<h3 id="2-api-server">2. API Server<a class="headerlink" href="#2-api-server" title="Permanent link">¶</a></h3>
+<ul>
+<li>Validates request</li>
+<li>Stores object in etcd</li>
+</ul>
+<hr>
+<h3 id="3-scheduler">3. Scheduler<a class="headerlink" href="#3-scheduler" title="Permanent link">¶</a></h3>
+<ul>
+<li>Detects unscheduled Pod</li>
+<li>Assigns it to a node</li>
+</ul>
+<hr>
+<h3 id="4-kubelet">4. Kubelet<a class="headerlink" href="#4-kubelet" title="Permanent link">¶</a></h3>
+<ul>
+<li>Watches API Server</li>
+<li>Pulls assigned Pod spec</li>
+<li>Starts containers</li>
+</ul>
+<hr>
+<h3 id="5-continuous-reconciliation">5. Continuous Reconciliation<a class="headerlink" href="#5-continuous-reconciliation" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>Controllers ensure:</p>
+<ul>
+<li>Correct number of replicas</li>
+<li>Failed Pods are replaced</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="real-world-implications">Real-World Implications<a class="headerlink" href="#real-world-implications" title="Permanent link">¶</a></h2>
+<ul>
+<li>Delays in scheduling → resource constraints</li>
+<li>Pod stuck Pending → scheduler issue</li>
+<li>CrashLoopBackOff → runtime or app issue</li>
+</ul>
+<hr>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">¶</a></h2>
+<ul>
+<li>Everything starts with the API Server</li>
+<li>Scheduling is asynchronous</li>
+<li>Kubernetes is event-driven and declarative</li>
+</ul>
+<hr>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
@@ -1726,7 +1976,7 @@
 <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
 <script src="../../../javascripts/mermaid-init.js"></script>
 <script src="../../../javascripts/extra.js"></script>
-
+<script>mermaid.initialize({});</script>
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });
 </script></body></html>

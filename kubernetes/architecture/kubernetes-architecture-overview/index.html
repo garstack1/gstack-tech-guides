@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#kubernetes-architecture-overview">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -305,11 +308,74 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Kubernetes Architecture Overview
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     Kubernetes Architecture Overview
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-is-kubernetes-architecture">
+<span class="md-ellipsis">
+      What is Kubernetes Architecture?
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-this-architecture-exists">
+<span class="md-ellipsis">
+      Why This Architecture Exists
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#high-level-architecture">
+<span class="md-ellipsis">
+      High-Level Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-components">
+<span class="md-ellipsis">
+      Core Components
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-it-works-simple-view">
+<span class="md-ellipsis">
+      How It Works (Simple View)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-implications">
+<span class="md-ellipsis">
+      Real-World Implications
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      Key Takeaways
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../control-plane-components/">
@@ -1031,14 +1097,14 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../explanation/storage/persistent-volumes/">
 <span class="md-ellipsis">
-    Configmaps
+    Persistent Volumes
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../explanation/storage/persistent-volume-claims.md">
+<a class="md-nav__link" href="../../explanation/storage/persistent-volume-claims/">
 <span class="md-ellipsis">
-    Secrets
+    Persistent Volume Claims
   </span>
 </a>
 </li>
@@ -1682,14 +1748,142 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-is-kubernetes-architecture">
+<span class="md-ellipsis">
+      What is Kubernetes Architecture?
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-this-architecture-exists">
+<span class="md-ellipsis">
+      Why This Architecture Exists
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#high-level-architecture">
+<span class="md-ellipsis">
+      High-Level Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-components">
+<span class="md-ellipsis">
+      Core Components
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-it-works-simple-view">
+<span class="md-ellipsis">
+      How It Works (Simple View)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-world-implications">
+<span class="md-ellipsis">
+      Real-World Implications
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-takeaways">
+<span class="md-ellipsis">
+      Key Takeaways
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Kubernetes Architecture Overview</h1>
+<h1 id="kubernetes-architecture-overview">Kubernetes Architecture Overview<a class="headerlink" href="#kubernetes-architecture-overview" title="Permanent link">¶</a></h1>
+<h2 id="what-is-kubernetes-architecture">What is Kubernetes Architecture?<a class="headerlink" href="#what-is-kubernetes-architecture" title="Permanent link">¶</a></h2>
+<p>Kubernetes architecture defines how the system is structured to manage containerized applications across a cluster of machines.</p>
+<p>At a high level, Kubernetes is split into two main parts:</p>
+<ul>
+<li><strong>Control Plane</strong> – Makes decisions about the cluster</li>
+<li><strong>Worker Nodes</strong> – Run your applications</li>
+</ul>
+<hr>
+<h2 id="why-this-architecture-exists">Why This Architecture Exists<a class="headerlink" href="#why-this-architecture-exists" title="Permanent link">¶</a></h2>
+<p>Kubernetes is designed to:</p>
+<ul>
+<li>Decouple <strong>decision-making</strong> from <strong>execution</strong></li>
+<li>Enable <strong>horizontal scalability</strong></li>
+<li>Provide <strong>self-healing systems</strong></li>
+<li>Support <strong>declarative infrastructure</strong></li>
+</ul>
+<p>This separation is what allows Kubernetes to manage thousands of containers reliably.</p>
+<hr>
+<h2 id="high-level-architecture">High-Level Architecture<a class="headerlink" href="#high-level-architecture" title="Permanent link">¶</a></h2>
+<div class="mermaid">
+graph TD
+    User --&gt;|kubectl/API| APIServer
+    APIServer --&gt; Scheduler
+    APIServer --&gt; ControllerManager
+    APIServer --&gt; etcd
 
+    Scheduler --&gt; Node1
+    Scheduler --&gt; Node2
+
+    Node1 --&gt; Kubelet1
+    Node1 --&gt; KubeProxy1
+
+    Node2 --&gt; Kubelet2
+    Node2 --&gt; KubeProxy2
+</div>
+<hr>
+<h2 id="core-components">Core Components<a class="headerlink" href="#core-components" title="Permanent link">¶</a></h2>
+<p><strong>Control Plane</strong></p>
+<ul>
+<li>API Server</li>
+<li>Scheduler</li>
+<li>Controller Manager</li>
+<li>etcd</li>
+</ul>
+<p><strong>Worker Nodes</strong></p>
+<ul>
+<li>Kubelet</li>
+<li>Kube Proxy</li>
+<li>Container Runtime</li>
+</ul>
+<hr>
+<h2 id="how-it-works-simple-view">How It Works (Simple View)<a class="headerlink" href="#how-it-works-simple-view" title="Permanent link">¶</a></h2>
+<ol>
+<li>User submits a request (e.g. deploy a Pod)</li>
+<li>API Server validates and stores it in etcd</li>
+<li>Scheduler assigns the workload to a node</li>
+<li>Kubelet runs the container on that node</li>
+<li>Controllers continuously ensure desired state is maintained</li>
+</ol>
+<hr>
+<h2 id="real-world-implications">Real-World Implications<a class="headerlink" href="#real-world-implications" title="Permanent link">¶</a></h2>
+<ul>
+<li>If the Control Plane fails, the cluster stops making decisions</li>
+<li>If a Node fails, workloads are rescheduled automatically</li>
+<li>Everything is driven by desired state, not manual intervention</li>
+</ul>
+<hr>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">¶</a></h2>
+<ul>
+<li>Kubernetes separates control from execution</li>
+<li>The API Server is the central communication hub</li>
+<li>The system continuously reconciles desired vs actual state</li>
+</ul>
+<hr>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
@@ -1726,7 +1920,7 @@
 <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
 <script src="../../../javascripts/mermaid-init.js"></script>
 <script src="../../../javascripts/extra.js"></script>
-
+<script>mermaid.initialize({});</script>
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });
 </script></body></html>
