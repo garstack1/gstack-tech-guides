@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#container-lifecycle">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -1097,6 +1100,17 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Container Lifecycle
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -1107,6 +1121,59 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-states">
+<span class="md-ellipsis">
+      
+        The states
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-container-is-just-a-process">
+<span class="md-ellipsis">
+      
+        A container is just a process
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-survives-each-transition">
+<span class="md-ellipsis">
+      
+        What survives each transition
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../isolation/">
@@ -3948,6 +4015,57 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-states">
+<span class="md-ellipsis">
+      
+        The states
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-container-is-just-a-process">
+<span class="md-ellipsis">
+      
+        A container is just a process
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-survives-each-transition">
+<span class="md-ellipsis">
+      
+        What survives each transition
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3986,8 +4104,44 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Container Lifecycle</h1>
-
+<h1 id="container-lifecycle">Container Lifecycle<a class="headerlink" href="#container-lifecycle" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>A container moves through a small set of well-defined states during its life. The beginner tutorial showed the commands that move it between them. This page explains the <strong>states themselves</strong>, and what is really happening at each one.</p>
+<hr>
+<h2 id="the-states">The states<a class="headerlink" href="#the-states" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Created</strong>: the container exists, with its filesystem and configuration ready, but nothing is running yet. <code>docker run</code> normally creates and starts in a single step, so you rarely see this state on its own.</li>
+<li><strong>Running</strong>: the container's main process is executing. This is the normal, active state.</li>
+<li><strong>Paused</strong>: the running processes are frozen in place. They use no CPU but stay in memory, ready to resume exactly where they left off.</li>
+<li><strong>Stopped</strong> (also shown as <em>Exited</em>): the main process has ended, either because it finished or because you stopped it. The container still exists, with its writable layer and configuration intact, but nothing is running. It can be started again.</li>
+<li><strong>Removed</strong>: the container and its writable layer are deleted. It is gone.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>flowchart LR
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    Created --&gt;|start| Running
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>    Running --&gt;|pause| Paused
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    Paused --&gt;|unpause| Running
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>    Running --&gt;|stop or process exits| Stopped
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>    Stopped --&gt;|start| Running
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>    Stopped --&gt;|rm| Removed
+</code></pre></div>
+<p>(<code>docker run</code> is really "create then start" combined.)</p>
+<hr>
+<h2 id="a-container-is-just-a-process">A container is just a process<a class="headerlink" href="#a-container-is-just-a-process" title="Permanent link">¶</a></h2>
+<p>The mental model that ties this together: a running container <strong>is</strong> its main process running. Nothing more mystical than that.</p>
+<p>This explains behaviour you have already seen. The <code>hello-world</code> container printed its message and stopped instantly, because its main process finished immediately. An nginx container keeps running because its process stays alive waiting for requests. A container lives exactly as long as its main process does.</p>
+<hr>
+<h2 id="what-survives-each-transition">What survives each transition<a class="headerlink" href="#what-survives-each-transition" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Stop then start</strong>: the writable layer survives, so the container's data is intact when it resumes.</li>
+<li><strong>Remove</strong>: the writable layer is destroyed along with the container.</li>
+</ul>
+<p>This is the mechanism behind the volumes lesson: to keep data beyond a container's removal, it must live outside that writable layer.</p>
+<hr>
+<h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../isolation/">Isolation and Namespaces</a> explains what keeps containers separate.</li>
+<li><a href="../../storage/data-persistence/">Data Persistence</a> explains how to keep data for good.</li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

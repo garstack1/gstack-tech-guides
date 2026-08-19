@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#stop-compose-services">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -855,6 +858,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Stop Compose Services
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -865,6 +879,68 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-to-use-this-guide">
+<span class="md-ellipsis">
+      
+        When to Use This Guide
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-stop-and-remove-the-stack">
+<span class="md-ellipsis">
+      
+        Step 1: Stop and Remove the Stack
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-remove-volumes-too-optional">
+<span class="md-ellipsis">
+      
+        Step 2: Remove Volumes Too (Optional)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#stop-without-removing">
+<span class="md-ellipsis">
+      
+        Stop Without Removing
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-issues">
+<span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-guides">
+<span class="md-ellipsis">
+      
+        Related Guides
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -3948,6 +4024,66 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-to-use-this-guide">
+<span class="md-ellipsis">
+      
+        When to Use This Guide
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-stop-and-remove-the-stack">
+<span class="md-ellipsis">
+      
+        Step 1: Stop and Remove the Stack
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-remove-volumes-too-optional">
+<span class="md-ellipsis">
+      
+        Step 2: Remove Volumes Too (Optional)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#stop-without-removing">
+<span class="md-ellipsis">
+      
+        Stop Without Removing
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-issues">
+<span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-guides">
+<span class="md-ellipsis">
+      
+        Related Guides
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3986,8 +4122,46 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Stop Compose Services</h1>
-
+<h1 id="stop-compose-services">Stop Compose Services<a class="headerlink" href="#stop-compose-services" title="Permanent link">¶</a></h1>
+<h2 id="when-to-use-this-guide">When to Use This Guide<a class="headerlink" href="#when-to-use-this-guide" title="Permanent link">¶</a></h2>
+<p>Use this guide to stop and clean up the containers a Compose file started.</p>
+<hr>
+<div class="admonition tip">
+<p class="admonition-title">Quick Command</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>down
+</code></pre></div>
+</div>
+<hr>
+<h2 id="step-1-stop-and-remove-the-stack">Step 1: Stop and Remove the Stack<a class="headerlink" href="#step-1-stop-and-remove-the-stack" title="Permanent link">¶</a></h2>
+<p>Run this from the folder containing your <code>compose.yaml</code>.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>down
+</code></pre></div>
+<p>This stops and removes the containers and the network. Your named volumes are <strong>kept</strong>, so data is safe.</p>
+<hr>
+<h2 id="step-2-remove-volumes-too-optional">Step 2: Remove Volumes Too (Optional)<a class="headerlink" href="#step-2-remove-volumes-too-optional" title="Permanent link">¶</a></h2>
+<p>To wipe the data as well, add <code>-v</code>.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span>-v
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>docker compose down -v</code> permanently deletes the volumes and everything in them. Use it only for a clean start.</p>
+</div>
+<hr>
+<h2 id="stop-without-removing">Stop Without Removing<a class="headerlink" href="#stop-without-removing" title="Permanent link">¶</a></h2>
+<p>To pause the stack but keep the containers for later:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>stop
+</code></pre></div>
+<p>Start them again with <code>docker compose start</code>.</p>
+<hr>
+<h2 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">¶</a></h2>
+<p><strong>Data disappeared</strong></p>
+<p>You likely ran <code>down -v</code>, which removes volumes. Use plain <code>down</code> to keep data.</p>
+<hr>
+<h2 id="related-guides">Related Guides<a class="headerlink" href="#related-guides" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../run-compose/">Run a Multi-Container App</a></li>
+<li><a href="../create-compose-file/">Create a Compose File</a></li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#docker-networking-overview">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -1147,6 +1150,17 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Docker Networking Overview
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -1157,6 +1171,59 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#containers-on-a-network">
+<span class="md-ellipsis">
+      
+        Containers on a network
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reaching-the-outside-publishing-ports">
+<span class="md-ellipsis">
+      
+        Reaching the outside: publishing ports
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#network-types">
+<span class="md-ellipsis">
+      
+        Network types
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../bridge-network/">
@@ -3948,6 +4015,57 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#containers-on-a-network">
+<span class="md-ellipsis">
+      
+        Containers on a network
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reaching-the-outside-publishing-ports">
+<span class="md-ellipsis">
+      
+        Reaching the outside: publishing ports
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#network-types">
+<span class="md-ellipsis">
+      
+        Network types
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3986,8 +4104,37 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Docker Networking Overview</h1>
-
+<h1 id="docker-networking-overview">Docker Networking Overview<a class="headerlink" href="#docker-networking-overview" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>Because of the network namespace, every container starts with its own private network: its own interfaces, its own address, its own ports. Docker networking is about <strong>connecting</strong> those private networks, both to each other and to the outside world.</p>
+<hr>
+<h2 id="containers-on-a-network">Containers on a network<a class="headerlink" href="#containers-on-a-network" title="Permanent link">¶</a></h2>
+<p>When containers share a Docker network, they can reach one another. On a <strong>user-defined network</strong>, Docker also runs a small DNS service, so containers find each other by <strong>name</strong> rather than by chasing IP addresses. This is why the networking tutorial could point the app at a database simply by its container name.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>flowchart TB
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    NET[Docker network]
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>    NET --&gt; C1[Container A]
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    NET --&gt; C2[Container B]
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>    C1 &lt;--&gt;|reach by name| C2
+</code></pre></div>
+<hr>
+<h2 id="reaching-the-outside-publishing-ports">Reaching the outside: publishing ports<a class="headerlink" href="#reaching-the-outside-publishing-ports" title="Permanent link">¶</a></h2>
+<p>A container's ports are <strong>private by default</strong>. Other containers on the same network can reach them, but your laptop and the wider internet cannot.</p>
+<p>Publishing a port with <code>-p HOST:CONTAINER</code> opens a door from the host into the container. That is the difference between a database (usually left unpublished, reachable only by the app) and a web frontend (published, so people can visit it).</p>
+<hr>
+<h2 id="network-types">Network types<a class="headerlink" href="#network-types" title="Permanent link">¶</a></h2>
+<p>Docker offers several kinds of network:</p>
+<ul>
+<li><strong>bridge</strong>: the default. A private network on a single host.</li>
+<li><strong>host</strong>: the container shares the host's network directly, with no separation.</li>
+<li><strong>none</strong>: no networking at all.</li>
+<li><strong>overlay</strong>: a network that spans multiple hosts, used when orchestrating containers across a cluster.</li>
+</ul>
+<hr>
+<h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../bridge-network/">Bridge Network</a> covers the default type in detail.</li>
+<li><a href="../host-network/">Host Network</a> covers sharing the host's network directly.</li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

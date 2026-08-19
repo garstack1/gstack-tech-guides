@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#mount-a-volume">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -781,6 +784,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Mount a Volume
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -791,6 +805,59 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-to-use-this-guide">
+<span class="md-ellipsis">
+      
+        When to Use This Guide
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-mount-the-volume">
+<span class="md-ellipsis">
+      
+        Step 1: Mount the Volume
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-prove-the-data-survives">
+<span class="md-ellipsis">
+      
+        Step 2: Prove the Data Survives
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-issues">
+<span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-guides">
+<span class="md-ellipsis">
+      
+        Related Guides
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../bind-mounts/">
@@ -3948,6 +4015,57 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-to-use-this-guide">
+<span class="md-ellipsis">
+      
+        When to Use This Guide
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-mount-the-volume">
+<span class="md-ellipsis">
+      
+        Step 1: Mount the Volume
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-prove-the-data-survives">
+<span class="md-ellipsis">
+      
+        Step 2: Prove the Data Survives
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-issues">
+<span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-guides">
+<span class="md-ellipsis">
+      
+        Related Guides
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3986,8 +4104,41 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Mount a Volume</h1>
-
+<h1 id="mount-a-volume">Mount a Volume<a class="headerlink" href="#mount-a-volume" title="Permanent link">¶</a></h1>
+<h2 id="when-to-use-this-guide">When to Use This Guide<a class="headerlink" href="#when-to-use-this-guide" title="Permanent link">¶</a></h2>
+<p>Use this guide to attach a named volume to a container, so the data it writes there survives the container being removed.</p>
+<hr>
+<div class="admonition tip">
+<p class="admonition-title">Quick Command</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-v<span class="w"> </span>my-data:/var/lib/postgresql/data<span class="w"> </span>postgres:16
+</code></pre></div>
+</div>
+<hr>
+<h2 id="step-1-mount-the-volume">Step 1: Mount the Volume<a class="headerlink" href="#step-1-mount-the-volume" title="Permanent link">¶</a></h2>
+<p>Attach a volume with <code>-v NAME:PATH</code>, where <code>PATH</code> is the folder inside the container.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>db<span class="w"> </span>-e<span class="w"> </span><span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>secret<span class="w"> </span>-v<span class="w"> </span>my-data:/var/lib/postgresql/data<span class="w"> </span>postgres:16
+</code></pre></div>
+<p>Docker creates the volume automatically if it does not exist yet.</p>
+<hr>
+<h2 id="step-2-prove-the-data-survives">Step 2: Prove the Data Survives<a class="headerlink" href="#step-2-prove-the-data-survives" title="Permanent link">¶</a></h2>
+<p>Remove the container.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>db
+</code></pre></div>
+<p>Start a new one with the <strong>same</strong> volume, and the data is still there.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>db<span class="w"> </span>-e<span class="w"> </span><span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>secret<span class="w"> </span>-v<span class="w"> </span>my-data:/var/lib/postgresql/data<span class="w"> </span>postgres:16
+</code></pre></div>
+<hr>
+<h2 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">¶</a></h2>
+<p><strong>Data was not there after recreating</strong></p>
+<p>Check you used the exact same volume name both times. A typo creates a new, empty volume.</p>
+<p><strong>Wrong path inside the container</strong></p>
+<p>The volume must be mounted at the folder where the application actually stores its data. For Postgres that is <code>/var/lib/postgresql/data</code>.</p>
+<hr>
+<h2 id="related-guides">Related Guides<a class="headerlink" href="#related-guides" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../create-volume/">Create a Volume</a></li>
+<li><a href="../bind-mounts/">Use Bind Mounts</a></li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

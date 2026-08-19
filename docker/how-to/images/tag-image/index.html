@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#tag-an-image">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -633,6 +636,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Tag an Image
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -643,6 +657,68 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-to-use-this-guide">
+<span class="md-ellipsis">
+      
+        When to Use This Guide
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-tag-the-image">
+<span class="md-ellipsis">
+      
+        Step 1: Tag the Image
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-confirm">
+<span class="md-ellipsis">
+      
+        Step 2: Confirm
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#understanding-the-format">
+<span class="md-ellipsis">
+      
+        Understanding the Format
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-issues">
+<span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-guides">
+<span class="md-ellipsis">
+      
+        Related Guides
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../push-image/">
@@ -3948,6 +4024,66 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-to-use-this-guide">
+<span class="md-ellipsis">
+      
+        When to Use This Guide
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-tag-the-image">
+<span class="md-ellipsis">
+      
+        Step 1: Tag the Image
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-confirm">
+<span class="md-ellipsis">
+      
+        Step 2: Confirm
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#understanding-the-format">
+<span class="md-ellipsis">
+      
+        Understanding the Format
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-issues">
+<span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-guides">
+<span class="md-ellipsis">
+      
+        Related Guides
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3986,8 +4122,42 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Tag an Image</h1>
-
+<h1 id="tag-an-image">Tag an Image<a class="headerlink" href="#tag-an-image" title="Permanent link">¶</a></h1>
+<h2 id="when-to-use-this-guide">When to Use This Guide<a class="headerlink" href="#when-to-use-this-guide" title="Permanent link">¶</a></h2>
+<p>Use this guide to give an image an additional name, usually to add a version number or to prepare it for pushing to a registry.</p>
+<hr>
+<div class="admonition tip">
+<p class="admonition-title">Quick Command</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>docker<span class="w"> </span>tag<span class="w"> </span>my-app<span class="w"> </span>YOUR_USERNAME/my-app:1.0
+</code></pre></div>
+</div>
+<hr>
+<h2 id="step-1-tag-the-image">Step 1: Tag the Image<a class="headerlink" href="#step-1-tag-the-image" title="Permanent link">¶</a></h2>
+<p>Point a new name at an existing image.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>docker<span class="w"> </span>tag<span class="w"> </span>my-app<span class="w"> </span>YOUR_USERNAME/my-app:1.0
+</code></pre></div>
+<p>This does not make a copy. It adds a second name for the same image.</p>
+<hr>
+<h2 id="step-2-confirm">Step 2: Confirm<a class="headerlink" href="#step-2-confirm" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>docker<span class="w"> </span>images
+</code></pre></div>
+<p>Both <code>my-app</code> and <code>YOUR_USERNAME/my-app</code> will appear, sharing the same IMAGE ID.</p>
+<hr>
+<h2 id="understanding-the-format">Understanding the Format<a class="headerlink" href="#understanding-the-format" title="Permanent link">¶</a></h2>
+<p>A full image name looks like this:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>YOUR_USERNAME/repository:version
+</code></pre></div>
+<p>If you leave the version off, Docker uses <code>latest</code> by default. Tagging real versions like <code>1.0</code> is a good habit, because <code>latest</code> changes meaning over time.</p>
+<hr>
+<h2 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">¶</a></h2>
+<p><strong>No such image</strong></p>
+<p>The source image name is wrong. List your images with <code>docker images</code> and copy the name exactly.</p>
+<hr>
+<h2 id="related-guides">Related Guides<a class="headerlink" href="#related-guides" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../build-image/">Build an Image</a></li>
+<li><a href="../push-image/">Push to Docker Hub</a></li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

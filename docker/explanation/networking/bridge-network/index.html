@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#bridge-network">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -1159,6 +1162,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Bridge Network
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -1169,6 +1183,59 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#default-bridge-vs-user-defined-bridge">
+<span class="md-ellipsis">
+      
+        Default bridge vs user-defined bridge
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-it-works">
+<span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-user-defined-bridges-are-preferred">
+<span class="md-ellipsis">
+      
+        Why user-defined bridges are preferred
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../host-network/">
@@ -3948,6 +4015,57 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#default-bridge-vs-user-defined-bridge">
+<span class="md-ellipsis">
+      
+        Default bridge vs user-defined bridge
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-it-works">
+<span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-user-defined-bridges-are-preferred">
+<span class="md-ellipsis">
+      
+        Why user-defined bridges are preferred
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3986,8 +4104,37 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Bridge Network</h1>
-
+<h1 id="bridge-network">Bridge Network<a class="headerlink" href="#bridge-network" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>The <strong>bridge</strong> is Docker's default network type. It creates a private virtual network on your machine that containers attach to. A useful way to picture it is a <strong>virtual switch</strong>: containers plug into it, and it passes traffic between them.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>flowchart TB
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    HOST[Host] --&gt; BR[Bridge network]
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>    BR --&gt; C1[Container A: 172.18.0.2]
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    BR --&gt; C2[Container B: 172.18.0.3]
+</code></pre></div>
+<hr>
+<h2 id="default-bridge-vs-user-defined-bridge">Default bridge vs user-defined bridge<a class="headerlink" href="#default-bridge-vs-user-defined-bridge" title="Permanent link">¶</a></h2>
+<p>There are two flavours, and the difference matters:</p>
+<ul>
+<li><strong>The default bridge</strong> (named <code>bridge</code>): every container joins it automatically unless told otherwise. But containers on it can only reach each other by <strong>IP address</strong>, not by name. That makes it awkward to use.</li>
+<li><strong>A user-defined bridge</strong> (one you make with <code>docker network create</code>): this adds automatic <strong>name-based discovery</strong>, so containers reach each other by their names. This is the recommended approach, and it is exactly what Docker Compose creates for you behind the scenes.</li>
+</ul>
+<hr>
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">¶</a></h2>
+<p>Each container attached to the bridge is given a private IP address on the bridge's subnet. The bridge routes traffic between containers, and connects them outward to the host and the internet using address translation (NAT).</p>
+<hr>
+<h2 id="why-user-defined-bridges-are-preferred">Why user-defined bridges are preferred<a class="headerlink" href="#why-user-defined-bridges-are-preferred" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Name-based discovery</strong>: no need to look up and hard-code IP addresses.</li>
+<li><strong>Cleaner isolation</strong>: only the containers you attach can talk to each other.</li>
+</ul>
+<p>This is also what the networking tutorial's "break it on purpose" step demonstrated. When the app was left on the default bridge instead of the shared user-defined network, it could not resolve the database by name, and the connection failed.</p>
+<hr>
+<h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../host-network/">Host Network</a> for a very different approach.</li>
+<li><a href="../networking/">Docker Networking Overview</a> for the wider picture.</li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

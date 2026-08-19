@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#host-network">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -1171,6 +1174,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Host Network
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -1181,6 +1195,59 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-that-means-in-practice">
+<span class="md-ellipsis">
+      
+        What that means in practice
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-trade-offs">
+<span class="md-ellipsis">
+      
+        The trade-offs
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-to-use-it">
+<span class="md-ellipsis">
+      
+        When to use it
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -3948,6 +4015,57 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-that-means-in-practice">
+<span class="md-ellipsis">
+      
+        What that means in practice
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-trade-offs">
+<span class="md-ellipsis">
+      
+        The trade-offs
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-to-use-it">
+<span class="md-ellipsis">
+      
+        When to use it
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3986,8 +4104,39 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Host Network</h1>
-
+<h1 id="host-network">Host Network<a class="headerlink" href="#host-network" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>Host networking removes the separation entirely. With <code>--network host</code>, a container does <strong>not</strong> get its own network namespace. Instead it shares the host's network stack directly, as if the application were running on the host itself.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>flowchart TB
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    HN[Host network stack]
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>    HN --&gt; APP[Container using host network]
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    HN --&gt; OTHER[Other host processes]
+</code></pre></div>
+<hr>
+<h2 id="what-that-means-in-practice">What that means in practice<a class="headerlink" href="#what-that-means-in-practice" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>No separate container IP</strong>: the container uses the host's own address.</li>
+<li><strong>No port publishing</strong>: if the app listens on port 8080, it is immediately on the host's port 8080. There is no <code>-p</code> mapping, because there is no boundary to map across.</li>
+<li><strong>Slightly faster</strong>: with no virtual network layer or address translation in between, there is a little less overhead.</li>
+</ul>
+<hr>
+<h2 id="the-trade-offs">The trade-offs<a class="headerlink" href="#the-trade-offs" title="Permanent link">¶</a></h2>
+<p>Host networking gives up the very isolation that makes containers safe and tidy:</p>
+<ul>
+<li><strong>No network isolation</strong> between the container and the host.</li>
+<li><strong>Port conflicts</strong>: two containers cannot both use the same host port, because they share one set of ports.</li>
+<li><strong>Platform differences</strong>: it is primarily a Linux feature. On Docker Desktop for Mac and Windows, containers run inside a virtual machine, so host networking behaves differently and is often not what you expect.</li>
+</ul>
+<hr>
+<h2 id="when-to-use-it">When to use it<a class="headerlink" href="#when-to-use-it" title="Permanent link">¶</a></h2>
+<p>Reach for host networking only for specific needs: performance-sensitive workloads that cannot afford the small networking overhead, or tools that genuinely need to see the host's network interfaces directly.</p>
+<p>For almost everything else, a <strong>user-defined bridge</strong> is the better default. It keeps containers isolated, avoids port clashes, and gives you clean name-based discovery.</p>
+<hr>
+<h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../bridge-network/">Bridge Network</a> for the recommended default.</li>
+<li><a href="../networking/">Docker Networking Overview</a> for how the types compare.</li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#list-networks">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -695,6 +698,17 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    List Networks
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -705,6 +719,59 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-to-use-this-guide">
+<span class="md-ellipsis">
+      
+        When to Use This Guide
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-list-all-networks">
+<span class="md-ellipsis">
+      
+        Step 1: List All Networks
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-inspect-a-network">
+<span class="md-ellipsis">
+      
+        Step 2: Inspect a Network
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-issues">
+<span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-guides">
+<span class="md-ellipsis">
+      
+        Related Guides
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../create-network/">
@@ -3948,6 +4015,57 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-to-use-this-guide">
+<span class="md-ellipsis">
+      
+        When to Use This Guide
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-list-all-networks">
+<span class="md-ellipsis">
+      
+        Step 1: List All Networks
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-inspect-a-network">
+<span class="md-ellipsis">
+      
+        Step 2: Inspect a Network
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-issues">
+<span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-guides">
+<span class="md-ellipsis">
+      
+        Related Guides
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3986,8 +4104,38 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>List Networks</h1>
-
+<h1 id="list-networks">List Networks<a class="headerlink" href="#list-networks" title="Permanent link">¶</a></h1>
+<h2 id="when-to-use-this-guide">When to Use This Guide<a class="headerlink" href="#when-to-use-this-guide" title="Permanent link">¶</a></h2>
+<p>Use this guide to see the Docker networks on your machine, or to inspect one and find out which containers are attached to it.</p>
+<hr>
+<div class="admonition tip">
+<p class="admonition-title">Quick Command</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>docker<span class="w"> </span>network<span class="w"> </span>ls
+</code></pre></div>
+</div>
+<hr>
+<h2 id="step-1-list-all-networks">Step 1: List All Networks<a class="headerlink" href="#step-1-list-all-networks" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>docker<span class="w"> </span>network<span class="w"> </span>ls
+</code></pre></div>
+<p>You will always see a few built-in networks, including <code>bridge</code>, <code>host</code>, and <code>none</code>, plus any you or Compose have created.</p>
+<hr>
+<h2 id="step-2-inspect-a-network">Step 2: Inspect a Network<a class="headerlink" href="#step-2-inspect-a-network" title="Permanent link">¶</a></h2>
+<p>See its details, including which containers are attached.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>docker<span class="w"> </span>network<span class="w"> </span>inspect<span class="w"> </span>my-net
+</code></pre></div>
+<p>Look under the <code>Containers</code> section of the output to see what is connected.</p>
+<hr>
+<h2 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">¶</a></h2>
+<p><strong>Too many networks left over</strong></p>
+<p>Compose and old projects can leave networks behind. Remove unused ones with:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>docker<span class="w"> </span>network<span class="w"> </span>prune
+</code></pre></div>
+<hr>
+<h2 id="related-guides">Related Guides<a class="headerlink" href="#related-guides" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../create-network/">Create a Network</a></li>
+<li><a href="../connect-containers/">Connect Containers</a></li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

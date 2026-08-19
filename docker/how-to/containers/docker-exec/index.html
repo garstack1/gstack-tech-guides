@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#exec-into-a-container">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -571,6 +574,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Exec into a Container
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -581,6 +595,77 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-to-use-this-guide">
+<span class="md-ellipsis">
+      
+        When to Use This Guide
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-confirm-the-container-is-running">
+<span class="md-ellipsis">
+      
+        Step 1: Confirm the Container Is Running
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-open-a-shell-inside-it">
+<span class="md-ellipsis">
+      
+        Step 2: Open a Shell Inside It
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-run-commands-then-leave">
+<span class="md-ellipsis">
+      
+        Step 3: Run Commands, Then Leave
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-a-single-command-without-a-shell">
+<span class="md-ellipsis">
+      
+        Run a Single Command Without a Shell
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-issues">
+<span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-guides">
+<span class="md-ellipsis">
+      
+        Related Guides
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../view-logs/">
@@ -3948,6 +4033,75 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-to-use-this-guide">
+<span class="md-ellipsis">
+      
+        When to Use This Guide
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-confirm-the-container-is-running">
+<span class="md-ellipsis">
+      
+        Step 1: Confirm the Container Is Running
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-open-a-shell-inside-it">
+<span class="md-ellipsis">
+      
+        Step 2: Open a Shell Inside It
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-run-commands-then-leave">
+<span class="md-ellipsis">
+      
+        Step 3: Run Commands, Then Leave
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-a-single-command-without-a-shell">
+<span class="md-ellipsis">
+      
+        Run a Single Command Without a Shell
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-issues">
+<span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-guides">
+<span class="md-ellipsis">
+      
+        Related Guides
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3986,8 +4140,53 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Exec into a Container</h1>
-
+<h1 id="exec-into-a-container">Exec into a Container<a class="headerlink" href="#exec-into-a-container" title="Permanent link">¶</a></h1>
+<h2 id="when-to-use-this-guide">When to Use This Guide<a class="headerlink" href="#when-to-use-this-guide" title="Permanent link">¶</a></h2>
+<p>Use this guide when you need to run a command inside a running container, or open a shell to look around while debugging.</p>
+<hr>
+<div class="admonition tip">
+<p class="admonition-title">Quick Command</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>web<span class="w"> </span>sh
+</code></pre></div>
+</div>
+<hr>
+<h2 id="step-1-confirm-the-container-is-running">Step 1: Confirm the Container Is Running<a class="headerlink" href="#step-1-confirm-the-container-is-running" title="Permanent link">¶</a></h2>
+<p><code>exec</code> only works on a running container.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>docker<span class="w"> </span>ps
+</code></pre></div>
+<hr>
+<h2 id="step-2-open-a-shell-inside-it">Step 2: Open a Shell Inside It<a class="headerlink" href="#step-2-open-a-shell-inside-it" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>web<span class="w"> </span>sh
+</code></pre></div>
+<ul>
+<li><code>-it</code> makes the session interactive</li>
+<li><code>sh</code> is the shell to run (some images also have <code>bash</code>)</li>
+</ul>
+<p>Your prompt changes to show you are now inside the container.</p>
+<hr>
+<h2 id="step-3-run-commands-then-leave">Step 3: Run Commands, Then Leave<a class="headerlink" href="#step-3-run-commands-then-leave" title="Permanent link">¶</a></h2>
+<p>Inside the container you can inspect files or environment variables.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>ls
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>env
+</code></pre></div>
+<p>Type <code>exit</code> to return to your own terminal.</p>
+<hr>
+<h2 id="run-a-single-command-without-a-shell">Run a Single Command Without a Shell<a class="headerlink" href="#run-a-single-command-without-a-shell" title="Permanent link">¶</a></h2>
+<p>To run one command and get the output directly:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>web<span class="w"> </span>ls<span class="w"> </span>/usr/share/nginx/html
+</code></pre></div>
+<hr>
+<h2 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">¶</a></h2>
+<p><strong>"container is not running"</strong></p>
+<p>You cannot exec into a stopped container. Check <code>docker ps -a</code>, and view its logs instead.</p>
+<p><strong>"executable file not found" for bash</strong></p>
+<p>The image may not include <code>bash</code>. Use <code>sh</code> instead.</p>
+<hr>
+<h2 id="related-guides">Related Guides<a class="headerlink" href="#related-guides" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../view-logs/">View Container Logs</a></li>
+<li><a href="../run-container/">Run a Container</a></li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

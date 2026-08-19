@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#volumes-vs-bind-mounts">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -1209,6 +1212,17 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Volumes vs Bind Mounts
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -1219,6 +1233,50 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-options">
+<span class="md-ellipsis">
+      
+        The options
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#volumes-vs-bind-mounts_1">
+<span class="md-ellipsis">
+      
+        Volumes vs bind mounts
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../data-persistence/">
@@ -3948,6 +4006,48 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-options">
+<span class="md-ellipsis">
+      
+        The options
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#volumes-vs-bind-mounts_1">
+<span class="md-ellipsis">
+      
+        Volumes vs bind mounts
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3986,8 +4086,58 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Volumes vs Bind Mounts</h1>
-
+<h1 id="volumes-vs-bind-mounts">Volumes vs Bind Mounts<a class="headerlink" href="#volumes-vs-bind-mounts" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>By default, everything a container writes goes into its <strong>writable layer</strong>, which is destroyed when the container is removed. To keep data, or to share files with the host, Docker offers storage that lives <strong>outside</strong> the container. There are a few kinds, and choosing the right one matters.</p>
+<hr>
+<h2 id="the-options">The options<a class="headerlink" href="#the-options" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Writable layer</strong> (the default): temporary, private to one container, and gone the moment that container is removed. Fine for scratch work, useless for anything you need to keep.</li>
+<li><strong>Named volume</strong>: storage that Docker creates and manages for you. You refer to it by name and let Docker decide where it physically sits. This is the right choice for data your application produces.</li>
+<li><strong>Bind mount</strong>: maps a specific folder on <strong>your host machine</strong> into the container. You control exactly where it lives. Ideal when you want to edit files on your machine and have the container see the changes.</li>
+<li><strong>tmpfs</strong>: stored only in memory, never written to disk, and gone when the container stops. Useful for sensitive or purely temporary data.</li>
+</ul>
+<hr>
+<h2 id="volumes-vs-bind-mounts_1">Volumes vs bind mounts<a class="headerlink" href="#volumes-vs-bind-mounts_1" title="Permanent link">¶</a></h2>
+<p>The two you will reach for most are volumes and bind mounts. They solve different problems:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Named volume</th>
+<th>Bind mount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Managed by</td>
+<td>Docker</td>
+<td>You</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>Docker decides</td>
+<td>A path you choose on the host</td>
+</tr>
+<tr>
+<td>Best for</td>
+<td>Data the app owns (databases, uploads)</td>
+<td>Files you actively edit (source code)</td>
+</tr>
+<tr>
+<td>Portable</td>
+<td>Yes</td>
+<td>Tied to a host path</td>
+</tr>
+</tbody>
+</table>
+<p>The rule of thumb from the volumes lesson holds: <strong>volumes for data your app produces, bind mounts for files you are actively editing.</strong></p>
+<hr>
+<h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../data-persistence/">Data Persistence</a> explains the idea behind keeping data safe.</li>
+<li><a href="../../images/image-layers/">Image Layers</a> explains the writable layer these options replace.</li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

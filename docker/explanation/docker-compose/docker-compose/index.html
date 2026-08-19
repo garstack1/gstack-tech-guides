@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#what-is-docker-compose">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -1259,6 +1262,17 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    What is Docker Compose
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -1269,6 +1283,59 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#declarative-not-step-by-step">
+<span class="md-ellipsis">
+      
+        Declarative, not step by step
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-compose-file">
+<span class="md-ellipsis">
+      
+        The Compose file
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-it-matters">
+<span class="md-ellipsis">
+      
+        Why it matters
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../multi-container/">
@@ -3948,6 +4015,57 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#declarative-not-step-by-step">
+<span class="md-ellipsis">
+      
+        Declarative, not step by step
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-compose-file">
+<span class="md-ellipsis">
+      
+        The Compose file
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-it-matters">
+<span class="md-ellipsis">
+      
+        Why it matters
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3986,8 +4104,35 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>What is Docker Compose</h1>
-
+<h1 id="what-is-docker-compose">What is Docker Compose?<a class="headerlink" href="#what-is-docker-compose" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>Docker Compose is a tool for defining and running applications made of <strong>multiple containers</strong>. Instead of typing a long series of <code>docker</code> commands to start each piece, you describe the whole system in one file and bring it all up with a single command.</p>
+<hr>
+<h2 id="declarative-not-step-by-step">Declarative, not step by step<a class="headerlink" href="#declarative-not-step-by-step" title="Permanent link">¶</a></h2>
+<p>This is the key shift in thinking. With <code>docker run</code>, you give <strong>step-by-step instructions</strong>: create this network, run that container, attach this volume, set these variables. If you miss a step, it breaks.</p>
+<p>With Compose, you <strong>describe the end result you want</strong>: these services should exist, on this network, with these volumes. Compose then figures out how to make reality match your description. You say <em>what</em> you want, not <em>how</em> to assemble it.</p>
+<hr>
+<h2 id="the-compose-file">The Compose file<a class="headerlink" href="#the-compose-file" title="Permanent link">¶</a></h2>
+<p>A <code>compose.yaml</code> file lists the parts of your system:</p>
+<ul>
+<li><strong>services</strong>: the containers, each saying which image to use or build, its ports, its environment, and what it depends on.</li>
+<li><strong>networks</strong> and <strong>volumes</strong>: declared once and shared by the services that need them.</li>
+</ul>
+<p>Compose reads this file and creates everything in it, including a shared network so the services can find each other by name automatically.</p>
+<hr>
+<h2 id="why-it-matters">Why it matters<a class="headerlink" href="#why-it-matters" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Reproducible</strong>: the file is the single source of truth for the entire stack. The same file produces the same system every time.</li>
+<li><strong>Shareable</strong>: hand someone the file and they can run your whole application, no lengthy setup instructions needed.</li>
+<li><strong>Version-controlled</strong>: it lives in Git alongside your code, so changes to your architecture are tracked like any other change.</li>
+</ul>
+<p><code>docker compose up</code> builds it all; <code>docker compose down</code> cleanly removes it.</p>
+<hr>
+<h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../multi-container/">Multi-Container Architecture</a> explains why apps are split into several containers.</li>
+<li>The <a href="../../../tutorials/advanced/docker-compose-app/">Docker Compose tutorial</a> puts it into practice.</li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

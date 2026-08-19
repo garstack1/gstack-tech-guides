@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#multi-container-architecture">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -1271,6 +1274,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Multi-Container Architecture
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -1281,6 +1295,68 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#one-concern-per-container">
+<span class="md-ellipsis">
+      
+        One concern per container
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-the-pieces-relate">
+<span class="md-ellipsis">
+      
+        How the pieces relate
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-snapshot-example">
+<span class="md-ellipsis">
+      
+        The Snapshot example
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-build-this-way">
+<span class="md-ellipsis">
+      
+        Why build this way
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -3948,6 +4024,66 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#one-concern-per-container">
+<span class="md-ellipsis">
+      
+        One concern per container
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-the-pieces-relate">
+<span class="md-ellipsis">
+      
+        How the pieces relate
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-snapshot-example">
+<span class="md-ellipsis">
+      
+        The Snapshot example
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-build-this-way">
+<span class="md-ellipsis">
+      
+        Why build this way
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3986,8 +4122,44 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Multi-Container Architecture</h1>
-
+<h1 id="multi-container-architecture">Multi-Container Architecture<a class="headerlink" href="#multi-container-architecture" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>Real applications are rarely a single container. They are built from several <strong>single-purpose</strong> containers working together. This page explains why that is the norm, and how the pieces relate.</p>
+<hr>
+<h2 id="one-concern-per-container">One concern per container<a class="headerlink" href="#one-concern-per-container" title="Permanent link">¶</a></h2>
+<p>The guiding principle is simple: <strong>each container should do one job</strong>. A frontend, an API, a database, and a background worker each live in their own container rather than being bundled together.</p>
+<p>Keeping them separate keeps them independent. You can update, restart, or scale one without disturbing the others, and you can swap one out (a different database, say) without touching the rest.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>flowchart LR
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    User[User] --&gt; F[Frontend container]
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>    F --&gt; A[API container]
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    A --&gt; D[(Database container)]
+</code></pre></div>
+<hr>
+<h2 id="how-the-pieces-relate">How the pieces relate<a class="headerlink" href="#how-the-pieces-relate" title="Permanent link">¶</a></h2>
+<p>Compose gives you three tools to connect single-purpose containers into a system:</p>
+<ul>
+<li><strong>Services</strong>: each container is defined as a service.</li>
+<li><strong>A shared network</strong>: Compose places the services on one network so they discover each other by name.</li>
+<li><strong>Dependencies</strong>: <code>depends_on</code> expresses the order they should start in.</li>
+</ul>
+<hr>
+<h2 id="the-snapshot-example">The Snapshot example<a class="headerlink" href="#the-snapshot-example" title="Permanent link">¶</a></h2>
+<p>The final tutorial built exactly this shape. The <strong>frontend</strong> serves the page and forwards API requests to the <strong>API</strong>, which reads and writes the <strong>database</strong>. Only the frontend is exposed to the outside world; the API and database stay private inside the stack. Each tier is replaceable on its own.</p>
+<hr>
+<h2 id="why-build-this-way">Why build this way<a class="headerlink" href="#why-build-this-way" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Independent scaling</strong>: run several API containers behind one database if traffic demands it.</li>
+<li><strong>Independent updates</strong>: ship a new frontend without restarting the database.</li>
+<li><strong>Separation of concerns</strong>: each part stays small and focused.</li>
+<li><strong>Reusability</strong>: standard images (like Postgres) drop in without modification.</li>
+</ul>
+<p>This same thinking, many small containers cooperating, is exactly what Kubernetes is built to manage at large scale.</p>
+<hr>
+<h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../docker-compose/">What is Docker Compose?</a> for the tool that runs these systems.</li>
+<li>The <a href="../../../tutorials/end-to-end/fullstack-compose/">Full Stack App with Compose</a> tutorial builds one end to end.</li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
