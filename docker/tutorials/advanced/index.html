@@ -5,7 +5,7 @@
 <meta content="Garrett Stack" name="author">
 <link href="https://garstack-sharetribe.github.io/gstack-tech-guides/docker/tutorials/advanced/" rel="canonical">
 <link href="../intermediate/docker-networking/" rel="prev">
-<link href="multi-stage-builds/" rel="next">
+<link href="optimize-images/" rel="next">
 <link href="../../../assets/images/favicon.png" rel="icon">
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator">
 <title>Index - Technical Tutorials Hub</title>
@@ -391,11 +391,11 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="multi-stage-builds/">
+<a class="md-nav__link" href="optimize-images/">
 <span class="md-ellipsis">
     
   
-    Multi-Stage Builds
+    Optimize Image Size
   
 
     
@@ -403,11 +403,11 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="optimize-images/">
+<a class="md-nav__link" href="multi-stage-builds/">
 <span class="md-ellipsis">
     
   
-    Optimize Image Size
+    Multi-Stage Builds
   
 
     
@@ -4009,12 +4009,12 @@
 </nav>
 <article class="md-content__inner md-typeset">
 <h1 id="advanced-production-ready-docker">Advanced: Production-Ready Docker<a class="headerlink" href="#advanced-production-ready-docker" title="Permanent link">¶</a></h1>
-<p>You can build and connect images. This track is about doing it <em>well</em>: smaller images, cleaner builds, and the skills to fix things when they break.</p>
+<p>You can build and connect images by hand. This track makes that professional: run your whole stack from one file, produce much smaller images, and gain the skills to fix things when they break.</p>
 <p>You will learn how to:</p>
 <ul>
+<li>Run your whole multi-service app from a single Compose file</li>
 <li>Use multi-stage builds to produce lean images</li>
 <li>Shrink image size and understand what drives it</li>
-<li>Run a multi-service application with Docker Compose</li>
 <li>Debug containers that misbehave</li>
 </ul>
 <hr>
@@ -4030,6 +4030,11 @@
 <div class="grid cards">
 <ul>
 <li>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 3v8h8V3zM3 21h8v-8H3zM3 3v8h8V3zm10 13h3v-3h2v3h3v2h-3v3h-2v-3h-3z"></path></svg></span> <strong>Docker Compose Multi-Service App</strong></p>
+<p>Run a whole stack of containers with a single command.</p>
+<p><a href="docker-compose-app/"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Start Tutorial</a></p>
+</li>
+<li>
 <p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0 3 7l1.63 1.27L12 14l7.36-5.73L21 7zm7.37 10.73L12 16.47l-7.38-5.73L3 12l9 7 9-7zm0 5L12 21.47l-7.38-5.73L3 17l9 7 9-7z"></path></svg></span> <strong>Multi-Stage Builds</strong></p>
 <p>Build in one stage, ship from a clean one, and drop the extra weight.</p>
 <p><a href="multi-stage-builds/"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Start Tutorial</a></p>
@@ -4038,11 +4043,6 @@
 <p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.5 3.09 15 7.59V4h-2v7h7V9h-3.59l4.5-4.5zM4 13v2h3.59l-4.5 4.5 1.41 1.41 4.5-4.5V20h2v-7z"></path></svg></span> <strong>Optimize Image Size</strong></p>
 <p>See what makes images large and how to make them small.</p>
 <p><a href="optimize-images/"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Start Tutorial</a></p>
-</li>
-<li>
-<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 3v8h8V3zM3 21h8v-8H3zM3 3v8h8V3zm10 13h3v-3h2v3h3v2h-3v3h-2v-3h-3z"></path></svg></span> <strong>Docker Compose Multi-Service App</strong></p>
-<p>Run a whole stack of containers with a single command.</p>
-<p><a href="docker-compose-app/"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Start Tutorial</a></p>
 </li>
 <li>
 <p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 12h-4v-2h4m0 6h-4v-2h4m6-6h-2.81a6 6 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6 6 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20z"></path></svg></span> <strong>Debugging Containers</strong></p>

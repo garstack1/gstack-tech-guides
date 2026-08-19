@@ -4,8 +4,8 @@
 <meta content="Hands-on guides for Kubernetes, Docker, Automation and more" name="description">
 <meta content="Garrett Stack" name="author">
 <link href="https://garstack-sharetribe.github.io/gstack-tech-guides/docker/tutorials/advanced/optimize-images/" rel="canonical">
-<link href="../multi-stage-builds/" rel="prev">
-<link href="../docker-compose-app/" rel="next">
+<link href="../" rel="prev">
+<link href="../multi-stage-builds/" rel="next">
 <link href="../../../../assets/images/favicon.png" rel="icon">
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator">
 <title>Optimize Image Size - Technical Tutorials Hub</title>
@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#optimize-image-size">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -387,25 +390,116 @@
 
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Optimize Image Size
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Optimize Image Size
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-we-will-do-in-very-simple-steps">
+<span class="md-ellipsis">
+      
+        What we will do (in very simple steps)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lever-1-pick-the-right-base-image">
+<span class="md-ellipsis">
+      
+        Lever 1: Pick the right base image
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lever-2-add-a-dockerignore">
+<span class="md-ellipsis">
+      
+        Lever 2: Add a .dockerignore
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lever-3-order-your-dockerfile-for-caching">
+<span class="md-ellipsis">
+      
+        Lever 3: Order your Dockerfile for caching
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lever-4-clean-up-in-the-same-layer">
+<span class="md-ellipsis">
+      
+        Lever 4: Clean up in the same layer
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#check-your-work">
+<span class="md-ellipsis">
+      
+        Check your work
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#checkpoint">
+<span class="md-ellipsis">
+      
+        ✅ Checkpoint
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-hiccups">
+<span class="md-ellipsis">
+      
+        🩹 Common hiccups
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../multi-stage-builds/">
 <span class="md-ellipsis">
     
   
     Multi-Stage Builds
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
-<a class="md-nav__link md-nav__link--active" href="./">
-<span class="md-ellipsis">
-    
-  
-    Optimize Image Size
   
 
     
@@ -3944,6 +4038,84 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-we-will-do-in-very-simple-steps">
+<span class="md-ellipsis">
+      
+        What we will do (in very simple steps)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lever-1-pick-the-right-base-image">
+<span class="md-ellipsis">
+      
+        Lever 1: Pick the right base image
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lever-2-add-a-dockerignore">
+<span class="md-ellipsis">
+      
+        Lever 2: Add a .dockerignore
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lever-3-order-your-dockerfile-for-caching">
+<span class="md-ellipsis">
+      
+        Lever 3: Order your Dockerfile for caching
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lever-4-clean-up-in-the-same-layer">
+<span class="md-ellipsis">
+      
+        Lever 4: Clean up in the same layer
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#check-your-work">
+<span class="md-ellipsis">
+      
+        Check your work
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#checkpoint">
+<span class="md-ellipsis">
+      
+        ✅ Checkpoint
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-hiccups">
+<span class="md-ellipsis">
+      
+        🩹 Common hiccups
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3982,8 +4154,122 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Optimize Image Size</h1>
-
+<h1 id="optimize-image-size">Optimize Image Size<a class="headerlink" href="#optimize-image-size" title="Permanent link">¶</a></h1>
+<p>Multi-stage builds were the biggest lever for shrinking images. This lesson covers the rest of the toolkit: choosing the right base, keeping junk out, and ordering your Dockerfile so builds stay fast. We'll apply these to your Python API image from the intermediate track. 🧹</p>
+<h2 id="what-we-will-do-in-very-simple-steps">What we will do (in very simple steps)<a class="headerlink" href="#what-we-will-do-in-very-simple-steps" title="Permanent link">¶</a></h2>
+<ol>
+<li>Understand how the base image sets your starting size</li>
+<li>Add a <code>.dockerignore</code> to keep junk out of your image</li>
+<li>Order your Dockerfile so rebuilds stay fast</li>
+<li>Learn the cleanup habit for system packages</li>
+</ol>
+<hr>
+<h2 id="lever-1-pick-the-right-base-image">Lever 1: Pick the right base image<a class="headerlink" href="#lever-1-pick-the-right-base-image" title="Permanent link">¶</a></h2>
+<p>Your base image (<code>FROM ...</code>) decides how much you start with before you add a single thing. For Python, there are three common choices:</p>
+<table>
+<thead>
+<tr>
+<th>Base image</th>
+<th>Approx size</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>python:3.12</code></td>
+<td>~1 GB</td>
+<td>A fully stocked professional kitchen. Everything, most unused.</td>
+</tr>
+<tr>
+<td><code>python:3.12-slim</code></td>
+<td>~150 MB</td>
+<td>A compact kitchen with the essentials. The usual sweet spot.</td>
+</tr>
+<tr>
+<td><code>python:3.12-alpine</code></td>
+<td>~50 MB</td>
+<td>A tiny camping stove. Smallest, but some ingredients cook differently.</td>
+</tr>
+</tbody>
+</table>
+<p>Your API Dockerfile already uses <code>python:3.12-slim</code>, which is the right default for most Python apps. 👍</p>
+<p>A word on <strong>alpine</strong>: it's tempting because it's tiny, but it uses a different core library (musl instead of glibc). Some Python packages have no ready-made build for it and must be compiled, which can make builds slower and occasionally break. For example, the <code>psycopg2</code> database driver needs extra build tools on alpine. Reach for <code>slim</code> first, and only consider <code>alpine</code> when size is truly critical and you've tested it.</p>
+<p>Check your current image's size:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>docker<span class="w"> </span>images<span class="w"> </span>my-first-app
+</code></pre></div>
+<hr>
+<h2 id="lever-2-add-a-dockerignore">Lever 2: Add a <code>.dockerignore</code><a class="headerlink" href="#lever-2-add-a-dockerignore" title="Permanent link">¶</a></h2>
+<p>When you run <code>docker build</code>, Docker copies the whole folder (the "build context") and your <code>COPY . .</code> line can pull unwanted files into the image: caches, local settings, secrets. A <code>.dockerignore</code> file tells Docker what to leave out.</p>
+<p>In <code>~/my-docker-app</code>, create a file named exactly <code>.dockerignore</code>:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>.venv/
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>__pycache__/
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>*.pyc
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>*.env
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>.git/
+</code></pre></div>
+<p>What each line keeps out:</p>
+<ul>
+<li><code>.venv/</code> a local Python environment, never wanted in an image</li>
+<li><code>__pycache__/</code> and <code>*.pyc</code> Python's compiled cache files</li>
+<li><code>*.env</code> your <code>app.env</code> and any other env files. Keeping secrets <strong>out</strong> of images is important, and you pass them at run time anyway</li>
+<li><code>.git/</code> version history, irrelevant inside an image</li>
+</ul>
+<p>Rebuild and your image is cleaner and smaller, with no risk of baking in that <code>app.env</code>:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>my-first-app<span class="w"> </span>.
+</code></pre></div>
+<blockquote>
+<p>💡 A <code>.dockerignore</code> works just like a <code>.gitignore</code>, but for Docker builds. Most real projects have both.</p>
+</blockquote>
+<hr>
+<h2 id="lever-3-order-your-dockerfile-for-caching">Lever 3: Order your Dockerfile for caching<a class="headerlink" href="#lever-3-order-your-dockerfile-for-caching" title="Permanent link">¶</a></h2>
+<p>Docker builds in layers, and it <strong>caches</strong> each one. If a layer hasn't changed, Docker reuses it instead of redoing the work. The trick is to put the things that rarely change <strong>before</strong> the things that change often.</p>
+<p>Look at your Dockerfile's order:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">COPY</span><span class="w"> </span>requirements.txt<span class="w"> </span>.
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+</code></pre></div>
+<p>This ordering is deliberate. Dependencies (<code>requirements.txt</code>) change rarely, so installing them comes first. Your code changes constantly, so it's copied last. See it in action: make a tiny edit to <code>app.py</code>, then rebuild:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>my-first-app<span class="w"> </span>.
+</code></pre></div>
+<p>The rebuild is <strong>fast</strong>, because Docker reused the cached dependency layer and only redid the final code copy. ⚡</p>
+<p>Now imagine the wrong order, with <code>COPY . .</code> before the install. Every single code change would throw away the cache and reinstall every dependency from scratch, every time. Same result, far slower. Order matters.</p>
+<blockquote>
+<p>💡 You'll also notice <code>--no-cache-dir</code> on the pip line. That stops pip from keeping its own download cache inside the image, saving more space.</p>
+</blockquote>
+<hr>
+<h2 id="lever-4-clean-up-in-the-same-layer">Lever 4: Clean up in the same layer<a class="headerlink" href="#lever-4-clean-up-in-the-same-layer" title="Permanent link">¶</a></h2>
+<p>Your Python app doesn't install system packages, but many images do, and this is where size quietly balloons. When you install with a package manager, clean up in the <strong>same</strong> <code>RUN</code> command, because each <code>RUN</code> is a permanent layer. Cleaning up in a later step doesn't shrink the earlier one.</p>
+<p>The pattern to remember, using Debian's <code>apt</code> as an example:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--no-install-recommends<span class="w"> </span>some-package<span class="w"> </span><span class="se">\</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*
+</code></pre></div>
+<p>Everything happens in one layer: update, install only what's needed, then delete the package lists. Splitting these across separate <code>RUN</code> lines would leave the junk baked into an earlier layer forever.</p>
+<hr>
+<h2 id="check-your-work">Check your work<a class="headerlink" href="#check-your-work" title="Permanent link">¶</a></h2>
+<p>See all your images and their sizes together:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>docker<span class="w"> </span>images
+</code></pre></div>
+<p>A well-built Python API image on <code>slim</code>, with a <code>.dockerignore</code> and sensible layering, typically lands around 150 to 200 MB. If yours is far larger, one of these four levers is usually the reason.</p>
+<hr>
+<h2 id="checkpoint">✅ Checkpoint<a class="headerlink" href="#checkpoint" title="Permanent link">¶</a></h2>
+<p>You've finished this lesson if:</p>
+<ul>
+<li>You can name the trade-off between <code>slim</code> and <code>alpine</code></li>
+<li>You added a <code>.dockerignore</code> and rebuilt your API image</li>
+<li>You understand why <code>requirements.txt</code> is copied before your code</li>
+<li>You know to clean up package caches in the same <code>RUN</code> line</li>
+</ul>
+<hr>
+<h2 id="common-hiccups">🩹 Common hiccups<a class="headerlink" href="#common-hiccups" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong><code>.dockerignore</code> seems ignored</strong>: it must be named exactly <code>.dockerignore</code> and sit in the same folder you build from.</li>
+<li><strong>Rebuild still slow after a code change</strong>: check that <code>COPY requirements.txt</code> and the install come <strong>before</strong> <code>COPY . .</code> in your Dockerfile.</li>
+<li><strong>Switched to alpine and the build broke</strong>: that's the musl trade-off. Go back to <code>slim</code> unless you're ready to add build tools and test carefully.</li>
+<li><strong>Image still large</strong>: run <code>docker history my-first-app</code> to see which layer is heaviest, and target that one.</li>
+</ul>
+<hr>
+<p><strong>Next up:</strong> <a href="../debugging-containers/">Debugging Containers</a>, the final lesson of the track, where you'll learn to read logs, inspect containers, and calmly track down why something isn't working.</p>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

@@ -4,7 +4,7 @@
 <meta content="Hands-on guides for Kubernetes, Docker, Automation and more" name="description">
 <meta content="Garrett Stack" name="author">
 <link href="https://garstack-sharetribe.github.io/gstack-tech-guides/docker/tutorials/advanced/docker-compose-app/" rel="canonical">
-<link href="../optimize-images/" rel="prev">
+<link href="../multi-stage-builds/" rel="prev">
 <link href="../debugging-containers/" rel="next">
 <link href="../../../../assets/images/favicon.png" rel="icon">
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator">
@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#docker-compose-multi-service-app">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -388,18 +391,6 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../multi-stage-builds/">
-<span class="md-ellipsis">
-    
-  
-    Multi-Stage Builds
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../optimize-images/">
 <span class="md-ellipsis">
     
@@ -411,8 +402,31 @@
   </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../multi-stage-builds/">
+<span class="md-ellipsis">
+    
+  
+    Multi-Stage Builds
+  
+
+    
+  </span>
+</a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Docker Compose Multi-Service App
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -423,6 +437,95 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-we-will-do-in-very-simple-steps">
+<span class="md-ellipsis">
+      
+        What we will do (in very simple steps)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-idea">
+<span class="md-ellipsis">
+      
+        The idea
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-create-the-compose-file">
+<span class="md-ellipsis">
+      
+        Step 1: Create the Compose file
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-add-a-database-seed-file">
+<span class="md-ellipsis">
+      
+        Step 2: Add a database seed file
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-start-everything-with-one-command">
+<span class="md-ellipsis">
+      
+        Step 3: Start everything with one command
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-4-tear-it-down">
+<span class="md-ellipsis">
+      
+        Step 4: Tear it down
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-note-on-depends_on">
+<span class="md-ellipsis">
+      
+        A note on depends_on
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#checkpoint">
+<span class="md-ellipsis">
+      
+        ✅ Checkpoint
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-hiccups">
+<span class="md-ellipsis">
+      
+        🩹 Common hiccups
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../debugging-containers/">
@@ -3944,6 +4047,93 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-we-will-do-in-very-simple-steps">
+<span class="md-ellipsis">
+      
+        What we will do (in very simple steps)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-idea">
+<span class="md-ellipsis">
+      
+        The idea
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-create-the-compose-file">
+<span class="md-ellipsis">
+      
+        Step 1: Create the Compose file
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-add-a-database-seed-file">
+<span class="md-ellipsis">
+      
+        Step 2: Add a database seed file
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-start-everything-with-one-command">
+<span class="md-ellipsis">
+      
+        Step 3: Start everything with one command
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-4-tear-it-down">
+<span class="md-ellipsis">
+      
+        Step 4: Tear it down
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-note-on-depends_on">
+<span class="md-ellipsis">
+      
+        A note on depends_on
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#checkpoint">
+<span class="md-ellipsis">
+      
+        ✅ Checkpoint
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-hiccups">
+<span class="md-ellipsis">
+      
+        🩹 Common hiccups
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3982,8 +4172,119 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Docker Compose Multi-Service App</h1>
-
+<h1 id="docker-compose-multi-service-app">Docker Compose Multi-Service App<a class="headerlink" href="#docker-compose-multi-service-app" title="Permanent link">¶</a></h1>
+<p>At the end of the Intermediate track, starting your app took a lot of typing: create a network, run the database with a volume, rebuild the app, run it on the network with the right environment variables. Miss one flag and nothing works. 😮‍💨</p>
+<p>There's a better way. <strong>Docker Compose</strong> lets you describe your entire setup in a single file, then start all of it with one command. This is how real projects run multiple containers.</p>
+<h2 id="what-we-will-do-in-very-simple-steps">What we will do (in very simple steps)<a class="headerlink" href="#what-we-will-do-in-very-simple-steps" title="Permanent link">¶</a></h2>
+<ol>
+<li>Write one file describing your whole app</li>
+<li>Start everything with a single command</li>
+<li>See the app and database working together</li>
+<li>Tear it all down cleanly</li>
+</ol>
+<hr>
+<h2 id="the-idea">The idea<a class="headerlink" href="#the-idea" title="Permanent link">¶</a></h2>
+<p>Instead of cooking each dish by hand and remembering every step, Compose is a <strong>written menu for the whole kitchen</strong>. It lists every part of your system, how they connect, and prepares the entire meal with one command. 📋</p>
+<p>A Compose file describes <strong>services</strong> (your containers), and Compose handles the network and names for you automatically.</p>
+<hr>
+<h2 id="step-1-create-the-compose-file">Step 1: Create the Compose file<a class="headerlink" href="#step-1-create-the-compose-file" title="Permanent link">¶</a></h2>
+<p>In your <code>~/my-docker-app</code> folder (the same one with your <code>Dockerfile</code> and <code>app.py</code>), create a file named <code>compose.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">services</span><span class="p">:</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="nt">db</span><span class="p">:</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres:16</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">      </span><span class="nt">POSTGRES_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secret</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">      </span><span class="nt">POSTGRES_DB</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">snapshot</span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">snapshot-data:/var/lib/postgresql/data</span>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./init.sql:/docker-entrypoint-initdb.d/init.sql</span>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">  </span><span class="nt">app</span><span class="p">:</span>
+<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.</span>
+<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"8000:5000"</span>
+<a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">      </span><span class="nt">DB_HOST</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db</span>
+<a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">      </span><span class="nt">GREETING</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hi</span>
+<a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+<a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db</span>
+<a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a>
+<a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="nt">volumes</span><span class="p">:</span>
+<a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">  </span><span class="nt">snapshot-data</span><span class="p">:</span>
+</code></pre></div>
+<p>Let's read it like a menu:</p>
+<ul>
+<li><strong><code>db</code> service</strong>: uses the <code>postgres:16</code> image, sets the same environment variables you used by hand, and attaches the <code>snapshot-data</code> volume so data survives.</li>
+<li><strong><code>app</code> service</strong>: <code>build: .</code> tells Compose to build your image from the Dockerfile right here. It publishes port 8000, and passes environment variables.</li>
+<li><strong><code>depends_on</code></strong>: start the database before the app.</li>
+<li><strong><code>volumes:</code> at the bottom</strong>: declares the named volume Compose will manage.</li>
+</ul>
+<p>Here's the detail that ties the whole track together: the app's <code>DB_HOST</code> is just <strong><code>db</code></strong>, the service name. Compose puts every service on a shared network automatically, so services find each other by their service name. No manual network, no container-name juggling. The networking you did by hand last lesson now happens for free. ✨</p>
+<hr>
+<h2 id="step-2-add-a-database-seed-file">Step 2: Add a database seed file<a class="headerlink" href="#step-2-add-a-database-seed-file" title="Permanent link">¶</a></h2>
+<p>So the app has something to show, create one more file in the same folder called <code>init.sql</code>:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">photos</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="nb">serial</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="nb">text</span><span class="p">);</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">photos</span><span class="w"> </span><span class="p">(</span><span class="n">title</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'sunset'</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'mountain'</span><span class="p">);</span>
+</code></pre></div>
+<p>Postgres runs any <code>.sql</code> file placed in that special <code>docker-entrypoint-initdb.d</code> folder <strong>the first time</strong> it starts with an empty volume. That means your table and sample rows get created automatically.</p>
+<blockquote>
+<p>💡 For a clean first run, if you still have the <code>snapshot-data</code> volume from earlier lessons, remove it so the seed can run on a fresh database: <code>docker volume rm snapshot-data</code> (do this only if no container is using it).</p>
+</blockquote>
+<hr>
+<h2 id="step-3-start-everything-with-one-command">Step 3: Start everything with one command<a class="headerlink" href="#step-3-start-everything-with-one-command" title="Permanent link">¶</a></h2>
+<p>From inside <code>~/my-docker-app</code>:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>--build
+</code></pre></div>
+<ul>
+<li><code>up</code> creates and starts everything in your Compose file</li>
+<li><code>-d</code> runs it in the background</li>
+<li><code>--build</code> makes sure your app image is rebuilt from the latest code</li>
+</ul>
+<p>Compose builds your app, pulls Postgres, creates the network and volume, and starts both containers, all from that one command. Check they're both running:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>ps
+</code></pre></div>
+<p>Now test it:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>curl<span class="w"> </span>http://localhost:8000/photos
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">{</span><span class="nt">"photos"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sunset"</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mountain"</span><span class="p">}]}</span>
+</code></pre></div>
+<p>Your whole system, up and talking, from a single file. 🎉</p>
+<p>Want to see what's happening inside? Compose gives you all the logs together:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>logs
+</code></pre></div>
+<hr>
+<h2 id="step-4-tear-it-down">Step 4: Tear it down<a class="headerlink" href="#step-4-tear-it-down" title="Permanent link">¶</a></h2>
+<p>One command stops and removes everything Compose created:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>down
+</code></pre></div>
+<p>This removes the containers and the network, but <strong>keeps your volume</strong>, so your data is safe. If you ever want to wipe the data too, add <code>-v</code>:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span>-v
+</code></pre></div>
+<blockquote>
+<p>⚠️ <code>docker compose down -v</code> deletes the volume and everything in it. Use it only when you truly want a clean slate.</p>
+</blockquote>
+<hr>
+<h2 id="a-note-on-depends_on">A note on <code>depends_on</code><a class="headerlink" href="#a-note-on-depends_on" title="Permanent link">¶</a></h2>
+<p><code>depends_on</code> makes the app <strong>start</strong> after the database container starts, but it does not wait for Postgres to be fully <strong>ready</strong> to accept connections. For our test that's fine, because by the time you run <code>curl</code>, the database is ready. In production, you'd add a <strong>healthcheck</strong> so the app waits for a genuinely ready database. That's a topic for later.</p>
+<hr>
+<h2 id="checkpoint">✅ Checkpoint<a class="headerlink" href="#checkpoint" title="Permanent link">¶</a></h2>
+<p>You've finished this lesson if:</p>
+<ul>
+<li><code>docker compose up -d --build</code> started both services</li>
+<li><code>docker compose ps</code> shows <code>app</code> and <code>db</code> running</li>
+<li><code>curl http://localhost:8000/photos</code> returned your rows</li>
+<li><code>docker compose down</code> cleanly removed everything but the volume</li>
+</ul>
+<hr>
+<h2 id="common-hiccups">🩹 Common hiccups<a class="headerlink" href="#common-hiccups" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong><code>docker compose</code> command not found</strong>: some older setups use the hyphenated <code>docker-compose</code> instead of <code>docker compose</code>. Try that. If neither works, update Docker Desktop.</li>
+<li><strong><code>/photos</code> errors or is empty</strong>: your database volume predates the table. For a clean seed, run <code>docker compose down</code>, then <code>docker volume rm snapshot-data</code>, then <code>docker compose up -d --build</code> so <code>init.sql</code> runs on a fresh database.</li>
+<li><strong>"port is already allocated"</strong>: something is using 8000. Change the app's ports line to <code>"8001:5000"</code> and visit <code>http://localhost:8001/photos</code>.</li>
+<li><strong>App can't reach the database</strong>: check that <code>DB_HOST</code> is <code>db</code>, matching the service name exactly.</li>
+</ul>
+<hr>
+<p><strong>Next up:</strong> <a href="../multi-stage-builds/">Multi-Stage Builds</a>, where you'll make your images dramatically smaller by separating how an image is built from what actually ships.</p>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

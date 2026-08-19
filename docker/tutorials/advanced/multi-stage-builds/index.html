@@ -4,8 +4,8 @@
 <meta content="Hands-on guides for Kubernetes, Docker, Automation and more" name="description">
 <meta content="Garrett Stack" name="author">
 <link href="https://garstack-sharetribe.github.io/gstack-tech-guides/docker/tutorials/advanced/multi-stage-builds/" rel="canonical">
-<link href="../" rel="prev">
-<link href="../optimize-images/" rel="next">
+<link href="../optimize-images/" rel="prev">
+<link href="../docker-compose-app/" rel="next">
 <link href="../../../../assets/images/favicon.png" rel="icon">
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator">
 <title>Multi-Stage Builds - Technical Tutorials Hub</title>
@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#multi-stage-builds">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -387,19 +390,6 @@
 
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
-<a class="md-nav__link md-nav__link--active" href="./">
-<span class="md-ellipsis">
-    
-  
-    Multi-Stage Builds
-  
-
-    
-  </span>
-</a>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../optimize-images/">
 <span class="md-ellipsis">
@@ -411,6 +401,119 @@
     
   </span>
 </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Multi-Stage Builds
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Multi-Stage Builds
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-we-will-do-in-very-simple-steps">
+<span class="md-ellipsis">
+      
+        What we will do (in very simple steps)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-idea">
+<span class="md-ellipsis">
+      
+        The idea 🧰
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-create-the-frontend">
+<span class="md-ellipsis">
+      
+        Step 1: Create the frontend
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-build-it-the-naive-way-and-weigh-it">
+<span class="md-ellipsis">
+      
+        Step 2: Build it the naive way (and weigh it)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-rebuild-it-as-a-multi-stage-build">
+<span class="md-ellipsis">
+      
+        Step 3: Rebuild it as a multi-stage build
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-4-compare-and-run-the-small-one">
+<span class="md-ellipsis">
+      
+        Step 4: Compare, and run the small one
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-smaller-images-matter">
+<span class="md-ellipsis">
+      
+        Why smaller images matter
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#checkpoint">
+<span class="md-ellipsis">
+      
+        ✅ Checkpoint
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-hiccups">
+<span class="md-ellipsis">
+      
+        🩹 Common hiccups
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../docker-compose-app/">
@@ -3944,6 +4047,93 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-we-will-do-in-very-simple-steps">
+<span class="md-ellipsis">
+      
+        What we will do (in very simple steps)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-idea">
+<span class="md-ellipsis">
+      
+        The idea 🧰
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-create-the-frontend">
+<span class="md-ellipsis">
+      
+        Step 1: Create the frontend
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-build-it-the-naive-way-and-weigh-it">
+<span class="md-ellipsis">
+      
+        Step 2: Build it the naive way (and weigh it)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-rebuild-it-as-a-multi-stage-build">
+<span class="md-ellipsis">
+      
+        Step 3: Rebuild it as a multi-stage build
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-4-compare-and-run-the-small-one">
+<span class="md-ellipsis">
+      
+        Step 4: Compare, and run the small one
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-smaller-images-matter">
+<span class="md-ellipsis">
+      
+        Why smaller images matter
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#checkpoint">
+<span class="md-ellipsis">
+      
+        ✅ Checkpoint
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-hiccups">
+<span class="md-ellipsis">
+      
+        🩹 Common hiccups
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3982,8 +4172,157 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Multi-Stage Builds</h1>
-
+<h1 id="multi-stage-builds">Multi-Stage Builds<a class="headerlink" href="#multi-stage-builds" title="Permanent link">¶</a></h1>
+<p>Some images carry a lot of dead weight. They ship the tools used to <strong>build</strong> the app, even though those tools are useless once the app is just <strong>running</strong>. Multi-stage builds fix that, often shrinking an image from over a gigabyte to a few dozen megabytes. 📉</p>
+<p>In this lesson your Snapshot app gains a small <strong>frontend</strong>, and it's the perfect example: a frontend needs a big toolbox to build, but only some static files and a tiny web server to run.</p>
+<h2 id="what-we-will-do-in-very-simple-steps">What we will do (in very simple steps)<a class="headerlink" href="#what-we-will-do-in-very-simple-steps" title="Permanent link">¶</a></h2>
+<ol>
+<li>Create a tiny frontend</li>
+<li>Build it the naive way and see how huge the image is</li>
+<li>Rebuild it with a multi-stage Dockerfile</li>
+<li>Compare the two sizes</li>
+</ol>
+<hr>
+<h2 id="the-idea">The idea 🧰<a class="headerlink" href="#the-idea" title="Permanent link">¶</a></h2>
+<p>Imagine baking a cake. You need a messy kitchen full of bowls, mixers, and flour to <strong>make</strong> it. But to <strong>serve</strong> it, you just need the cake on a plate. You wouldn't hand someone the entire dirty kitchen.</p>
+<p>A multi-stage build does exactly this. One stage is the messy kitchen where the app is built. A second, clean stage takes only the finished result and throws the kitchen away.</p>
+<hr>
+<h2 id="step-1-create-the-frontend">Step 1: Create the frontend<a class="headerlink" href="#step-1-create-the-frontend" title="Permanent link">¶</a></h2>
+<p>Give the frontend its own folder, separate from your API:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>mkdir<span class="w"> </span>~/snapshot-frontend
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>~/snapshot-frontend
+</code></pre></div>
+<p>Create <code>package.json</code>:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">{</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"snapshot-frontend"</span><span class="p">,</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">  </span><span class="nt">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="nt">"build"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vite build"</span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">  </span><span class="p">},</span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">  </span><span class="nt">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="nt">"vite"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^5.0.0"</span>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">  </span><span class="p">}</span>
+<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="p">}</span>
+</code></pre></div>
+<p>Create <code>index.html</code>:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">&lt;!doctype html&gt;</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Snapshot<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Snapshot Gallery<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"app"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"module"</span> <span class="na">src</span><span class="o">=</span><span class="s">"/src/main.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Create a <code>src</code> folder with a file <code>main.js</code> inside it:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>mkdir<span class="w"> </span>src
+</code></pre></div>
+<p><code>src/main.js</code>:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">"#app"</span><span class="p">).</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Welcome to Snapshot!"</span><span class="p">;</span>
+</code></pre></div>
+<p>Don't worry about the frontend code itself. The point of this lesson is the Dockerfile, not the JavaScript.</p>
+<hr>
+<h2 id="step-2-build-it-the-naive-way-and-weigh-it">Step 2: Build it the naive way (and weigh it)<a class="headerlink" href="#step-2-build-it-the-naive-way-and-weigh-it" title="Permanent link">¶</a></h2>
+<p>First, let's build it the obvious way, in a single stage. Create a file called <code>Dockerfile</code>:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">node:20</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">COPY</span><span class="w"> </span>package.json<span class="w"> </span>.
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="k">RUN</span><span class="w"> </span>npm<span class="w"> </span>install
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="k">RUN</span><span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span>build
+</code></pre></div>
+<p>Build it with a <code>naive</code> tag:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>snapshot-frontend:naive<span class="w"> </span>.
+</code></pre></div>
+<p>Now weigh it:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>docker<span class="w"> </span>images<span class="w"> </span>snapshot-frontend
+</code></pre></div>
+<p>You'll see something startling, an image around <strong>1.1 GB</strong>. 😳 It contains all of Node, every build tool, and the whole <code>node_modules</code> folder, none of which is needed just to serve a few static files.</p>
+<hr>
+<h2 id="step-3-rebuild-it-as-a-multi-stage-build">Step 3: Rebuild it as a multi-stage build<a class="headerlink" href="#step-3-rebuild-it-as-a-multi-stage-build" title="Permanent link">¶</a></h2>
+<p>Now replace the entire contents of your <code>Dockerfile</code> with this:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="c"># Stage 1: the messy kitchen, where we build the app</span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="k">FROM</span><span class="w"> </span><span class="s">node:20</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">build</span>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="k">COPY</span><span class="w"> </span>package.json<span class="w"> </span>.
+<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="k">RUN</span><span class="w"> </span>npm<span class="w"> </span>install
+<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="k">RUN</span><span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span>build
+<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a>
+<a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="c"># Stage 2: the clean plate, where we only serve the result</span>
+<a href="#__codelineno-8-10" id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="k">FROM</span><span class="w"> </span><span class="s">nginx:alpine</span>
+<a href="#__codelineno-8-11" id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>build<span class="w"> </span>/app/dist<span class="w"> </span>/usr/share/nginx/html
+</code></pre></div>
+<p>Two new pieces do all the work:</p>
+<ul>
+<li><code>FROM node:20 AS build</code> names the first stage <code>build</code>. This is the messy kitchen.</li>
+<li><code>FROM nginx:alpine</code> starts a brand new, tiny stage from scratch. Nothing from the first stage carries over automatically.</li>
+<li><code>COPY --from=build /app/dist /usr/share/nginx/html</code> reaches back into the <code>build</code> stage and copies <strong>only</strong> the finished static files into the clean image.</li>
+</ul>
+<p>Everything in the build stage, Node, npm, all the tools, is thrown away. Only the built files survive. Build it with a <code>multi</code> tag:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>snapshot-frontend:multi<span class="w"> </span>.
+</code></pre></div>
+<hr>
+<h2 id="step-4-compare-and-run-the-small-one">Step 4: Compare, and run the small one<a class="headerlink" href="#step-4-compare-and-run-the-small-one" title="Permanent link">¶</a></h2>
+<p>Weigh both images side by side:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>docker<span class="w"> </span>images<span class="w"> </span>snapshot-frontend
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Approx size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>naive</code></td>
+<td>~1.1 GB</td>
+</tr>
+<tr>
+<td><code>multi</code></td>
+<td>~50 MB</td>
+</tr>
+</tbody>
+</table>
+<p>Same app, roughly <strong>twenty times smaller</strong>. 🎯 That difference is pure build-time clutter that the multi-stage version left behind.</p>
+<p>Now run the small one and see it works perfectly:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>--name<span class="w"> </span>frontend<span class="w"> </span>snapshot-frontend:multi
+</code></pre></div>
+<p>Visit <a href="http://localhost:8080">http://localhost:8080</a> and you'll see your <strong>Snapshot Gallery</strong> page. Clean up when done:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>frontend
+</code></pre></div>
+<hr>
+<h2 id="why-smaller-images-matter">Why smaller images matter<a class="headerlink" href="#why-smaller-images-matter" title="Permanent link">¶</a></h2>
+<p>A leaner image is not just tidy, it's practical:</p>
+<ul>
+<li><strong>Faster to pull and deploy</strong>, especially across a slow network</li>
+<li><strong>Cheaper to store</strong> in a registry</li>
+<li><strong>Safer</strong>, because fewer tools inside means fewer things that can be exploited</li>
+</ul>
+<p>The same technique applies to any language that has a separate build step, including compiled apps and, as you'll often see in the wild, the exact frontend pattern you just used.</p>
+<hr>
+<h2 id="checkpoint">✅ Checkpoint<a class="headerlink" href="#checkpoint" title="Permanent link">¶</a></h2>
+<p>You've finished this lesson if:</p>
+<ul>
+<li>The <code>naive</code> image built and was very large (around a gigabyte)</li>
+<li>The <code>multi</code> image built and was tiny (tens of megabytes)</li>
+<li><code>docker images snapshot-frontend</code> shows the dramatic difference</li>
+<li>The <code>multi</code> image ran and served your page at port 8080</li>
+</ul>
+<hr>
+<h2 id="common-hiccups">🩹 Common hiccups<a class="headerlink" href="#common-hiccups" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong><code>npm install</code> is slow</strong>: that's normal on the first build. Later builds reuse cached layers.</li>
+<li><strong>"vite: not found"</strong>: the build stage didn't run <code>npm install</code>. Check the Dockerfile matches exactly.</li>
+<li><strong>"/app/dist not found" during COPY</strong>: the build didn't produce a <code>dist</code> folder. Make sure <code>RUN npm run build</code> is in the build stage and the stage is named <code>AS build</code>.</li>
+<li><strong>Page won't load</strong>: confirm you ran the <code>:multi</code> image and mapped <code>-p 8080:80</code>.</li>
+</ul>
+<hr>
+<p><strong>Next up:</strong> <a href="../optimize-images/">Optimize Image Size</a>, where you'll shrink images even further with smaller base images, fewer layers, and a <code>.dockerignore</code> file.</p>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
