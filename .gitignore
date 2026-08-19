@@ -1,0 +1,12 @@
+# Python virtual environment (machine-specific, never commit)
+.venv/
+
+# MkDocs build output (generated, not source)
+site/
+
+# Python caches
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
