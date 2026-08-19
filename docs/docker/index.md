@@ -4,6 +4,8 @@ Docker is a container platform that allows you to package applications and their
 
 Containers ensure that software runs the same way across different machines, making Docker one of the core tools in modern DevOps, cloud infrastructure, and local development workflows.
 
+This course takes you from your very first container all the way to a deployed, multi-service application, and then hands you off to Kubernetes.
+
 ---
 
 ## Why Docker Matters
@@ -27,50 +29,47 @@ Benefits include:
 
 ## What You'll Learn
 
-This section covers the core skills required to work with Docker effectively.
+This course is organised into five parts, each doing a different job. Use whichever fits what you need right now.
 
-### Tutorials
-Step-by-step learning for beginners.
+<div class="grid cards" markdown>
 
-Start here if you're new to Docker.
+-   :material-school: **Tutorials**
 
-You will learn how to:
+    Step-by-step learning, from installing Docker to deploying a full-stack app. Start here if you are new.
 
-- Install Docker
-- Run your first container
-- Understand images and containers
-- Build basic Docker workflows
+    [:octicons-arrow-right-24: Start learning](tutorials/index.md)
+
+-   :material-wrench: **How-To Guides**
+
+    Practical recipes for specific tasks, for when you already understand the basics.
+
+    [:octicons-arrow-right-24: Get things done](how-to/index.md)
+
+-   :material-lightbulb-on: **Explanation**
+
+    Conceptual deep dives into how Docker works internally: architecture, layers, and isolation.
+
+    [:octicons-arrow-right-24: Understand Docker](explanation/index.md)
+
+-   :material-book-open-variant: **Reference**
+
+    Quick lookup for Docker CLI commands, their syntax, and common options.
+
+    [:octicons-arrow-right-24: Look up commands](reference/index.md)
+
+-   :material-bug: **Troubleshooting**
+
+    Problem, symptoms, and fix for the errors you are most likely to hit.
+
+    [:octicons-arrow-right-24: Fix a problem](troubleshooting/index.md)
+
+</div>
 
 ---
 
-### How-To Guides
-Practical guides focused on **specific tasks**, such as:
+## One App, Start to Finish
 
-- Building Docker images
-- Publishing images to registries
-- Managing containers
-
-These guides assume you already understand the basics.
-
----
-
-### Explanation
-Conceptual deep dives explaining **how Docker works internally**, including:
-
-- Containers vs Virtual Machines
-- Docker architecture
-- Images, layers, and registries
-
-These sections help build mental models.
-
----
-
-### Reference
-Quick reference material including:
-
-- Docker CLI commands
-- Configuration syntax
-- Useful command examples
+The tutorials are built around a single application, **Snapshot**, that grows as you learn. It begins as a one-container greeting, gains a database and lasting storage, connects into a multi-service system, adds a frontend, and finally runs as a deployed three-tier stack. Nothing is a throwaway demo. Every lesson builds on the last.
 
 ---
 
@@ -84,32 +83,32 @@ docker run hello-world
 
 Docker will:
 
-Pull the hello-world image
+- Pull the `hello-world` image
+- Create a container from it
+- Run it
+- Print a success message
 
-Create a container
+That is the whole cycle in one command.
 
-Run it
+---
 
-Print a success message
+## Docker in the Modern Stack
 
-Docker in the Modern Stack
+Docker is rarely used alone. It is the foundation for a wider toolset:
 
-Docker is often used together with:
+- **Kubernetes**, for running containers at scale
+- **CI/CD pipelines**, for building and shipping automatically
+- **Cloud platforms**, for hosting containerised apps
+- **Infrastructure automation**, for managing it all as code
 
-Kubernetes
+Understanding Docker is a foundational step before learning any of these.
 
-CI/CD pipelines
+---
 
-Cloud platforms
+## Where to Start
 
-Infrastructure automation
+If you are new to Docker, start here:
 
-Understanding Docker is a foundational step before learning Kubernetes.
+[:octicons-arrow-right-24: Get Docker Installed](tutorials/beginner/install-docker.md)
 
-Where to Start
-
-If you're new to Docker, start with:
-
-→ Tutorials → Install Docker
-
-From there you'll run your first container and begin building images.
+From there you will run your first container and begin building images. Once you finish the course, the [Kubernetes course](../kubernetes/) is your natural next step.
