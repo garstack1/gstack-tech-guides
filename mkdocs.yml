@@ -118,6 +118,7 @@ nav:
           - Debugging Containers: docker/tutorials/advanced/debugging-containers.md
 
       - End-to-End:
+          - Index: docker/tutorials/end-to-end/index.md
           - Deploy a Web App with Docker: docker/tutorials/end-to-end/deploy-web-app.md
           - Full Stack App with Compose: docker/tutorials/end-to-end/fullstack-compose.md
 
