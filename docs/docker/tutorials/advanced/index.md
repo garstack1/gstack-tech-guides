@@ -1,12 +1,12 @@
 # Advanced: Production-Ready Docker
 
-You can build and connect images. This track is about doing it *well*: smaller images, cleaner builds, and the skills to fix things when they break.
+You can build and connect images by hand. This track makes that professional: run your whole stack from one file, produce much smaller images, and gain the skills to fix things when they break.
 
 You will learn how to:
 
+- Run your whole multi-service app from a single Compose file
 - Use multi-stage builds to produce lean images
 - Shrink image size and understand what drives it
-- Run a multi-service application with Docker Compose
 - Debug containers that misbehave
 
 ---
@@ -25,6 +25,12 @@ You should have finished the [Intermediate track](../intermediate/index.md), or 
 
 <div class="grid cards" markdown>
 
+-   :material-view-grid-plus: **Docker Compose Multi-Service App**
+
+    Run a whole stack of containers with a single command.
+
+    [:octicons-arrow-right-24: Start Tutorial](docker-compose-app.md)
+
 -   :material-layers-triple: **Multi-Stage Builds**
 
     Build in one stage, ship from a clean one, and drop the extra weight.
@@ -36,12 +42,6 @@ You should have finished the [Intermediate track](../intermediate/index.md), or 
     See what makes images large and how to make them small.
 
     [:octicons-arrow-right-24: Start Tutorial](optimize-images.md)
-
--   :material-view-grid-plus: **Docker Compose Multi-Service App**
-
-    Run a whole stack of containers with a single command.
-
-    [:octicons-arrow-right-24: Start Tutorial](docker-compose-app.md)
 
 -   :material-bug: **Debugging Containers**
 

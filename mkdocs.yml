@@ -112,8 +112,8 @@ nav:
 
       - Advanced:
           - Index: docker/tutorials/advanced/index.md
-          - Multi-Stage Builds: docker/tutorials/advanced/multi-stage-builds.md
           - Optimize Image Size: docker/tutorials/advanced/optimize-images.md
+          - Multi-Stage Builds: docker/tutorials/advanced/multi-stage-builds.md
           - Docker Compose Multi-Service App: docker/tutorials/advanced/docker-compose-app.md
           - Debugging Containers: docker/tutorials/advanced/debugging-containers.md
 
