@@ -3964,52 +3964,39 @@
       
     </span>
 </a>
-<nav aria-label="What You'll Learn" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tutorials">
+<a class="md-nav__link" href="#one-app-start-to-finish">
 <span class="md-ellipsis">
       
-        Tutorials
+        One App, Start to Finish
       
     </span>
 </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#how-to-guides">
-<span class="md-ellipsis">
-      
-        How-To Guides
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#explanation">
-<span class="md-ellipsis">
-      
-        Explanation
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#reference">
-<span class="md-ellipsis">
-      
-        Reference
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#quick-example">
 <span class="md-ellipsis">
       
         Quick Example
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#docker-in-the-modern-stack">
+<span class="md-ellipsis">
+      
+        Docker in the Modern Stack
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#where-to-start">
+<span class="md-ellipsis">
+      
+        Where to Start
       
     </span>
 </a>
@@ -4042,6 +4029,7 @@
 <h1 id="docker">🐳 Docker<a class="headerlink" href="#docker" title="Permanent link">¶</a></h1>
 <p>Docker is a container platform that allows you to package applications and their dependencies into <strong>portable, reproducible environments</strong> called containers.</p>
 <p>Containers ensure that software runs the same way across different machines, making Docker one of the core tools in modern DevOps, cloud infrastructure, and local development workflows.</p>
+<p>This course takes you from your very first container all the way to a deployed, multi-service application, and then hands you off to Kubernetes.</p>
 <hr>
 <h2 id="why-docker-matters">Why Docker Matters<a class="headerlink" href="#why-docker-matters" title="Permanent link">¶</a></h2>
 <p>Traditional software deployments often fail due to environment differences:</p>
@@ -4060,64 +4048,67 @@
 </ul>
 <hr>
 <h2 id="what-youll-learn">What You'll Learn<a class="headerlink" href="#what-youll-learn" title="Permanent link">¶</a></h2>
-<p>This section covers the core skills required to work with Docker effectively.</p>
-<h3 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">¶</a></h3>
-<p>Step-by-step learning for beginners.</p>
-<p>Start here if you're new to Docker.</p>
-<p>You will learn how to:</p>
+<p>This course is organised into five parts, each doing a different job. Use whichever fits what you need right now.</p>
+<div class="grid cards">
 <ul>
-<li>Install Docker</li>
-<li>Run your first container</li>
-<li>Understand images and containers</li>
-<li>Build basic Docker workflows</li>
+<li>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"></path></svg></span> <strong>Tutorials</strong></p>
+<p>Step-by-step learning, from installing Docker to deploying a full-stack app. Start here if you are new.</p>
+<p><a href="tutorials/"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Start learning</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m22.7 19-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4"></path></svg></span> <strong>How-To Guides</strong></p>
+<p>Practical recipes for specific tasks, for when you already understand the basics.</p>
+<p><a href="how-to/"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Get things done</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm6-10h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93zm12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12z"></path></svg></span> <strong>Explanation</strong></p>
+<p>Conceptual deep dives into how Docker works internally: architecture, layers, and isolation.</p>
+<p><a href="explanation/"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Understand Docker</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"></path></svg></span> <strong>Reference</strong></p>
+<p>Quick lookup for Docker CLI commands, their syntax, and common options.</p>
+<p><a href="reference/"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Look up commands</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 12h-4v-2h4m0 6h-4v-2h4m6-6h-2.81a6 6 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6 6 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20z"></path></svg></span> <strong>Troubleshooting</strong></p>
+<p>Problem, symptoms, and fix for the errors you are most likely to hit.</p>
+<p><a href="troubleshooting/"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Fix a problem</a></p>
+</li>
 </ul>
+</div>
 <hr>
-<h3 id="how-to-guides">How-To Guides<a class="headerlink" href="#how-to-guides" title="Permanent link">¶</a></h3>
-<p>Practical guides focused on <strong>specific tasks</strong>, such as:</p>
-<ul>
-<li>Building Docker images</li>
-<li>Publishing images to registries</li>
-<li>Managing containers</li>
-</ul>
-<p>These guides assume you already understand the basics.</p>
-<hr>
-<h3 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">¶</a></h3>
-<p>Conceptual deep dives explaining <strong>how Docker works internally</strong>, including:</p>
-<ul>
-<li>Containers vs Virtual Machines</li>
-<li>Docker architecture</li>
-<li>Images, layers, and registries</li>
-</ul>
-<p>These sections help build mental models.</p>
-<hr>
-<h3 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">¶</a></h3>
-<p>Quick reference material including:</p>
-<ul>
-<li>Docker CLI commands</li>
-<li>Configuration syntax</li>
-<li>Useful command examples</li>
-</ul>
+<h2 id="one-app-start-to-finish">One App, Start to Finish<a class="headerlink" href="#one-app-start-to-finish" title="Permanent link">¶</a></h2>
+<p>The tutorials are built around a single application, <strong>Snapshot</strong>, that grows as you learn. It begins as a one-container greeting, gains a database and lasting storage, connects into a multi-service system, adds a frontend, and finally runs as a deployed three-tier stack. Nothing is a throwaway demo. Every lesson builds on the last.</p>
 <hr>
 <h2 id="quick-example">Quick Example<a class="headerlink" href="#quick-example" title="Permanent link">¶</a></h2>
 <p>Run your first container:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>hello-world
 </code></pre></div>
 <p>Docker will:</p>
-<p>Pull the hello-world image</p>
-<p>Create a container</p>
-<p>Run it</p>
-<p>Print a success message</p>
-<p>Docker in the Modern Stack</p>
-<p>Docker is often used together with:</p>
-<p>Kubernetes</p>
-<p>CI/CD pipelines</p>
-<p>Cloud platforms</p>
-<p>Infrastructure automation</p>
-<p>Understanding Docker is a foundational step before learning Kubernetes.</p>
-<p>Where to Start</p>
-<p>If you're new to Docker, start with:</p>
-<p>→ Tutorials → Install Docker</p>
-<p>From there you'll run your first container and begin building images.</p>
+<ul>
+<li>Pull the <code>hello-world</code> image</li>
+<li>Create a container from it</li>
+<li>Run it</li>
+<li>Print a success message</li>
+</ul>
+<p>That is the whole cycle in one command.</p>
+<hr>
+<h2 id="docker-in-the-modern-stack">Docker in the Modern Stack<a class="headerlink" href="#docker-in-the-modern-stack" title="Permanent link">¶</a></h2>
+<p>Docker is rarely used alone. It is the foundation for a wider toolset:</p>
+<ul>
+<li><strong>Kubernetes</strong>, for running containers at scale</li>
+<li><strong>CI/CD pipelines</strong>, for building and shipping automatically</li>
+<li><strong>Cloud platforms</strong>, for hosting containerised apps</li>
+<li><strong>Infrastructure automation</strong>, for managing it all as code</li>
+</ul>
+<p>Understanding Docker is a foundational step before learning any of these.</p>
+<hr>
+<h2 id="where-to-start">Where to Start<a class="headerlink" href="#where-to-start" title="Permanent link">¶</a></h2>
+<p>If you are new to Docker, start here:</p>
+<p><a href="tutorials/beginner/install-docker/"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Get Docker Installed</a></p>
+<p>From there you will run your first container and begin building images. Once you finish the course, the <a href="../kubernetes/">Kubernetes course</a> is your natural next step.</p>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
