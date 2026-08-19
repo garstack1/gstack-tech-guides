@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#build-failures">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -1289,7 +1292,8 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox">
-<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../reference/">
 <span class="md-ellipsis">
     
   
@@ -1298,8 +1302,11 @@
 
     
   </span>
+</a>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_5">
 <span class="md-nav__icon md-icon"></span>
@@ -1310,18 +1317,6 @@
 
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/index.md">
-<span class="md-ellipsis">
-    
-  
-    Index
-  
-
-    
-  </span>
-</a>
-</li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_5_2" type="checkbox">
 <label class="md-nav__link" for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
@@ -1761,6 +1756,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Build Failures
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -1771,6 +1777,68 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#problem">
+<span class="md-ellipsis">
+      
+        Problem
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#symptoms">
+<span class="md-ellipsis">
+      
+        Symptoms
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-causes">
+<span class="md-ellipsis">
+      
+        Common Causes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#investigation">
+<span class="md-ellipsis">
+      
+        Investigation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resolution">
+<span class="md-ellipsis">
+      
+        Resolution
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prevention">
+<span class="md-ellipsis">
+      
+        Prevention
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -3948,6 +4016,66 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#problem">
+<span class="md-ellipsis">
+      
+        Problem
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#symptoms">
+<span class="md-ellipsis">
+      
+        Symptoms
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-causes">
+<span class="md-ellipsis">
+      
+        Common Causes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#investigation">
+<span class="md-ellipsis">
+      
+        Investigation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resolution">
+<span class="md-ellipsis">
+      
+        Resolution
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prevention">
+<span class="md-ellipsis">
+      
+        Prevention
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3986,8 +4114,31 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Build Failures</h1>
-
+<h1 id="build-failures">Build Failures<a class="headerlink" href="#build-failures" title="Permanent link">¶</a></h1>
+<h2 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">¶</a></h2>
+<p><code>docker build</code> stops partway through with an error.</p>
+<h2 id="symptoms">Symptoms<a class="headerlink" href="#symptoms" title="Permanent link">¶</a></h2>
+<p>The build output ends at a particular step with a red error message, and no image is produced.</p>
+<h2 id="common-causes">Common Causes<a class="headerlink" href="#common-causes" title="Permanent link">¶</a></h2>
+<ul>
+<li>A file referenced by <code>COPY</code> does not exist, or is excluded by <code>.dockerignore</code></li>
+<li>A <code>RUN</code> command fails</li>
+<li>A syntax mistake in the Dockerfile</li>
+<li>The base image name or tag is wrong</li>
+</ul>
+<h2 id="investigation">Investigation<a class="headerlink" href="#investigation" title="Permanent link">¶</a></h2>
+<p>Read the error carefully. Docker tells you <strong>which step</strong> failed and why. If a <code>RUN</code> command failed, try running that same command yourself to see the full error.</p>
+<p>Confirm the files you are copying actually exist.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>ls
+</code></pre></div>
+<h2 id="resolution">Resolution<a class="headerlink" href="#resolution" title="Permanent link">¶</a></h2>
+<p>Fix the specific instruction that failed: correct the <code>COPY</code> path, repair the failing command, or fix the base image name.</p>
+<h2 id="prevention">Prevention<a class="headerlink" href="#prevention" title="Permanent link">¶</a></h2>
+<ul>
+<li>Build frequently, so failures are small and easy to trace</li>
+<li>Keep a <code>.dockerignore</code> so you do not accidentally exclude needed files</li>
+<li>Order instructions so cached layers are reused</li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

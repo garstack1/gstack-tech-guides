@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#debugging-with-logs">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -1289,7 +1292,8 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox">
-<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../reference/">
 <span class="md-ellipsis">
     
   
@@ -1298,8 +1302,11 @@
 
     
   </span>
+</a>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_5">
 <span class="md-nav__icon md-icon"></span>
@@ -1310,18 +1317,6 @@
 
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/index.md">
-<span class="md-ellipsis">
-    
-  
-    Index
-  
-
-    
-  </span>
-</a>
-</li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_5_2" type="checkbox">
 <label class="md-nav__link" for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
@@ -1849,6 +1844,17 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Debugging with Logs
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -1859,6 +1865,77 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#problem">
+<span class="md-ellipsis">
+      
+        Problem
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#symptoms">
+<span class="md-ellipsis">
+      
+        Symptoms
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-first-move">
+<span class="md-ellipsis">
+      
+        The First Move
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#useful-variations">
+<span class="md-ellipsis">
+      
+        Useful Variations
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reading-the-output">
+<span class="md-ellipsis">
+      
+        Reading the Output
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-this-matters">
+<span class="md-ellipsis">
+      
+        Why This Matters
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related">
+<span class="md-ellipsis">
+      
+        Related
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../docker-inspect/">
@@ -3948,6 +4025,75 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#problem">
+<span class="md-ellipsis">
+      
+        Problem
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#symptoms">
+<span class="md-ellipsis">
+      
+        Symptoms
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-first-move">
+<span class="md-ellipsis">
+      
+        The First Move
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#useful-variations">
+<span class="md-ellipsis">
+      
+        Useful Variations
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reading-the-output">
+<span class="md-ellipsis">
+      
+        Reading the Output
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-this-matters">
+<span class="md-ellipsis">
+      
+        Why This Matters
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related">
+<span class="md-ellipsis">
+      
+        Related
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3986,8 +4132,37 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Debugging with Logs</h1>
-
+<h1 id="debugging-with-logs">Debugging with Logs<a class="headerlink" href="#debugging-with-logs" title="Permanent link">¶</a></h1>
+<h2 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">¶</a></h2>
+<p>Something is not working, and you need to find out what the container is actually doing.</p>
+<h2 id="symptoms">Symptoms<a class="headerlink" href="#symptoms" title="Permanent link">¶</a></h2>
+<p>A container errors, returns an unexpected result, or behaves differently than you expect.</p>
+<h2 id="the-first-move">The First Move<a class="headerlink" href="#the-first-move" title="Permanent link">¶</a></h2>
+<p>Almost every Docker problem starts here. Read what the container printed.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>docker<span class="w"> </span>logs<span class="w"> </span>CONTAINER_NAME
+</code></pre></div>
+<h2 id="useful-variations">Useful Variations<a class="headerlink" href="#useful-variations" title="Permanent link">¶</a></h2>
+<p>Follow logs live as they happen.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>docker<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>CONTAINER_NAME
+</code></pre></div>
+<p>Show only the most recent lines.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>docker<span class="w"> </span>logs<span class="w"> </span>--tail<span class="w"> </span><span class="m">50</span><span class="w"> </span>CONTAINER_NAME
+</code></pre></div>
+<p>For Compose, view all services together.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>logs
+</code></pre></div>
+<h2 id="reading-the-output">Reading the Output<a class="headerlink" href="#reading-the-output" title="Permanent link">¶</a></h2>
+<ul>
+<li>A stack trace or error message points directly at the cause</li>
+<li>"connection refused" or "could not resolve host" suggests a networking problem</li>
+<li>No output at all may mean the app logs to a file instead of the screen</li>
+</ul>
+<h2 id="why-this-matters">Why This Matters<a class="headerlink" href="#why-this-matters" title="Permanent link">¶</a></h2>
+<p>A browser or client often shows only a vague error. The logs show the real cause. When in doubt, check the logs before changing anything.</p>
+<h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../docker-inspect/">Inspecting Containers</a></li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

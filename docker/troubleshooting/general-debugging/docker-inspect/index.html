@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#inspecting-containers">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -1289,7 +1292,8 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox">
-<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../reference/">
 <span class="md-ellipsis">
     
   
@@ -1298,8 +1302,11 @@
 
     
   </span>
+</a>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_5">
 <span class="md-nav__icon md-icon"></span>
@@ -1310,18 +1317,6 @@
 
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/index.md">
-<span class="md-ellipsis">
-    
-  
-    Index
-  
-
-    
-  </span>
-</a>
-</li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_5_2" type="checkbox">
 <label class="md-nav__link" for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
@@ -1861,6 +1856,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Inspecting Containers
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -1871,6 +1877,59 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#problem">
+<span class="md-ellipsis">
+      
+        Problem
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-tool">
+<span class="md-ellipsis">
+      
+        The Tool
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#useful-queries">
+<span class="md-ellipsis">
+      
+        Useful Queries
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-to-use-it">
+<span class="md-ellipsis">
+      
+        When to Use It
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related">
+<span class="md-ellipsis">
+      
+        Related
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -3948,6 +4007,57 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#problem">
+<span class="md-ellipsis">
+      
+        Problem
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-tool">
+<span class="md-ellipsis">
+      
+        The Tool
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#useful-queries">
+<span class="md-ellipsis">
+      
+        Useful Queries
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-to-use-it">
+<span class="md-ellipsis">
+      
+        When to Use It
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related">
+<span class="md-ellipsis">
+      
+        Related
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3986,8 +4096,30 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Inspecting Containers</h1>
-
+<h1 id="inspecting-containers">Inspecting Containers<a class="headerlink" href="#inspecting-containers" title="Permanent link">¶</a></h1>
+<h2 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">¶</a></h2>
+<p>You need to see a container's full configuration: its exit code, its networks, its environment, or its mounts.</p>
+<h2 id="the-tool">The Tool<a class="headerlink" href="#the-tool" title="Permanent link">¶</a></h2>
+<p><code>docker inspect</code> returns everything Docker knows about a container as detailed data.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>docker<span class="w"> </span>inspect<span class="w"> </span>CONTAINER_NAME
+</code></pre></div>
+<p>The output is long, so it is usually best to pull out just one field.</p>
+<h2 id="useful-queries">Useful Queries<a class="headerlink" href="#useful-queries" title="Permanent link">¶</a></h2>
+<p>Check why a container stopped.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>docker<span class="w"> </span>inspect<span class="w"> </span>--format<span class="w"> </span><span class="s1">'{{.State.ExitCode}}'</span><span class="w"> </span>CONTAINER_NAME
+</code></pre></div>
+<p>Check its current status.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>docker<span class="w"> </span>inspect<span class="w"> </span>--format<span class="w"> </span><span class="s1">'{{.State.Status}}'</span><span class="w"> </span>CONTAINER_NAME
+</code></pre></div>
+<p>See which networks it is attached to.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>docker<span class="w"> </span>inspect<span class="w"> </span>--format<span class="w"> </span><span class="s1">'{{json .NetworkSettings.Networks}}'</span><span class="w"> </span>CONTAINER_NAME
+</code></pre></div>
+<h2 id="when-to-use-it">When to Use It<a class="headerlink" href="#when-to-use-it" title="Permanent link">¶</a></h2>
+<p>Reach for <code>inspect</code> when the logs alone do not answer a question like "which network is this really on?" or "what environment variables did it actually start with?"</p>
+<h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../debugging-logs/">Debugging with Logs</a></li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

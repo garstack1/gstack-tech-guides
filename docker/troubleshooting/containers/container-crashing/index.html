@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#container-crashing">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -1289,7 +1292,8 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox">
-<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../reference/">
 <span class="md-ellipsis">
     
   
@@ -1298,8 +1302,11 @@
 
     
   </span>
+</a>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_5">
 <span class="md-nav__icon md-icon"></span>
@@ -1310,18 +1317,6 @@
 
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/index.md">
-<span class="md-ellipsis">
-    
-  
-    Index
-  
-
-    
-  </span>
-</a>
-</li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_5_2" type="checkbox">
 <label class="md-nav__link" for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
@@ -1699,6 +1694,17 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Container Crashing
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -1709,6 +1715,68 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#problem">
+<span class="md-ellipsis">
+      
+        Problem
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#symptoms">
+<span class="md-ellipsis">
+      
+        Symptoms
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-causes">
+<span class="md-ellipsis">
+      
+        Common Causes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#investigation">
+<span class="md-ellipsis">
+      
+        Investigation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resolution">
+<span class="md-ellipsis">
+      
+        Resolution
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prevention">
+<span class="md-ellipsis">
+      
+        Prevention
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../container-exits/">
@@ -3948,6 +4016,66 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#problem">
+<span class="md-ellipsis">
+      
+        Problem
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#symptoms">
+<span class="md-ellipsis">
+      
+        Symptoms
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-causes">
+<span class="md-ellipsis">
+      
+        Common Causes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#investigation">
+<span class="md-ellipsis">
+      
+        Investigation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resolution">
+<span class="md-ellipsis">
+      
+        Resolution
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prevention">
+<span class="md-ellipsis">
+      
+        Prevention
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3986,8 +4114,35 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Container Crashing</h1>
-
+<h1 id="container-crashing">Container Crashing<a class="headerlink" href="#container-crashing" title="Permanent link">¶</a></h1>
+<h2 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">¶</a></h2>
+<p>A container starts but keeps crashing, often restarting again and again.</p>
+<h2 id="symptoms">Symptoms<a class="headerlink" href="#symptoms" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>docker<span class="w"> </span>ps
+</code></pre></div>
+<p>The container shows a status like <code>Restarting</code>, or it appears in <code>docker ps -a</code> with a non-zero exit code.</p>
+<h2 id="common-causes">Common Causes<a class="headerlink" href="#common-causes" title="Permanent link">¶</a></h2>
+<ul>
+<li>The application hits an error during startup</li>
+<li>A required environment variable is missing or wrong</li>
+<li>It cannot reach a service it depends on, such as a database</li>
+<li>The wrong start command is being run</li>
+</ul>
+<h2 id="investigation">Investigation<a class="headerlink" href="#investigation" title="Permanent link">¶</a></h2>
+<p>Read the logs first. They almost always contain the real error.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>docker<span class="w"> </span>logs<span class="w"> </span>CONTAINER_NAME
+</code></pre></div>
+<p>Check the exit code and status.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a
+</code></pre></div>
+<h2 id="resolution">Resolution<a class="headerlink" href="#resolution" title="Permanent link">¶</a></h2>
+<p>Fix whatever the logs reveal: supply the missing variable, correct the start command, or make sure any service it depends on is running and reachable.</p>
+<h2 id="prevention">Prevention<a class="headerlink" href="#prevention" title="Permanent link">¶</a></h2>
+<ul>
+<li>Test the image locally before relying on it</li>
+<li>Pass required configuration explicitly</li>
+<li>Add a healthcheck so dependencies are ready before the app starts</li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
