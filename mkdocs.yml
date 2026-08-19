@@ -86,7 +86,7 @@ markdown_extensions:
       
 nav:
   - Home: index.md
-  - "🐳 Docker  (🚧 Planned)":
+  - "🐳 Docker":
     - Overview: docker/index.md
 
     # -------------------------
@@ -257,18 +257,7 @@ nav:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-  - "☸ Kubernetes (🚧 In Progress)":
+  - "☸ Kubernetes":
     - Overview: kubernetes/index.md
     - Tutorials:
       - Index: kubernetes/tutorials/index.md
@@ -406,31 +395,44 @@ nav:
         - Kubectl-Debugging: kubernetes/troubleshooting/kubectl-debugging.md
 
 
-  - "⚡Automation (🚧 Planned)":
-    - Overview: automation/index.md
+  - "🚀 CI/CD & GitOps (🚧 In Progress)":
+    - Overview: cicd/index.md
+
     - Tutorials:
-      - Index: automation/tutorials/index.md
+      - Index: cicd/tutorials/index.md
+
       - Beginner:
-         - Overview: automation/tutorials/beginner/index.md
-#        - Overview: automation/tutorials/beginner/01-high-level-overview.md
-#        - Recap & Tips: automation/tutorials/beginner/06-recap-and-tips.md
+          - Index: cicd/tutorials/beginner/index.md
+          - Why Automate?: cicd/tutorials/beginner/why-automate.md
+          - Meet GitHub Actions: cicd/tutorials/beginner/github-actions-intro.md
+          - Building in the Pipeline: cicd/tutorials/beginner/build-in-pipeline.md
+          - Testing in the Pipeline: cicd/tutorials/beginner/test-in-pipeline.md
+          - Reading a Red Build: cicd/tutorials/beginner/reading-failures.md
+          - Publishing Automatically: cicd/tutorials/beginner/publish-image.md
+          - "Capstone: Build, Test, Push": cicd/tutorials/beginner/capstone.md
+
       - Intermediate:
-         - Overview: automation/tutorials/intermediate/index.md
-#        - Overview: automation/tutorials/intermediate/01-overview.md
-#        - Troubleshooting: automation/tutorials/intermediate/06-troubleshooting.md
+          - Index: cicd/tutorials/intermediate/index.md
+          - Versioning and Releases: cicd/tutorials/intermediate/versioning-releases.md
+          - Secrets Done Right: cicd/tutorials/intermediate/secrets.md
+          - Multi-Stage Pipelines: cicd/tutorials/intermediate/multi-stage-pipelines.md
+          - Deploy to a Server: cicd/tutorials/intermediate/deploy-to-server.md
+          - Environments and Gates: cicd/tutorials/intermediate/environments-gates.md
+          - Faster Pipelines: cicd/tutorials/intermediate/caching.md
+          - Rollbacks: cicd/tutorials/intermediate/rollbacks.md
+          - "Capstone: Full Delivery Pipeline": cicd/tutorials/intermediate/capstone.md
+
       - Advanced:
-         - Overview: automation/tutorials/advanced/index.md
-#        - Overview: automation/tutorials/advanced/01-overview.md
-#        - StatefulSets: automation/tutorials/advanced/06-statefulsets.md
-    - How-To Guides:
-      - Index: automation/how-to/index.md
-#      - Troubleshoot Pods: automation/how-to/troubleshooting.md
-    - Explanation:
-      - Index: automation/explanation/index.md
-#      - Namespaces: automation/explanation/namespaces.md
-    - Reference:
-      - Index: automation/reference/index.md
-#      - StatefulSets: automation/reference/statefulsets.md
+          - Index: cicd/tutorials/advanced/index.md
+          - What is GitOps: cicd/tutorials/advanced/what-is-gitops.md
+          - Push vs Pull Delivery: cicd/tutorials/advanced/push-vs-pull.md
+          - Snapshot on Kubernetes: cicd/tutorials/advanced/kubernetes-manifests.md
+          - Install Argo CD: cicd/tutorials/advanced/install-argocd.md
+          - Your First Synced App: cicd/tutorials/advanced/first-sync.md
+          - Closing the Loop: cicd/tutorials/advanced/closing-the-loop.md
+          - Drift and Self-Healing: cicd/tutorials/advanced/drift-self-healing.md
+          - Progressive Delivery: cicd/tutorials/advanced/progressive-delivery.md
+          - "Capstone: Full GitOps Loop": cicd/tutorials/advanced/capstone.md
 
 extra:
   mermaid:
