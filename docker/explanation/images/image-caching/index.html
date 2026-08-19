@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#image-caching">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -440,7 +443,8 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_2_5" type="checkbox">
-<label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../tutorials/end-to-end/">
 <span class="md-ellipsis">
     
   
@@ -449,8 +453,11 @@
 
     
   </span>
+</a>
+<label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-expanded="false" aria-labelledby="__nav_2_2_5_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_2_2_5">
 <span class="md-nav__icon md-icon"></span>
@@ -1055,6 +1062,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Image Caching
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -1065,6 +1083,68 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-the-cache-decides">
+<span class="md-ellipsis">
+      
+        How the cache decides
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#invalidation-cascades">
+<span class="md-ellipsis">
+      
+        Invalidation cascades
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-instruction-order-matters">
+<span class="md-ellipsis">
+      
+        Why instruction order matters
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#practical-takeaways">
+<span class="md-ellipsis">
+      
+        Practical takeaways
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -3944,6 +4024,66 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-the-cache-decides">
+<span class="md-ellipsis">
+      
+        How the cache decides
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#invalidation-cascades">
+<span class="md-ellipsis">
+      
+        Invalidation cascades
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-instruction-order-matters">
+<span class="md-ellipsis">
+      
+        Why instruction order matters
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#practical-takeaways">
+<span class="md-ellipsis">
+      
+        Practical takeaways
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3982,8 +4122,44 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Image Caching</h1>
-
+<h1 id="image-caching">Image Caching<a class="headerlink" href="#image-caching" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>Docker caches every layer as it builds. If nothing that affects a layer has changed since last time, Docker reuses the stored layer instead of doing the work again. This is why the first build of an image is slow, and the next one is often nearly instant.</p>
+<hr>
+<h2 id="how-the-cache-decides">How the cache decides<a class="headerlink" href="#how-the-cache-decides" title="Permanent link">¶</a></h2>
+<p>Docker works through the Dockerfile top to bottom. For each instruction it asks: has this instruction, or the files it depends on, changed since the last build?</p>
+<ul>
+<li><strong>No change</strong>: a cache hit. Docker reuses the existing layer.</li>
+<li><strong>Change</strong>: a cache miss. Docker rebuilds that layer from scratch.</li>
+</ul>
+<hr>
+<h2 id="invalidation-cascades">Invalidation cascades<a class="headerlink" href="#invalidation-cascades" title="Permanent link">¶</a></h2>
+<p>Here is the rule that matters most: once one layer is rebuilt, <strong>every layer after it is rebuilt too</strong>, even if those later instructions did not change. The cache is only trusted up to the first change.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>flowchart TB
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    A[FROM base: cached] --&gt; B[COPY requirements: cached] --&gt; C[RUN pip install: cached] --&gt; D[COPY . . : changed] --&gt; E[all following steps: rebuilt]
+</code></pre></div>
+<p>A change partway down the Dockerfile invalidates everything below it.</p>
+<hr>
+<h2 id="why-instruction-order-matters">Why instruction order matters<a class="headerlink" href="#why-instruction-order-matters" title="Permanent link">¶</a></h2>
+<p>This cascade is the reason the build tutorial copied <code>requirements.txt</code> and installed dependencies <strong>before</strong> copying the application code:</p>
+<ul>
+<li>Dependencies change <strong>rarely</strong>, so their expensive install layer stays cached.</li>
+<li>Code changes <strong>constantly</strong>, so it goes last, where a change only rebuilds the quick final copy.</li>
+</ul>
+<p>Reverse that order, and every tiny code edit would throw away the cache and reinstall every dependency from scratch.</p>
+<hr>
+<h2 id="practical-takeaways">Practical takeaways<a class="headerlink" href="#practical-takeaways" title="Permanent link">¶</a></h2>
+<ul>
+<li>Copy dependency files and install them before copying the rest of your code.</li>
+<li>Put the instructions that change most often near the end.</li>
+<li>Use a <code>.dockerignore</code> so unrelated file changes do not needlessly invalidate the cache.</li>
+</ul>
+<hr>
+<h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../image-layers/">Image Layers</a> for the structure the cache is built on.</li>
+<li>The <a href="../../../tutorials/advanced/optimize-images/">Optimize Image Size</a> tutorial puts these ideas into practice.</li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

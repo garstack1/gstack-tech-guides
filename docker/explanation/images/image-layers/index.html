@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#image-layers">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -440,7 +443,8 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_2_5" type="checkbox">
-<label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../tutorials/end-to-end/">
 <span class="md-ellipsis">
     
   
@@ -449,8 +453,11 @@
 
     
   </span>
+</a>
+<label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-expanded="false" aria-labelledby="__nav_2_2_5_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_2_2_5">
 <span class="md-nav__icon md-icon"></span>
@@ -1043,6 +1050,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Image Layers
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -1053,6 +1071,59 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-layers-are-created">
+<span class="md-ellipsis">
+      
+        How layers are created
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layers-are-shared">
+<span class="md-ellipsis">
+      
+        Layers are shared
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-writable-layer">
+<span class="md-ellipsis">
+      
+        The writable layer
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../image-caching/">
@@ -3944,6 +4015,57 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-layers-are-created">
+<span class="md-ellipsis">
+      
+        How layers are created
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#layers-are-shared">
+<span class="md-ellipsis">
+      
+        Layers are shared
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-writable-layer">
+<span class="md-ellipsis">
+      
+        The writable layer
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3982,8 +4104,33 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Image Layers</h1>
-
+<h1 id="image-layers">Image Layers<a class="headerlink" href="#image-layers" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>An image is not one solid block. It is a <strong>stack of read-only layers</strong>, each built on top of the one below. Understanding layers explains how Docker saves space, why some builds are fast, and where a container's changes actually go.</p>
+<hr>
+<h2 id="how-layers-are-created">How layers are created<a class="headerlink" href="#how-layers-are-created" title="Permanent link">¶</a></h2>
+<p>Each instruction in a Dockerfile adds a <strong>new layer</strong> on top of the previous one. A layer simply records the filesystem changes that its instruction made.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>flowchart TB
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    W[Writable layer: the container]
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>    C[Layer 3: COPY . .]
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    R[Layer 2: RUN pip install]
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>    B[Layer 1: FROM base image]
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>    W --&gt; C --&gt; R --&gt; B
+</code></pre></div>
+<p>The base image sits at the bottom, and your instructions stack upward. Together, the read-only layers form the complete filesystem the application sees.</p>
+<hr>
+<h2 id="layers-are-shared">Layers are shared<a class="headerlink" href="#layers-are-shared" title="Permanent link">¶</a></h2>
+<p>Layers are stored once and <strong>reused across images</strong>. If ten images all start <code>FROM python:3.12-slim</code>, that base layer is stored a single time on your machine and shared by all of them. The same is true when pulling: Docker only downloads layers it does not already have. This is why the second image using a familiar base pulls almost instantly.</p>
+<hr>
+<h2 id="the-writable-layer">The writable layer<a class="headerlink" href="#the-writable-layer" title="Permanent link">¶</a></h2>
+<p>The image layers are read-only. So where do a container's changes go? When you start a container, Docker adds a thin <strong>writable layer</strong> on top of the stack. Everything the container writes lives there.</p>
+<p>This is the mechanism behind the beginner lesson where changes vanished. Remove the container and its writable layer is deleted with it, while the read-only image layers underneath are never touched. It also means many containers can run from one image, each with its own private writable layer, without interfering with each other.</p>
+<hr>
+<h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../image-caching/">Image Caching</a> explains how layers make rebuilds fast.</li>
+<li><a href="../../storage/data-persistence/">Data Persistence</a> explains how to keep data beyond that writable layer.</li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

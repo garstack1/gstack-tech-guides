@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#client-vs-daemon">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -440,7 +443,8 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_2_5" type="checkbox">
-<label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../tutorials/end-to-end/">
 <span class="md-ellipsis">
     
   
@@ -449,8 +453,11 @@
 
     
   </span>
+</a>
+<label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-expanded="false" aria-labelledby="__nav_2_2_5_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_2_2_5">
 <span class="md-nav__icon md-icon"></span>
@@ -993,6 +1000,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Client vs Daemon
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -1003,6 +1021,68 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-client">
+<span class="md-ellipsis">
+      
+        The client
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-daemon">
+<span class="md-ellipsis">
+      
+        The daemon
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-they-communicate">
+<span class="md-ellipsis">
+      
+        How they communicate
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-the-split-matters">
+<span class="md-ellipsis">
+      
+        Why the split matters
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -3944,6 +4024,66 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-client">
+<span class="md-ellipsis">
+      
+        The client
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-daemon">
+<span class="md-ellipsis">
+      
+        The daemon
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-they-communicate">
+<span class="md-ellipsis">
+      
+        How they communicate
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-the-split-matters">
+<span class="md-ellipsis">
+      
+        Why the split matters
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3982,8 +4122,39 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Client vs Daemon</h1>
-
+<h1 id="client-vs-daemon">Client vs Daemon<a class="headerlink" href="#client-vs-daemon" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>The <code>docker</code> command you type is only a <strong>messenger</strong>. The real work happens in a separate background service. This split, a lightweight client talking to a powerful daemon, is central to how Docker works, and it explains several behaviours that otherwise seem odd.</p>
+<hr>
+<h2 id="the-client">The client<a class="headerlink" href="#the-client" title="Permanent link">¶</a></h2>
+<p>The <strong>Docker client</strong> is the <code>docker</code> command line tool. Its whole job is to take what you type, turn it into a request, send it to the daemon, and show you the reply. It does no container work of its own. If the daemon is not running, the client can do nothing.</p>
+<h2 id="the-daemon">The daemon<a class="headerlink" href="#the-daemon" title="Permanent link">¶</a></h2>
+<p>The <strong>Docker daemon</strong> (<code>dockerd</code>) receives those requests and carries them out: building images, running containers, managing networks and volumes. It runs continuously in the background, and it runs with high privileges, effectively as the system administrator, because creating containers needs deep access to the operating system.</p>
+<hr>
+<h2 id="how-they-communicate">How they communicate<a class="headerlink" href="#how-they-communicate" title="Permanent link">¶</a></h2>
+<p>The client and daemon talk over the Docker API, usually through a local connection called a socket.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>flowchart LR
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    U[You] --&gt; CLI[Docker client]
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>    CLI --&gt;|API request| D[Docker daemon]
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    D --&gt; C[Container]
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>    D --&gt;|response| CLI
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>    CLI --&gt;|output| U
+</code></pre></div>
+<p>You type a command, the client sends a request, the daemon does the work, and the result travels back to your screen.</p>
+<hr>
+<h2 id="why-the-split-matters">Why the split matters<a class="headerlink" href="#why-the-split-matters" title="Permanent link">¶</a></h2>
+<p>This separation is not just tidy design. It has real consequences:</p>
+<ul>
+<li><strong>Remote control</strong>: because they communicate over an API, a client on one machine can control a daemon on another.</li>
+<li><strong>Mac and Windows</strong>: containers need a Linux kernel, so on these systems the daemon runs inside a small hidden Linux virtual machine while the client runs natively. This is why Docker Desktop must be running before any command works.</li>
+<li><strong>Security</strong>: since the daemon runs with administrator rights, access to it is effectively administrator access to the machine, which is why it is carefully protected.</li>
+</ul>
+<hr>
+<h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../docker-architecture/">Docker Architecture Overview</a> for how this fits the wider picture.</li>
+<li><a href="../docker-engine/">Docker Engine</a> for what the daemon is built from.</li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

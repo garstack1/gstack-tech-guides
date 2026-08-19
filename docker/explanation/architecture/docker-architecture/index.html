@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#docker-architecture-overview">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -440,7 +443,8 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_2_5" type="checkbox">
-<label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../tutorials/end-to-end/">
 <span class="md-ellipsis">
     
   
@@ -449,8 +453,11 @@
 
     
   </span>
+</a>
+<label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-expanded="false" aria-labelledby="__nav_2_2_5_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_2_2_5">
 <span class="md-nav__icon md-icon"></span>
@@ -969,6 +976,17 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Docker Architecture Overview
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -979,6 +997,50 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-main-parts">
+<span class="md-ellipsis">
+      
+        The main parts
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-happens-when-you-run-a-container">
+<span class="md-ellipsis">
+      
+        What happens when you run a container
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../docker-engine/">
@@ -3944,6 +4006,48 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-main-parts">
+<span class="md-ellipsis">
+      
+        The main parts
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-happens-when-you-run-a-container">
+<span class="md-ellipsis">
+      
+        What happens when you run a container
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3982,8 +4086,41 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>Docker Architecture Overview</h1>
-
+<h1 id="docker-architecture-overview">Docker Architecture Overview<a class="headerlink" href="#docker-architecture-overview" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>Docker is built on a <strong>client-server model</strong>. When you type a Docker command, a small client program hands it to a background service, and that service does the real work of building and running containers. Knowing the main parts makes Docker's behaviour far easier to reason about.</p>
+<hr>
+<h2 id="the-main-parts">The main parts<a class="headerlink" href="#the-main-parts" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Docker client</strong>: the <code>docker</code> command you type in your terminal. It sends instructions and shows you results, but does no container work itself.</li>
+<li><strong>Docker daemon</strong>: the background service (named <code>dockerd</code>) that actually builds images, runs containers, and manages networks and volumes.</li>
+<li><strong>Images</strong>: read-only templates that an application is packaged into.</li>
+<li><strong>Containers</strong>: running instances created from images.</li>
+<li><strong>Registry</strong>: a remote store of images, such as Docker Hub, that the daemon pulls from and pushes to.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>flowchart LR
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>    CLI[Docker CLI] --&gt;|commands| D[Docker daemon]
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>    D --&gt; IMG[Images]
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>    D --&gt; CON[Containers]
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>    D &lt;--&gt;|pull and push| REG[(Registry)]
+</code></pre></div>
+<hr>
+<h2 id="what-happens-when-you-run-a-container">What happens when you run a container<a class="headerlink" href="#what-happens-when-you-run-a-container" title="Permanent link">¶</a></h2>
+<p>Following a single command, <code>docker run nginx</code>, shows how the parts cooperate:</p>
+<ol>
+<li>The <strong>client</strong> turns your command into a request and sends it to the daemon.</li>
+<li>The <strong>daemon</strong> looks for the nginx image on your machine.</li>
+<li>If it is missing, the daemon <strong>pulls</strong> it from the registry.</li>
+<li>The daemon <strong>creates</strong> a container from that image.</li>
+<li>The daemon <strong>starts</strong> the container, and its output streams back through the client to your screen.</li>
+</ol>
+<p>You typed one line, but five distinct steps happened behind it. Every Docker command follows this same shape: client asks, daemon acts.</p>
+<hr>
+<h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../docker-engine/">Docker Engine</a> looks inside the daemon itself.</li>
+<li><a href="../client-daemon/">Client vs Daemon</a> explains how the two halves communicate.</li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

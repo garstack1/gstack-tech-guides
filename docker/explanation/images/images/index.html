@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#what-is-a-docker-image">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -440,7 +443,8 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_2_5" type="checkbox">
-<label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../tutorials/end-to-end/">
 <span class="md-ellipsis">
     
   
@@ -449,8 +453,11 @@
 
     
   </span>
+</a>
+<label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-expanded="false" aria-labelledby="__nav_2_2_5_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_2_2_5">
 <span class="md-nav__icon md-icon"></span>
@@ -1031,6 +1038,17 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    What is a Docker Image
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -1041,6 +1059,59 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-is-inside-an-image">
+<span class="md-ellipsis">
+      
+        What is inside an image
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tags-and-identity">
+<span class="md-ellipsis">
+      
+        Tags and identity
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#images-are-immutable">
+<span class="md-ellipsis">
+      
+        Images are immutable
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../image-layers/">
@@ -3944,6 +4015,57 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-is-inside-an-image">
+<span class="md-ellipsis">
+      
+        What is inside an image
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tags-and-identity">
+<span class="md-ellipsis">
+      
+        Tags and identity
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#images-are-immutable">
+<span class="md-ellipsis">
+      
+        Images are immutable
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3982,8 +4104,33 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>What is a Docker Image</h1>
-
+<h1 id="what-is-a-docker-image">What is a Docker Image?<a class="headerlink" href="#what-is-a-docker-image" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>An <strong>image</strong> is a read-only template that contains an application together with everything it needs to run: the code, the runtime, the libraries, and the settings. Containers are created from images. If a container is a running meal, the image is the sealed meal kit it came from.</p>
+<hr>
+<h2 id="what-is-inside-an-image">What is inside an image<a class="headerlink" href="#what-is-inside-an-image" title="Permanent link">¶</a></h2>
+<p>An image holds two things:</p>
+<ul>
+<li><strong>A filesystem</strong>, built as a stack of read-only layers. This is everything the application sees as its files.</li>
+<li><strong>Metadata</strong>, a set of instructions bundled with it: which command to run on start, which environment variables to set, which port the app uses, and so on.</li>
+</ul>
+<p>When you run an image, the daemon reads that metadata to know how to start the container.</p>
+<hr>
+<h2 id="tags-and-identity">Tags and identity<a class="headerlink" href="#tags-and-identity" title="Permanent link">¶</a></h2>
+<p>An image is named as a <strong>repository</strong> and a <strong>tag</strong>, for example <code>nginx:1.27</code>. The tag is usually a version.</p>
+<ul>
+<li>If you leave the tag off, Docker assumes <code>latest</code>. This is a <strong>moving label</strong>, not a fixed version, so <code>latest</code> today and <code>latest</code> next month can be different images.</li>
+<li>Beneath the friendly name, every image has an immutable <strong>digest</strong>, a long <code>sha256</code> fingerprint. Two images with the same digest are guaranteed byte-for-byte identical. Pinning a digest is how production systems guarantee they run the exact image they tested.</li>
+</ul>
+<hr>
+<h2 id="images-are-immutable">Images are immutable<a class="headerlink" href="#images-are-immutable" title="Permanent link">¶</a></h2>
+<p>Once built, an image never changes. There is no way to edit an image in place. To "change" one, you build a <strong>new</strong> image, which gets its own digest. This immutability is what makes images reproducible: the same image runs the same way everywhere, forever.</p>
+<hr>
+<h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../image-layers/">Image Layers</a> explains how that layered filesystem is structured.</li>
+<li><a href="../image-caching/">Image Caching</a> explains why builds are fast the second time.</li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>

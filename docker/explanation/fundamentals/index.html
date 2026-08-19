@@ -3,20 +3,18 @@
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <meta content="Hands-on guides for Kubernetes, Docker, Automation and more" name="description">
 <meta content="Garrett Stack" name="author">
-<link href="https://garstack-sharetribe.github.io/gstack-tech-guides/docker/tutorials/end-to-end/deploy-web-app/" rel="canonical">
-<link href="../" rel="prev">
-<link href="../fullstack-compose/" rel="next">
-<link href="../../../../assets/images/favicon.png" rel="icon">
+<link href="https://garstack-sharetribe.github.io/gstack-tech-guides/docker/explanation/fundamentals/" rel="canonical">
+<link href="../../../assets/images/favicon.png" rel="icon">
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator">
-<title>Deploy a Web App with Docker - Technical Tutorials Hub</title>
-<link href="../../../../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet">
-<link href="../../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet">
+<title>Docker Explained - Technical Tutorials Hub</title>
+<link href="../../../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet">
+<link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet">
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../../../stylesheets/extra.css" rel="stylesheet">
-<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+<link href="../../../stylesheets/extra.css" rel="stylesheet">
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -32,7 +30,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#deploy-a-web-app-with-docker">
+<a class="md-skip" href="#docker-explained">
           Skip to content
         </a>
 </div>
@@ -40,7 +38,7 @@
 </div>
 <header class="md-header md-header--shadow" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Technical Tutorials Hub" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Technical Tutorials Hub">
+<a aria-label="Technical Tutorials Hub" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Technical Tutorials Hub">
 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -56,7 +54,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Deploy a Web App with Docker
+              Docker Explained
             
           </span>
 </div>
@@ -113,7 +111,7 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Technical Tutorials Hub" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Technical Tutorials Hub">
+<a aria-label="Technical Tutorials Hub" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Technical Tutorials Hub">
 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 </a>
     Technical Tutorials Hub
@@ -130,7 +128,7 @@
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../..">
+<a class="md-nav__link" href="../../..">
 <span class="md-ellipsis">
     
   
@@ -141,10 +139,10 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../">
+<a class="md-nav__link" href="../../">
 <span class="md-ellipsis">
     
   
@@ -158,7 +156,7 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
             
@@ -168,10 +166,10 @@
 
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../">
+<a class="md-nav__link" href="../../tutorials/">
 <span class="md-ellipsis">
     
   
@@ -185,7 +183,7 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="true" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_2">
 <span class="md-nav__icon md-icon"></span>
             
@@ -198,7 +196,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_2_2" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../beginner/">
+<a class="md-nav__link" href="../../tutorials/beginner/">
 <span class="md-ellipsis">
     
   
@@ -223,7 +221,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../beginner/install-docker/">
+<a class="md-nav__link" href="../../tutorials/beginner/install-docker/">
 <span class="md-ellipsis">
     
   
@@ -235,7 +233,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../beginner/first-container/">
+<a class="md-nav__link" href="../../tutorials/beginner/first-container/">
 <span class="md-ellipsis">
     
   
@@ -247,7 +245,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../beginner/images-vs-containers/">
+<a class="md-nav__link" href="../../tutorials/beginner/images-vs-containers/">
 <span class="md-ellipsis">
     
   
@@ -259,7 +257,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../beginner/container-lifecycle/">
+<a class="md-nav__link" href="../../tutorials/beginner/container-lifecycle/">
 <span class="md-ellipsis">
     
   
@@ -276,7 +274,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_2_3" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../intermediate/">
+<a class="md-nav__link" href="../../tutorials/intermediate/">
 <span class="md-ellipsis">
     
   
@@ -301,7 +299,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../intermediate/build-image/">
+<a class="md-nav__link" href="../../tutorials/intermediate/build-image/">
 <span class="md-ellipsis">
     
   
@@ -313,7 +311,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../intermediate/push-to-registry/">
+<a class="md-nav__link" href="../../tutorials/intermediate/push-to-registry/">
 <span class="md-ellipsis">
     
   
@@ -325,7 +323,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../intermediate/environment-variables/">
+<a class="md-nav__link" href="../../tutorials/intermediate/environment-variables/">
 <span class="md-ellipsis">
     
   
@@ -337,7 +335,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../intermediate/docker-volumes/">
+<a class="md-nav__link" href="../../tutorials/intermediate/docker-volumes/">
 <span class="md-ellipsis">
     
   
@@ -349,7 +347,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../intermediate/docker-networking/">
+<a class="md-nav__link" href="../../tutorials/intermediate/docker-networking/">
 <span class="md-ellipsis">
     
   
@@ -366,7 +364,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_2_4" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../advanced/">
+<a class="md-nav__link" href="../../tutorials/advanced/">
 <span class="md-ellipsis">
     
   
@@ -391,7 +389,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../advanced/optimize-images/">
+<a class="md-nav__link" href="../../tutorials/advanced/optimize-images/">
 <span class="md-ellipsis">
     
   
@@ -403,7 +401,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../advanced/multi-stage-builds/">
+<a class="md-nav__link" href="../../tutorials/advanced/multi-stage-builds/">
 <span class="md-ellipsis">
     
   
@@ -415,7 +413,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../advanced/docker-compose-app/">
+<a class="md-nav__link" href="../../tutorials/advanced/docker-compose-app/">
 <span class="md-ellipsis">
     
   
@@ -427,7 +425,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../advanced/debugging-containers/">
+<a class="md-nav__link" href="../../tutorials/advanced/debugging-containers/">
 <span class="md-ellipsis">
     
   
@@ -441,10 +439,10 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2_5" type="checkbox">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_5" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../">
+<a class="md-nav__link" href="../../tutorials/end-to-end/">
 <span class="md-ellipsis">
     
   
@@ -458,7 +456,7 @@
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="true" aria-labelledby="__nav_2_2_5_label" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_5_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_2_2_5">
 <span class="md-nav__icon md-icon"></span>
             
@@ -468,20 +466,8 @@
 
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    
-  
-    Deploy a Web App with Docker
-  
-
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../tutorials/end-to-end/deploy-web-app/">
 <span class="md-ellipsis">
     
   
@@ -491,107 +477,9 @@
     
   </span>
 </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#what-we-will-do-in-very-simple-steps">
-<span class="md-ellipsis">
-      
-        What we will do (in very simple steps)
-      
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#step-1-get-a-server">
-<span class="md-ellipsis">
-      
-        Step 1: Get a server
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-2-install-docker-on-the-server">
-<span class="md-ellipsis">
-      
-        Step 2: Install Docker on the server
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-3-push-your-image-so-the-server-can-pull-it">
-<span class="md-ellipsis">
-      
-        Step 3: Push your image so the server can pull it
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-4-run-the-stack-on-the-server">
-<span class="md-ellipsis">
-      
-        Step 4: Run the stack on the server
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-5-visit-your-app">
-<span class="md-ellipsis">
-      
-        Step 5: Visit your app
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#a-word-on-real-production">
-<span class="md-ellipsis">
-      
-        A word on real production
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#checkpoint">
-<span class="md-ellipsis">
-      
-        ✅ Checkpoint
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#common-hiccups">
-<span class="md-ellipsis">
-      
-        🩹 Common hiccups
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#where-this-leads-kubernetes">
-<span class="md-ellipsis">
-      
-        🚀 Where this leads: Kubernetes
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../fullstack-compose/">
+<a class="md-nav__link" href="../../tutorials/end-to-end/fullstack-compose/">
 <span class="md-ellipsis">
     
   
@@ -611,7 +499,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../how-to/">
+<a class="md-nav__link" href="../../how-to/">
 <span class="md-ellipsis">
     
   
@@ -659,7 +547,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../how-to/containers/run-container/">
+<a class="md-nav__link" href="../../how-to/containers/run-container/">
 <span class="md-ellipsis">
     
   
@@ -671,7 +559,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../how-to/containers/stop-remove/">
+<a class="md-nav__link" href="../../how-to/containers/stop-remove/">
 <span class="md-ellipsis">
     
   
@@ -683,7 +571,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../how-to/containers/docker-exec/">
+<a class="md-nav__link" href="../../how-to/containers/docker-exec/">
 <span class="md-ellipsis">
     
   
@@ -695,7 +583,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../how-to/containers/view-logs/">
+<a class="md-nav__link" href="../../how-to/containers/view-logs/">
 <span class="md-ellipsis">
     
   
@@ -733,7 +621,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../how-to/images/build-image/">
+<a class="md-nav__link" href="../../how-to/images/build-image/">
 <span class="md-ellipsis">
     
   
@@ -745,7 +633,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../how-to/images/tag-image/">
+<a class="md-nav__link" href="../../how-to/images/tag-image/">
 <span class="md-ellipsis">
     
   
@@ -757,7 +645,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../how-to/images/push-image/">
+<a class="md-nav__link" href="../../how-to/images/push-image/">
 <span class="md-ellipsis">
     
   
@@ -769,7 +657,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../how-to/images/remove-images/">
+<a class="md-nav__link" href="../../how-to/images/remove-images/">
 <span class="md-ellipsis">
     
   
@@ -807,7 +695,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../how-to/networking/list-networks/">
+<a class="md-nav__link" href="../../how-to/networking/list-networks/">
 <span class="md-ellipsis">
     
   
@@ -819,7 +707,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../how-to/networking/create-network/">
+<a class="md-nav__link" href="../../how-to/networking/create-network/">
 <span class="md-ellipsis">
     
   
@@ -831,7 +719,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../how-to/networking/connect-containers/">
+<a class="md-nav__link" href="../../how-to/networking/connect-containers/">
 <span class="md-ellipsis">
     
   
@@ -843,7 +731,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../how-to/networking/expose-ports/">
+<a class="md-nav__link" href="../../how-to/networking/expose-ports/">
 <span class="md-ellipsis">
     
   
@@ -881,7 +769,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../how-to/storage/create-volume/">
+<a class="md-nav__link" href="../../how-to/storage/create-volume/">
 <span class="md-ellipsis">
     
   
@@ -893,7 +781,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../how-to/storage/mount-volume/">
+<a class="md-nav__link" href="../../how-to/storage/mount-volume/">
 <span class="md-ellipsis">
     
   
@@ -905,7 +793,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../how-to/storage/bind-mounts/">
+<a class="md-nav__link" href="../../how-to/storage/bind-mounts/">
 <span class="md-ellipsis">
     
   
@@ -943,7 +831,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../how-to/compose/create-compose-file/">
+<a class="md-nav__link" href="../../how-to/compose/create-compose-file/">
 <span class="md-ellipsis">
     
   
@@ -955,7 +843,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../how-to/compose/run-compose/">
+<a class="md-nav__link" href="../../how-to/compose/run-compose/">
 <span class="md-ellipsis">
     
   
@@ -967,7 +855,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../how-to/compose/stop-compose/">
+<a class="md-nav__link" href="../../how-to/compose/stop-compose/">
 <span class="md-ellipsis">
     
   
@@ -987,7 +875,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../explanation/">
+<a class="md-nav__link" href="../">
 <span class="md-ellipsis">
     
   
@@ -1035,7 +923,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/fundamentals/what-is-docker/">
+<a class="md-nav__link" href="what-is-docker/">
 <span class="md-ellipsis">
     
   
@@ -1047,7 +935,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/fundamentals/containers-vs-vm/">
+<a class="md-nav__link" href="containers-vs-vm/">
 <span class="md-ellipsis">
     
   
@@ -1085,7 +973,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/architecture/docker-architecture/">
+<a class="md-nav__link" href="../architecture/docker-architecture/">
 <span class="md-ellipsis">
     
   
@@ -1097,7 +985,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/architecture/docker-engine/">
+<a class="md-nav__link" href="../architecture/docker-engine/">
 <span class="md-ellipsis">
     
   
@@ -1109,7 +997,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/architecture/client-daemon/">
+<a class="md-nav__link" href="../architecture/client-daemon/">
 <span class="md-ellipsis">
     
   
@@ -1147,7 +1035,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/images/images/">
+<a class="md-nav__link" href="../images/images/">
 <span class="md-ellipsis">
     
   
@@ -1159,7 +1047,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/images/image-layers/">
+<a class="md-nav__link" href="../images/image-layers/">
 <span class="md-ellipsis">
     
   
@@ -1171,7 +1059,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/images/image-caching/">
+<a class="md-nav__link" href="../images/image-caching/">
 <span class="md-ellipsis">
     
   
@@ -1209,7 +1097,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/containers/container-lifecycle/">
+<a class="md-nav__link" href="../containers/container-lifecycle/">
 <span class="md-ellipsis">
     
   
@@ -1221,7 +1109,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/containers/isolation/">
+<a class="md-nav__link" href="../containers/isolation/">
 <span class="md-ellipsis">
     
   
@@ -1259,7 +1147,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/networking/networking/">
+<a class="md-nav__link" href="../networking/networking/">
 <span class="md-ellipsis">
     
   
@@ -1271,7 +1159,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/networking/bridge-network/">
+<a class="md-nav__link" href="../networking/bridge-network/">
 <span class="md-ellipsis">
     
   
@@ -1283,7 +1171,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/networking/host-network/">
+<a class="md-nav__link" href="../networking/host-network/">
 <span class="md-ellipsis">
     
   
@@ -1321,7 +1209,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/storage/storage/">
+<a class="md-nav__link" href="../storage/storage/">
 <span class="md-ellipsis">
     
   
@@ -1333,7 +1221,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/storage/data-persistence/">
+<a class="md-nav__link" href="../storage/data-persistence/">
 <span class="md-ellipsis">
     
   
@@ -1371,7 +1259,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/docker-compose/docker-compose/">
+<a class="md-nav__link" href="../docker-compose/docker-compose/">
 <span class="md-ellipsis">
     
   
@@ -1383,7 +1271,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../explanation/docker-compose/multi-container/">
+<a class="md-nav__link" href="../docker-compose/multi-container/">
 <span class="md-ellipsis">
     
   
@@ -1424,7 +1312,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/index.md">
+<a class="md-nav__link" href="../../reference/index.md">
 <span class="md-ellipsis">
     
   
@@ -1459,7 +1347,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/core-commands/docker-run/">
+<a class="md-nav__link" href="../../reference/core-commands/docker-run/">
 <span class="md-ellipsis">
     
   
@@ -1471,7 +1359,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/core-commands/docker-ps/">
+<a class="md-nav__link" href="../../reference/core-commands/docker-ps/">
 <span class="md-ellipsis">
     
   
@@ -1483,7 +1371,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/core-commands/docker-stop/">
+<a class="md-nav__link" href="../../reference/core-commands/docker-stop/">
 <span class="md-ellipsis">
     
   
@@ -1495,7 +1383,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/core-commands/docker-rm/">
+<a class="md-nav__link" href="../../reference/core-commands/docker-rm/">
 <span class="md-ellipsis">
     
   
@@ -1507,7 +1395,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/core-commands/docker-logs/">
+<a class="md-nav__link" href="../../reference/core-commands/docker-logs/">
 <span class="md-ellipsis">
     
   
@@ -1519,7 +1407,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/core-commands/docker-exec/">
+<a class="md-nav__link" href="../../reference/core-commands/docker-exec/">
 <span class="md-ellipsis">
     
   
@@ -1557,7 +1445,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/image-commands/docker-build/">
+<a class="md-nav__link" href="../../reference/image-commands/docker-build/">
 <span class="md-ellipsis">
     
   
@@ -1569,7 +1457,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/image-commands/docker-pull/">
+<a class="md-nav__link" href="../../reference/image-commands/docker-pull/">
 <span class="md-ellipsis">
     
   
@@ -1581,7 +1469,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/image-commands/docker-push/">
+<a class="md-nav__link" href="../../reference/image-commands/docker-push/">
 <span class="md-ellipsis">
     
   
@@ -1593,7 +1481,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/image-commands/docker-images/">
+<a class="md-nav__link" href="../../reference/image-commands/docker-images/">
 <span class="md-ellipsis">
     
   
@@ -1631,7 +1519,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/networking-commands/docker-network-ls/">
+<a class="md-nav__link" href="../../reference/networking-commands/docker-network-ls/">
 <span class="md-ellipsis">
     
   
@@ -1643,7 +1531,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/networking-commands/docker-network-create/">
+<a class="md-nav__link" href="../../reference/networking-commands/docker-network-create/">
 <span class="md-ellipsis">
     
   
@@ -1681,7 +1569,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/volume-commands/docker-volume-ls/">
+<a class="md-nav__link" href="../../reference/volume-commands/docker-volume-ls/">
 <span class="md-ellipsis">
     
   
@@ -1693,7 +1581,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/volume-commands/docker-volume-create/">
+<a class="md-nav__link" href="../../reference/volume-commands/docker-volume-create/">
 <span class="md-ellipsis">
     
   
@@ -1731,7 +1619,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/docker-compose/docker-compose-up/">
+<a class="md-nav__link" href="../../reference/docker-compose/docker-compose-up/">
 <span class="md-ellipsis">
     
   
@@ -1743,7 +1631,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/docker-compose/docker-compose-down/">
+<a class="md-nav__link" href="../../reference/docker-compose/docker-compose-down/">
 <span class="md-ellipsis">
     
   
@@ -1763,7 +1651,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../troubleshooting/">
+<a class="md-nav__link" href="../../troubleshooting/">
 <span class="md-ellipsis">
     
   
@@ -1811,7 +1699,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../troubleshooting/containers/container-crashing/">
+<a class="md-nav__link" href="../../troubleshooting/containers/container-crashing/">
 <span class="md-ellipsis">
     
   
@@ -1823,7 +1711,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../troubleshooting/containers/container-exits/">
+<a class="md-nav__link" href="../../troubleshooting/containers/container-exits/">
 <span class="md-ellipsis">
     
   
@@ -1861,7 +1749,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../troubleshooting/images/image-pull-errors/">
+<a class="md-nav__link" href="../../troubleshooting/images/image-pull-errors/">
 <span class="md-ellipsis">
     
   
@@ -1873,7 +1761,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../troubleshooting/images/build-failures/">
+<a class="md-nav__link" href="../../troubleshooting/images/build-failures/">
 <span class="md-ellipsis">
     
   
@@ -1911,7 +1799,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../troubleshooting/networking/port-in-use/">
+<a class="md-nav__link" href="../../troubleshooting/networking/port-in-use/">
 <span class="md-ellipsis">
     
   
@@ -1923,7 +1811,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../troubleshooting/networking/cannot-reach-container/">
+<a class="md-nav__link" href="../../troubleshooting/networking/cannot-reach-container/">
 <span class="md-ellipsis">
     
   
@@ -1961,7 +1849,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../troubleshooting/general-debugging/debugging-logs/">
+<a class="md-nav__link" href="../../troubleshooting/general-debugging/debugging-logs/">
 <span class="md-ellipsis">
     
   
@@ -1973,7 +1861,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../troubleshooting/general-debugging/docker-inspect/">
+<a class="md-nav__link" href="../../troubleshooting/general-debugging/docker-inspect/">
 <span class="md-ellipsis">
     
   
@@ -1996,7 +1884,7 @@
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../../kubernetes/">
+<a class="md-nav__link" href="../../../kubernetes/">
 <span class="md-ellipsis">
     
   
@@ -2023,7 +1911,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/">
 <span class="md-ellipsis">
     
   
@@ -2050,7 +1938,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_2_2" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/beginner/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/beginner/">
 <span class="md-ellipsis">
     
   
@@ -2075,7 +1963,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/beginner/high-level-overview/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/beginner/high-level-overview/">
 <span class="md-ellipsis">
     
   
@@ -2087,7 +1975,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/beginner/install-minikube/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/beginner/install-minikube/">
 <span class="md-ellipsis">
     
   
@@ -2099,7 +1987,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/beginner/your-first-pod-and-deployment/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/beginner/your-first-pod-and-deployment/">
 <span class="md-ellipsis">
     
   
@@ -2111,7 +1999,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/beginner/deployments/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/beginner/deployments/">
 <span class="md-ellipsis">
     
   
@@ -2123,7 +2011,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/beginner/services/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/beginner/services/">
 <span class="md-ellipsis">
     
   
@@ -2135,7 +2023,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/beginner/recap-and-tips/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/beginner/recap-and-tips/">
 <span class="md-ellipsis">
     
   
@@ -2152,7 +2040,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_2_3" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/intermediate/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/intermediate/">
 <span class="md-ellipsis">
     
   
@@ -2177,7 +2065,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/intermediate/deploy-multi-container-app/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/intermediate/deploy-multi-container-app/">
 <span class="md-ellipsis">
     
   
@@ -2189,7 +2077,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/intermediate/configmaps/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/intermediate/configmaps/">
 <span class="md-ellipsis">
     
   
@@ -2201,7 +2089,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/intermediate/secrets/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/intermediate/secrets/">
 <span class="md-ellipsis">
     
   
@@ -2213,7 +2101,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/intermediate/persistent-volumes-and-storage/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/intermediate/persistent-volumes-and-storage/">
 <span class="md-ellipsis">
     
   
@@ -2225,7 +2113,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/intermediate/rolling-update-and-rollback/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/intermediate/rolling-update-and-rollback/">
 <span class="md-ellipsis">
     
   
@@ -2237,7 +2125,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/intermediate/expose-app-with-ingress/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/intermediate/expose-app-with-ingress/">
 <span class="md-ellipsis">
     
   
@@ -2254,7 +2142,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_2_4" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/advanced/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/advanced/">
 <span class="md-ellipsis">
     
   
@@ -2279,7 +2167,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/advanced/ingress/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/advanced/ingress/">
 <span class="md-ellipsis">
     
   
@@ -2291,7 +2179,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/advanced/helm-basics/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/advanced/helm-basics/">
 <span class="md-ellipsis">
     
   
@@ -2303,7 +2191,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/advanced/resource-limits-and-requests/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/advanced/resource-limits-and-requests/">
 <span class="md-ellipsis">
     
   
@@ -2315,7 +2203,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/advanced/rbac-and-network-policies/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/advanced/rbac-and-network-policies/">
 <span class="md-ellipsis">
     
   
@@ -2327,7 +2215,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/advanced/statefulsets-headless-services/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/advanced/statefulsets-headless-services/">
 <span class="md-ellipsis">
     
   
@@ -2339,7 +2227,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/advanced/final-wrap-up/">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/advanced/final-wrap-up/">
 <span class="md-ellipsis">
     
   
@@ -2377,7 +2265,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/end-to-end/deploy-your-first-application.md">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/end-to-end/deploy-your-first-application.md">
 <span class="md-ellipsis">
     
   
@@ -2389,7 +2277,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/end-to-end/scale-an-application.md">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/end-to-end/scale-an-application.md">
 <span class="md-ellipsis">
     
   
@@ -2401,7 +2289,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/tutorials/end-to-end/debug-a-failing-application.md">
+<a class="md-nav__link" href="../../../kubernetes/tutorials/end-to-end/debug-a-failing-application.md">
 <span class="md-ellipsis">
     
   
@@ -2421,7 +2309,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../../kubernetes/how-to/">
+<a class="md-nav__link" href="../../../kubernetes/how-to/">
 <span class="md-ellipsis">
     
   
@@ -2448,7 +2336,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_3_2" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../../kubernetes/how-to/deployments/">
+<a class="md-nav__link" href="../../../kubernetes/how-to/deployments/">
 <span class="md-ellipsis">
     
   
@@ -2473,7 +2361,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/how-to/deployments/scale-deployment/">
+<a class="md-nav__link" href="../../../kubernetes/how-to/deployments/scale-deployment/">
 <span class="md-ellipsis">
     
   
@@ -2485,7 +2373,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/how-to/deployments/rollback-deployment/">
+<a class="md-nav__link" href="../../../kubernetes/how-to/deployments/rollback-deployment/">
 <span class="md-ellipsis">
     
   
@@ -2497,7 +2385,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/how-to/deployments/restart-deployment/">
+<a class="md-nav__link" href="../../../kubernetes/how-to/deployments/restart-deployment/">
 <span class="md-ellipsis">
     
   
@@ -2509,7 +2397,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/how-to/deployments/update-container-image/">
+<a class="md-nav__link" href="../../../kubernetes/how-to/deployments/update-container-image/">
 <span class="md-ellipsis">
     
   
@@ -2526,7 +2414,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_3_3" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../../kubernetes/how-to/networking/">
+<a class="md-nav__link" href="../../../kubernetes/how-to/networking/">
 <span class="md-ellipsis">
     
   
@@ -2551,7 +2439,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/how-to/networking/expose-service/">
+<a class="md-nav__link" href="../../../kubernetes/how-to/networking/expose-service/">
 <span class="md-ellipsis">
     
   
@@ -2563,7 +2451,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/how-to/networking/expose-service-ingress/">
+<a class="md-nav__link" href="../../../kubernetes/how-to/networking/expose-service-ingress/">
 <span class="md-ellipsis">
     
   
@@ -2575,7 +2463,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/how-to/networking/port-forward-pod/">
+<a class="md-nav__link" href="../../../kubernetes/how-to/networking/port-forward-pod/">
 <span class="md-ellipsis">
     
   
@@ -2592,7 +2480,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_3_4" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../../kubernetes/how-to/configuration/">
+<a class="md-nav__link" href="../../../kubernetes/how-to/configuration/">
 <span class="md-ellipsis">
     
   
@@ -2617,7 +2505,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/how-to/configuration/use-configmaps/">
+<a class="md-nav__link" href="../../../kubernetes/how-to/configuration/use-configmaps/">
 <span class="md-ellipsis">
     
   
@@ -2629,7 +2517,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/how-to/configuration/use-secrets/">
+<a class="md-nav__link" href="../../../kubernetes/how-to/configuration/use-secrets/">
 <span class="md-ellipsis">
     
   
@@ -2641,7 +2529,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/how-to/configuration/add-env-vars/">
+<a class="md-nav__link" href="../../../kubernetes/how-to/configuration/add-env-vars/">
 <span class="md-ellipsis">
     
   
@@ -2658,7 +2546,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_3_5" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../../kubernetes/how-to/storage/">
+<a class="md-nav__link" href="../../../kubernetes/how-to/storage/">
 <span class="md-ellipsis">
     
   
@@ -2683,7 +2571,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/how-to/storage/mount-persistent-volume/">
+<a class="md-nav__link" href="../../../kubernetes/how-to/storage/mount-persistent-volume/">
 <span class="md-ellipsis">
     
   
@@ -2703,7 +2591,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_4" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/">
 <span class="md-ellipsis">
     
   
@@ -2751,7 +2639,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/container-fundamentals/what-is-docker/">
+<a class="md-nav__link" href="../../../kubernetes/container-fundamentals/what-is-docker/">
 <span class="md-ellipsis">
     
   
@@ -2763,7 +2651,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/container-fundamentals/container-vs-docker/">
+<a class="md-nav__link" href="../../../kubernetes/container-fundamentals/container-vs-docker/">
 <span class="md-ellipsis">
     
   
@@ -2775,7 +2663,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/container-fundamentals/building-a-docker-image/">
+<a class="md-nav__link" href="../../../kubernetes/container-fundamentals/building-a-docker-image/">
 <span class="md-ellipsis">
     
   
@@ -2813,7 +2701,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/architecture/kubernetes-architecture-overview/">
+<a class="md-nav__link" href="../../../kubernetes/architecture/kubernetes-architecture-overview/">
 <span class="md-ellipsis">
     
   
@@ -2825,7 +2713,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/architecture/control-plane-components/">
+<a class="md-nav__link" href="../../../kubernetes/architecture/control-plane-components/">
 <span class="md-ellipsis">
     
   
@@ -2837,7 +2725,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/architecture/worker-node-components/">
+<a class="md-nav__link" href="../../../kubernetes/architecture/worker-node-components/">
 <span class="md-ellipsis">
     
   
@@ -2849,7 +2737,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/architecture/request-flow-through-kubernetes/">
+<a class="md-nav__link" href="../../../kubernetes/architecture/request-flow-through-kubernetes/">
 <span class="md-ellipsis">
     
   
@@ -2866,7 +2754,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_4_4" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/workloads/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/workloads/">
 <span class="md-ellipsis">
     
   
@@ -2891,7 +2779,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/workloads/pods/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/workloads/pods/">
 <span class="md-ellipsis">
     
   
@@ -2903,7 +2791,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/workloads/deployments/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/workloads/deployments/">
 <span class="md-ellipsis">
     
   
@@ -2915,7 +2803,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/workloads/replica-sets/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/workloads/replica-sets/">
 <span class="md-ellipsis">
     
   
@@ -2927,7 +2815,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/workloads/statefulsets/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/workloads/statefulsets/">
 <span class="md-ellipsis">
     
   
@@ -2944,7 +2832,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_4_5" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/networking/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/networking/">
 <span class="md-ellipsis">
     
   
@@ -2969,7 +2857,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/networking/pod-networking/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/networking/pod-networking/">
 <span class="md-ellipsis">
     
   
@@ -2981,7 +2869,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/networking/services/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/networking/services/">
 <span class="md-ellipsis">
     
   
@@ -2993,7 +2881,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/networking/kube-proxy/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/networking/kube-proxy/">
 <span class="md-ellipsis">
     
   
@@ -3005,7 +2893,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/networking/ingress/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/networking/ingress/">
 <span class="md-ellipsis">
     
   
@@ -3017,7 +2905,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/networking/dns/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/networking/dns/">
 <span class="md-ellipsis">
     
   
@@ -3029,7 +2917,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/networking/network-policies/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/networking/network-policies/">
 <span class="md-ellipsis">
     
   
@@ -3046,7 +2934,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_4_6" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/configuration/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/configuration/">
 <span class="md-ellipsis">
     
   
@@ -3071,7 +2959,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/configuration/configmaps/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/configuration/configmaps/">
 <span class="md-ellipsis">
     
   
@@ -3083,7 +2971,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/configuration/secrets/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/configuration/secrets/">
 <span class="md-ellipsis">
     
   
@@ -3100,7 +2988,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_4_7" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/storage/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/storage/">
 <span class="md-ellipsis">
     
   
@@ -3125,7 +3013,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/storage/persistent-volumes/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/storage/persistent-volumes/">
 <span class="md-ellipsis">
     
   
@@ -3137,7 +3025,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/storage/persistent-volume-claims/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/storage/persistent-volume-claims/">
 <span class="md-ellipsis">
     
   
@@ -3154,7 +3042,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_4_8" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/scaling/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/scaling/">
 <span class="md-ellipsis">
     
   
@@ -3179,7 +3067,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/scaling/horizontal-pod-autoscaler.md">
+<a class="md-nav__link" href="../../../kubernetes/explanation/scaling/horizontal-pod-autoscaler.md">
 <span class="md-ellipsis">
     
   
@@ -3191,7 +3079,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/explanation/scaling/rolling-updates/">
+<a class="md-nav__link" href="../../../kubernetes/explanation/scaling/rolling-updates/">
 <span class="md-ellipsis">
     
   
@@ -3211,7 +3099,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../../kubernetes/reference/">
+<a class="md-nav__link" href="../../../kubernetes/reference/">
 <span class="md-ellipsis">
     
   
@@ -3259,7 +3147,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/reference/kubectl/kubectl-overview/">
+<a class="md-nav__link" href="../../../kubernetes/reference/kubectl/kubectl-overview/">
 <span class="md-ellipsis">
     
   
@@ -3271,7 +3159,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/reference/kubectl/kubectl-get/">
+<a class="md-nav__link" href="../../../kubernetes/reference/kubectl/kubectl-get/">
 <span class="md-ellipsis">
     
   
@@ -3283,7 +3171,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/reference/kubectl/kubectl-describe/">
+<a class="md-nav__link" href="../../../kubernetes/reference/kubectl/kubectl-describe/">
 <span class="md-ellipsis">
     
   
@@ -3295,7 +3183,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/reference/kubectl/kubectl-logs/">
+<a class="md-nav__link" href="../../../kubernetes/reference/kubectl/kubectl-logs/">
 <span class="md-ellipsis">
     
   
@@ -3307,7 +3195,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/reference/kubectl/kubectl-exec/">
+<a class="md-nav__link" href="../../../kubernetes/reference/kubectl/kubectl-exec/">
 <span class="md-ellipsis">
     
   
@@ -3319,7 +3207,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/reference/kubectl/kubectl-apply/">
+<a class="md-nav__link" href="../../../kubernetes/reference/kubectl/kubectl-apply/">
 <span class="md-ellipsis">
     
   
@@ -3357,7 +3245,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/reference/objects/pods/">
+<a class="md-nav__link" href="../../../kubernetes/reference/objects/pods/">
 <span class="md-ellipsis">
     
   
@@ -3369,7 +3257,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/reference/objects/deployments/">
+<a class="md-nav__link" href="../../../kubernetes/reference/objects/deployments/">
 <span class="md-ellipsis">
     
   
@@ -3381,7 +3269,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/reference/objects/services/">
+<a class="md-nav__link" href="../../../kubernetes/reference/objects/services/">
 <span class="md-ellipsis">
     
   
@@ -3393,7 +3281,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/reference/objects/configmaps/">
+<a class="md-nav__link" href="../../../kubernetes/reference/objects/configmaps/">
 <span class="md-ellipsis">
     
   
@@ -3405,7 +3293,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/reference/objects/secrets/">
+<a class="md-nav__link" href="../../../kubernetes/reference/objects/secrets/">
 <span class="md-ellipsis">
     
   
@@ -3417,7 +3305,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/reference/objects/statefulsets/">
+<a class="md-nav__link" href="../../../kubernetes/reference/objects/statefulsets/">
 <span class="md-ellipsis">
     
   
@@ -3455,7 +3343,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/reference/resources/resource-limits/">
+<a class="md-nav__link" href="../../../kubernetes/reference/resources/resource-limits/">
 <span class="md-ellipsis">
     
   
@@ -3467,7 +3355,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/reference/resources/hpa/">
+<a class="md-nav__link" href="../../../kubernetes/reference/resources/hpa/">
 <span class="md-ellipsis">
     
   
@@ -3508,7 +3396,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/reference/resource-limits.md">
+<a class="md-nav__link" href="../../../kubernetes/reference/resource-limits.md">
 <span class="md-ellipsis">
     
   
@@ -3520,7 +3408,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/reference/hpa/">
+<a class="md-nav__link" href="../../../kubernetes/reference/hpa/">
 <span class="md-ellipsis">
     
   
@@ -3558,7 +3446,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/reference/rbac.md">
+<a class="md-nav__link" href="../../../kubernetes/reference/rbac.md">
 <span class="md-ellipsis">
     
   
@@ -3570,7 +3458,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/reference/network-policies.md">
+<a class="md-nav__link" href="../../../kubernetes/reference/network-policies.md">
 <span class="md-ellipsis">
     
   
@@ -3587,7 +3475,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3_8" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../../kubernetes/troubleshooting/">
+<a class="md-nav__link" href="../../../kubernetes/troubleshooting/">
 <span class="md-ellipsis">
     
   
@@ -3635,7 +3523,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/troubleshooting/CrashLoopBackOff/">
+<a class="md-nav__link" href="../../../kubernetes/troubleshooting/CrashLoopBackOff/">
 <span class="md-ellipsis">
     
   
@@ -3647,7 +3535,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/troubleshooting/ImagePullBackOff/">
+<a class="md-nav__link" href="../../../kubernetes/troubleshooting/ImagePullBackOff/">
 <span class="md-ellipsis">
     
   
@@ -3659,7 +3547,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/troubleshooting/pod-stuck-pending/">
+<a class="md-nav__link" href="../../../kubernetes/troubleshooting/pod-stuck-pending/">
 <span class="md-ellipsis">
     
   
@@ -3697,7 +3585,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/troubleshooting/service-not-reachable/">
+<a class="md-nav__link" href="../../../kubernetes/troubleshooting/service-not-reachable/">
 <span class="md-ellipsis">
     
   
@@ -3735,7 +3623,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../kubernetes/troubleshooting/kubectl-debugging/">
+<a class="md-nav__link" href="../../../kubernetes/troubleshooting/kubectl-debugging/">
 <span class="md-ellipsis">
     
   
@@ -3758,7 +3646,7 @@
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox">
 <div class="md-nav__link md-nav__container">
-<a class="md-nav__link" href="../../../../automation/">
+<a class="md-nav__link" href="../../../automation/">
 <span class="md-ellipsis">
     
   
@@ -3806,7 +3694,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../automation/tutorials/index.md">
+<a class="md-nav__link" href="../../../automation/tutorials/index.md">
 <span class="md-ellipsis">
     
   
@@ -3841,7 +3729,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../automation/tutorials/beginner/index.md">
+<a class="md-nav__link" href="../../../automation/tutorials/beginner/index.md">
 <span class="md-ellipsis">
     
   
@@ -3879,7 +3767,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../automation/tutorials/intermediate/index.md">
+<a class="md-nav__link" href="../../../automation/tutorials/intermediate/index.md">
 <span class="md-ellipsis">
     
   
@@ -3917,7 +3805,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../automation/tutorials/advanced/index.md">
+<a class="md-nav__link" href="../../../automation/tutorials/advanced/index.md">
 <span class="md-ellipsis">
     
   
@@ -3958,7 +3846,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../automation/how-to/index.md">
+<a class="md-nav__link" href="../../../automation/how-to/index.md">
 <span class="md-ellipsis">
     
   
@@ -3996,7 +3884,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../automation/explanation/index.md">
+<a class="md-nav__link" href="../../../automation/explanation/index.md">
 <span class="md-ellipsis">
     
   
@@ -4034,7 +3922,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../automation/reference/index.md">
+<a class="md-nav__link" href="../../../automation/reference/index.md">
 <span class="md-ellipsis">
     
   
@@ -4066,91 +3954,10 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#what-we-will-do-in-very-simple-steps">
+<a class="md-nav__link" href="#topics">
 <span class="md-ellipsis">
       
-        What we will do (in very simple steps)
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-1-get-a-server">
-<span class="md-ellipsis">
-      
-        Step 1: Get a server
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-2-install-docker-on-the-server">
-<span class="md-ellipsis">
-      
-        Step 2: Install Docker on the server
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-3-push-your-image-so-the-server-can-pull-it">
-<span class="md-ellipsis">
-      
-        Step 3: Push your image so the server can pull it
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-4-run-the-stack-on-the-server">
-<span class="md-ellipsis">
-      
-        Step 4: Run the stack on the server
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#step-5-visit-your-app">
-<span class="md-ellipsis">
-      
-        Step 5: Visit your app
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#a-word-on-real-production">
-<span class="md-ellipsis">
-      
-        A word on real production
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#checkpoint">
-<span class="md-ellipsis">
-      
-        ✅ Checkpoint
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#common-hiccups">
-<span class="md-ellipsis">
-      
-        🩹 Common hiccups
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#where-this-leads-kubernetes">
-<span class="md-ellipsis">
-      
-        🚀 Where this leads: Kubernetes
+        Topics
       
     </span>
 </a>
@@ -4161,170 +3968,51 @@
 </div>
 </div>
 <div class="md-content" data-md-component="content">
-<nav aria-label="Navigation" class="md-path">
-<ol class="md-path__list">
-<li class="md-path__item">
-<a class="md-path__link" href="../../../..">
-<span class="md-ellipsis">
-    Home
-  </span>
-</a>
-</li>
-<li class="md-path__item">
-<a class="md-path__link" href="../../../">
-<span class="md-ellipsis">
-    🐳 Docker  (🚧 Planned)
-  </span>
-</a>
-</li>
-<li class="md-path__item">
-<a class="md-path__link" href="../../">
-<span class="md-ellipsis">
-    Tutorials
-  </span>
-</a>
-</li>
-<li class="md-path__item">
-<a class="md-path__link" href="../">
-<span class="md-ellipsis">
-    End-to-End
-  </span>
-</a>
-</li>
-</ol>
-</nav>
 <article class="md-content__inner md-typeset">
-<h1 id="deploy-a-web-app-with-docker">Deploy a Web App with Docker<a class="headerlink" href="#deploy-a-web-app-with-docker" title="Permanent link">¶</a></h1>
-<p>Everything so far has run on your own machine. In this end-to-end lesson you'll put your app on a <strong>real server</strong>, reachable from anywhere on the internet. This is the moment your work stops being a local experiment and becomes something you could actually share. 🌍</p>
-<p>It pulls together skills from across the course: pushing to a registry, writing a Compose file, and passing configuration with environment variables.</p>
-<blockquote>
-<p>ℹ️ <strong>You can read this one without following along.</strong> The steps need a cloud server, which costs a little money. If you have one, great. If not, read through so you understand how deployment works, and come back when you're ready.</p>
-</blockquote>
-<h2 id="what-we-will-do-in-very-simple-steps">What we will do (in very simple steps)<a class="headerlink" href="#what-we-will-do-in-very-simple-steps" title="Permanent link">¶</a></h2>
-<ol>
-<li>Get a small Linux server in the cloud</li>
-<li>Install Docker on it</li>
-<li>Push your app image so the server can pull it</li>
-<li>Run the whole stack on the server with Compose</li>
-<li>Visit your app on its public address</li>
-</ol>
+<h1 id="docker-explained">Docker Explained<a class="headerlink" href="#docker-explained" title="Permanent link">¶</a></h1>
+<p>The tutorials showed you <em>how</em> to use Docker. This section explains <em>why</em> it works the way it does, and what is really happening underneath.</p>
+<p>These pages are for understanding, not for step-by-step practice. Read them when you want the mental model behind a feature, not a task to follow.</p>
 <hr>
-<h2 id="step-1-get-a-server">Step 1: Get a server<a class="headerlink" href="#step-1-get-a-server" title="Permanent link">¶</a></h2>
-<p>Create a small <strong>Ubuntu</strong> server with any cloud provider (DigitalOcean, Hetzner, AWS, and others all work). The smallest, cheapest size is plenty for this. You'll end up with two things:</p>
+<h2 id="topics">Topics<a class="headerlink" href="#topics" title="Permanent link">¶</a></h2>
+<div class="grid cards">
 <ul>
-<li>A <strong>public IP address</strong>, for example <code>203.0.113.10</code></li>
-<li><strong>SSH access</strong>, usually a key or password set during creation</li>
+<li>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 6a6 6 0 0 1 6 6c0 2.22-1.21 4.16-3 5.2V19a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1.8c-1.79-1.04-3-2.98-3-5.2a6 6 0 0 1 6-6m2 15v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1zm6-10h3v2h-3zM1 11h3v2H1zM13 1v3h-2V1zM4.92 3.5l2.13 2.14-1.42 1.41L3.5 4.93zm12.03 2.13 2.12-2.13 1.43 1.43-2.13 2.12z"></path></svg></span> <strong>Fundamentals</strong></p>
+<p>What Docker is, the problem it solves, and how containers differ from virtual machines.</p>
+<p><a href="fundamentals/what-is-docker.md"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Start here</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 2v6h2v3H5c-1.11 0-2 .89-2 2v3H1v6h6v-6H5v-3h6v3H9v6h6v-6h-2v-3h6v3h-2v6h6v-6h-2v-3c0-1.11-.89-2-2-2h-6V8h2V2z"></path></svg></span> <strong>Architecture</strong></p>
+<p>The client, the daemon, and how a command becomes a running container.</p>
+<p><a href="architecture/docker-architecture.md"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Read more</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12 16 7.36-5.73L21 9l-9-7-9 7 1.63 1.27M12 18.54l-7.38-5.73L3 14.07l9 7 9-7-1.63-1.27z"></path></svg></span> <strong>Images</strong></p>
+<p>How images are built from layers, and why caching makes builds fast.</p>
+<p><a href="images/images.md"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Read more</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.32.17.53.5.53.88zM12 4.15 6.04 7.5 12 10.85l5.96-3.35zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-6.7l-6 3.37v6.71z"></path></svg></span> <strong>Containers</strong></p>
+<p>The container lifecycle, and the isolation that keeps them separate.</p>
+<p><a href="containers/container-lifecycle.md"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Read more</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 2c-1.11 0-2 .89-2 2v3c0 1.11.89 2 2 2h1v2H2v2h4v2H5c-1.11 0-2 .89-2 2v3c0 1.11.89 2 2 2h4c1.11 0 2-.89 2-2v-3c0-1.11-.89-2-2-2H8v-2h8v2h-1c-1.11 0-2 .89-2 2v3c0 1.11.89 2 2 2h4c1.11 0 2-.89 2-2v-3c0-1.11-.89-2-2-2h-1v-2h4v-2h-9V9h1c1.11 0 2-.89 2-2V4c0-1.11-.89-2-2-2zm0 2h4v3h-4zM5 17h4v3H5zm10 0h4v3h-4z"></path></svg></span> <strong>Networking</strong></p>
+<p>How containers find and talk to each other, and the different network types.</p>
+<p><a href="networking/networking.md"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Read more</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4M4 9v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9c0 2.21-3.58 4-8 4s-8-1.79-8-4m0 5v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3c0 2.21-3.58 4-8 4s-8-1.79-8-4"></path></svg></span> <strong>Storage</strong></p>
+<p>Where container data lives, and how volumes make it last.</p>
+<p><a href="storage/storage.md"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Read more</a></p>
+</li>
+<li>
+<p><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 3v8h8V3zM3 21h8v-8H3zM3 3v8h8V3zm10 13h3v-3h2v3h3v2h-3v3h-2v-3h-3z"></path></svg></span> <strong>Docker Compose</strong></p>
+<p>What Compose adds, and how it describes a multi-container system.</p>
+<p><a href="docker-compose/docker-compose.md"><span class="twemoji"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span> Read more</a></p>
+</li>
 </ul>
-<p>Connect to it from your terminal (replace with your server's address):</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>ssh<span class="w"> </span>root@YOUR_SERVER_IP
-</code></pre></div>
-<p>From here on, commands run <strong>on the server</strong>, not your laptop, unless we say otherwise.</p>
-<hr>
-<h2 id="step-2-install-docker-on-the-server">Step 2: Install Docker on the server<a class="headerlink" href="#step-2-install-docker-on-the-server" title="Permanent link">¶</a></h2>
-<p>The same one-line installer you used at the very start works here too:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://get.docker.com<span class="w"> </span>-o<span class="w"> </span>get-docker.sh
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>sudo<span class="w"> </span>sh<span class="w"> </span>get-docker.sh
-</code></pre></div>
-<p>Check it worked:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>docker<span class="w"> </span>--version
-</code></pre></div>
-<p>Your server now has the same container engine your laptop does. 🐳</p>
-<hr>
-<h2 id="step-3-push-your-image-so-the-server-can-pull-it">Step 3: Push your image so the server can pull it<a class="headerlink" href="#step-3-push-your-image-so-the-server-can-pull-it" title="Permanent link">¶</a></h2>
-<p>A server doesn't build images, it <strong>pulls</strong> finished ones. So back <strong>on your laptop</strong>, make sure your API image is on Docker Hub (from the registry lesson):</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>docker<span class="w"> </span>push<span class="w"> </span>YOUR_USERNAME/my-first-app:1.0
-</code></pre></div>
-<p>If you need to rebuild and push it first:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nb">cd</span><span class="w"> </span>~/my-docker-app
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>YOUR_USERNAME/my-first-app:1.0<span class="w"> </span>.
-<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>docker<span class="w"> </span>push<span class="w"> </span>YOUR_USERNAME/my-first-app:1.0
-</code></pre></div>
-<p>Now the server can fetch your app from anywhere.</p>
-<hr>
-<h2 id="step-4-run-the-stack-on-the-server">Step 4: Run the stack on the server<a class="headerlink" href="#step-4-run-the-stack-on-the-server" title="Permanent link">¶</a></h2>
-<p>Back <strong>on the server</strong>, create a folder and two files. First <code>compose.yaml</code>:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nt">services</span><span class="p">:</span>
-<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="nt">db</span><span class="p">:</span>
-<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres:16</span>
-<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">      </span><span class="nt">POSTGRES_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secret</span>
-<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">      </span><span class="nt">POSTGRES_DB</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">snapshot</span>
-<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
-<a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">snapshot-data:/var/lib/postgresql/data</span>
-<a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./init.sql:/docker-entrypoint-initdb.d/init.sql</span>
-<a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a>
-<a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">  </span><span class="nt">app</span><span class="p">:</span>
-<a href="#__codelineno-5-12" id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOUR_USERNAME/my-first-app:1.0</span>
-<a href="#__codelineno-5-13" id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
-<a href="#__codelineno-5-14" id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"80:5000"</span>
-<a href="#__codelineno-5-15" id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<a href="#__codelineno-5-16" id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">      </span><span class="nt">DB_HOST</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db</span>
-<a href="#__codelineno-5-17" id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
-<a href="#__codelineno-5-18" id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db</span>
-<a href="#__codelineno-5-19" id="__codelineno-5-19" name="__codelineno-5-19"></a>
-<a href="#__codelineno-5-20" id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="nt">volumes</span><span class="p">:</span>
-<a href="#__codelineno-5-21" id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="w">  </span><span class="nt">snapshot-data</span><span class="p">:</span>
-</code></pre></div>
-<p>Two differences from your local Compose file, both important:</p>
-<ul>
-<li>The app uses <code>image: YOUR_USERNAME/my-first-app:1.0</code> instead of <code>build: .</code>, because the server pulls your finished image rather than building it.</li>
-<li>The app maps to port <strong>80</strong>, the standard web port, so visitors don't need to add a port number to the address.</li>
-</ul>
-<p>Then the same seed file, <code>init.sql</code>:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">photos</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="nb">serial</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="nb">text</span><span class="p">);</span>
-<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">photos</span><span class="w"> </span><span class="p">(</span><span class="n">title</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'sunset'</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="s1">'mountain'</span><span class="p">);</span>
-</code></pre></div>
-<p>Start it all:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
-</code></pre></div>
-<p>The server pulls Postgres and your app, creates the network and volume, and starts everything, exactly as it did on your laptop.</p>
-<hr>
-<h2 id="step-5-visit-your-app">Step 5: Visit your app<a class="headerlink" href="#step-5-visit-your-app" title="Permanent link">¶</a></h2>
-<p>Open your browser and go to your server's public address:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>http://YOUR_SERVER_IP/photos
-</code></pre></div>
-<p>Your app responds, live on the internet, serving data from its database. 🎉 You built this, and now anyone can reach it.</p>
-<blockquote>
-<p>🔥 If it doesn't load, your provider's firewall may be blocking port 80. Most providers have a firewall or "security group" setting where you allow inbound HTTP (port 80). Check that first.</p>
-</blockquote>
-<hr>
-<h2 id="a-word-on-real-production">A word on real production<a class="headerlink" href="#a-word-on-real-production" title="Permanent link">¶</a></h2>
-<p>This is a deliberately simple deploy, perfect for learning, but not yet hardened for serious use. A real production setup would also add:</p>
-<ul>
-<li><strong>HTTPS</strong> so traffic is encrypted</li>
-<li><strong>Proper secrets</strong> instead of a password sitting in a Compose file</li>
-<li><strong>Backups</strong> of the database volume</li>
-<li><strong>Automatic restarts</strong> if the server reboots</li>
-</ul>
-<p>Those are worthwhile next steps once the basics feel comfortable.</p>
-<hr>
-<h2 id="checkpoint">✅ Checkpoint<a class="headerlink" href="#checkpoint" title="Permanent link">¶</a></h2>
-<p>You've finished this lesson if:</p>
-<ul>
-<li>You installed Docker on a remote server</li>
-<li>Your app image is on Docker Hub and the server pulled it</li>
-<li><code>docker compose up -d</code> started the stack on the server</li>
-<li>Visiting <code>http://YOUR_SERVER_IP/photos</code> returned your data</li>
-</ul>
-<hr>
-<h2 id="common-hiccups">🩹 Common hiccups<a class="headerlink" href="#common-hiccups" title="Permanent link">¶</a></h2>
-<ul>
-<li><strong>Page won't load</strong>: the provider firewall is likely blocking port 80. Allow inbound HTTP in your server's network settings.</li>
-<li><strong>"pull access denied"</strong>: the image name or tag is wrong, or the repository is private. Check <code>YOUR_USERNAME/my-first-app:1.0</code> exactly.</li>
-<li><strong>App error on <code>/photos</code></strong>: give Postgres a few seconds to start, and confirm <code>init.sql</code> is in the same folder as <code>compose.yaml</code>.</li>
-<li><strong>Can't SSH in</strong>: check your key or password and that your provider allows SSH (port 22).</li>
-</ul>
-<hr>
-<h2 id="where-this-leads-kubernetes">🚀 Where this leads: Kubernetes<a class="headerlink" href="#where-this-leads-kubernetes" title="Permanent link">¶</a></h2>
-<p>Look at what you just did, and what it cost. You deployed to <strong>one</strong> server, <strong>by hand</strong>. Now ask the hard questions:</p>
-<ul>
-<li>What happens if that server crashes at 3 a.m.?</li>
-<li>What if your app needs ten servers to handle traffic?</li>
-<li>How do you update to a new version with no downtime?</li>
-</ul>
-<p>Doing all of that by hand, across many machines, quickly becomes impossible. That is exactly the problem <strong>Kubernetes</strong> was built to solve. It takes the very containers you've built here and runs them reliably at scale, healing, updating, and balancing them automatically.</p>
-<p>You now have the perfect foundation for it. Everything Kubernetes orchestrates is a container, and you understand containers deeply. The <a href="../../../kubernetes/">Kubernetes course</a> is your natural next step.</p>
-<p><strong>Next up:</strong> <a href="../fullstack-compose/">Full Stack App with Compose</a>, where you'll bring the frontend, API, and database together into one complete local stack.</p>
+</div>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
@@ -4356,11 +4044,11 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.path", "navigation.indexes", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow", "search.suggest", "search.highlight"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.path", "navigation.indexes", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
 <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
-<script src="../../../../javascripts/mermaid-init.js"></script>
-<script src="../../../../javascripts/extra.js"></script>
+<script src="../../../javascripts/mermaid-init.js"></script>
+<script src="../../../javascripts/extra.js"></script>
 
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(()=>{ lightbox.reload(); });

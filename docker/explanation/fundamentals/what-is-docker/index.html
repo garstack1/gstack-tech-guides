@@ -32,6 +32,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#what-is-docker">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -440,7 +443,8 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2_2_5" type="checkbox">
-<label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../tutorials/end-to-end/">
 <span class="md-ellipsis">
     
   
@@ -449,8 +453,11 @@
 
     
   </span>
+</a>
+<label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-expanded="false" aria-labelledby="__nav_2_2_5_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_2_2_5">
 <span class="md-nav__icon md-icon"></span>
@@ -919,6 +926,17 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    What is Docker
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -929,6 +947,59 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-a-container-actually-is">
+<span class="md-ellipsis">
+      
+        What a container actually is
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-docker-adds">
+<span class="md-ellipsis">
+      
+        What Docker adds
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-to-use-docker-and-when-not-to">
+<span class="md-ellipsis">
+      
+        When to use Docker, and when not to
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../containers-vs-vm/">
@@ -3944,6 +4015,57 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-a-container-actually-is">
+<span class="md-ellipsis">
+      
+        What a container actually is
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-docker-adds">
+<span class="md-ellipsis">
+      
+        What Docker adds
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-to-use-docker-and-when-not-to">
+<span class="md-ellipsis">
+      
+        When to use Docker, and when not to
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#next">
+<span class="md-ellipsis">
+      
+        Next
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -3982,8 +4104,42 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1>What is Docker</h1>
-
+<h1 id="what-is-docker">What is Docker?<a class="headerlink" href="#what-is-docker" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>Docker is a platform for <strong>building, sharing, and running applications in containers</strong>. A container packages an application together with everything it needs to run, so it behaves the same way on any machine that has Docker.</p>
+<p>The problem it solves is an old one, summed up by a familiar complaint:</p>
+<blockquote>
+<p>"But it works on my machine."</p>
+</blockquote>
+<p>Software often breaks when it moves between environments, because the machines differ: different library versions, different settings, missing dependencies. Docker removes those differences by packaging the application and its environment together.</p>
+<hr>
+<h2 id="what-a-container-actually-is">What a container actually is<a class="headerlink" href="#what-a-container-actually-is" title="Permanent link">¶</a></h2>
+<p>It is tempting to picture a container as a small virtual machine, but that is not what it is. A container is really just <strong>a normal process running on your computer</strong>, with some clever isolation applied so that it behaves as if it has the machine to itself.</p>
+<p>That isolation comes from features built into the Linux kernel:</p>
+<ul>
+<li><strong>Namespaces</strong> give the process its own private view of the system: its own filesystem, its own network, its own list of processes. It cannot see the rest of the machine.</li>
+<li><strong>Control groups (cgroups)</strong> limit how much CPU and memory the process can use, so one container cannot starve the others.</li>
+</ul>
+<p>Because a container is just an isolated process sharing the host's kernel, it starts in milliseconds and uses very little memory. There is no second operating system booting up inside it.</p>
+<hr>
+<h2 id="what-docker-adds">What Docker adds<a class="headerlink" href="#what-docker-adds" title="Permanent link">¶</a></h2>
+<p>The isolation features existed before Docker. What Docker provides is a simple, consistent way to use them, built around three ideas:</p>
+<ul>
+<li><strong>Images</strong>: read-only templates that contain your application and its dependencies.</li>
+<li><strong>Containers</strong>: running instances created from images.</li>
+<li><strong>Registries</strong>: shared stores, like Docker Hub, where images are published and pulled.</li>
+</ul>
+<p>With these, the workflow becomes: build an image once, push it to a registry, and run it as a container anywhere. Build, ship, run.</p>
+<hr>
+<h2 id="when-to-use-docker-and-when-not-to">When to use Docker, and when not to<a class="headerlink" href="#when-to-use-docker-and-when-not-to" title="Permanent link">¶</a></h2>
+<p>Docker is an excellent fit for packaging web services, APIs, databases, and background workers, and for making development and production environments match.</p>
+<p>It is less suited to desktop GUI applications, and it is not a security boundary as strong as a full virtual machine, because containers share the host kernel. For workloads that need the hardest possible isolation, virtual machines still have a place.</p>
+<hr>
+<h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../containers-vs-vm/">Containers vs Virtual Machines</a> explores that difference in detail.</li>
+<li><a href="../../architecture/docker-architecture/">Docker Architecture Overview</a> shows how a command becomes a running container.</li>
+</ul>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
