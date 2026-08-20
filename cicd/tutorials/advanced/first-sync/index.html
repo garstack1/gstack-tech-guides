@@ -3,7 +3,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <meta content="Hands-on guides for Kubernetes, Docker, Automation and more" name="description">
 <meta content="Garrett Stack" name="author">
-<link href="https://garstack-sharetribe.github.io/gstack-tech-guides/cicd/tutorials/advanced/first-sync/" rel="canonical">
+<link href="https://garstack1.github.io/gstack-tech-guides/cicd/tutorials/advanced/first-sync/" rel="canonical">
 <link href="../install-argocd/" rel="prev">
 <link href="../closing-the-loop/" rel="next">
 <link href="../../../../assets/images/favicon.png" rel="icon">
@@ -94,7 +94,7 @@
 </div>
 </div>
 <div class="md-header__source">
-<a class="md-source" data-md-component="source" href="https://github.com/garstack-sharetribe/gstack-tech-guides" title="Go to repository">
+<a class="md-source" data-md-component="source" href="https://github.com/garstack1/gstack-tech-guides" title="Go to repository">
 <div class="md-source__icon md-icon">
 <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
 </div>
@@ -119,7 +119,7 @@
     Technical Tutorials Hub
   </label>
 <div class="md-nav__source">
-<a class="md-source" data-md-component="source" href="https://github.com/garstack-sharetribe/gstack-tech-guides" title="Go to repository">
+<a class="md-source" data-md-component="source" href="https://github.com/garstack1/gstack-tech-guides" title="Go to repository">
 <div class="md-source__icon md-icon">
 <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
 </div>
@@ -3644,7 +3644,7 @@
 <span class="md-ellipsis">
     
   
-    🚀 CI/CD &amp; GitOps (🚧 In Progress)
+    🚀 CI/CD &amp; GitOps
   
 
     
@@ -3659,7 +3659,7 @@
 <span class="md-nav__icon md-icon"></span>
             
   
-    🚀 CI/CD &amp; GitOps (🚧 In Progress)
+    🚀 CI/CD &amp; GitOps
   
 
           </label>
@@ -4008,6 +4008,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Your First Synced App
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -4018,6 +4029,86 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-we-will-do-in-very-simple-steps">
+<span class="md-ellipsis">
+      
+        What we will do (in very simple steps)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-an-application-is">
+<span class="md-ellipsis">
+      
+        What an Application is
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-create-the-application">
+<span class="md-ellipsis">
+      
+        Step 1: Create the Application
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-sync-it">
+<span class="md-ellipsis">
+      
+        Step 2: Sync it
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-verify-from-the-terminal">
+<span class="md-ellipsis">
+      
+        Step 3: Verify from the terminal
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-more-gitops-way">
+<span class="md-ellipsis">
+      
+        The more GitOps way
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#checkpoint">
+<span class="md-ellipsis">
+      
+        ✅ Checkpoint
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-hiccups">
+<span class="md-ellipsis">
+      
+        🩹 Common hiccups
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../closing-the-loop/">
@@ -4073,6 +4164,798 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../how-to/">
+<span class="md-ellipsis">
+    
+  
+    How-To Guides
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    How-To Guides
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3_2" type="checkbox">
+<label class="md-nav__link" for="__nav_4_3_2" id="__nav_4_3_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_3_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Workflows
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/workflows/trigger-on-tag/">
+<span class="md-ellipsis">
+    
+  
+    Trigger on a Tag
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/workflows/run-tests/">
+<span class="md-ellipsis">
+    
+  
+    Run Tests in CI
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/workflows/cache-dependencies/">
+<span class="md-ellipsis">
+    
+  
+    Cache Dependencies
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/workflows/build-and-push/">
+<span class="md-ellipsis">
+    
+  
+    Build and Push an Image
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3_3" type="checkbox">
+<label class="md-nav__link" for="__nav_4_3_3" id="__nav_4_3_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_3_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/deployment/add-a-secret/">
+<span class="md-ellipsis">
+    
+  
+    Add a Secret
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/deployment/deploy-over-ssh/">
+<span class="md-ellipsis">
+    
+  
+    Deploy over SSH
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/deployment/require-approval/">
+<span class="md-ellipsis">
+    
+  
+    Require an Approval
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/deployment/roll-back/">
+<span class="md-ellipsis">
+    
+  
+    Roll Back a Deploy
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3_4" type="checkbox">
+<label class="md-nav__link" for="__nav_4_3_4" id="__nav_4_3_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    GitOps
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_3_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    GitOps
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/gitops/create-argocd-app/">
+<span class="md-ellipsis">
+    
+  
+    Create an Argo CD App
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/gitops/enable-auto-sync/">
+<span class="md-ellipsis">
+    
+  
+    Enable Auto-Sync
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../explanation/">
+<span class="md-ellipsis">
+    
+  
+    Explanation
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Explanation
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4_2" type="checkbox">
+<label class="md-nav__link" for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_4_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../explanation/fundamentals/what-is-cicd/">
+<span class="md-ellipsis">
+    
+  
+    What is CI/CD?
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../explanation/fundamentals/ci-vs-cd/">
+<span class="md-ellipsis">
+    
+  
+    CI vs CD
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4_3" type="checkbox">
+<label class="md-nav__link" for="__nav_4_4_3" id="__nav_4_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pipelines
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipelines
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../explanation/pipelines/pipeline-anatomy/">
+<span class="md-ellipsis">
+    
+  
+    Pipeline Anatomy
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../explanation/pipelines/triggers-and-events/">
+<span class="md-ellipsis">
+    
+  
+    Triggers and Events
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4_4" type="checkbox">
+<label class="md-nav__link" for="__nav_4_4_4" id="__nav_4_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    GitOps
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    GitOps
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../explanation/gitops/gitops-principles/">
+<span class="md-ellipsis">
+    
+  
+    GitOps Principles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../explanation/gitops/reconciliation-and-drift/">
+<span class="md-ellipsis">
+    
+  
+    Reconciliation and Drift
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../reference/">
+<span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5_2" type="checkbox">
+<label class="md-nav__link" for="__nav_4_5_2" id="__nav_4_5_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    GitHub Actions
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_5_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    GitHub Actions
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../reference/github-actions/workflow-syntax/">
+<span class="md-ellipsis">
+    
+  
+    Workflow Syntax
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../reference/github-actions/triggers/">
+<span class="md-ellipsis">
+    
+  
+    Triggers
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../reference/github-actions/common-actions/">
+<span class="md-ellipsis">
+    
+  
+    Common Actions
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5_3" type="checkbox">
+<label class="md-nav__link" for="__nav_4_5_3" id="__nav_4_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Argo CD
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_5_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Argo CD
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../reference/argo-cd/argocd-cli/">
+<span class="md-ellipsis">
+    
+  
+    Argo CD CLI
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../reference/argo-cd/application-spec/">
+<span class="md-ellipsis">
+    
+  
+    Application Spec
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6_2" type="checkbox">
+<label class="md-nav__link" for="__nav_4_6_2" id="__nav_4_6_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pipelines
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipelines
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../troubleshooting/pipelines/workflow-not-triggering/">
+<span class="md-ellipsis">
+    
+  
+    Workflow Not Triggering
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../troubleshooting/pipelines/yaml-errors/">
+<span class="md-ellipsis">
+    
+  
+    YAML Errors
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../troubleshooting/pipelines/red-build/">
+<span class="md-ellipsis">
+    
+  
+    Red Build
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6_3" type="checkbox">
+<label class="md-nav__link" for="__nav_4_6_3" id="__nav_4_6_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Secrets and Permissions
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Secrets and Permissions
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../troubleshooting/secrets/permission-denied/">
+<span class="md-ellipsis">
+    
+  
+    Permission Denied
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../troubleshooting/secrets/secret-not-found/">
+<span class="md-ellipsis">
+    
+  
+    Secret Not Found
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6_4" type="checkbox">
+<label class="md-nav__link" for="__nav_4_6_4" id="__nav_4_6_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../troubleshooting/deployment/ssh-connection-fails/">
+<span class="md-ellipsis">
+    
+  
+    SSH Connection Fails
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../troubleshooting/deployment/image-pull-errors/">
+<span class="md-ellipsis">
+    
+  
+    Image Pull Errors
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6_5" type="checkbox">
+<label class="md-nav__link" for="__nav_4_6_5" id="__nav_4_6_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    GitOps
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    GitOps
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../troubleshooting/gitops/argocd-out-of-sync/">
+<span class="md-ellipsis">
+    
+  
+    App Out of Sync
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../troubleshooting/gitops/argocd-repo-access/">
+<span class="md-ellipsis">
+    
+  
+    Argo CD Repo Access
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -4085,6 +4968,84 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-we-will-do-in-very-simple-steps">
+<span class="md-ellipsis">
+      
+        What we will do (in very simple steps)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-an-application-is">
+<span class="md-ellipsis">
+      
+        What an Application is
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-create-the-application">
+<span class="md-ellipsis">
+      
+        Step 1: Create the Application
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-sync-it">
+<span class="md-ellipsis">
+      
+        Step 2: Sync it
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-verify-from-the-terminal">
+<span class="md-ellipsis">
+      
+        Step 3: Verify from the terminal
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-more-gitops-way">
+<span class="md-ellipsis">
+      
+        The more GitOps way
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#checkpoint">
+<span class="md-ellipsis">
+      
+        ✅ Checkpoint
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-hiccups">
+<span class="md-ellipsis">
+      
+        🩹 Common hiccups
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -4102,7 +5063,7 @@
 <li class="md-path__item">
 <a class="md-path__link" href="../../../">
 <span class="md-ellipsis">
-    🚀 CI/CD &amp; GitOps (🚧 In Progress)
+    🚀 CI/CD &amp; GitOps
   </span>
 </a>
 </li>
@@ -4124,7 +5085,80 @@
 </nav>
 <article class="md-content__inner md-typeset">
 <h1 id="your-first-synced-app">Your First Synced App<a class="headerlink" href="#your-first-synced-app" title="Permanent link">¶</a></h1>
-<p><em>This page is coming soon.</em></p>
+<p>Argo CD is running. Your manifests are in Git. Now you connect the two: you tell Argo CD to watch your repository, and it deploys Snapshot into the cluster for you. This is your first real GitOps deployment. 🎉</p>
+<h2 id="what-we-will-do-in-very-simple-steps">What we will do (in very simple steps)<a class="headerlink" href="#what-we-will-do-in-very-simple-steps" title="Permanent link">¶</a></h2>
+<ol>
+<li>Understand what an Argo CD Application is</li>
+<li>Point Argo CD at your repository</li>
+<li>Sync it, and watch Snapshot appear</li>
+</ol>
+<hr>
+<h2 id="what-an-application-is">What an Application is<a class="headerlink" href="#what-an-application-is" title="Permanent link">¶</a></h2>
+<p>In Argo CD, an <strong>Application</strong> is a small definition that says: <em>watch this folder, in this repository, and keep this cluster namespace matching it.</em> Once it exists, Argo CD takes over the deploying.</p>
+<hr>
+<h2 id="step-1-create-the-application">Step 1: Create the Application<a class="headerlink" href="#step-1-create-the-application" title="Permanent link">¶</a></h2>
+<p>In the Argo CD dashboard, click <strong>New App</strong>, then fill in:</p>
+<ul>
+<li><strong>Application Name</strong>: <code>snapshot</code></li>
+<li><strong>Project</strong>: <code>default</code></li>
+<li><strong>Sync Policy</strong>: <code>Manual</code> (we will sync by hand this first time)</li>
+<li><strong>Repository URL</strong>: <code>https://github.com/YOUR_USERNAME/snapshot-app.git</code></li>
+<li><strong>Revision</strong>: <code>HEAD</code></li>
+<li><strong>Path</strong>: <code>k8s</code></li>
+<li><strong>Cluster URL</strong>: <code>https://kubernetes.default.svc</code> (the in-cluster option)</li>
+<li><strong>Namespace</strong>: <code>default</code></li>
+</ul>
+<p>Click <strong>Create</strong>.</p>
+<p>Your app appears on the dashboard, marked <strong>OutOfSync</strong>. That means Argo CD can see what Git wants, but has not applied it yet.</p>
+<hr>
+<h2 id="step-2-sync-it">Step 2: Sync it<a class="headerlink" href="#step-2-sync-it" title="Permanent link">¶</a></h2>
+<p>Click into the <code>snapshot</code> app, then click <strong>Sync</strong>, then <strong>Synchronize</strong>.</p>
+<p>Watch the diagram come to life. Argo CD reads your <code>k8s/</code> folder and creates the Deployment and the Service. Within moments the app turns <strong>Synced</strong> and <strong>Healthy</strong>, and you can see the two Snapshot pods appear as boxes on the screen. You did not run a single <code>kubectl apply</code>. Argo CD did it, from Git. ✨</p>
+<hr>
+<h2 id="step-3-verify-from-the-terminal">Step 3: Verify from the terminal<a class="headerlink" href="#step-3-verify-from-the-terminal" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>kubectl<span class="w"> </span>get<span class="w"> </span>pods
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>svc
+</code></pre></div>
+<p>You will see two <code>snapshot</code> pods running and the <code>snapshot</code> service. To reach the app, forward its port:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>kubectl<span class="w"> </span>port-forward<span class="w"> </span>svc/snapshot<span class="w"> </span><span class="m">8000</span>:80
+</code></pre></div>
+<p>Open <a href="http://localhost:8000">http://localhost:8000</a> and there is Snapshot, deployed by GitOps.</p>
+<hr>
+<h2 id="the-more-gitops-way">The more GitOps way<a class="headerlink" href="#the-more-gitops-way" title="Permanent link">¶</a></h2>
+<p>You created the Application through the dashboard, which is great for learning. In a full GitOps setup, the Application <strong>itself</strong> is a manifest committed to Git, so even Argo CD's configuration is version-controlled:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">argoproj.io/v1alpha1</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Application</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nt">metadata</span><span class="p">:</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">snapshot</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">argocd</span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="nt">spec</span><span class="p">:</span>
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">  </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">  </span><span class="nt">source</span><span class="p">:</span>
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="nt">repoURL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/YOUR_USERNAME/snapshot-app.git</span>
+<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">    </span><span class="nt">targetRevision</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HEAD</span>
+<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">k8s</span>
+<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">  </span><span class="nt">destination</span><span class="p">:</span>
+<a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://kubernetes.default.svc</span>
+<a href="#__codelineno-2-14" id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+</code></pre></div>
+<p>You would apply this once, and from then on everything lives in Git. Keep it in mind, we build on it next.</p>
+<hr>
+<h2 id="checkpoint">✅ Checkpoint<a class="headerlink" href="#checkpoint" title="Permanent link">¶</a></h2>
+<p>You are ready for the next lesson if:</p>
+<ul>
+<li>You created a <code>snapshot</code> Application in Argo CD</li>
+<li>Syncing it deployed the Deployment and Service</li>
+<li>The app shows <strong>Synced</strong> and <strong>Healthy</strong>, and you reached Snapshot in the browser</li>
+</ul>
+<hr>
+<h2 id="common-hiccups">🩹 Common hiccups<a class="headerlink" href="#common-hiccups" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>"repository not accessible"</strong>: the repo URL must be correct, and the repo public (or Argo CD given credentials).</li>
+<li><strong>Stuck OutOfSync after syncing</strong>: open the app and read the message on the failing resource. A bad image tag or a manifest typo is the usual cause.</li>
+<li><strong>Pods not starting</strong>: check the image in <code>deployment.yaml</code> exists and is public. Argo CD deploys it, but the cluster still has to pull it.</li>
+</ul>
+<hr>
+<p><strong>Next up:</strong> <a href="../closing-the-loop/">Closing the Loop</a>, where a new image from CI flows all the way to the cluster automatically.</p>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
