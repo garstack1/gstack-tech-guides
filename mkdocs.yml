@@ -434,59 +434,59 @@ nav:
           - Progressive Delivery: cicd/tutorials/advanced/progressive-delivery.md
           - "Capstone: Full GitOps Loop": cicd/tutorials/advanced/capstone.md
 
-    - How-To Guides:
-      - Index: cicd/how-to/index.md
-      - Workflows:
-          - Trigger on a Tag: cicd/how-to/workflows/trigger-on-tag.md
-          - Run Tests in CI: cicd/how-to/workflows/run-tests.md
-          - Cache Dependencies: cicd/how-to/workflows/cache-dependencies.md
-          - Build and Push an Image: cicd/how-to/workflows/build-and-push.md
-      - Deployment:
-          - Add a Secret: cicd/how-to/deployment/add-a-secret.md
-          - Deploy over SSH: cicd/how-to/deployment/deploy-over-ssh.md
-          - Require an Approval: cicd/how-to/deployment/require-approval.md
-          - Roll Back a Deploy: cicd/how-to/deployment/roll-back.md
-      - GitOps:
-          - Create an Argo CD App: cicd/how-to/gitops/create-argocd-app.md
-          - Enable Auto-Sync: cicd/how-to/gitops/enable-auto-sync.md
+      - How-To Guides:
+        - Index: cicd/how-to/index.md
+        - Workflows:
+            - Trigger on a Tag: cicd/how-to/workflows/trigger-on-tag.md
+            - Run Tests in CI: cicd/how-to/workflows/run-tests.md
+            - Cache Dependencies: cicd/how-to/workflows/cache-dependencies.md
+            - Build and Push an Image: cicd/how-to/workflows/build-and-push.md
+        - Deployment:
+            - Add a Secret: cicd/how-to/deployment/add-a-secret.md
+            - Deploy over SSH: cicd/how-to/deployment/deploy-over-ssh.md
+            - Require an Approval: cicd/how-to/deployment/require-approval.md
+            - Roll Back a Deploy: cicd/how-to/deployment/roll-back.md
+        - GitOps:
+            - Create an Argo CD App: cicd/how-to/gitops/create-argocd-app.md
+            - Enable Auto-Sync: cicd/how-to/gitops/enable-auto-sync.md
 
-    - Explanation:
-      - Index: cicd/explanation/index.md
-      - Fundamentals:
-          - What is CI/CD?: cicd/explanation/fundamentals/what-is-cicd.md
-          - CI vs CD: cicd/explanation/fundamentals/ci-vs-cd.md
-      - Pipelines:
-          - Pipeline Anatomy: cicd/explanation/pipelines/pipeline-anatomy.md
-          - Triggers and Events: cicd/explanation/pipelines/triggers-and-events.md
-      - GitOps:
-          - GitOps Principles: cicd/explanation/gitops/gitops-principles.md
-          - Reconciliation and Drift: cicd/explanation/gitops/reconciliation-and-drift.md
+      - Explanation:
+        - Index: cicd/explanation/index.md
+        - Fundamentals:
+            - What is CI/CD?: cicd/explanation/fundamentals/what-is-cicd.md
+            - CI vs CD: cicd/explanation/fundamentals/ci-vs-cd.md
+        - Pipelines:
+            - Pipeline Anatomy: cicd/explanation/pipelines/pipeline-anatomy.md
+            - Triggers and Events: cicd/explanation/pipelines/triggers-and-events.md
+        - GitOps:
+            - GitOps Principles: cicd/explanation/gitops/gitops-principles.md
+            - Reconciliation and Drift: cicd/explanation/gitops/reconciliation-and-drift.md
 
-    - Reference:
-      - Index: cicd/reference/index.md
-      - GitHub Actions:
-          - Workflow Syntax: cicd/reference/github-actions/workflow-syntax.md
-          - Triggers: cicd/reference/github-actions/triggers.md
-          - Common Actions: cicd/reference/github-actions/common-actions.md
-      - Argo CD:
-          - Argo CD CLI: cicd/reference/argo-cd/argocd-cli.md
-          - Application Spec: cicd/reference/argo-cd/application-spec.md
+      - Reference:
+        - Index: cicd/reference/index.md
+        - GitHub Actions:
+            - Workflow Syntax: cicd/reference/github-actions/workflow-syntax.md
+            - Triggers: cicd/reference/github-actions/triggers.md
+            - Common Actions: cicd/reference/github-actions/common-actions.md
+        - Argo CD:
+            - Argo CD CLI: cicd/reference/argo-cd/argocd-cli.md
+            - Application Spec: cicd/reference/argo-cd/application-spec.md
 
-    - Troubleshooting:
-      - Overview: cicd/troubleshooting/index.md
-      - Pipelines:
-          - Workflow Not Triggering: cicd/troubleshooting/pipelines/workflow-not-triggering.md
-          - YAML Errors: cicd/troubleshooting/pipelines/yaml-errors.md
-          - Red Build: cicd/troubleshooting/pipelines/red-build.md
-      - Secrets and Permissions:
-          - Permission Denied: cicd/troubleshooting/secrets/permission-denied.md
-          - Secret Not Found: cicd/troubleshooting/secrets/secret-not-found.md
-      - Deployment:
-          - SSH Connection Fails: cicd/troubleshooting/deployment/ssh-connection-fails.md
-          - Image Pull Errors: cicd/troubleshooting/deployment/image-pull-errors.md
-      - GitOps:
-          - App Out of Sync: cicd/troubleshooting/gitops/argocd-out-of-sync.md
-          - Argo CD Repo Access: cicd/troubleshooting/gitops/argocd-repo-access.md
+      - Troubleshooting:
+        - Overview: cicd/troubleshooting/index.md
+        - Pipelines:
+            - Workflow Not Triggering: cicd/troubleshooting/pipelines/workflow-not-triggering.md
+            - YAML Errors: cicd/troubleshooting/pipelines/yaml-errors.md
+            - Red Build: cicd/troubleshooting/pipelines/red-build.md
+        - Secrets and Permissions:
+            - Permission Denied: cicd/troubleshooting/secrets/permission-denied.md
+            - Secret Not Found: cicd/troubleshooting/secrets/secret-not-found.md
+        - Deployment:
+            - SSH Connection Fails: cicd/troubleshooting/deployment/ssh-connection-fails.md
+            - Image Pull Errors: cicd/troubleshooting/deployment/image-pull-errors.md
+        - GitOps:
+            - App Out of Sync: cicd/troubleshooting/gitops/argocd-out-of-sync.md
+            - Argo CD Repo Access: cicd/troubleshooting/gitops/argocd-repo-access.md
 
 
 extra:
