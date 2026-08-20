@@ -1,9 +1,9 @@
 site_name: Technical Tutorials Hub
 site_description: Hands-on guides for Kubernetes, Docker, Automation and more
 site_author: Garrett Stack
-site_url: https://garstack-sharetribe.github.io/gstack-tech-guides/
+site_url: https://garstack1.github.io/gstack-tech-guides/
 
-repo_url: https://github.com/garstack-sharetribe/gstack-tech-guides
+repo_url: https://github.com/garstack1/gstack-tech-guides
 repo_name: garstack-tech-guides
 
 copyright: © 2026 Garrett Stack
@@ -395,7 +395,7 @@ nav:
         - Kubectl-Debugging: kubernetes/troubleshooting/kubectl-debugging.md
 
 
-  - "🚀 CI/CD & GitOps (🚧 In Progress)":
+  - "🚀 CI/CD & GitOps":
     - Overview: cicd/index.md
 
     - Tutorials:
