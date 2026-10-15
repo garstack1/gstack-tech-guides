@@ -22,6 +22,7 @@ Each section follows the [Diátaxis](https://diataxis.fr/) framework:
 - **How-to guides** - task-focused steps for specific problems
 - **Reference** - commands and configuration for quick lookup
 - **Explanation** - the concepts behind the tools
+- **Troubleshooting** - common errors and how to fix them
 
 ## Run it locally
 
