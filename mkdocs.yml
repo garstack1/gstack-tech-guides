@@ -1,5 +1,5 @@
 site_name: Technical Tutorials Hub
-site_description: Hands-on guides for Kubernetes, Docker, Automation and more
+site_description: Hands-on guides for Docker, Kubernetes, CI/CD & GitOps and more
 site_author: Garrett Stack
 site_url: https://garstack1.github.io/gstack-tech-guides/
 

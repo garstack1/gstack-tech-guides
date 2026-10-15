@@ -1,6 +1,6 @@
 # Technical Tutorials Hub
 
-Welcome to the **Technical Tutorials Hub**, a hands-on platform for learning modern DevOps, container orchestration, and automation tools.  
+Welcome to the **Technical Tutorials Hub**, a hands-on platform for learning modern DevOps, container orchestration, and CI/CD & GitOps.  
 This site is designed for developers, DevOps engineers, and tech enthusiasts who want to **learn, experiment, and reference real-world workflows**.
 
 ---
@@ -27,11 +27,11 @@ From creating your first cluster to understanding advanced concepts like **state
 
 
 ---
-### ⚡ Automation
-Automate workflows with **n8n, Make, and Zapier**.  
-Visualize, build, and run automation pipelines to streamline tasks, integrate apps, and save time. Includes **interactive examples and workflow diagrams**.
+### 🚀 CI/CD & GitOps
+Build, test, and deploy automatically with **CI/CD pipelines and GitOps**.
+Use Git as the single source of truth to ship changes safely, from source code to a self-healing deployment. Includes **hands-on labs and pipeline diagrams**.
 
-[Go to Automation →](automation/index.md)
+[Go to CI/CD & GitOps →](cicd/index.md)
 
 
 
@@ -43,7 +43,7 @@ If you’re new to these technologies, a suggested path:
 
 1. Start with **Docker Tutorials** to understand containers.  
 2. Move to **Kubernetes Tutorials** to orchestrate containers at scale.  
-3. Explore **Automation Tools** to simplify repetitive tasks and integrate applications.  
+3. Move to **CI/CD & GitOps** to automate building, testing, and deploying your applications.  
 4. Use **How-To Guides and Reference** sections as needed for troubleshooting or quick lookups.
 
 
